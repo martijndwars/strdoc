@@ -66,8 +66,10 @@ app.factory('moduleService', function (baseUrl, $http) {
   };
 
   var getModules = function () {
-    return $http.get(baseUrl + 'data/modules.json').then(function (response) {
-      return response.data;
+    return $http.get(baseUrl + 'data/packages.json').then(function (response) {
+      return _.flatMap(response.data, function (package) {
+        return package.modules;
+      });
     });
   };
 

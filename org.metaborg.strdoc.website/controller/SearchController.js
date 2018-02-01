@@ -7,15 +7,13 @@ app.controller('SearchController', function ($scope, $routeParams, $q, moduleSer
     });
 
     $q.all(modules).then(function (modules) {
-      var allStrategies = modules.reduce(function (accumulator, module) {
-        var moduleStrategies = module.strategies.map(function (strategy) {
+      var allStrategies = _.flatMap(modules, function (module) {
+        return module.strategies.map(function (strategy) {
           return angular.extend({
             module: module
           }, strategy);
         });
-
-        return accumulator.concat(moduleStrategies);
-      }, []);
+      });
 
       var filteredStrategies = allStrategies.filter(function (strategy) {
         return strategy.name.toLowerCase().indexOf(query) != -1;
