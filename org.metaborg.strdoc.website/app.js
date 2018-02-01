@@ -123,6 +123,10 @@ app.config(function ($routeProvider, $locationProvider) {
 
 // Focus on search input when pressing 's'
 $(document).on('keydown', function (e) {
+  if (e.metaKey) {
+    return;
+  }
+
   var inputs = $('input');
 
   function focusOn(selector) {
