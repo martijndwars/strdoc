@@ -30,8 +30,10 @@
 </div>
 
 <h3>Strategies</h3>
+<input type="search" id="filter" placeholder="Click 'F' to filter" ng-model="filter"/>
+
 <ul class="strategies">
-	<li ng-repeat="strategy in module.strategies" id="{{strategy.name}}">
+	<li ng-repeat="strategy in module.strategies | filter:filter" id="{{strategy.name}}">
 		<h5>
 			{{strategy.name}} <span><a href="#/source/{{module.name}}.str.html/{{strategy.lines()}}">(source)</a></span>
 		</h5>

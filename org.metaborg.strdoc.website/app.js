@@ -61,7 +61,9 @@ app.factory('moduleService', function (baseUrl, $http) {
   };
 
   var getModule = function (name) {
-    return $http.get(baseUrl + 'data/' + name + '.str.json').then(function (response) {
+    var file = baseUrl + 'data/' + name + '.str.json';
+
+    return $http.get(file).then(function (response) {
       var data = response.data;
 
       // Fix the prototype of each strategy in the module
@@ -121,11 +123,23 @@ app.config(function ($routeProvider, $locationProvider) {
 
 // Focus on search input when pressing 's'
 $(document).on('keydown', function (e) {
-  if (e.keyCode === 83) {
-    if (document.activeElement != $('input').get(0)) {
-      $('input').focus();
+  var inputs = $('input');
 
-      return false;
+  function focusOn(selector) {
+    for (input in inputs) {
+      if (inputs[input] == document.activeElement) {
+        return true;
+      }
     }
+
+    $(selector).focus();
+
+    return false;
+  }
+
+  if (e.keyCode == 83) {
+    return focusOn('input#search');
+  } else if (e.keyCode === 70) {
+    return focusOn('input#filter');
   }
 });

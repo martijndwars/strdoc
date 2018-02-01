@@ -26,7 +26,9 @@
   <body>
     <div class="container">
       <input
-        placeholder="Click or press 'S' to search"
+        type="search"
+        id="search"
+        placeholder="Click 'S' to search"
         ng-model="query"
         ng-change="search()"
         ng-model-options='{debounce: 200}'/>

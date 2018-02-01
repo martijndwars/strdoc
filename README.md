@@ -42,7 +42,6 @@ $ org.metaborg.strdoc.website/deploy.sh
 
 ## Todo
 
-* Feature: Search for strategy within a module.
 * Feature: Link to source on module page.
 * Feature: Improve structure/hierarchy (package -> module -> strategies).
 * Bug: Some whitespace gets lost in the description (see util/config/parse-options)
