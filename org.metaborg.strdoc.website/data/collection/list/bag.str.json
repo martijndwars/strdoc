@@ -1,0 +1,43 @@
+{
+"name": "collection/list/bag",
+"description": "\nThis module contains strategies for handling bags.\n\nA bag is a set of elements where each element has an occurence number. Adding\nan element to a bag which already exists, will increase the occurence number\nfor that element by one.\n\nIn the current implementation, bags are represented as lists of\n(element,occurrence) tuples. Adding a new element is done using bag-insert.\n\n",
+"strategies": [{
+               "name": "bag-insert",
+               "description": "\nInserts a new element into a bag. The element must be on the form\na (element, occurrence) tuple, where occurrence is an integer. The\nbag may be empty.\n\nExample: <bag-insert> (('a', 1), []) => [('a',1)]\n\n\n",
+               "start": 23,
+               "end": 25,
+               "types": ["(elem, occur) * List(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bag-union",
+               "description": "\nTakes the union of two bags.\n\nExample: <bag-union> ([('a',2), ('b',1)], [('a',1)]) => [('b',1),('a',3)]\n\n\n",
+               "start": 34,
+               "end": 35,
+               "types": ["List(a) * List(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bag-insert(equ)",
+               "description": "\nInserts a new element into a bag. The element must be on the form\na (element, occurrence) tuple, where occurrence is an integer. The\nbag may be empty.  The strategy parameter is used to check elements\nfor equality.\n\n\n",
+               "start": 47,
+               "end": 49,
+               "types": ["  (elem, occurrence) * List(a) -> List(a)"],
+               "params": [" Used to test equality on elements."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bag-union(equ)",
+               "description": "\nTakes the union of two bags. The strategy parameter is used\nto check elements for equality.\n\n\n",
+               "start": 58,
+               "end": 59,
+               "types": ["  List(a) * List(a) -> List(a)"],
+               "params": [" Used to test equality on elements."],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

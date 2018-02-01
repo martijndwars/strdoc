@@ -1,0 +1,187 @@
+{
+"name": "strategy/collect",
+"description": "\nCollecting subterms.\n\nThere are two main variants of collect strategies: collect-all\nand collect-om.\n\nThe collect-all strategies continue collecting terms in the\nsubterms of a term that has already been collected.\n\nThe collect-om strategies do not collect subterms of collected\nterms. They collect only the outermost subterms that satisfy\nsome condition.\n\nFor example: if terms matching the term pattern A(_,_) should be\ncollected, then in the term\n\nA(1, A(1, 2))\n\ncollect-all variant will return\n\nA(1, A(1, 2)) and A(1, 2).\n\ncollect-om will only return the outermost result, that is,\n\nA(1, A(1, 2)).\n\n",
+"strategies": [{
+               "name": "collect-all(s)",
+               "description": "\ncollect all subterms for which s succeeds\n\nThis strategy returns a *set* of subterms. The result\nwill therefore not contain duplicates.\n\n",
+               "start": 42,
+               "end": 43,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "collect-all(s, un)",
+               "description": "\ncollect all subterms with user-defined union operator.\n\nThe un argument must take two lists and produce a single one.\n\n",
+               "start": 50,
+               "end": 54,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "collect-all(s, un, reduce)",
+               "description": "\ncollect all subterms with user-defined union operator and\na skip argument.\n\nThe un argument must take two lists and produce a single one.\nIf duplicates must be removed, then this argument should be union,\notherwise it usually conc.\n\nThe reduce argument can be used to reduce the current term before\ncollecting subterms of it. Producing the empty list will result\nin a complete skip of all subterms.\n\nexample:\ncollect-all(?Var(_), conc, \\ Assign(_, e) -> e \\)\n\napplied to:\nAssign(Var(\"x\"), Plus(Var(\"y\"), Var(\"z\")))\n\nresults in:\n[Var(\"y\"), Var(\"z\")]\n\nThe collect-all is applied to the term after the reduce, i.e the\nexample collect-all applied to\n\nAssign(Var(\"x\"), Var(\"y\"))\n\nresults in:\n[Var(\"y\")]\n\n\n",
+               "start": 87,
+               "end": 92,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": " 0.9.6"
+               },{
+               "name": "collect-om(s)",
+               "description": "\ncollect outermost subterms for which s succeeds\n\nThis strategy returns a *set* of subterms. The result\nwill therefore not contain duplicates.\n\n",
+               "start": 105,
+               "end": 106,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "collect(s)",
+               "description": "\nSynonym of collect-om.\n\n",
+               "start": 111,
+               "end": 112,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "collect-om(s, op)",
+               "description": "\ncollect outermost subterms with user-defined union operator.\n\nThe un argument must take two lists and produce a single one.\n\n",
+               "start": 119,
+               "end": 121,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "collect-om(s, un, skip)",
+               "description": "\ncollect outermost subterms with user-defined union operator and\na skip argument.\n\nSee collect-all(s, un, skip) for a description of the arguments.\n\n\n",
+               "start": 131,
+               "end": 136,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": " 0.9.6"
+               },{
+               "name": "collect-split(f, g)",
+               "description": "\nProduces pair of a reduced term and a list of extracted subterms.\n\nReduces terms with f and extracts information with g resulting in a\npair (t, xs) of a reduced term and the list of extracted subterms.\n\n",
+               "start": 146,
+               "end": 147,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "collect-split(splitter)",
+               "description": "\n\n",
+               "start": 149,
+               "end": 150,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "CollectSplit(s, splitter)",
+               "description": "\nHelper of collect-split. Don't use.\n\n",
+               "start": 155,
+               "end": 158,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "CollectSplit(s, f, g)",
+               "description": "\nHelper of collect-split. Don't use.\n\n",
+               "start": 163,
+               "end": 164,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "collect-split'(splitter)",
+               "description": "\n\n",
+               "start": 167,
+               "end": 169,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "postorder-collect(s)",
+               "description": "\n\n",
+               "start": 173,
+               "end": 174,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "postorder-collect(s, acc)",
+               "description": "\n\n",
+               "start": 176,
+               "end": 178,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "collect(s, skip: a -> a * a -> a * a -> a)",
+               "description": "\n\n",
+               "start": 182,
+               "end": 185,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "collect-exc(base, special: a -> b * a -> b)",
+               "description": "\n\n",
+               "start": 187,
+               "end": 192,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bu-collect(s)",
+               "description": "\n\n",
+               "start": 194,
+               "end": 197,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "collect-one(s)",
+               "description": "\ncollect a single, outermost value from a tree.\n\n",
+               "start": 204,
+               "end": 205,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "twicetd(s)",
+               "description": "\n\n",
+               "start": 209,
+               "end": 214,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "atmostonce(s)",
+               "description": "\n\n",
+               "start": 216,
+               "end": 217,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

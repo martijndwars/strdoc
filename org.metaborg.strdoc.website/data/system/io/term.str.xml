@@ -1,0 +1,188 @@
+
+<module>
+  <name>system/io/term</name>
+  <description><![CDATA[
+                        Term input and output.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>fprint</name>
+    <description><![CDATA[
+                          Prints the terms to a stream. If a term is a string it is printed
+                          without quotes, otherwise it is printed as a term.
+                          
+                          
+                          ]]></description>
+    <start>140</start>
+    <end>150</end>
+    <type><![CDATA[Stream * [a] -> Stream]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>fprintnl</name>
+    <description><![CDATA[
+                          fprint, followed by a newline.
+                          
+                          
+                          ]]></description>
+    <start>157</start>
+    <end>158</end>
+    <type><![CDATA[Stream * [a] -> Stream]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>print</name>
+    <description><![CDATA[
+                          Prints terms to a file. If \verb|ti| is a string it is printed without
+                          quotes, otherwise it is printed as a term. \verb|printnl| has the same
+                          behaviour, but also prints a newline after \verb|tn|.
+                          
+                          E.g. <print> (file, [t1,...,tn]) prints terms ti to file. Terms ti
+                          that are strings are printed without quotes
+                          
+                          
+                          ]]></description>
+    <start>170</start>
+    <end>173</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>printnl</name>
+    <description><![CDATA[
+                          Same as print, but prints a newline at the end.
+                          
+                          
+                          ]]></description>
+    <start>180</start>
+    <end>182</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>debug</name>
+    <description><![CDATA[
+                          Prints the current term to stderr without changing it.
+                          This is a useful strategy for debugging specifications (hence its name).
+                          
+                          
+                          ]]></description>
+    <start>192</start>
+    <end>193</end>
+    <type><![CDATA[ a -> a]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>debug</name>
+    <description><![CDATA[
+                          Prints the term produced by applying msg followed by the current term to stderr.
+                          
+                          
+                          ]]></description>
+    <start>200</start>
+    <end>201</end>
+    <type><![CDATA[ a -> a]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>say</name>
+    <description><![CDATA[
+                          Prints the term produced by applying msg to stderr.
+                          
+                          
+                          ]]></description>
+    <start>225</start>
+    <end>226</end>
+    <type><![CDATA[  a -> a]]></type>
+    <param><![CDATA[ term to print to stderr]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>error</name>
+    <description><![CDATA[
+                          Prints a list of terms to stderr using fprintnl.
+                          
+                          
+                          ]]></description>
+    <start>236</start>
+    <end>237</end>
+    <type><![CDATA[List(a) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>fatal-error</name>
+    <description><![CDATA[
+                          Prints a list of terms to stderr using fprintnl and exits with code 1.
+                          
+                          
+                          ]]></description>
+    <start>244</start>
+    <end>245</end>
+    <type><![CDATA[List(a) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>giving-up</name>
+    <description><![CDATA[
+                          Prints giving-up to stderr and exits with code 1.
+                          
+                          
+                          ]]></description>
+    <start>252</start>
+    <end>253</end>
+    <type><![CDATA[_ -> _]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>obsolete</name>
+    <description><![CDATA[
+                          Logs an obsolete strategy message with the given message.
+                          
+                          
+                          ]]></description>
+    <start>261</start>
+    <end>262</end>
+    <type><![CDATA[ a -> a]]></type>
+    <param><![CDATA[Strategy that produces a string message.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>risky</name>
+    <description><![CDATA[
+                          Tries to apply s and prints msg to stderr if this fails.
+                          Risky preserves the failure of s: if s fails, then risky will
+                          fail as well.
+                          
+                          
+                          ]]></description>
+    <start>273</start>
+    <end>274</end>
+    <type><![CDATA[ a -> a]]></type>
+    <param><![CDATA[Strategy that produces a string message]]></param>
+    <param><![CDATA[Strategy to apply]]></param>
+  </strategy>
+  
+</module>

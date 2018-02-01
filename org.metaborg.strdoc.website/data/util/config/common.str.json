@@ -1,0 +1,97 @@
+{
+"name": "util/config/common",
+"description": "\nGet and set values in the configuration table.\n\n",
+"strategies": [{
+               "name": "get-config",
+               "description": "\nGet the value for the specified key from the config table.\nThe key is the current term.\n\n",
+               "start": 13,
+               "end": 14,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-configs(pred)",
+               "description": "\nGet all values of config keys for which 'pred' succeeds.\nThe current term is ignored.\n\n\n",
+               "start": 24,
+               "end": 26,
+               "types": [" _ -> List(b)"],
+               "params": ["  Is applied to the keys of the config table."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-config-keys(pred)",
+               "description": "\nGet all config keys for which pred succeeds\n\n\n",
+               "start": 35,
+               "end": 37,
+               "types": ["    _ -> List(a)"],
+               "params": ["   Is applied to the keys of the config table."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "set-config",
+               "description": "\nSet an entry (key and value) in the config table.\n\n\n",
+               "start": 46,
+               "end": 48,
+               "types": ["(a, b) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rm-config",
+               "description": "\nRemove the entry of the specified key from the config table.\n\n\n",
+               "start": 55,
+               "end": 57,
+               "types": ["(a, b) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "toggle-config",
+               "description": "\nAdds an entry to the config table if it does not exist, or\nremoves the entry if it does already exist in the config table.\n\n\n",
+               "start": 65,
+               "end": 71,
+               "types": ["(a, b) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "extend-config",
+               "description": "\nExtends the list of values of the specified key with new values.\nThe values are added in front of the current list.\n\n\n",
+               "start": 79,
+               "end": 81,
+               "types": ["(a, List(b)) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "post-extend-config",
+               "description": "\nExtends the list of values of the specified key with new values.\nThe values are added to the end of the current list.\n\n\n",
+               "start": 89,
+               "end": 91,
+               "types": ["(a, List(b)) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-java-platform(s)",
+               "description": "\nEvaluates a strategy f if and only if the program is compiled to Java.\n\n",
+               "start": 96,
+               "end": 97,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-c-platform(s)",
+               "description": "\nEvaluates a strategy f if and only if the program is compiled to C.\n\n",
+               "start": 102,
+               "end": 103,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

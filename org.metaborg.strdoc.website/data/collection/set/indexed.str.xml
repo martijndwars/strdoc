@@ -1,0 +1,12 @@
+
+<module>
+  <name>collection/set/indexed</name>
+  <description><![CDATA[
+                        Interface to ATerm's IndexedSets.
+                        
+                        
+                        ]]></description>
+  <author><![CDATA[ Martin Bravenboer <martin.bravenboer@gmail.com>]]></author>
+  
+  
+</module>

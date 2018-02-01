@@ -1,0 +1,151 @@
+{
+"name": "system/posix/time",
+"description": "\n\n",
+"strategies": [{
+               "name": "times",
+               "description": "The times() function stores the current process times in a quadruple\n(user time, system time, user time of children, system time of children)\nSee man 2 times for more information\n",
+               "start": 6,
+               "end": 7,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "ticks-to-seconds",
+               "description": "\n\n",
+               "start": 9,
+               "end": 10,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "diff-times",
+               "description": "\n\n",
+               "start": 12,
+               "end": 14,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "add-times",
+               "description": "\n\n",
+               "start": 16,
+               "end": 18,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "times-to-seconds",
+               "description": "\n\n",
+               "start": 20,
+               "end": 22,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "user-time",
+               "description": "\n\n",
+               "start": 24,
+               "end": 25,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "system-time",
+               "description": "\n\n",
+               "start": 27,
+               "end": 28,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "cuser-time",
+               "description": "\n\n",
+               "start": 30,
+               "end": 31,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "csystem-time",
+               "description": "\n\n",
+               "start": 33,
+               "end": 34,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "self-children-user-time",
+               "description": "\n\n",
+               "start": 36,
+               "end": 37,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "self-children-sys-time",
+               "description": "\n\n",
+               "start": 39,
+               "end": 40,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "run-time",
+               "description": "\nTotal run-time so far.\n\n",
+               "start": 45,
+               "end": 46,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "report-run-time",
+               "description": "\nOutputs the name of the program and the run time in seconds to\nstderr.\n\n",
+               "start": 52,
+               "end": 55,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "profile(s)",
+               "description": "\n\n",
+               "start": 57,
+               "end": 60,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "profile(msg, s)",
+               "description": "\n\n",
+               "start": 62,
+               "end": 71,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "profile'(msg, s)",
+               "description": "\n\n",
+               "start": 73,
+               "end": 82,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

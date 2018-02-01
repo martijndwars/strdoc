@@ -1,0 +1,387 @@
+
+<module>
+  <name>collection/list/zip</name>
+  <description><![CDATA[
+                        Zipping two lists into a list of pairs is a useful operation
+                        in many situations. There are many variants of zipping, for
+                        instance in the way lists of unequal length are treated. This
+                        module defines a collection of zip-like strategies for lists
+                        based on one underlying control scheme.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>cart</name>
+    <description><![CDATA[
+                          Create the cartesian product of two lists, i.e., combine
+                          each element of the first list which each element from the second
+                          list. The strategy s is used to combine the pairs of elements
+                          <s>(x,y).
+                          
+                          Example: <cart(id)> ([1,2],[5,6]) => [(1,5),(1,6),(2,5),(2,6)]
+                          
+                          
+                          ]]></description>
+    <start>25</start>
+    <end>27</end>
+    <type><![CDATA[    List(a) * List(b) -> List(c)]]></type>
+    <param><![CDATA[s              a * b -> c]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>join</name>
+    <description><![CDATA[
+                          Creates the cartesian product of two lists and select only
+                          those combined elements <s>(x, y) that succeed.
+                          
+                          
+                          ]]></description>
+    <start>36</start>
+    <end>38</end>
+    <type><![CDATA[    List(a) * List(b) -> List(c)]]></type>
+    <param><![CDATA[s              a * b -> c]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>Skip</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>41</start>
+    <end>41</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>genzip</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>46</start>
+    <end>47</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>zip</name>
+    <description><![CDATA[
+                          Combines two lists into one by pairing up the elements from both lists.
+                          Both lists must be of equal length.
+                          
+                          Example: <zip> ([1,2], [3,4]) => [(1,3),(2,4)]
+                          
+                          
+                          
+                          ]]></description>
+    <start>59</start>
+    <end>59</end>
+    <type><![CDATA[List(a) * List(b) -> List(a * b)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>zip</name>
+    <description><![CDATA[
+                          Combines two lists into one by pairing up the elements from both lists,
+                          applying s to the pair. Starts at the beginning of the lists. Both lists
+                          must be of equal length.
+                          
+                          Example: <zip(add)> ([1,2], [3,4]) => [4,6]
+                          
+                          
+                          ]]></description>
+    <start>71</start>
+    <end>72</end>
+    <type><![CDATA[    List(a) * List(b) -> List(c)]]></type>
+    <param><![CDATA[s              a * b -> c]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>zip</name>
+    <description><![CDATA[
+                          Combines two lists into one by pairing up the elements from both lists.
+                          Both lists must be of equal length.
+                          
+                          
+                          ]]></description>
+    <start>95</start>
+    <end>101</end>
+    <type><![CDATA[List(a) -> List(c)]]></type>
+    <param><![CDATA[Strategy s(|y : b) : a -> c]]></param>
+    <param><![CDATA[Second list : List(b)]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>unzip</name>
+    <description><![CDATA[
+                          Splits a list of pairs into two separate lists. This strategy
+                          is the inverse of zip.
+                          
+                          Example: <unzip> [(1,2),(3,4)] => ([1,3],[2,4])
+                          
+                          
+                          ]]></description>
+    <start>115</start>
+    <end>115</end>
+    <type><![CDATA[    List(a * b) -> List(a) * List(b)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>unzip</name>
+    <description><![CDATA[
+                          Splits a list of pairs into two separate lists, applying s to
+                          the pair before splitting. This strategy
+                          is the inverse of zip.
+                          
+                          Example: <unzip((inc, inc))> [(1,2),(3,4)] => ([2,4],[3,5])
+                          
+                          
+                          ]]></description>
+    <start>126</start>
+    <end>127</end>
+    <type><![CDATA[    List(a * b) -> List(a) * List(b)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>nzip0</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>132</start>
+    <end>133</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>zipPad</name>
+    <description><![CDATA[
+                          Combines two lists, which may have different lengths, into one by pairing
+                          up the elements from both lists, applying s to the pair. Starts at the
+                          beginning of the lists. The shorter list will be padded with the result
+                          the padding strategy.
+                          
+                          Example: <zipPad(id, !0)> ([1,2], [3,4,5]) => [(1,3),(2,4),(0,5)]
+                          
+                          
+                          ]]></description>
+    <start>161</start>
+    <end>164</end>
+    <type><![CDATA[    List(a) * List(b) -> List(c)]]></type>
+    <param><![CDATA[s              a * b -> c]]></param>
+    <param><![CDATA[padding            _ -> d]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>Zip1</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>179</start>
+    <end>179</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Zip1a'</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>181</start>
+    <end>181</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Zip1b'</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>183</start>
+    <end>183</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Zip1c</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>185</start>
+    <end>185</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Zip1c'</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>187</start>
+    <end>187</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Zip1d</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>189</start>
+    <end>189</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Zip2</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>191</start>
+    <end>191</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>LZip2</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>194</start>
+    <end>194</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>RZip2</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>196</start>
+    <end>196</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Zip3</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>199</start>
+    <end>199</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnZip1</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>202</start>
+    <end>202</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnZip2</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>204</start>
+    <end>204</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnZip3</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>206</start>
+    <end>206</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>NZip00</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>209</start>
+    <end>209</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>NZip01</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>211</start>
+    <end>211</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>NZip1</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>213</start>
+    <end>213</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>NZip2</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>215</start>
+    <end>215</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>NZip3</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>217</start>
+    <end>217</end>
+    
+    
+  </strategy>
+  
+</module>

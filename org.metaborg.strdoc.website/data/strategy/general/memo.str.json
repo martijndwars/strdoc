@@ -1,0 +1,25 @@
+{
+"name": "strategy/general/memo",
+"description": "\nThe memo operator makes a strategy\ninto a memoizing strategy that looks up the term to be transformed\nin a memo table and only computes the transformation if the\nterm is not found.\n\n",
+"strategies": [{
+               "name": "memo-scope(s)",
+               "description": "\n\n",
+               "start": 12,
+               "end": 12,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "memo(s)",
+               "description": "\n<memo(tbl, s)> t first looks up the term t in the memo table. If\npresent the association in the table is produced, else the result\nof <s> t is computed and stored in the table.\n\n",
+               "start": 19,
+               "end": 22,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

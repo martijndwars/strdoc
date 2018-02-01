@@ -1,0 +1,1586 @@
+
+<module>
+  <name>term/string</name>
+  <description><![CDATA[
+                        This module contains strategies for operating on strings.
+                        
+                        In Stratego, strings are primitive terms, separate from characters
+                        and character lists. It is recommended that all strings contain only
+                        ISO-8859-1 (Latin1) characters.
+                        
+                        
+                        ]]></description>
+  <author><![CDATA[Eelco Visser <visser@acm.org>]]></author>
+  <author><![CDATA[Karl Trygve Kalleberg <karltk@strategoxt.org>]]></author>
+  <author><![CDATA[Lennart Kats <lennart add lclnet.nl>]]></author>
+  
+  
+  <strategy>
+    <name>conc-strings</name>
+    <description><![CDATA[
+                          Concats a tuple of two Strings.
+                          
+                          
+                          ]]></description>
+    <start>111</start>
+    <end>113</end>
+    <type><![CDATA[String * String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>strcat</name>
+    <description><![CDATA[
+                          Concats a tuple of two Strings.
+                          
+                          
+                          ]]></description>
+    <start>125</start>
+    <end>126</end>
+    <type><![CDATA[    String * String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>concat-strings</name>
+    <description><![CDATA[
+                          Concats a list of Strings
+                          
+                          
+                          ]]></description>
+    <start>137</start>
+    <end>138</end>
+    <type><![CDATA[List(String) -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-length</name>
+    <description><![CDATA[
+                          Returns the number of characters in a string.
+                          
+                          
+                          ]]></description>
+    <start>147</start>
+    <end>148</end>
+    <type><![CDATA[String -> Int]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>strlen</name>
+    <description><![CDATA[
+                          Returns the number of characters in a string.
+                          
+                          
+                          ]]></description>
+    <start>158</start>
+    <end>159</end>
+    <type><![CDATA[String -> Int]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>escape</name>
+    <description><![CDATA[
+                          Escapes double quotes, backslash and linefeed to C like escape sequences.
+                          
+                          
+                          ]]></description>
+    <start>169</start>
+    <end>169</end>
+    <type><![CDATA[String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>escape-chars</name>
+    <description><![CDATA[
+                          Escapes double quotes, backslash and linefeed to C like escape sequences.
+                          
+                          
+                          ]]></description>
+    <start>176</start>
+    <end>177</end>
+    <type><![CDATA[List(Char) -> List(Char)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>escape-chars</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>180</start>
+    <end>185</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>unescape</name>
+    <description><![CDATA[
+                          Unescapes double quotes, backslash, linefeed and tabs.
+                          
+                          
+                          ]]></description>
+    <start>196</start>
+    <end>196</end>
+    <type><![CDATA[String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>unescape-chars</name>
+    <description><![CDATA[
+                          Unescapes characters using a specified unescape strategy.
+                          
+                          
+                          ]]></description>
+    <start>204</start>
+    <end>208</end>
+    <type><![CDATA[ List(Char) -> List(Char)]]></type>
+    <param><![CDATA[List(Char) -> List(Char)]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>unescape-chars</name>
+    <description><![CDATA[
+                          Unescapes double quotes, backslash, linefeed and tabs.
+                          
+                          
+                          ]]></description>
+    <start>215</start>
+    <end>216</end>
+    <type><![CDATA[List(Char) -> List(Char)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Escape</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>221</start>
+    <end>225</end>
+    <type><![CDATA[List(Char) -> List(Char)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Escape-double-quote</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>228</start>
+    <end>228</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Escape-single-quote</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>231</start>
+    <end>231</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Escape-backslash</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>234</start>
+    <end>234</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Escape-linefeed</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>237</start>
+    <end>237</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Escape-carriage-return</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>240</start>
+    <end>240</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnEscape</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>245</start>
+    <end>250</end>
+    <type><![CDATA[List(Char) -> List(Char)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnEscape-double-quote</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>253</start>
+    <end>253</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnEscape-single-quote</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>256</start>
+    <end>256</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnEscape-backslash</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>259</start>
+    <end>259</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnEscape-carriage-return</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>262</start>
+    <end>262</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnEscape-linefeed</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>265</start>
+    <end>265</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnEscape-tab</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>268</start>
+    <end>268</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnEscape</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>271</start>
+    <end>272</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>escape</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>277</start>
+    <end>280</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>cify</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>285</start>
+    <end>285</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>uncify</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>288</start>
+    <end>288</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnCify</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>291</start>
+    <end>291</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Cify</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>296</start>
+    <end>296</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Cify</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>299</start>
+    <end>299</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Cify</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>302</start>
+    <end>302</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Cify</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>305</start>
+    <end>305</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Cify</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>308</start>
+    <end>308</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnCify1</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>311</start>
+    <end>311</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnCify1</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>314</start>
+    <end>314</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnCify1</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>317</start>
+    <end>317</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnCify2</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>320</start>
+    <end>320</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>UnCify3</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>323</start>
+    <end>323</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-double-quoted</name>
+    <description><![CDATA[Predicate that checks if a string is double quoted, i.e. quoted
+                          with double quotation marks (").
+                          
+                          
+                          
+                          ]]></description>
+    <start>477</start>
+    <end>478</end>
+    <type><![CDATA[  String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-single-quoted</name>
+    <description><![CDATA[
+                          Predicate that checks a string is quoted with single quotes.
+                          
+                          
+                          ]]></description>
+    <start>485</start>
+    <end>486</end>
+    <type><![CDATA[ String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-double-quoted-chars</name>
+    <description><![CDATA[
+                          Predicate that checks if a character list is double quoted. That
+                          is, if the first and last character are both double quotes.
+                          
+                          
+                          ]]></description>
+    <start>494</start>
+    <end>495</end>
+    <type><![CDATA[List(Char) -> List(Char)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-single-quoted-chars</name>
+    <description><![CDATA[
+                          Predicate that checks if a character list is single quoted. That is,
+                          if the first and last character are both single quotes.
+                          
+                          
+                          ]]></description>
+    <start>503</start>
+    <end>504</end>
+    <type><![CDATA[List(Char) -> List(Char)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-quoted</name>
+    <description><![CDATA[
+                          Predicate that checks if a string is quoted with the given character.
+                          
+                          The character c is the quotation character to check for.
+                          
+                          
+                          ]]></description>
+    <start>514</start>
+    <end>518</end>
+    <type><![CDATA[ String -> String]]></type>
+    <param><![CDATA[Char]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-quoted-chars</name>
+    <description><![CDATA[
+                          Predicate that checks if a list of characters is quoted with
+                          the character given by the term argument. That is, if the
+                          first and last character of the list are both equal to c.
+                          
+                          
+                          ]]></description>
+    <start>528</start>
+    <end>529</end>
+    <type><![CDATA[List(Char) -> List(Char)]]></type>
+    <param><![CDATA[Char]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-to-num</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>536</start>
+    <end>538</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>lower-case</name>
+    <description><![CDATA[
+                          Converts all characters of this string to lower case
+                          
+                          
+                          ]]></description>
+    <start>547</start>
+    <end>547</end>
+    <type><![CDATA[ String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>upper-case</name>
+    <description><![CDATA[
+                          Converts all characters of this string to upper case
+                          
+                          
+                          ]]></description>
+    <start>554</start>
+    <end>554</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>lower-case-chars</name>
+    <description><![CDATA[
+                          Converts a list of characters to lower case.
+                          
+                          Example: <explode-string ; lower-case-char ; implode-string> "STRATEGO" => "stratego"
+                          
+                          
+                          ]]></description>
+    <start>563</start>
+    <end>563</end>
+    <type><![CDATA[ List(Char) -> List(Char)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>upper-case-chars</name>
+    <description><![CDATA[
+                          Converts a list of characters to upper case.
+                          
+                          Example: <explode-string ; upper-case-chars ; implode-string> "stratego" => "STRATEGO"
+                          
+                          
+                          ]]></description>
+    <start>572</start>
+    <end>572</end>
+    <type><![CDATA[ List(Char) -> List(Char)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-tokenize</name>
+    <description><![CDATA[
+                          Breaks a string into tokens.
+                          
+                          Given a list of possible delimiters (characters that
+                          separate tokens), string-tokenize returns a list of
+                          tokens for a given string.
+                          
+                          
+                          ]]></description>
+    <start>586</start>
+    <end>587</end>
+    <type><![CDATA[ String -> List(String)]]></type>
+    <param><![CDATA[List of separate characters]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-tokenize</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>590</start>
+    <end>593</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-tokenize</name>
+    <description><![CDATA[
+                          
+                          
+                          ]]></description>
+    <start>604</start>
+    <end>606</end>
+    <type><![CDATA[ (List(Char), String) -> List(String)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>padd-with</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>615</start>
+    <end>616</end>
+    <type><![CDATA[String * Int -> String]]></type>
+    <param><![CDATA[s  () -> Char]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>remove-padding</name>
+    <description><![CDATA[
+                          Remove padding from a string.
+                          
+                          
+                          ]]></description>
+    <start>624</start>
+    <end>632</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>align-right</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>652</start>
+    <end>654</end>
+    <type><![CDATA[Char * String * Int -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>align-left</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>659</start>
+    <end>661</end>
+    <type><![CDATA[Char * String * Int -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>align-center</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>666</start>
+    <end>675</end>
+    <type><![CDATA[Char * String * Int -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>align-helper</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>682</start>
+    <end>689</end>
+    <type><![CDATA[String -> String]]></type>
+    <param><![CDATA[c  Char]]></param>
+    <param><![CDATA[n  Int]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>SplitInit</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>696</start>
+    <end>696</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>SplitExit</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>699</start>
+    <end>701</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>SplitNext</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>704</start>
+    <end>706</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>SplitNext</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>709</start>
+    <end>711</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>split-at-space</name>
+    <description><![CDATA[
+                          Splits a string at each occurrence of a whitespace. The
+                          resulting list of string does not contain any of the
+                          whitespaces. Two adjacent whitespaces will result in
+                          an empty string in the result.
+                          
+                          Example: <split-at-space> "foo  bar" => ["foo", "", "bar"]
+                          
+                          
+                          ]]></description>
+    <start>725</start>
+    <end>728</end>
+    <type><![CDATA[String -> List(String)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>split-at-dot</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>733</start>
+    <end>738</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>split-before</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>744</start>
+    <end>750</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>split-after</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>756</start>
+    <end>763</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-substring</name>
+    <description><![CDATA[
+                          Succeeds if the string produced by s is a substring
+                          of the argument string.
+                          
+                          
+                          ]]></description>
+    <start>773</start>
+    <end>781</end>
+    <type><![CDATA[String -> _]]></type>
+    <param><![CDATA[_ -> String]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>copy-char</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>787</start>
+    <end>788</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-sort</name>
+    <description><![CDATA[
+                          Sorts a list of strings lexicographically, ignoring case, ascending.
+                          
+                          
+                          
+                          ]]></description>
+    <start>799</start>
+    <end>802</end>
+    <type><![CDATA[List(String) -> List(String)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-sort-desc</name>
+    <description><![CDATA[
+                          Sorts a list of strings lexicographically ignoring case, descending.
+                          
+                          
+                          ]]></description>
+    <start>809</start>
+    <end>812</end>
+    <type><![CDATA[List(String) -> List(String)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-gt</name>
+    <description><![CDATA[
+                          Compares two strings or lists of characters lexicographically and succeeds if
+                          the first one is larger than the second, ignoring case.
+                          
+                          
+                          ]]></description>
+    <start>823</start>
+    <end>825</end>
+    <type><![CDATA[ (List(Char), List(Char)) -> 1]]></type>
+    <type><![CDATA[ (String, String)         -> 1]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-lt</name>
+    <description><![CDATA[
+                          Compares two strings or lists of characters lexicographically and succeeds if
+                          the first one is smaller than the second, ignoring case.
+                          
+                          
+                          ]]></description>
+    <start>834</start>
+    <end>836</end>
+    <type><![CDATA[ (List(Char), List(Char)) -> 1]]></type>
+    <type><![CDATA[ (String, String)         -> 1]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-starts-with</name>
+    <description><![CDATA[
+                          Succeeds if the first String starts with the second String.
+                          
+                          If the strategy succeeds, the current term is left untouched.
+                          
+                          Example: <string-starts-with(|"foo")> "foobar"
+                          
+                          
+                          ]]></description>
+    <start>847</start>
+    <end>848</end>
+    <type><![CDATA[ String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-ends-with</name>
+    <description><![CDATA[
+                          Succeeds if the first String ends with the second String.
+                          
+                          If the strategy succeeds, the current term is left untouched.
+                          
+                          Example: <string-ends-with(|"bar")> "foobar"
+                          
+                          
+                          ]]></description>
+    <start>859</start>
+    <end>860</end>
+    <type><![CDATA[ String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>left-match</name>
+    <description><![CDATA[
+                          Succeeds if the first list of terms starts with the second list of terms.
+                          
+                          Returns the suffix of the first list that is not matched.
+                          
+                          
+                          ]]></description>
+    <start>870</start>
+    <end>875</end>
+    <type><![CDATA[ (List(a), List(a)) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>right-match</name>
+    <description><![CDATA[
+                          Succeeds if the first list of terms ends with the second list of terms.
+                          
+                          Returns the prefix of the first list that is not matched.
+                          
+                          
+                          ]]></description>
+    <start>884</start>
+    <end>887</end>
+    <type><![CDATA[ (List(a), List(a)) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>strcmp</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>892</start>
+    <end>901</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>strncmp</name>
+    <description><![CDATA[
+                          Compares the n first characters of two character lists, n
+                          is given by the last argument. If the two lists are identical,
+                          the integer 0 is returned, otherwise the integer 1 is returned.
+                          
+                          
+                          ]]></description>
+    <start>910</start>
+    <end>917</end>
+    <type><![CDATA[List(Char) * List(Char) * Int -> Int]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>strcasecmp</name>
+    <description><![CDATA[
+                          Compares two lists of characters lexicographically, ignoring case.
+                          
+                          Returns:
+                          -1 if first is smaller than the second.
+                          0  if the strings are equal.
+                          1  if the first is larger than the second.
+                          
+                          
+                          ]]></description>
+    <start>929</start>
+    <end>935</end>
+    <type><![CDATA[(List(Char), List(Char)) -> -1, 0,1 or -1.]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-tokenize-keep-empty</name>
+    <description><![CDATA[
+                          Splits a string into a list of tokens, including the empty ones.
+                          
+                          This strategy differs from string-tokenize in that it produces an empty ""
+                          token when two separator chars are encountered, or after a final separator.
+                          
+                          Example:
+                          <string-tokenize-keep-empty(|['\n'])> "fu\n\nbar\n" => ["fu","","bar",""]
+                          
+                          
+                          ]]></description>
+    <start>953</start>
+    <end>958</end>
+    <type><![CDATA[sepChars [char]]]></type>
+    <type><![CDATA[   string -> [string]]]></type>
+    <param><![CDATA[The list of characters that may separate two tokens.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-tokenize-keep-all</name>
+    <description><![CDATA[
+                          Splits a string into a list of tokens, keeping the separating elements as
+                          1-char-strings within the results list, *and* also keeping the empty
+                          "" tokens.
+                          
+                          Example:
+                          <string-tokenize-keep-all(|['\n'])> "fu\n\nbar\n" => ["fu","\n","","\n","bar","\n",""]
+                          
+                          
+                          ]]></description>
+    <start>974</start>
+    <end>979</end>
+    <type><![CDATA[sepChars [char]]]></type>
+    <type><![CDATA[   string -> [string]]]></type>
+    <param><![CDATA[The list of characters that may separate two tokens.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>get-lines</name>
+    <description><![CDATA[
+                          Gets all newline(\n, \r\n or \r)-separated lines in a string.
+                          If the string is ended by a newline, the last element of the returned list
+                          is the empty string.
+                          
+                          
+                          ]]></description>
+    <start>989</start>
+    <end>992</end>
+    <type><![CDATA[string -> [string]]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>all-lines</name>
+    <description><![CDATA[
+                          Applies a strategy to all lines in a string.
+                          
+                          Lines are expected to be separated by a single '\n'.
+                          The last line may be ended by a newline, or not. In the former case, the
+                          last line in the resulting string will also be ended by a newline,
+                          otherwise not.
+                          Initial or intermediate newlines are preserved.
+                          The strategy is applied to each line (even the empty ones), *excluding*
+                          the newline character. The newline is appended again after application of s
+                          
+                          
+                          ]]></description>
+    <start>1019</start>
+    <end>1028</end>
+    <type><![CDATA[s string -> string]]></type>
+    <type><![CDATA[  string -> string]]></type>
+    <param><![CDATA[The strategy that should be applied to each line.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>lines</name>
+    <description><![CDATA[
+                          Makes one newline-separated string out of a list of strings.
+                          
+                          
+                          ]]></description>
+    <start>1036</start>
+    <end>1039</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>indent-text</name>
+    <description><![CDATA[
+                          Indents every line in a string with spaces.
+                          
+                          
+                          ]]></description>
+    <start>1049</start>
+    <end>1051</end>
+    <type><![CDATA[n int]]></type>
+    <type><![CDATA[string -> string]]></type>
+    <param><![CDATA[The number of spaces to be put in front of every line.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>prefix-lines</name>
+    <description><![CDATA[
+                          Prefixes all lines in a string with a string.
+                          
+                          
+                          ]]></description>
+    <start>1061</start>
+    <end>1062</end>
+    <type><![CDATA[p string]]></type>
+    <type><![CDATA[  string -> string]]></type>
+    <param><![CDATA[The prefix.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>ltrim-chars</name>
+    <description><![CDATA[
+                          Trims leading characters from a string. The characters to
+                          to trim are given by the strategy argument.
+                          
+                          Removes from the left-hand side all characters matched by
+                          strategy s.
+                          
+                          Example:  <ltrim-chars(?' ')> "   fred  " => "fred  "
+                          
+                          
+                          ]]></description>
+    <start>1079</start>
+    <end>1079</end>
+    <type><![CDATA[String -> String]]></type>
+    <param><![CDATA[should match all characters to be removed]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>rtrim-chars</name>
+    <description><![CDATA[
+                          Trims trailing characters from a string.
+                          
+                          Removes from the right-hand side all characters matched by
+                          strategy s.
+                          
+                          Example: <rtrim-chars(?' ')> "   fred  " => "   fred"
+                          
+                          
+                          ]]></description>
+    <start>1093</start>
+    <end>1093</end>
+    <type><![CDATA[String -> String]]></type>
+    <param><![CDATA[should match on all characters to be removed]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>trim-chars</name>
+    <description><![CDATA[
+                          Trims leading and trailing characters from a string. The
+                          characters to trim is given by the strategy argument.
+                          
+                          Removes from both ends all characters matched by strategy
+                          s.
+                          
+                          Example:  <trim-chars(?' ')>  "   fred  " => "fred"
+                          
+                          
+                          ]]></description>
+    <start>1108</start>
+    <end>1108</end>
+    <type><![CDATA[String -> String]]></type>
+    <param><![CDATA[should match all characters to be removed]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-whitespace</name>
+    <description><![CDATA[
+                          Succeeds if the character is whitespace.
+                          
+                          Whitespace is a space (32), or a tab (9)
+                          
+                          
+                          ]]></description>
+    <start>1118</start>
+    <end>1118</end>
+    <type><![CDATA[Char -> Char]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>trim-trailing-whitespace</name>
+    <description><![CDATA[
+                          Trims all trailing whitespace in a (single-line) string.
+                          
+                          
+                          ]]></description>
+    <start>1126</start>
+    <end>1127</end>
+    <type><![CDATA[String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>trim-leading-whitespace</name>
+    <description><![CDATA[
+                          Trims all leading whitespace in a (single-line) string.
+                          
+                          
+                          ]]></description>
+    <start>1135</start>
+    <end>1136</end>
+    <type><![CDATA[String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>trim-whitespace</name>
+    <description><![CDATA[
+                          Trims all trailing and leading whitespace in a (single-line) string.
+                          
+                          
+                          ]]></description>
+    <start>1144</start>
+    <end>1145</end>
+    <type><![CDATA[String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>shuffle-forced</name>
+    <description><![CDATA[
+                          Some shuffling strategies
+                          
+                          ]]></description>
+    <start>1153</start>
+    <end>1157</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>shuffle</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>1160</start>
+    <end>1164</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>shuffle-word-mids</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>1167</start>
+    <end>1170</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>shuffle-word-mid</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>1173</start>
+    <end>1181</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-alphanum</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>1188</start>
+    <end>1188</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-alpha</name>
+    <description><![CDATA[
+                          Succeeds if the character is part of the lowercase or
+                          uppercase alphabet.
+                          
+                          
+                          ]]></description>
+    <start>1196</start>
+    <end>1196</end>
+    <type><![CDATA[Char -> Char]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-hexnum</name>
+    <description><![CDATA[
+                          Succeeds if applied to a character that is a hexidecimal
+                          digit, i.e. either of the characters in the range '0'-'9'
+                          or 'A'-'F' or 'a'-'f'.
+                          
+                          
+                          ]]></description>
+    <start>1205</start>
+    <end>1211</end>
+    <type><![CDATA[Char -> Char]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-num</name>
+    <description><![CDATA[
+                          
+                          ]]></description>
+    <start>1217</start>
+    <end>1218</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-upper</name>
+    <description><![CDATA[
+                          Succeeds if this character is upper-case.
+                          
+                          
+                          ]]></description>
+    <start>1225</start>
+    <end>1226</end>
+    <type><![CDATA[Char -> Char]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-lower</name>
+    <description><![CDATA[
+                          Succeeds if this character is lower-case.
+                          
+                          
+                          ]]></description>
+    <start>1233</start>
+    <end>1234</end>
+    <type><![CDATA[Char -> Char]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-ascii</name>
+    <description><![CDATA[
+                          Succeeds if this string only contains printable ASCII characters.
+                          
+                          The letters 32 through 126, in total 96 characters, are defined
+                          as printable.
+                          
+                          
+                          ]]></description>
+    <start>1244</start>
+    <end>1245</end>
+    <type><![CDATA[Char -> Char]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>case-char</name>
+    <description><![CDATA[
+                          Applies a strategy to the upper-case variants of two characters.
+                          
+                          This is useful for doing case-insenstive operations.
+                          
+                          
+                          ]]></description>
+    <start>1255</start>
+    <end>1255</end>
+    <type><![CDATA[ (Char, Char) -> a]]></type>
+    <param><![CDATA[(Char, Char) -> a]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>to-upper</name>
+    <description><![CDATA[
+                          Ensures that a character is upper-case.
+                          
+                          This strategy returns the input character if this
+                          character is already upper-case.
+                          
+                          
+                          ]]></description>
+    <start>1265</start>
+    <end>1266</end>
+    <type><![CDATA[Char -> Char]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>to-lower</name>
+    <description><![CDATA[
+                          Ensures that a character is lower-case.
+                          
+                          This strategy returns the input character if this
+                          character is already lower-case.
+                          
+                          
+                          ]]></description>
+    <start>1276</start>
+    <end>1276</end>
+    <type><![CDATA[Char -> Char]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>string-replace</name>
+    <description><![CDATA[
+                          Replaces one substring with another in a string.
+                          
+                          Example: <string-replace(|"foo", "bar")> "foobarfoo" gives "barbarbar"
+                          
+                          
+                          
+                          ]]></description>
+    <start>1289</start>
+    <end>1293</end>
+    <type><![CDATA[String -> String]]></type>
+    <param><![CDATA[old - the old substring which is to be excised]]></param>
+    <param><![CDATA[new - the new subtring which is to be inserted]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>internal-string-replace</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>1298</start>
+    <end>1308</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>internal-string-replace</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>1311</start>
+    <end>1312</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>internal-string-replace-found</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>1315</start>
+    <end>1319</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>internal-string-replace-found</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>1322</start>
+    <end>1323</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>internal-ensure-as-string</name>
+    <description><![CDATA[
+                          Used by desugaring of string interpolation $[... [x] ...]
+                          
+                          ]]></description>
+    <start>1329</start>
+    <end>1339</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>internal-string-interpolation</name>
+    <description><![CDATA[
+                          Used by desugaring of string interpolation $[... [x] ...]
+                          
+                          ]]></description>
+    <start>1345</start>
+    <end>1345</end>
+    
+    
+  </strategy>
+  
+</module>

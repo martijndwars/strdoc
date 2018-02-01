@@ -1,0 +1,80 @@
+module names
+
+imports
+
+  xsignature
+
+rules // Definition to name
+
+  definition-to-name:
+    _ -> name'
+    where
+      ?SDef(name, param*, _)
+    + ?RDef(name, param*, _)
+    with
+      param'* := <map(param-to-name); separate-by(|", ")> param*
+    ; name'   := $[[name]([param'*])]
+
+  definition-to-name:
+    _ -> name
+    where
+      ?SDefNoArgs(name, _)
+     +?RDefNoArgs(name, _)
+
+  definition-to-name:
+    _ -> name'
+    where
+      ?SDefT(name, sparam*, tparam*, _)
+    + ?RDefT(name, sparam*, tparam*, _)
+    with
+      sparam'* := <map(param-to-name); separate-by(|", ")> sparam*
+    ; tparam'* := <map(param-to-name); separate-by(|", ")> tparam*
+    ; name'    := $[[name]([sparam'*] | [tparam'*])]
+
+rules // Parameter to name
+
+  param-to-name:
+    DefaultVarDec(identifier) -> name
+    with
+      name := <identifier-to-name> identifier
+
+  param-to-name:
+    VarDec(name, type) -> $[[name]: [type']]
+    with
+      type' := <type-to-name> type
+
+rules // Type to name
+
+  type-to-name:
+    FunType(argument*, result) -> $[[<separate-by(|" * ")> argument'*] -> [result']]
+    with
+      argument'* := <map(type-to-name)> argument*
+    ; result'    := <type-to-name> result
+
+  type-to-name:
+    ConstType(sort) -> sort'
+    with
+      sort' := <sort-to-name> sort
+
+rules // Sort to name
+
+  sort-to-name:
+    SortVar(lcid) -> lcid
+
+  sort-to-name:
+    SortNoArgs(ucid) -> ucid
+
+  sort-to-name:
+    Sort(name, sort*) -> $[[name]([<separate-by(|", ")> sort'*])]
+    with
+      sort'* := <map(sort-to-name)> sort*
+
+rules // Identifier to name
+
+  identifier-to-name:
+    ListVar(name) -> name
+
+  identifier-to-name:
+    _ -> <id>
+    where
+      is-string

@@ -1,0 +1,52 @@
+{
+"name": "strategy/traversal/list-environment",
+"description": "\nTraversals that carry an environment.\n\n",
+"strategies": [{
+               "name": "all-l-dist(s)",
+               "description": "\n\n",
+               "start": 9,
+               "end": 10,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "env-alltd-l(s)",
+               "description": "\n\n",
+               "start": 14,
+               "end": 15,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "env-topdown-l(s)",
+               "description": "\n\n",
+               "start": 17,
+               "end": 18,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "env-topdown-l(s, skip: term -> term * term -> term)",
+               "description": "\n\n",
+               "start": 20,
+               "end": 21,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "env-bottomup-l(s)",
+               "description": "\n\n",
+               "start": 23,
+               "end": 24,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

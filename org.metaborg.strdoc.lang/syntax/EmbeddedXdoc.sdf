@@ -1,0 +1,26 @@
+module EmbeddedXdoc[E1 E2 E3 E4 E5 E6]
+
+imports
+  xdoc
+  Comment
+
+exports
+  context-free syntax
+    %% TODO: Remove these
+    "abcdef" "|[" E1 "]|" -> E1 {cons("DocBlock")}
+    
+    "-- ABC" XINT E1 -> E1 {cons("DocBlock")}
+    
+    "//ABC" E1 -> E1 {cons("DocBlock"), prefer}
+    
+    MLC E1 -> E1 {cons("DocBlock"), prefer}
+
+    MLC E2 -> E2 {cons("DocBlock"), prefer}
+    
+    MLC E3 -> E3 {cons("DocBlock"), prefer}
+    
+    MLC E4 -> E4 {cons("DocBlock"), prefer}
+    
+    MLC E5 -> E5 {cons("DocBlock"), prefer}
+    
+    MLC E6 -> E6 {cons("DocBlock"), prefer}

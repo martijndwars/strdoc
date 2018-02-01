@@ -1,0 +1,1258 @@
+{
+"name": "term/string",
+"description": "\nThis module contains strategies for operating on strings.\n\nIn Stratego, strings are primitive terms, separate from characters\nand character lists. It is recommended that all strings contain only\nISO-8859-1 (Latin1) characters.\n\n\n",
+"strategies": [{
+               "name": "new",
+               "description": "\nGenerates a unique new string of the form 'c_d',\nwhere c is one char and d is a positive integer.\n\n",
+               "start": 27,
+               "end": 27,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "newname",
+               "description": "\nGenerates a unique new string with user-defined prefix\nthe form 'sd', where s is a string and d is a positive integer.\nThe produced string is *always* unique across a program run.\n\nThe prefix comes in front of an increasing number, which is\nseparately maintained and started at 0 for each prefix.\n\nExamples (results are shown in comment)\n<newname; debug> \"a\"        // produces \"a0\"\n; <newname; debug> \"a\"        // produces \"a1\"\n; <newname; debug> \"a\"        // produces \"a2\"\n; <newname; debug> \"b\"        // produces \"b0\"\n; <newname; debug> \"b\"        // produces \"b1\"\n; <newname; debug> \"b_2\"      // produces \"b_20\"\n; <newname; debug> \"b_2\"      // produces \"b_21\"\n; <newname; debug> \"b_a\"      // produces \"b_a0\"\n; <newname; debug> \"b_a\"      // produces \"b_a1\"\n; <newname; debug> \"a_\"       // produces \"a_0\"\n; <newname; debug> \"a_1\"      // produces \"a_10\"\n\n",
+               "start": 50,
+               "end": 50,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "newterm",
+               "description": "\nGenerates a unique new term.\nMay not necessarily be a string, depending on the platform.\nMay be slightly more efficient than a standard 'new.'\n\n\n",
+               "start": 59,
+               "end": 61,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": "0.18"
+               },{
+               "name": "is-string",
+               "description": "\nPredicate that checks if the supplied term is a string.\n\n\n",
+               "start": 70,
+               "end": 70,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-char",
+               "description": "\nPredicate that checks if the supplied term is a printable character.\n\n\n",
+               "start": 77,
+               "end": 77,
+               "types": ["Char -> Char"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "implode-string",
+               "description": "\nImplodes a list of chars to a string.\n\n\n",
+               "start": 84,
+               "end": 84,
+               "types": ["List(Char) -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "explode-string",
+               "description": "\nExplodes a String to a list of chars.\n\n\n",
+               "start": 91,
+               "end": 91,
+               "types": ["String -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-as-chars(s)",
+               "description": "\nWraps a strategy on a list of chars in a strategy on a string.\n\n\n",
+               "start": 99,
+               "end": 102,
+               "types": [" String -> String"],
+               "params": ["List(Char) -> List(Char)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "conc-strings",
+               "description": "\nConcats a tuple of two Strings.\n\n\n",
+               "start": 111,
+               "end": 113,
+               "types": ["String * String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "strcat",
+               "description": "\nConcats a tuple of two Strings.\n\n\n",
+               "start": 125,
+               "end": 126,
+               "types": ["    String * String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "concat-strings",
+               "description": "\nConcats a list of Strings\n\n\n",
+               "start": 137,
+               "end": 138,
+               "types": ["List(String) -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-length",
+               "description": "\nReturns the number of characters in a string.\n\n\n",
+               "start": 147,
+               "end": 148,
+               "types": ["String -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "strlen",
+               "description": "\nReturns the number of characters in a string.\n\n\n",
+               "start": 158,
+               "end": 159,
+               "types": ["String -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "escape",
+               "description": "\nEscapes double quotes, backslash and linefeed to C like escape sequences.\n\n\n",
+               "start": 169,
+               "end": 169,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "escape-chars",
+               "description": "\nEscapes double quotes, backslash and linefeed to C like escape sequences.\n\n\n",
+               "start": 176,
+               "end": 177,
+               "types": ["List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "escape-chars(s)",
+               "description": "\n",
+               "start": 180,
+               "end": 185,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unescape",
+               "description": "\nUnescapes double quotes, backslash, linefeed and tabs.\n\n\n",
+               "start": 196,
+               "end": 196,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unescape-chars(s)",
+               "description": "\nUnescapes characters using a specified unescape strategy.\n\n\n",
+               "start": 204,
+               "end": 208,
+               "types": [" List(Char) -> List(Char)"],
+               "params": ["List(Char) -> List(Char)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unescape-chars",
+               "description": "\nUnescapes double quotes, backslash, linefeed and tabs.\n\n\n",
+               "start": 215,
+               "end": 216,
+               "types": ["List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Escape",
+               "description": "\n\n",
+               "start": 221,
+               "end": 225,
+               "types": ["List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Escape-double-quote",
+               "description": "\n",
+               "start": 228,
+               "end": 228,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Escape-single-quote",
+               "description": "\n",
+               "start": 231,
+               "end": 231,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Escape-backslash",
+               "description": "\n",
+               "start": 234,
+               "end": 234,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Escape-linefeed",
+               "description": "\n",
+               "start": 237,
+               "end": 237,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Escape-carriage-return",
+               "description": "\n",
+               "start": 240,
+               "end": 240,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnEscape",
+               "description": "\n\n",
+               "start": 245,
+               "end": 250,
+               "types": ["List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnEscape-double-quote",
+               "description": "\n",
+               "start": 253,
+               "end": 253,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnEscape-single-quote",
+               "description": "\n",
+               "start": 256,
+               "end": 256,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnEscape-backslash",
+               "description": "\n",
+               "start": 259,
+               "end": 259,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnEscape-carriage-return",
+               "description": "\n",
+               "start": 262,
+               "end": 262,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnEscape-linefeed",
+               "description": "\n",
+               "start": 265,
+               "end": 265,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnEscape-tab",
+               "description": "\n",
+               "start": 268,
+               "end": 268,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnEscape( | c)",
+               "description": "\n",
+               "start": 271,
+               "end": 272,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "escape(esc: List(String) -> List(String) * List(String) -> List(String))",
+               "description": "\n",
+               "start": 277,
+               "end": 280,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "cify",
+               "description": "\n\n",
+               "start": 285,
+               "end": 285,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "uncify",
+               "description": "\n",
+               "start": 288,
+               "end": 288,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnCify(x)",
+               "description": "\n",
+               "start": 291,
+               "end": 291,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Cify(x)",
+               "description": "\n",
+               "start": 296,
+               "end": 296,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Cify(x)",
+               "description": "\n",
+               "start": 299,
+               "end": 299,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Cify(x)",
+               "description": "\n",
+               "start": 302,
+               "end": 302,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Cify(x)",
+               "description": "\n",
+               "start": 305,
+               "end": 305,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Cify(x)",
+               "description": "\n",
+               "start": 308,
+               "end": 308,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnCify1(x)",
+               "description": "\n",
+               "start": 311,
+               "end": 311,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnCify1(x)",
+               "description": "\n",
+               "start": 314,
+               "end": 314,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnCify1(x)",
+               "description": "\n",
+               "start": 317,
+               "end": 317,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnCify2(x)",
+               "description": "\n",
+               "start": 320,
+               "end": 320,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnCify3(x)",
+               "description": "\n",
+               "start": 323,
+               "end": 323,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "quote(c)",
+               "description": "\nparam  () -> Char\n\n",
+               "start": 334,
+               "end": 334,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "quote-chars(c)",
+               "description": "\nparam  () -> Char\n\n",
+               "start": 340,
+               "end": 340,
+               "types": [" List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "quote-chars",
+               "description": "\n\n",
+               "start": 345,
+               "end": 346,
+               "types": ["Char * List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "single-quote-chars",
+               "description": "\nAdds single quotes to the start and end of a list\nof characters.\n\n\n",
+               "start": 354,
+               "end": 354,
+               "types": ["List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "double-quote-chars",
+               "description": "\nAdds double quotes to the start and end of a\nlist of characters.\n\n\n",
+               "start": 362,
+               "end": 362,
+               "types": ["List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "single-quote",
+               "description": "\n\n",
+               "start": 367,
+               "end": 367,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "double-quote",
+               "description": "\nAdds double quotes to the start and end of\na string.\n\n\n",
+               "start": 375,
+               "end": 375,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unquote(s)",
+               "description": "\nRemoves the first and last character of a string.\nThe characters must satisfy s.\n\n\n",
+               "start": 389,
+               "end": 390,
+               "types": [" String -> String"],
+               "params": ["Char ->? _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unquote(s1, s2)",
+               "description": "\nRemoves the first and last character of a string.\nThe first character must satisfy s1.\nThe last character must satisfy s2.\n\n\n",
+               "start": 401,
+               "end": 402,
+               "types": ["  String -> String"],
+               "params": [" Char ->? _"," Char ->? _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unquote-chars(s)",
+               "description": "\nRemoves the first and last character of a list of characters.\nThe characters must satisfy s.\n\n\n",
+               "start": 411,
+               "end": 412,
+               "types": ["  List(Char) -> List(Char)"],
+               "params": [" Char ->? _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unquote-chars(s1, s2)",
+               "description": "\nRemoves the first and last character of a list of characters.\nThe first character must satisfy s1.\nThe last character must satisfy s2.\n\n\n",
+               "start": 423,
+               "end": 427,
+               "types": ["  List(Char) -> List(Char)"],
+               "params": [" Char ->? _"," Char ->? _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "un-single-quote-chars",
+               "description": "\nRemoves single quotes from the start and end of a list\nof characters. Fails if the list is not properly\nquoted.\n\n\n",
+               "start": 436,
+               "end": 436,
+               "types": [" List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "un-double-quote-chars",
+               "description": "\nRemoves double quotes from the start and end of a list\nof characters. Fails if the list is not properly\nquoted.\n\n\n",
+               "start": 445,
+               "end": 445,
+               "types": [" List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "un-single-quote",
+               "description": "\nRemoves single quotes from the start and end of a string\nFails if the string is not properly quoted.\n\n\n",
+               "start": 453,
+               "end": 453,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "un-double-quote",
+               "description": "\nRemoves double quotes from the start and end of a string\nFails if the string is not properly quoted.\n\n\n",
+               "start": 461,
+               "end": 461,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-double-quoted",
+               "description": "Predicate that checks if a string is double quoted, i.e. quoted\nwith double quotation marks (\").\n\n\n\n",
+               "start": 477,
+               "end": 478,
+               "types": ["  String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-single-quoted",
+               "description": "\nPredicate that checks a string is quoted with single quotes.\n\n\n",
+               "start": 485,
+               "end": 486,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-double-quoted-chars",
+               "description": "\nPredicate that checks if a character list is double quoted. That\nis, if the first and last character are both double quotes.\n\n\n",
+               "start": 494,
+               "end": 495,
+               "types": ["List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-single-quoted-chars",
+               "description": "\nPredicate that checks if a character list is single quoted. That is,\nif the first and last character are both single quotes.\n\n\n",
+               "start": 503,
+               "end": 504,
+               "types": ["List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-quoted( | c)",
+               "description": "\nPredicate that checks if a string is quoted with the given character.\n\nThe character c is the quotation character to check for.\n\n\n",
+               "start": 514,
+               "end": 518,
+               "types": [" String -> String"],
+               "params": ["Char"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-quoted-chars( | c)",
+               "description": "\nPredicate that checks if a list of characters is quoted with\nthe character given by the term argument. That is, if the\nfirst and last character of the list are both equal to c.\n\n\n",
+               "start": 528,
+               "end": 529,
+               "types": ["List(Char) -> List(Char)"],
+               "params": ["Char"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-num",
+               "description": "\n\n",
+               "start": 536,
+               "end": 538,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lower-case",
+               "description": "\nConverts all characters of this string to lower case\n\n\n",
+               "start": 547,
+               "end": 547,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "upper-case",
+               "description": "\nConverts all characters of this string to upper case\n\n\n",
+               "start": 554,
+               "end": 554,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lower-case-chars",
+               "description": "\nConverts a list of characters to lower case.\n\nExample: <explode-string ; lower-case-char ; implode-string> \"STRATEGO\" => \"stratego\"\n\n\n",
+               "start": 563,
+               "end": 563,
+               "types": [" List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "upper-case-chars",
+               "description": "\nConverts a list of characters to upper case.\n\nExample: <explode-string ; upper-case-chars ; implode-string> \"stratego\" => \"STRATEGO\"\n\n\n",
+               "start": 572,
+               "end": 572,
+               "types": [" List(Char) -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-tokenize( | sepchars)",
+               "description": "\nBreaks a string into tokens.\n\nGiven a list of possible delimiters (characters that\nseparate tokens), string-tokenize returns a list of\ntokens for a given string.\n\n\n",
+               "start": 586,
+               "end": 587,
+               "types": [" String -> List(String)"],
+               "params": ["List of separate characters"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-tokenize(sep)",
+               "description": "\n",
+               "start": 590,
+               "end": 593,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-tokenize",
+               "description": "\n\n\n",
+               "start": 604,
+               "end": 606,
+               "types": [" (List(Char), String) -> List(String)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "padd-with(s)",
+               "description": "\n\n",
+               "start": 615,
+               "end": 616,
+               "types": ["String * Int -> String"],
+               "params": ["s  () -> Char"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "remove-padding",
+               "description": "\nRemove padding from a string.\n\n\n",
+               "start": 624,
+               "end": 632,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": "0.18"
+               },{
+               "name": "align-right",
+               "description": "\n\n",
+               "start": 652,
+               "end": 654,
+               "types": ["Char * String * Int -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "align-left",
+               "description": "\n\n",
+               "start": 659,
+               "end": 661,
+               "types": ["Char * String * Int -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "align-center",
+               "description": "\n\n",
+               "start": 666,
+               "end": 675,
+               "types": ["Char * String * Int -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "align-helper( | c, n)",
+               "description": "\n\n",
+               "start": 682,
+               "end": 689,
+               "types": ["String -> String"],
+               "params": ["c  Char","n  Int"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "div2",
+               "description": "\n\n",
+               "start": 691,
+               "end": 691,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "SplitInit",
+               "description": "\n",
+               "start": 696,
+               "end": 696,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "SplitExit",
+               "description": "\n",
+               "start": 699,
+               "end": 701,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "SplitNext",
+               "description": "\n",
+               "start": 704,
+               "end": 706,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "SplitNext",
+               "description": "\n",
+               "start": 709,
+               "end": 711,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split-at-space",
+               "description": "\nSplits a string at each occurrence of a whitespace. The\nresulting list of string does not contain any of the\nwhitespaces. Two adjacent whitespaces will result in\nan empty string in the result.\n\nExample: <split-at-space> \"foo  bar\" => [\"foo\", \"\", \"bar\"]\n\n\n",
+               "start": 725,
+               "end": 728,
+               "types": ["String -> List(String)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split-at-dot",
+               "description": "\n\n",
+               "start": 733,
+               "end": 738,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split-before",
+               "description": "\n\n",
+               "start": 744,
+               "end": 750,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split-after",
+               "description": "\n\n",
+               "start": 756,
+               "end": 763,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-substring(s)",
+               "description": "\nSucceeds if the string produced by s is a substring\nof the argument string.\n\n\n",
+               "start": 773,
+               "end": 781,
+               "types": ["String -> _"],
+               "params": ["_ -> String"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "copy-char",
+               "description": "\n\n",
+               "start": 787,
+               "end": 788,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-sort",
+               "description": "\nSorts a list of strings lexicographically, ignoring case, ascending.\n\n\n\n",
+               "start": 799,
+               "end": 802,
+               "types": ["List(String) -> List(String)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-sort-desc",
+               "description": "\nSorts a list of strings lexicographically ignoring case, descending.\n\n\n",
+               "start": 809,
+               "end": 812,
+               "types": ["List(String) -> List(String)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-gt",
+               "description": "\nCompares two strings or lists of characters lexicographically and succeeds if\nthe first one is larger than the second, ignoring case.\n\n\n",
+               "start": 823,
+               "end": 825,
+               "types": [" (List(Char), List(Char)) -> 1"," (String, String)         -> 1"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-lt",
+               "description": "\nCompares two strings or lists of characters lexicographically and succeeds if\nthe first one is smaller than the second, ignoring case.\n\n\n",
+               "start": 834,
+               "end": 836,
+               "types": [" (List(Char), List(Char)) -> 1"," (String, String)         -> 1"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-starts-with( | start)",
+               "description": "\nSucceeds if the first String starts with the second String.\n\nIf the strategy succeeds, the current term is left untouched.\n\nExample: <string-starts-with(|\"foo\")> \"foobar\"\n\n\n",
+               "start": 847,
+               "end": 848,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-ends-with( | end)",
+               "description": "\nSucceeds if the first String ends with the second String.\n\nIf the strategy succeeds, the current term is left untouched.\n\nExample: <string-ends-with(|\"bar\")> \"foobar\"\n\n\n",
+               "start": 859,
+               "end": 860,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "left-match",
+               "description": "\nSucceeds if the first list of terms starts with the second list of terms.\n\nReturns the suffix of the first list that is not matched.\n\n\n",
+               "start": 870,
+               "end": 875,
+               "types": [" (List(a), List(a)) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "right-match",
+               "description": "\nSucceeds if the first list of terms ends with the second list of terms.\n\nReturns the prefix of the first list that is not matched.\n\n\n",
+               "start": 884,
+               "end": 887,
+               "types": [" (List(a), List(a)) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "strcmp",
+               "description": "\n\n",
+               "start": 892,
+               "end": 901,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "strncmp",
+               "description": "\nCompares the n first characters of two character lists, n\nis given by the last argument. If the two lists are identical,\nthe integer 0 is returned, otherwise the integer 1 is returned.\n\n\n",
+               "start": 910,
+               "end": 917,
+               "types": ["List(Char) * List(Char) * Int -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "strcasecmp",
+               "description": "\nCompares two lists of characters lexicographically, ignoring case.\n\nReturns:\n-1 if first is smaller than the second.\n0  if the strings are equal.\n1  if the first is larger than the second.\n\n\n",
+               "start": 929,
+               "end": 935,
+               "types": ["(List(Char), List(Char)) -> -1, 0,1 or -1."],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-tokenize-keep-empty( | sepChars)",
+               "description": "\nSplits a string into a list of tokens, including the empty ones.\n\nThis strategy differs from string-tokenize in that it produces an empty \"\"\ntoken when two separator chars are encountered, or after a final separator.\n\nExample:\n<string-tokenize-keep-empty(|['\\n'])> \"fu\\n\\nbar\\n\" => [\"fu\",\"\",\"bar\",\"\"]\n\n\n",
+               "start": 953,
+               "end": 958,
+               "types": ["sepChars [char]","   string -> [string]"],
+               "params": ["The list of characters that may separate two tokens."],
+               "notes": [],
+               "since": "0.9.5"
+               },{
+               "name": "string-tokenize-keep-all( | sepChars)",
+               "description": "\nSplits a string into a list of tokens, keeping the separating elements as\n1-char-strings within the results list, *and* also keeping the empty\n\"\" tokens.\n\nExample:\n<string-tokenize-keep-all(|['\\n'])> \"fu\\n\\nbar\\n\" => [\"fu\",\"\\n\",\"\",\"\\n\",\"bar\",\"\\n\",\"\"]\n\n\n",
+               "start": 974,
+               "end": 979,
+               "types": ["sepChars [char]","   string -> [string]"],
+               "params": ["The list of characters that may separate two tokens."],
+               "notes": [],
+               "since": "0.9.5"
+               },{
+               "name": "get-lines",
+               "description": "\nGets all newline(\\n, \\r\\n or \\r)-separated lines in a string.\nIf the string is ended by a newline, the last element of the returned list\nis the empty string.\n\n\n",
+               "start": 989,
+               "end": 992,
+               "types": ["string -> [string]"],
+               "params": [],
+               "notes": [],
+               "since": "0.9.4"
+               },{
+               "name": "all-lines(s)",
+               "description": "\nApplies a strategy to all lines in a string.\n\nLines are expected to be separated by a single '\\n'.\nThe last line may be ended by a newline, or not. In the former case, the\nlast line in the resulting string will also be ended by a newline,\notherwise not.\nInitial or intermediate newlines are preserved.\nThe strategy is applied to each line (even the empty ones), *excluding*\nthe newline character. The newline is appended again after application of s\n\n\n",
+               "start": 1019,
+               "end": 1028,
+               "types": ["s string -> string","  string -> string"],
+               "params": ["The strategy that should be applied to each line."],
+               "notes": [],
+               "since": "0.9.4"
+               },{
+               "name": "lines",
+               "description": "\nMakes one newline-separated string out of a list of strings.\n\n\n",
+               "start": 1036,
+               "end": 1039,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": "0.9.4"
+               },{
+               "name": "indent-text( | n)",
+               "description": "\nIndents every line in a string with spaces.\n\n\n",
+               "start": 1049,
+               "end": 1051,
+               "types": ["n int","string -> string"],
+               "params": ["The number of spaces to be put in front of every line."],
+               "notes": [],
+               "since": "0.9.4"
+               },{
+               "name": "prefix-lines( | p)",
+               "description": "\nPrefixes all lines in a string with a string.\n\n\n",
+               "start": 1061,
+               "end": 1062,
+               "types": ["p string","  string -> string"],
+               "params": ["The prefix."],
+               "notes": [],
+               "since": "0.9.4"
+               },{
+               "name": "ltrim-chars(s)",
+               "description": "\nTrims leading characters from a string. The characters to\nto trim are given by the strategy argument.\n\nRemoves from the left-hand side all characters matched by\nstrategy s.\n\nExample:  <ltrim-chars(?' ')> \"   fred  \" => \"fred  \"\n\n\n",
+               "start": 1079,
+               "end": 1079,
+               "types": ["String -> String"],
+               "params": ["should match all characters to be removed"],
+               "notes": [],
+               "since": "0.9.5"
+               },{
+               "name": "rtrim-chars(s)",
+               "description": "\nTrims trailing characters from a string.\n\nRemoves from the right-hand side all characters matched by\nstrategy s.\n\nExample: <rtrim-chars(?' ')> \"   fred  \" => \"   fred\"\n\n\n",
+               "start": 1093,
+               "end": 1093,
+               "types": ["String -> String"],
+               "params": ["should match on all characters to be removed"],
+               "notes": [],
+               "since": "0.9.5"
+               },{
+               "name": "trim-chars(s)",
+               "description": "\nTrims leading and trailing characters from a string. The\ncharacters to trim is given by the strategy argument.\n\nRemoves from both ends all characters matched by strategy\ns.\n\nExample:  <trim-chars(?' ')>  \"   fred  \" => \"fred\"\n\n\n",
+               "start": 1108,
+               "end": 1108,
+               "types": ["String -> String"],
+               "params": ["should match all characters to be removed"],
+               "notes": [],
+               "since": "0.9.5"
+               },{
+               "name": "is-whitespace",
+               "description": "\nSucceeds if the character is whitespace.\n\nWhitespace is a space (32), or a tab (9)\n\n\n",
+               "start": 1118,
+               "end": 1118,
+               "types": ["Char -> Char"],
+               "params": [],
+               "notes": [],
+               "since": "0.9.5"
+               },{
+               "name": "trim-trailing-whitespace",
+               "description": "\nTrims all trailing whitespace in a (single-line) string.\n\n\n",
+               "start": 1126,
+               "end": 1127,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "since": "0.9.5"
+               },{
+               "name": "trim-leading-whitespace",
+               "description": "\nTrims all leading whitespace in a (single-line) string.\n\n\n",
+               "start": 1135,
+               "end": 1136,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "since": "0.9.5"
+               },{
+               "name": "trim-whitespace",
+               "description": "\nTrims all trailing and leading whitespace in a (single-line) string.\n\n\n",
+               "start": 1144,
+               "end": 1145,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "since": "0.9.5"
+               },{
+               "name": "shuffle-forced",
+               "description": "\nSome shuffling strategies\n\n",
+               "start": 1153,
+               "end": 1157,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "shuffle",
+               "description": "\n",
+               "start": 1160,
+               "end": 1164,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "shuffle-word-mids",
+               "description": "\n",
+               "start": 1167,
+               "end": 1170,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "shuffle-word-mid",
+               "description": "\n",
+               "start": 1173,
+               "end": 1181,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-alphanum",
+               "description": "\n\n",
+               "start": 1188,
+               "end": 1188,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-alpha",
+               "description": "\nSucceeds if the character is part of the lowercase or\nuppercase alphabet.\n\n\n",
+               "start": 1196,
+               "end": 1196,
+               "types": ["Char -> Char"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-hexnum",
+               "description": "\nSucceeds if applied to a character that is a hexidecimal\ndigit, i.e. either of the characters in the range '0'-'9'\nor 'A'-'F' or 'a'-'f'.\n\n\n",
+               "start": 1205,
+               "end": 1211,
+               "types": ["Char -> Char"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-num",
+               "description": "\n\n",
+               "start": 1217,
+               "end": 1218,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-upper",
+               "description": "\nSucceeds if this character is upper-case.\n\n\n",
+               "start": 1225,
+               "end": 1226,
+               "types": ["Char -> Char"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-lower",
+               "description": "\nSucceeds if this character is lower-case.\n\n\n",
+               "start": 1233,
+               "end": 1234,
+               "types": ["Char -> Char"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-ascii",
+               "description": "\nSucceeds if this string only contains printable ASCII characters.\n\nThe letters 32 through 126, in total 96 characters, are defined\nas printable.\n\n\n",
+               "start": 1244,
+               "end": 1245,
+               "types": ["Char -> Char"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "case-char(s)",
+               "description": "\nApplies a strategy to the upper-case variants of two characters.\n\nThis is useful for doing case-insenstive operations.\n\n\n",
+               "start": 1255,
+               "end": 1255,
+               "types": [" (Char, Char) -> a"],
+               "params": ["(Char, Char) -> a"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "to-upper",
+               "description": "\nEnsures that a character is upper-case.\n\nThis strategy returns the input character if this\ncharacter is already upper-case.\n\n\n",
+               "start": 1265,
+               "end": 1266,
+               "types": ["Char -> Char"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "to-lower",
+               "description": "\nEnsures that a character is lower-case.\n\nThis strategy returns the input character if this\ncharacter is already lower-case.\n\n\n",
+               "start": 1276,
+               "end": 1276,
+               "types": ["Char -> Char"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-replace( | old, new)",
+               "description": "\nReplaces one substring with another in a string.\n\nExample: <string-replace(|\"foo\", \"bar\")> \"foobarfoo\" gives \"barbarbar\"\n\n\n\n",
+               "start": 1289,
+               "end": 1293,
+               "types": ["String -> String"],
+               "params": ["old - the old substring which is to be excised","new - the new subtring which is to be inserted"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "internal-string-replace( | old, new)",
+               "description": "\n",
+               "start": 1298,
+               "end": 1308,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "internal-string-replace( | old, new)",
+               "description": "\n",
+               "start": 1311,
+               "end": 1312,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "internal-string-replace-found( | old, new)",
+               "description": "\n",
+               "start": 1315,
+               "end": 1319,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "internal-string-replace-found( | old, new)",
+               "description": "\n",
+               "start": 1322,
+               "end": 1323,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "internal-ensure-as-string",
+               "description": "\nUsed by desugaring of string interpolation $[... [x] ...]\n\n",
+               "start": 1329,
+               "end": 1339,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "internal-string-interpolation( | t, padded_s)",
+               "description": "\nUsed by desugaring of string interpolation $[... [x] ...]\n\n",
+               "start": 1345,
+               "end": 1345,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org>","Lennart Kats <lennart add lclnet.nl>"],
+"see": []
+}

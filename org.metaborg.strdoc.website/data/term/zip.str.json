@@ -1,0 +1,43 @@
+{
+"name": "term/zip",
+"description": "\nThis module contains general zipping strategies for arbitrary terms\nand tuples.\n\nThe zip strategy on lists takes a pair of lists and combines\nthe elements of the lists into a list of pairs. This can be\ngeneralized by transforming a tuple of lists into a list of\ntuples. This module further generalizes zip by allowing any\nterm structure instead of a list to be zipped.\n\n\n\n",
+"strategies": [{
+               "name": "pair-term-zip-bu(leaf, node)",
+               "description": "Zips a two-element tuple of structurally similar terms recursively by\nusing the strategy leaf to detect leaves and node to post-transform\nthe result\n\nExample: <term-zip(add, id)> (N(1, N(2)), N(2, N(3))) => N(3,N(5))\n\n\n",
+               "start": 29,
+               "end": 30,
+               "types": ["            Tuple(a(c),a(c)) -> a(e)"],
+               "params": ["leaf       c -?> d","node       d -> e"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "TermZip(s)",
+               "description": "Zips the argument lists of two terms of the same type, given as\na two element tuple, using strategy s to combine each pair.\n\nExample: <TermZip(id)> (Foo(1,2,3),Foo(4,5,6)) => Foo((1,4),(2,5),(3,6))\n\n\n",
+               "start": 44,
+               "end": 45,
+               "types": ["s           Tuple(a,b) -> c","            Tuple(a,a) -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "term-zip(leaf, node)",
+               "description": "Zips a tuple of structurally similar terms recursively by using the\nstrategy leaf to detect leaves and node to post-transform the result\n\nExample: <term-zip(add, id)> (N(1, N(2)), N(2, N(3))) => N(3,N(5))\n\n\n",
+               "start": 58,
+               "end": 59,
+               "types": ["            Tuple(a(c),a(c)) -> a(e)"],
+               "params": ["leaf       c -?> d","node       d -> e"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "TermTupleZip(s)",
+               "description": "Zips the argument lists of an arbitrary length tuple of terms of the\nsame type, using using strategy s to combine each pair. Note that\nall terms in the tuple must use the same constructor: both the name\nand arity must be equal.\n\nExample: <TermZip(id)> (Foo(1,2),Foo(4,5),Foo(6,7)) => Foo((1,4,6),(2,5,7))\n\n\n",
+               "start": 72,
+               "end": 75,
+               "types": ["s           Tuple(a,b) -> c","            Tuple(a,a) -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],
+"see": []
+}

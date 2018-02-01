@@ -1,0 +1,79 @@
+{
+"name": "strategy/traversal/fixpoint",
+"description": "\nA collection of strategies that keeps traversing a term until\nno more applications of some strategy to the nodes can be\nfound.\n\n",
+"strategies": [{
+               "name": "reduce(s)",
+               "description": "\n\n",
+               "start": 14,
+               "end": 15,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "outermost(s)",
+               "description": "\n\n",
+               "start": 17,
+               "end": 18,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "innermost'(s)",
+               "description": "\n\n",
+               "start": 20,
+               "end": 21,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "innermost(s)",
+               "description": "\n\n",
+               "start": 23,
+               "end": 24,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "innermost-old(s)",
+               "description": "\n\n",
+               "start": 26,
+               "end": 27,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "pseudo-innermost3(s)",
+               "description": "\n\n",
+               "start": 29,
+               "end": 30,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "innermost-memo(s)",
+               "description": "\n\n",
+               "start": 32,
+               "end": 33,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "innermost-tagged(s: a -> a)",
+               "description": "\ninnermost-tagged(s) reduces the subject term by applying s to\ninnermost redices first. Terms in normal form are tagged (using\nattributes) to prevent renormalization.\n\n",
+               "start": 40,
+               "end": 43,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

@@ -1,0 +1,156 @@
+
+<module>
+  <name>strategy/iteration</name>
+  <description><![CDATA[
+                        Various iteration strategies.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>repeat</name>
+    <description><![CDATA[
+                          Repeatedly apply s until it fails.
+                          
+                          ]]></description>
+    <start>10</start>
+    <end>11</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>repeat</name>
+    <description><![CDATA[
+                          Repeatedly apply s until it fails and terminate with application of c.
+                          
+                          ]]></description>
+    <start>16</start>
+    <end>17</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>repeat1</name>
+    <description><![CDATA[
+                          Repeatedly apply s (at least once) and terminate with application of c.
+                          
+                          ]]></description>
+    <start>22</start>
+    <end>23</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>repeat1</name>
+    <description><![CDATA[
+                          Repeatedly apply s (at least once).
+                          
+                          ]]></description>
+    <start>28</start>
+    <end>29</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>repeat-until</name>
+    <description><![CDATA[
+                          Repeatedly apply s until c succeeds.
+                          
+                          ]]></description>
+    <start>34</start>
+    <end>35</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>repeat</name>
+    <description><![CDATA[
+                          Applies s repeatedly exactly n times. If s fails at some point during
+                          the n applications, the entire strategy fails. The result of the
+                          strategy is that of the nth application of s.
+                          
+                          ]]></description>
+    <start>42</start>
+    <end>48</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>while</name>
+    <description><![CDATA[
+                          While c succeeds apply s.
+                          
+                          ]]></description>
+    <start>53</start>
+    <end>54</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>while-not</name>
+    <description><![CDATA[
+                          While c does not succeed apply s.
+                          
+                          ]]></description>
+    <start>59</start>
+    <end>60</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>do-while</name>
+    <description><![CDATA[
+                          Apply s at least once and then repeat while c succeeds.
+                          
+                          ]]></description>
+    <start>65</start>
+    <end>66</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>for</name>
+    <description><![CDATA[
+                          Repeat application of s after initialization with i
+                          while c fails.
+                          
+                          ]]></description>
+    <start>72</start>
+    <end>73</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>for</name>
+    <description><![CDATA[
+                          Apply s for each integer from low to up (inclusive).
+                          
+                          ]]></description>
+    <start>78</start>
+    <end>82</end>
+    
+    
+  </strategy>
+  
+</module>

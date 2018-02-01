@@ -1,0 +1,196 @@
+{
+"name": "collection/list/set",
+"description": "\nThis module contains strategies for dealing with sets.\n\nThe strategies in this module assume that sets are encoded as lists.\nA list is converted to a set by excising duplicates, using the\nmake-set strategy .\n\nAn implementation of indexed sets can be found in collection/set/indexed.\n\nGiven this notion of sets, we can perform the traditional\nset operations such as intersect (isect), union, one-way\ndifference (diff) and symmetric difference (sym-diff).\n\nWe can also check sets for equality (set-eq), strict and\nnon-strict subset relation (subset and subseteq, respectively).\n\n\n\n",
+"strategies": [{
+               "name": "HdMember(mklst)",
+               "description": "\n",
+               "start": 30,
+               "end": 31,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "HdMember'(eq, mklst)",
+               "description": "\n",
+               "start": 34,
+               "end": 36,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "make-set",
+               "description": "\nRemoves duplicate elements from a list. This effectively\nconverts a list to a set.\n\n\n",
+               "start": 46,
+               "end": 47,
+               "types": [" List(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nub",
+               "description": "\nRemoves duplicate elements from a list. This effectively\nconverts a list to a set.\n\n\n",
+               "start": 57,
+               "end": 57,
+               "types": ["  List(a) -> List(a)"],
+               "params": [],
+               "notes": ["  nub is an alias of make-set."],
+               "since": " 0.9.4"
+               },{
+               "name": "union",
+               "description": "\nUnion: Concatenation of two lists, only those elements in the\nfirst list are added that are not already in the second list.\n\n\n",
+               "start": 72,
+               "end": 72,
+               "types": ["List(a) * List(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "union(eq)",
+               "description": "\nTakes the union of two sets. The result is a set\nwhere all elements found in both sets are present,\nbut each element occurs only once. The strategy\nparameter is the equality operator to be used on the\nelements.\n\n\n",
+               "start": 85,
+               "end": 90,
+               "types": ["List(a) * List(a) -> List(a)"],
+               "params": ["Equality operator to be used on the elements"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unions",
+               "description": "\nTakes the union of a list of sets. All the sets are\nsets are flattened into one list, and all duplicates\nare removed, to obtain a new set.\n\nExample: <unions> [[1,2,3],[3,4,5],[5,6,7]] => [1,2,3,4,5,6,7]\n\n\n",
+               "start": 103,
+               "end": 103,
+               "types": [" List(List(a)) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unions(eq)",
+               "description": "\nTakes the union of a list of sets. The result is a set\nwhere all elements found in either of the sets are present,\ni.e. where each element occurs only once. The strategy\nparameter is the equality operator to be used on the\nelements.\n\n\n",
+               "start": 116,
+               "end": 116,
+               "types": ["List(List(a)) -> List(a)"],
+               "params": ["Equality operator used on the elements."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "diff",
+               "description": "\nComputes the difference between two sets. That is, it\nreturns the elements found in the first set, but not in\nthe second.\n\n\n",
+               "start": 132,
+               "end": 132,
+               "types": [" (List(a), List(a)) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "diff(eq)",
+               "description": "\nComputes the difference between two sets. That is, the elements\nfound in the first set, but not in the second. The strategy\nargument is used to compare elements of the sets.\n\nExample: <diff(eq)> ([1,2,3], [5,1,2]) => [3]\n\n\n",
+               "start": 144,
+               "end": 149,
+               "types": ["  (List(a), List(a)) -> List(a)"],
+               "params": [" Used to compare the elements. If an application succeeds, then two elements are equal."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "sym-diff",
+               "description": "\nTakes the symmetric difference of two sets. That is, it returns\nall elements not found in both sets.\n\nExample: <sym-diff> ([1,2,3],[5,1,2,6]) => [3,5,6]\n\n\n",
+               "start": 164,
+               "end": 164,
+               "types": [" (List(a), List(a)) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "sym-diff(eq)",
+               "description": "\nTakes the symmetric difference of two sets. That is, it returns\nall elements not found in both sets. the strategy argument is\nused to compare elements of the sets.\n\nExample: <sym-diff(eq)> ([1,2,3],[5,1,2,6]) => [3,5,6]\n\n\n",
+               "start": 176,
+               "end": 177,
+               "types": ["  (List(a), List(a)) -> List(a)"],
+               "params": [" Equality operator to use on the elements. If it succeeds, the elements are equal."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "isect",
+               "description": "\nTake the intersection of two sets. That is, it returns\nall elements found in both sets.\n\nExample: <isect> ([1,2,3],[5,1,2,6]) => [1,2]\n\n\n",
+               "start": 194,
+               "end": 194,
+               "types": ["List(a) * List(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "isect(eq)",
+               "description": "\nTake the intersection of two sets.\n\nThe result is the first list, without the elements\nthat are not in the second list. If the first list is not\na set (it has duplicates), the result will\nhave duplicates. Note that because of this <isect> (l1, l2) is\nnot always equal to <isect> (l2, l1).\n\n\n",
+               "start": 209,
+               "end": 214,
+               "types": ["eq  a * a ->? _","    [a] * [a] -> [a]"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "set-eq",
+               "description": "\nCheck equality of two list sets.\n\nThis strategy uses the basic `eq` to compare the elements.\n\n",
+               "start": 224,
+               "end": 224,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "set-eq(eq)",
+               "description": "\nCheck equality of two list sets.\n\nThe input remains untouched, set-eq just succeeds or fails.\n\n\n",
+               "start": 238,
+               "end": 238,
+               "types": [],
+               "params": ["test strategy that will compare two elements upon their equality."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "subset",
+               "description": "\nSucceeds if the first set is a strict subset of the second.\n\nExample: <subset> ([1,2],[1,2,3])\n\n\n",
+               "start": 247,
+               "end": 247,
+               "types": ["List(a) * List(a) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "subset(eq)",
+               "description": "\nSucceeds if the first set is a strict subset of the second. The\nstrategy parameter is the equality operator that will be used\nto check if two elements are equal.\n\n\n",
+               "start": 257,
+               "end": 257,
+               "types": ["List(a) -> List(a) -> _"],
+               "params": ["Equality operator to be used on elements on the set."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "subseteq",
+               "description": "\nSucceeds if the first set is a (non-strict) subset of the second.\n\nExample: <subseteq> ([1,2],[1,2])\n\n\n",
+               "start": 266,
+               "end": 266,
+               "types": ["List(a) * List(a) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "subseteq(eq)",
+               "description": "\nSucceeds if the first set is a (non-strict) subset of the second.\nThe strategy parameter is the equality operator that will be used\nto check if two elements are equal.\n\nExample: <subseteq> ([1,2],[1,2])\n\n\n",
+               "start": 277,
+               "end": 277,
+               "types": ["List(a) * List(a) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "subset-gen(eq, rest)",
+               "description": "\nGeneral strategy for comparing two list sets.\n\nOther strategies call this one to check for equality, subset or subseteq.\n\nset after comparing all elements from the first list.\n\n",
+               "start": 288,
+               "end": 296,
+               "types": [],
+               "params": ["Equality operator to be used on elements in the set.","Matching strategy that tests the remainder of the right (2nd)"],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],
+"see": ["collection/set/indexed"]
+}

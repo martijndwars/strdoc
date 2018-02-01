@@ -1,0 +1,88 @@
+{
+"name": "term/real",
+"description": "\nThis module contains strategies for operating on real numbers.\n\nIn Stratego, real numbers are primitive terms, separate from\nintegers. The precision of the reals match that of the underlying\nruntime platform, which currently always is the ANSI C library.\n\n\n",
+"strategies": [{
+               "name": "is-real",
+               "description": "Predicate to check if the current term is a real number.\n\n\n",
+               "start": 17,
+               "end": 17,
+               "types": ["Real -> Real"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "cos",
+               "description": "Compute cosine of a real number.\n\n\n",
+               "start": 23,
+               "end": 23,
+               "types": ["Real -> Real"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "sin",
+               "description": "Compute sine of a real number.\n\n\n",
+               "start": 29,
+               "end": 29,
+               "types": ["Real -> Real"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "sqrt",
+               "description": "Compute square of a real number.\n\nNote: The number sqrt is applied to must be non-negative, as complex\nnumbers are not supported.\n\n\n",
+               "start": 38,
+               "end": 38,
+               "types": ["Real -> Real"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "atan2",
+               "description": "Compute arc tangent of a par of real numbers. The result, when applied to\nthe pair (x,y), is the arc tangent of y/x, expressed as radians between\n-PI and PI. The signs of the parameters x and y are used to determine the\ncorrect quadrant.\n\n\n",
+               "start": 47,
+               "end": 47,
+               "types": ["Real -> Real"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "real-to-string",
+               "description": "Convert a real to a string with default (maximal) precision.\n\n\n",
+               "start": 53,
+               "end": 53,
+               "types": ["Real -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "real-to-string( | prec)",
+               "description": "Convert a real to a string with given precision.\n\nThe term argument prec specifies the number of digits after the\nperiod is required. The result is rounded.\n\nExample: <real-to-string(2)> 12.124 => \"12.12\"\n\n\n",
+               "start": 65,
+               "end": 65,
+               "types": ["prec Int","Real -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-real",
+               "description": "Construct a real from a string.\n\nExample: <string-to-real> \"123.0e+02\"\n\n\n",
+               "start": 73,
+               "end": 73,
+               "types": ["String -> Real"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "real",
+               "description": "Construct a real from an int.\n\n\n",
+               "start": 79,
+               "end": 79,
+               "types": ["Int -> Real"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],
+"see": []
+}

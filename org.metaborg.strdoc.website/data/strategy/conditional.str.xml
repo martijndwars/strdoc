@@ -1,0 +1,197 @@
+
+<module>
+  <name>strategy/conditional</name>
+  <description><![CDATA[
+                        Conditionals
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>eq</name>
+    <description><![CDATA[
+                          Tests whether two terms are equal.
+                          
+                          ]]></description>
+    <start>12</start>
+    <end>13</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>equal</name>
+    <description><![CDATA[
+                          Tests whether two terms are equal.
+                          
+                          ]]></description>
+    <start>19</start>
+    <end>20</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>equal</name>
+    <description><![CDATA[
+                          Tests whether current term is equal to argument term.
+                          
+                          ]]></description>
+    <start>26</start>
+    <end>27</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>equal</name>
+    <description><![CDATA[
+                          Tests whether two argument terms are equal to each other.
+                          
+                          ]]></description>
+    <start>33</start>
+    <end>34</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>try</name>
+    <description><![CDATA[
+                          try(s) tries to apply s to the current term, but
+                          returns it unchanged (and succeeds) when s fails.
+                          
+                          ]]></description>
+    <start>43</start>
+    <end>44</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>restore</name>
+    <description><![CDATA[
+                          Apply restoring action 'rest' if s fails, and then fail.
+                          
+                          Typically useful if s performs side effects that should be
+                          restored/undone in case s fails.
+                          
+                          ]]></description>
+    <start>59</start>
+    <end>60</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>restore-always</name>
+    <description><![CDATA[
+                          Apply restoring action 'rest' after s terminates, and preserve
+                          success/failure behaviour of s.
+                          
+                          Typically useful if s performs side effects that should be
+                          restored always, e.g., when maintaining scope information.
+                          
+                          ]]></description>
+    <start>70</start>
+    <end>71</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>finally</name>
+    <description><![CDATA[
+                          Applies s followed by f whether s failed or not.
+                          
+                          
+                          ]]></description>
+    <start>81</start>
+    <end>82</end>
+    <type><![CDATA[  a -> b, (a or b) -> _ :: a -> b]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>true</name>
+    <description><![CDATA[
+                          true is a synonym for id.
+                          
+                          ]]></description>
+    <start>90</start>
+    <end>91</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>false</name>
+    <description><![CDATA[
+                          false is a synonym for fail.
+                          
+                          ]]></description>
+    <start>97</start>
+    <end>98</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>ior</name>
+    <description><![CDATA[
+                          ior(s1, s2) implements 'inclusive or', that is, the
+                          inclusive choice of s1 and s2. It first tries s1, if
+                          that fails it applies s2 (just like s1 <+ s2). However,
+                          when s1 succeeds it also tries to apply s2.
+                          
+                          The results of the transformations are returned.
+                          
+                          ]]></description>
+    <start>109</start>
+    <end>110</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>or</name>
+    <description><![CDATA[
+                          or(s1, s2) is similar to ior(s1,s2), but the application
+                          of the strategies is only tested.
+                          
+                          ]]></description>
+    <start>117</start>
+    <end>118</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>and</name>
+    <description><![CDATA[
+                          and(s1, s2) applies s1 and s2 to the current
+                          term and succeeds if both succeed. s2 will always
+                          be applied, i.e., and is *not* a short-circuit
+                          operator
+                          
+                          ]]></description>
+    <start>127</start>
+    <end>128</end>
+    
+    
+  </strategy>
+  
+</module>

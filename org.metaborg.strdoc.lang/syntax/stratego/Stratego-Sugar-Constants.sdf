@@ -1,0 +1,12 @@
+module stratego/Stratego-Sugar-Constants
+imports
+  stratego/Stratego-Core-Identifiers
+  stratego/Stratego-Core-Constants
+  stratego/Stratego-Sugar-StringQuotations
+exports
+  sorts Char CharChar
+  lexical syntax
+    "'" CharChar "'"		-> Char
+    ~[\']			-> CharChar
+    [\\] [\'ntr\ ]		-> CharChar
+    Char		 	-> Id {reject}

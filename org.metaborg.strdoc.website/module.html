@@ -1,0 +1,66 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{module.name}}</li>
+  </ol>
+</nav>
+
+<h2>Module {{module.name}}</h2>
+
+<p class="description">{{module.description}}</p>
+
+<dl>
+	<dt ng-repeat-start="see in module.see">See:</dt>
+	<dd ng-repeat-end><a ng-href="#/module/{{see}}">{{see}}</a></dd>
+
+	<dt ng-repeat-start="author in module.authors">Author:</dt>
+	<dd ng-repeat-end>{{author}}</dd>
+</dl>
+
+<h3>Summary</h3>
+<div class="row">
+	<div class="col-md-4">
+		<table class="table">
+			<tr>
+				<td>Strategies:</td>
+				<td>{{module.strategies.length}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<h3>Strategies</h3>
+<ul class="strategies">
+	<li ng-repeat="strategy in module.strategies" id="{{strategy.name}}">
+		<h5>
+			{{strategy.name}} <span><a href="#/source/{{module.name}}.str.html/{{strategy.lines()}}">(source)</a></span>
+		</h5>
+		
+		<p class="description">{{strategy.description}}</p>
+
+		<dl class="dl-horizontal">
+			<dt>Line:</dt>
+			<dd>{{strategy.lines()}}</dd>
+
+			<div ng-if="strategy.since">
+				<dt>Since:</dt>
+				<dd>{{strategy.since}}</dd>
+			</div>
+
+			<div ng-repeat="type in strategy.types">
+				<dt>Type:</dt>
+				<dd>{{type}}</dd>
+			</div>
+
+			<div ng-repeat="param in strategy.params">
+				<dt>Param:</dt>
+				<dd>{{param}}</dd>
+			</div>
+
+			<div ng-repeat="note in strategy.notes">
+				<dt>Note:</dt>
+				<dd>{{note}}</dd>
+			</div>
+		</dl>
+	</li>
+</ul>

@@ -1,0 +1,1555 @@
+{
+"name": "lang/dynamic-rules",
+"description": "\nA revised version of the pre-0.9.5 dynamic-rules-tools\nNow using the new hash-tables, and implementing scoping\nas a 'stack' of hashtables.\n\nissues: - a break inside the do-while\n- propagation in the first run could be wrong\nor if rulename + scoping of DR_BREAK suffices\nare merged, one of them is lost and not discarded. This needs\nto be fixed (unless the garbage collector takes care of this)\n\n",
+"strategies": [{
+               "name": "dr-rule-sets-hashtable",
+               "description": "\nRetrieve the primitive dynamic rules hashtable.\n\n",
+               "start": 51,
+               "end": 52,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-get-rule-set( | name)",
+               "description": "\n\n",
+               "start": 57,
+               "end": 60,
+               "types": [" _ -> List(RuleScope)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-rule-set( | name)",
+               "description": "\n\n",
+               "start": 62,
+               "end": 66,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-switch-rule-set( | name)",
+               "description": "\n\n",
+               "start": 68,
+               "end": 71,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-scope(s | name)",
+               "description": "\n\n",
+               "start": 100,
+               "end": 103,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-begin-scope( | name)",
+               "description": "\n\n",
+               "start": 108,
+               "end": 113,
+               "types": [" t -> t"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-end-scope( | name)",
+               "description": "\n\n",
+               "start": 118,
+               "end": 123,
+               "types": [" t -> t"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-scope-all(s)",
+               "description": "\nScope all dynamic rules.\n\nthis strategy also scopes the config hashtable.\n\n",
+               "start": 131,
+               "end": 137,
+               "types": [],
+               "params": [],
+               "notes": ["While get-config and set-config do not actually use dynamic rules,"],
+               "since": ""
+               },{
+               "name": "dr-scope-all-start",
+               "description": "\nStart a new scope for all dynamic rules.\n\nthis strategy also scopes the config hashtable.\n\n\n",
+               "start": 147,
+               "end": 160,
+               "types": [],
+               "params": [],
+               "notes": ["While get-config and set-config do not actually use dynamic rules,"],
+               "since": ""
+               },{
+               "name": "dr-scope-all-end",
+               "description": "\nEnd a scope for all dynamic rules.\n\n\n",
+               "start": 167,
+               "end": 182,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-scopes(s | names)",
+               "description": "\n\n",
+               "start": 184,
+               "end": 187,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-begin-scopes( | names)",
+               "description": "\n\n",
+               "start": 192,
+               "end": 199,
+               "types": [" t -> t"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-end-scopes( | names)",
+               "description": "\n\n",
+               "start": 204,
+               "end": 211,
+               "types": [" t -> t"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-start-change-set( | name)",
+               "description": "\n\n",
+               "start": 216,
+               "end": 221,
+               "types": [" t -> t"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-commit-change-set( | name)",
+               "description": "\n\n",
+               "start": 226,
+               "end": 231,
+               "types": [" t -> t"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-discard-change-set( | name)",
+               "description": "\n\n",
+               "start": 236,
+               "end": 241,
+               "types": [" t -> t"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-label-scope( | name, label)",
+               "description": "\n\n",
+               "start": 246,
+               "end": 251,
+               "types": [" t -> t"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-get-scope-labels( | name)",
+               "description": "\nGet all scope labels ordered from inner, most recent, to outer, oldest.\n\n",
+               "start": 257,
+               "end": 259,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-get-first-scope-label(s | name)",
+               "description": "\nGet the first scope label for which s succeeds starting with the\ninner, most recent, scope.\n\n",
+               "start": 266,
+               "end": 268,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-ignore-state(s | name)",
+               "description": "\nApply s in a state where the current dynamic rules for name are ignored.\n\n\n",
+               "start": 279,
+               "end": 288,
+               "types": ["a -> b"],
+               "params": ["strategy to apply (a -> b)","name of the dynamic rules (String)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-ignore-states(s | names)",
+               "description": "\nApply s in a state where the current dynamic rules for names are ignored.\n\n\n",
+               "start": 297,
+               "end": 306,
+               "types": ["a -> b"],
+               "params": ["strategy to apply (a -> b)","names of the dynamic rules (List(String))"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-rule( | name, key)",
+               "description": "\n\n",
+               "start": 310,
+               "end": 312,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-all-rules( | name, key)",
+               "description": "\n\n",
+               "start": 314,
+               "end": 316,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-rule-pointer( | name, key)",
+               "description": "\n\n",
+               "start": 318,
+               "end": 320,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-all-keys( | name)",
+               "description": "\n\n",
+               "start": 322,
+               "end": 324,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-rule( | name, key, value)",
+               "description": "\n\n",
+               "start": 326,
+               "end": 331,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-rule( | name, label, key, value)",
+               "description": "\n\n",
+               "start": 333,
+               "end": 338,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-rule-vis( | name, label, key, value)",
+               "description": "\n\n",
+               "start": 340,
+               "end": 345,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-rules-vis( | name, label, key, values)",
+               "description": "\n\n",
+               "start": 347,
+               "end": 352,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-undefine-rule( | name, key)",
+               "description": "\n\n",
+               "start": 354,
+               "end": 359,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-undefine-rule( | name, label, key)",
+               "description": "\n\n",
+               "start": 361,
+               "end": 366,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-undefine-rule-vis( | name, label, key)",
+               "description": "\n\n",
+               "start": 368,
+               "end": 373,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-rule( | name, key, value)",
+               "description": "\n\n",
+               "start": 375,
+               "end": 380,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-rule( | name, label, key, value)",
+               "description": "\n\n",
+               "start": 382,
+               "end": 387,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-rule-vis( | name, label, key, value)",
+               "description": "\n\n",
+               "start": 389,
+               "end": 394,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-intersect-with( | name)",
+               "description": "\nIntersect live rule-set with given rule set changing the live rule set.\n\n",
+               "start": 400,
+               "end": 402,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-intersect-symm( | name)",
+               "description": "\nIntersect live rule-set with given rule set changing both.\n\n",
+               "start": 408,
+               "end": 410,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-union-with( | name)",
+               "description": "\nMerge live rule-set with given rule set using union changing the live rule set.\n\n",
+               "start": 416,
+               "end": 418,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-union-symm( | name)",
+               "description": "\nMerge live rule-set with give rule set using union changing both.\n\n",
+               "start": 424,
+               "end": 427,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-left-choice(s1, s2 | rulenames)",
+               "description": "\nLeft choice with dynamic rule roll-back in case s1 fails.\n\n",
+               "start": 434,
+               "end": 439,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-save-rule-set",
+               "description": "\n\n",
+               "start": 447,
+               "end": 448,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-new-scope",
+               "description": "\n\n",
+               "start": 454,
+               "end": 455,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-new-rule-set",
+               "description": "\n\n",
+               "start": 457,
+               "end": 458,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-scope",
+               "description": "\n\n",
+               "start": 460,
+               "end": 461,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-destroy-scope",
+               "description": "\n\n",
+               "start": 463,
+               "end": 464,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-leave-scope",
+               "description": "\n\n",
+               "start": 466,
+               "end": 468,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-get-inner-scope",
+               "description": "\n\n",
+               "start": 470,
+               "end": 471,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-label-scope( | label)",
+               "description": "\n\n",
+               "start": 473,
+               "end": 476,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-get-scope-labels",
+               "description": "\n\n",
+               "start": 480,
+               "end": 481,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-get-first-scope-label(s)",
+               "description": "\nGet the first scope label for which s succeeds.\n\n",
+               "start": 487,
+               "end": 489,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-new-change-set",
+               "description": "\n\n",
+               "start": 493,
+               "end": 494,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-start-change-set",
+               "description": "\n\n",
+               "start": 496,
+               "end": 497,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-destroy-change-set",
+               "description": "\n\n",
+               "start": 499,
+               "end": 500,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-destroy-and-unmark",
+               "description": "\n\n",
+               "start": 502,
+               "end": 516,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-clone-change-set",
+               "description": "\n\n",
+               "start": 518,
+               "end": 525,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-commit-change-set",
+               "description": "\n\n",
+               "start": 527,
+               "end": 528,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-commit-change-set(destroy)",
+               "description": "\nThe strategy destroy indicates whether the change\nset should also be destroyed after the commmit.\n\n",
+               "start": 534,
+               "end": 562,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-discard-change-set",
+               "description": "\n\n",
+               "start": 564,
+               "end": 566,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-commit-labels( | labelset)",
+               "description": "\n\n",
+               "start": 568,
+               "end": 571,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-apply-change( | tbl)",
+               "description": "\ncommit to ruleset is finding the first ChangeSet (any) *or* the first\nRuleScope that has the appropriate scopeid (i.e. hashtable pointer)\nand setting the key-value into it\n\n",
+               "start": 579,
+               "end": 580,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-commit-to-rule-set( | scpid, key, value)",
+               "description": "\n\n",
+               "start": 583,
+               "end": 585,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-commit-to-change-set( | scpid, key, value)",
+               "description": "\n\n",
+               "start": 587,
+               "end": 594,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-commit-to-rule-scope( | scpid, key, value)",
+               "description": "\n\n",
+               "start": 596,
+               "end": 599,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-apply-removal",
+               "description": "\nthe old implementation (for reference)\n\n\ndr-commit-to-rule-set(|scpid, key, value) =\nfetch(\ndr-commit-to-change-set(|scpid, key, value)\n+ dr-commit-to-rule-scope(|scpid, key, value))\n\ndr-commit-to-change-set(|scpid, key, value) =\n?ChangeSet(_, _, tbl)\n; where(<hashtable-put(|(scpid, key), value)> tbl)\n\ndr-commit-to-rule-scope(|scpid, key, value) =\n?RuleScope(_,tbl@Hashtable(scpid))\n; where(<hashtable-put(|key, value)> tbl)\n\n",
+               "start": 619,
+               "end": 620,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-remove-from-rule-set( | scpid, key)",
+               "description": "\n\n",
+               "start": 622,
+               "end": 625,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-remove-from-change-set( | scpid, key)",
+               "description": "\n\n",
+               "start": 627,
+               "end": 629,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-remove-from-rule-scope( | scpid, key)",
+               "description": "\n\n",
+               "start": 631,
+               "end": 633,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-rule( | key)",
+               "description": "\nFetch the most recent definition for key.\n\n",
+               "start": 650,
+               "end": 651,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-rule(look | key, removed)",
+               "description": "\n\n",
+               "start": 653,
+               "end": 658,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-rule(look1 | key, removed)",
+               "description": "\n\n",
+               "start": 660,
+               "end": 672,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-rule-in-scope( | key, scpid)",
+               "description": "\nVersion of dr-lookup-rule that looks for definition of a key\nin a particular scope. The expected scope id (scpid) is the\npointer to the hashtable of a rule scope and is usually\nidentified by means of a label, i.e., a label indicates the\nrule scope and the rule scope has a unique scope id.\n\n",
+               "start": 682,
+               "end": 684,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-rule-in-scope-rs( | key, scpid)",
+               "description": "\n\n",
+               "start": 686,
+               "end": 690,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-rule-in-scope-cs( | key, scpid)",
+               "description": "\n\n",
+               "start": 692,
+               "end": 698,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-rule-pointer( | key)",
+               "description": "\nFetch the most recent definition for key and return a pointer\nto the table that defines it.\n\n",
+               "start": 705,
+               "end": 706,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-rule-pointer(look | key, removed)",
+               "description": "\n\n",
+               "start": 708,
+               "end": 714,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-rule-pointer(look1 | key, removed)",
+               "description": "\n\n",
+               "start": 716,
+               "end": 728,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-all-rules( | key)",
+               "description": "\nFetch all definitions for key.\n\n",
+               "start": 734,
+               "end": 735,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-all-rules(look | key, removed)",
+               "description": "\n\n",
+               "start": 737,
+               "end": 743,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-lookup-all-rules(look1 | key, removed)",
+               "description": "\n\n",
+               "start": 745,
+               "end": 757,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-all-keys( | removed, result)",
+               "description": "\nFetch all keys defined in a rule set.\n\n",
+               "start": 763,
+               "end": 769,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-all-keys( | removed, result)",
+               "description": "\n\n",
+               "start": 771,
+               "end": 778,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-all-keys( | removed, result)",
+               "description": "\n\n",
+               "start": 780,
+               "end": 781,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-in-rule-set( | key, value)",
+               "description": "\nset a rule in the inner scope\n\nThe inner scope has label () since all scopes are labeled\nthis way.\n\n",
+               "start": 795,
+               "end": 796,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-in-rule-set( | label, key, value)",
+               "description": "\nset a rule in the scope with specified label\n\n",
+               "start": 802,
+               "end": 803,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-fail( | scpid, tbl, key, value)",
+               "description": "\n\n",
+               "start": 805,
+               "end": 806,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-in-rule-set(set: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm | label, key, value)",
+               "description": "\n\n",
+               "start": 808,
+               "end": 816,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-in-rule-set(set1: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm | label, key, value)",
+               "description": "\n\n",
+               "start": 818,
+               "end": 835,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-in-rule-set-vis( | key, value)",
+               "description": "\nAdd a rule to the rule-set with the specified label and make sure\nit is visible by deleting any rules with the same key in scopes\nupto the specified scope. Deleting by removing from the table, not\nundefining.\n\n",
+               "start": 853,
+               "end": 854,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-in-rule-set-vis( | label, key, value)",
+               "description": "\n\n",
+               "start": 856,
+               "end": 857,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-rm-fail( | scpid, tbl, key)",
+               "description": "\n\n",
+               "start": 859,
+               "end": 860,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-in-rule-set-vis(set: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm, rm: ATerm * Hashtable * ATerm * ATerm -> ATerm | label, key, value)",
+               "description": "\n\n",
+               "start": 862,
+               "end": 875,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-set-in-rule-set-vis(set1: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm, rm1: ATerm * Hashtable * ATerm * ATerm -> ATerm | label, key, value)",
+               "description": "\n\n",
+               "start": 877,
+               "end": 905,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-to-rule-set( | key, value)",
+               "description": "\n\n",
+               "start": 913,
+               "end": 914,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-to-rule-set( | label, key, value)",
+               "description": "\nadd a rule to the scope for label\n\n= set-rule(|l, k, [v | <lookup-rule(|l, k, v) <+ ![]>])\n\n",
+               "start": 922,
+               "end": 923,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-fail( | scpid, tbl, key, value)",
+               "description": "\n\n",
+               "start": 925,
+               "end": 926,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-rm-fail( | scpid, tbl, key)",
+               "description": "\n\n",
+               "start": 928,
+               "end": 929,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-to-rule-set(add: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm | label, key, value)",
+               "description": "\n\n",
+               "start": 931,
+               "end": 939,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-to-rule-set(add1: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm | label, key, value)",
+               "description": "\n\n",
+               "start": 941,
+               "end": 970,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-to-rule-set-vis( | label, key, value)",
+               "description": "\nadd a rule to the scope for label such that it is visible afterwards\n\n= set-rule(|l, k, [v | <lookup-rule(|l, k, v) <+ ![]>])\n\n",
+               "start": 978,
+               "end": 979,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-to-rule-set-vis(add: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm, rm: ATerm * Hashtable * ATerm * ATerm -> ATerm | label, key, value)",
+               "description": "\n\n",
+               "start": 981,
+               "end": 994,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-add-to-rule-set-vis(add1: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm, rm1: ATerm * Hashtable * ATerm * ATerm -> ATerm | label, key, value)",
+               "description": "\n\n",
+               "start": 996,
+               "end": 1034,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-merge-rule-sets(merge-rs, merge-cs)",
+               "description": "\nMerge two rule sets scope by scope.\n\n\n",
+               "start": 1045,
+               "end": 1050,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-merge-rule-sets1(merge-rs, merge-rec)",
+               "description": "\n\n",
+               "start": 1052,
+               "end": 1056,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-merge-rule-sets2(merge-cs, merge-rec)",
+               "description": "\n\n",
+               "start": 1058,
+               "end": 1108,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fix-change-set",
+               "description": "\nFixes references in change set that point to rule scopes that will\nno longer be part of the merged ruleset. It is assumed that the references\nthat point to rule scopes in rsbad have to be replaced with references to\nthe corresponding (according to position) rule scopes in rsgood.\n\nNo longer used.\n\n",
+               "start": 1118,
+               "end": 1155,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-intersect-rule-sets",
+               "description": "\nIntersection of two rule-sets\n\nassumption: the scope structure is the same\nintersection works scope by scope\nnote that labels are ignored\n\n\n",
+               "start": 1167,
+               "end": 1175,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-rm-set( | rmset)",
+               "description": "\n\n",
+               "start": 1177,
+               "end": 1181,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-intersect-rule-sets-symm",
+               "description": "\nSymmetric intersection of two rule-sets\n\nassumption: the scope structure is the same\nintersection works scope by scope\nnote that labels are ignored\n\n\n",
+               "start": 1193,
+               "end": 1203,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-union-rule-sets",
+               "description": "\nUnion of two rule-sets\n\nassumption: the scope structure of the two rule-sets is the same\nand union works scope by scope\n\n\n",
+               "start": 1213,
+               "end": 1231,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-union-rule-sets-symm",
+               "description": "\n\n",
+               "start": 1233,
+               "end": 1256,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fork-rule-sets",
+               "description": "\n\n",
+               "start": 1260,
+               "end": 1264,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "merge-rule-sets(merge)",
+               "description": "\n\n",
+               "start": 1266,
+               "end": 1269,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fork-and-merge(merge, s1, s2 | rulenames)",
+               "description": "\nFork and merge two rule-sets.\n\n\n",
+               "start": 1277,
+               "end": 1282,
+               "types": [],
+               "params": ["merge :"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fork-and-merge(merge1, merge2, s1, s2 | rulenames1, rulenames2)",
+               "description": "\n\n",
+               "start": 1284,
+               "end": 1310,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fix-and-merge(merge, s | rulenames, label)",
+               "description": "\n\n",
+               "start": 1344,
+               "end": 1345,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fix-and-merge-internal(merge, s | rulenames)",
+               "description": "\n\n",
+               "start": 1349,
+               "end": 1417,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fix-and-merge(merge1, merge2, s | rulenames1, rulenames2)",
+               "description": "\n\n",
+               "start": 1419,
+               "end": 1440,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-merge-continue-change-sets(merge | label)",
+               "description": "\n\n",
+               "start": 1442,
+               "end": 1458,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-label(merge, s | rulenames, label)",
+               "description": "\n\n",
+               "start": 1465,
+               "end": 1522,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-break( | rulename)",
+               "description": "\n\n",
+               "start": 1524,
+               "end": 1525,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-break( | rulename, label)",
+               "description": "\n\n",
+               "start": 1527,
+               "end": 1549,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-break-bp( | rulename)",
+               "description": "\nThis implementation of the strategy doesn't work.\n(left here for reference purposes only)\n\nReason: replacing a number of change sets & rule scopes with\ntheir clones introduces inconsistency issues during merging\nthat are way too difficult to solve.\n\n\ndr-break-bp(|rulename) =\nwhere(\n<DR_BREAK>Label(rulename) => label\n; dr-get-rule-set(|rulename)\n; back-split-at(|<DR_BREAK>SplitPos(rulename, label))\n; ?(inRs, outRs)\n; <map({scope, lbls :\n(?ChangeSet(_, _, _); dr-new-change-set)\n<+ \\ RuleScope(labels, table) -> scope\nwhere dr-new-scope => scope@RuleScope(lbls, tbl)\n; <iset-addlist(|<iset-elements>labels)>lbls\n; <hashtable-keys>table\n; map({key, val :\n?key\n; <hashtable-get(|key)>table => val\n; <hashtable-put(|key, val)>tbl\n}) \\\n})>inRs\n; <conc>(<id>, outRs)\n; dr-set-rule-set(|rulename)\n)\n\n\n",
+               "start": 1585,
+               "end": 1601,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-build-bp-change-set( | rmset, tbl, ruleset)",
+               "description": "\n\n",
+               "start": 1603,
+               "end": 1605,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-build-bp-change-set( | rmset, tbl, ruleset)",
+               "description": "\n\n",
+               "start": 1607,
+               "end": 1624,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-continue( | rulename)",
+               "description": "\n\n",
+               "start": 1626,
+               "end": 1627,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-continue( | rulename, label)",
+               "description": "\n\n",
+               "start": 1629,
+               "end": 1650,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-build-aggregated-change-set",
+               "description": "\nThis strategy takes a pair of lists of change sets and rule scopes\nand returns a change set which contains all the changes from the\nchange sets in the left member of the input pair which refer to\nrule scopes in the right member of the input pair.\n\n",
+               "start": 1658,
+               "end": 1689,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-init-exception-block(has-finally | catch-tags, rulenames)",
+               "description": "\n\n",
+               "start": 1693,
+               "end": 1703,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-throw(eq-test | tag, rulename)",
+               "description": "\n\n",
+               "start": 1705,
+               "end": 1714,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-matching-id(eq-test | tag, rulename)",
+               "description": "\n\n",
+               "start": 1716,
+               "end": 1730,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-matching-id( | catchID, rulename)",
+               "description": "\n\n",
+               "start": 1732,
+               "end": 1740,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-complete-catch(merge, s | rulenames)",
+               "description": "\n\n",
+               "start": 1742,
+               "end": 1788,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-complete-finally(merge, s | rulenames)",
+               "description": "\n\n",
+               "start": 1790,
+               "end": 1847,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-complete-exception-block(merge | rulenames)",
+               "description": "\n\n",
+               "start": 1849,
+               "end": 1868,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-transaction(s | rulenames)",
+               "description": "\n\n",
+               "start": 1872,
+               "end": 1875,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fork-and-union(s1, s2 | rulenames)",
+               "description": "\nFork and union of two rule-sets\n\n",
+               "start": 1893,
+               "end": 1895,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fork-and-intersect-union(s1, s2 | rulenames1, rulenames2)",
+               "description": "\nFork and combined union and intersection of two rule-sets\n\n",
+               "start": 1900,
+               "end": 1903,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fix-and-intersect(s | rulenames, label)",
+               "description": "\n\n",
+               "start": 1918,
+               "end": 1920,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fix-and-union(s | rulenames)",
+               "description": "\nIterate union of two rule-sets\n\n",
+               "start": 1925,
+               "end": 1927,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fix-and-union(s | rulenames, label)",
+               "description": "\n\n",
+               "start": 1929,
+               "end": 1931,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fix-and-intersect-union(s | rulenames1, rulenames2)",
+               "description": "\nIterate combined union and intersection of two rule-sets\n\n",
+               "start": 1936,
+               "end": 1939,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-label-union(s | rulenames, label)",
+               "description": "\nLabel current point in data-flow with <label> to accommodate\nbreak's. Union of rule-sets after running <s>:\n- the \"main\" rule-set resulted by running <s>\n- all the rule-sets generated by calls to dr-break\nwith the same label as this one\n\n!! Only use this to label non-iterative statements. !!\n!! Use dr-fix-and-union which takes a label         !!\n!! argument to label iterative statements.          !!\n\n",
+               "start": 1973,
+               "end": 1975,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-complete-catch-intersect(s | rulenames)",
+               "description": "\n\n",
+               "start": 1979,
+               "end": 1981,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-complete-finally-intersect(s | rulenames)",
+               "description": "\n\n",
+               "start": 1983,
+               "end": 1985,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-complete-exception-block-intersect( | rulenames)",
+               "description": "\n\n",
+               "start": 1987,
+               "end": 1989,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-complete-catch-union(s | rulenames)",
+               "description": "\n\n",
+               "start": 1993,
+               "end": 1995,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-complete-finally-union(s | rulenames)",
+               "description": "\n\n",
+               "start": 1997,
+               "end": 1999,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-complete-exception-block-union( | rulenames)",
+               "description": "\n\n",
+               "start": 2001,
+               "end": 2003,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fold-and-intersect(empty, hd, tl: a -> a * a -> a | rulenames)",
+               "description": "\nn-way split in data-flow (case)\n\n\n",
+               "start": 2013,
+               "end": 2019,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-fold-and-intersect(empty, hd, tl: a -> a * a -> a | rulenames, rs0)",
+               "description": "\n\n",
+               "start": 2021,
+               "end": 2037,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-map-and-intersect(s | rulenames)",
+               "description": "\nfork and intersect over a list\n\n\n",
+               "start": 2045,
+               "end": 2048,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-define-ignoreB( | csid, label)",
+               "description": "\n\n",
+               "start": 2052,
+               "end": 2053,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-define-ignoreC( | csid, label)",
+               "description": "\n\n",
+               "start": 2055,
+               "end": 2056,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-define-ignoreT( | csid)",
+               "description": "\n\n",
+               "start": 2058,
+               "end": 2059,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-eq-rule-sets",
+               "description": "\n\n",
+               "start": 2063,
+               "end": 2073,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-debug-rule-set( | name)",
+               "description": "\n\n",
+               "start": 2077,
+               "end": 2077,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-debug-rule-set( | name, msg)",
+               "description": "\n\n",
+               "start": 2079,
+               "end": 2084,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-print-rule-set( | name)",
+               "description": "\n\n",
+               "start": 2086,
+               "end": 2090,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-print-rule-sets( | names)",
+               "description": "\n\n",
+               "start": 2092,
+               "end": 2095,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-print-rule-set-msg( | msg)",
+               "description": "\n\n",
+               "start": 2097,
+               "end": 2100,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-print-rule-set",
+               "description": "\n\n",
+               "start": 2102,
+               "end": 2103,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-print-scope",
+               "description": "\n\n",
+               "start": 2105,
+               "end": 2116,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-print-scope",
+               "description": "\n\n",
+               "start": 2118,
+               "end": 2138,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-friendly-debug-rule-set( | name)",
+               "description": "\n\n",
+               "start": 2142,
+               "end": 2142,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-friendly-debug-rule-set( | name, msg)",
+               "description": "\n\n",
+               "start": 2144,
+               "end": 2149,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-friendly-print-rule-set( | name)",
+               "description": "\n\n",
+               "start": 2151,
+               "end": 2155,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-friendly-print-rule-sets( | names)",
+               "description": "\n\n",
+               "start": 2157,
+               "end": 2160,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-friendly-print-rule-set-msg( | msg)",
+               "description": "\n\n",
+               "start": 2162,
+               "end": 2165,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-friendly-print-rule-set",
+               "description": "\n\n",
+               "start": 2167,
+               "end": 2194,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-friendly-print-rule-set-msg( | msg)",
+               "description": "\n\n",
+               "start": 2196,
+               "end": 2199,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-friendly-print-scope",
+               "description": "\n\n",
+               "start": 2201,
+               "end": 2215,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dr-friendly-print-scope",
+               "description": "\n\n",
+               "start": 2217,
+               "end": 2240,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

@@ -1,0 +1,152 @@
+
+<module>
+  <name>util/config/common</name>
+  <description><![CDATA[
+                        Get and set values in the configuration table.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>get-config</name>
+    <description><![CDATA[
+                          Get the value for the specified key from the config table.
+                          The key is the current term.
+                          
+                          ]]></description>
+    <start>13</start>
+    <end>14</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>get-configs</name>
+    <description><![CDATA[
+                          Get all values of config keys for which 'pred' succeeds.
+                          The current term is ignored.
+                          
+                          
+                          ]]></description>
+    <start>24</start>
+    <end>26</end>
+    <type><![CDATA[ _ -> List(b)]]></type>
+    <param><![CDATA[  Is applied to the keys of the config table.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>get-config-keys</name>
+    <description><![CDATA[
+                          Get all config keys for which pred succeeds
+                          
+                          
+                          ]]></description>
+    <start>35</start>
+    <end>37</end>
+    <type><![CDATA[    _ -> List(a)]]></type>
+    <param><![CDATA[   Is applied to the keys of the config table.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>set-config</name>
+    <description><![CDATA[
+                          Set an entry (key and value) in the config table.
+                          
+                          
+                          ]]></description>
+    <start>46</start>
+    <end>48</end>
+    <type><![CDATA[(a, b) -> _]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>rm-config</name>
+    <description><![CDATA[
+                          Remove the entry of the specified key from the config table.
+                          
+                          
+                          ]]></description>
+    <start>55</start>
+    <end>57</end>
+    <type><![CDATA[(a, b) -> _]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>toggle-config</name>
+    <description><![CDATA[
+                          Adds an entry to the config table if it does not exist, or
+                          removes the entry if it does already exist in the config table.
+                          
+                          
+                          ]]></description>
+    <start>65</start>
+    <end>71</end>
+    <type><![CDATA[(a, b) -> _]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>extend-config</name>
+    <description><![CDATA[
+                          Extends the list of values of the specified key with new values.
+                          The values are added in front of the current list.
+                          
+                          
+                          ]]></description>
+    <start>79</start>
+    <end>81</end>
+    <type><![CDATA[(a, List(b)) -> _]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>post-extend-config</name>
+    <description><![CDATA[
+                          Extends the list of values of the specified key with new values.
+                          The values are added to the end of the current list.
+                          
+                          
+                          ]]></description>
+    <start>89</start>
+    <end>91</end>
+    <type><![CDATA[(a, List(b)) -> _]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>if-java-platform</name>
+    <description><![CDATA[
+                          Evaluates a strategy f if and only if the program is compiled to Java.
+                          
+                          ]]></description>
+    <start>96</start>
+    <end>97</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>if-c-platform</name>
+    <description><![CDATA[
+                          Evaluates a strategy f if and only if the program is compiled to C.
+                          
+                          ]]></description>
+    <start>102</start>
+    <end>103</end>
+    
+    
+  </strategy>
+  
+</module>

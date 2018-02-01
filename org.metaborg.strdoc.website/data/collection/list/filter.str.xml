@@ -1,0 +1,159 @@
+
+<module>
+  <name>collection/list/filter</name>
+  <description><![CDATA[
+                        This module contains strategies for filtering and partitioning
+                        lists.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>filter</name>
+    <description><![CDATA[
+                          Returns all elements in a list that satisfy s, as a list.
+                          
+                          
+                          
+                          ]]></description>
+    <start>17</start>
+    <end>18</end>
+    <type><![CDATA[    List(a) -> List(b)]]></type>
+    <param><![CDATA[s  a -> b]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>retain-all</name>
+    <description><![CDATA[
+                          Returns all elements in a list that satisfy s, as a list.
+                          
+                          
+                          ]]></description>
+    <start>34</start>
+    <end>35</end>
+    <type><![CDATA[    List(a) -> List(b)]]></type>
+    <param><![CDATA[s  a -> b]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>remove-all</name>
+    <description><![CDATA[
+                          Removes all elements from a list that satisfy s
+                          
+                          
+                          ]]></description>
+    <start>43</start>
+    <end>44</end>
+    <type><![CDATA[    List(a) -> List(a)]]></type>
+    <param><![CDATA[s  a -> b]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>reverse-filter</name>
+    <description><![CDATA[
+                          Returns all elements in a list that satisfy s, as a list.
+                          Traverses the list in reverse order.
+                          
+                          
+                          ]]></description>
+    <start>55</start>
+    <end>56</end>
+    <type><![CDATA[ List(a) -> List(b)]]></type>
+    <param><![CDATA[s a -> b]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>filter-gen</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>65</start>
+    <end>66</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>filter-option-args</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>69</start>
+    <end>72</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>filter-options</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>75</start>
+    <end>78</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>list-some-filter</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>81</start>
+    <end>82</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>partition</name>
+    <description><![CDATA[
+                          Partitions a list into a tuple of two lists.
+                          
+                          The argument s is applied to all elements of the list. The
+                          results of the succesful applications are returned in the first
+                          list. The terms to which s cannot be applied are returned in the
+                          second list.
+                          
+                          
+                          
+                          ]]></description>
+    <start>97</start>
+    <end>98</end>
+    <type><![CDATA[     List(a) -> (List(b), List(a))]]></type>
+    <param><![CDATA[s   a -> b]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>partition</name>
+    <description><![CDATA[
+                          Partitions a list into a tuple of two lists.
+                          
+                          
+                          ]]></description>
+    <start>107</start>
+    <end>111</end>
+    <type><![CDATA[     List(a) -> (List(b), List(c))]]></type>
+    <param><![CDATA[s1   a -> b]]></param>
+    <param><![CDATA[s2   a -> c]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>partition'</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>114</start>
+    <end>118</end>
+    
+    
+  </strategy>
+  
+</module>

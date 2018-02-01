@@ -1,0 +1,187 @@
+{
+"name": "util/config/keep",
+"description": "\n\n",
+"strategies": [{
+               "name": "set-keep",
+               "description": "\nSets the 'keep' level.\n\nE.g. <set-keep>4 sets the keep level to 4.\n\n",
+               "start": 9,
+               "end": 10,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-keep",
+               "description": "\nGive the current 'keep' level. Default is 0.\n\n",
+               "start": 15,
+               "end": 16,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "pass-keep",
+               "description": "\nBuilds command-line parameter for 'keep' levels for calling XT tools.\n\nE.g. xtc-transform(!\"abox2text\", pass-keep ) passes the 'keep' level\nto abox2text.\n\n",
+               "start": 24,
+               "end": 25,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-keep(s | t)",
+               "description": "\n\n",
+               "start": 37,
+               "end": 40,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-keep1(s)",
+               "description": "\n\n",
+               "start": 42,
+               "end": 42,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-keep2(s)",
+               "description": "\n\n",
+               "start": 43,
+               "end": 43,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-keep3(s)",
+               "description": "\n\n",
+               "start": 44,
+               "end": 44,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-keep4(s)",
+               "description": "\n\n",
+               "start": 45,
+               "end": 45,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-keep5(s)",
+               "description": "\n\n",
+               "start": 46,
+               "end": 46,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-keep6(s)",
+               "description": "\n\n",
+               "start": 47,
+               "end": 47,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-keep7(s)",
+               "description": "\n\n",
+               "start": 48,
+               "end": 48,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-keep1(s | t)",
+               "description": "\n\n",
+               "start": 63,
+               "end": 63,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-keep(s | t)",
+               "description": "\n\n",
+               "start": 65,
+               "end": 68,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-keep1(s)",
+               "description": "\n\n",
+               "start": 70,
+               "end": 70,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-keep2(s)",
+               "description": "\n\n",
+               "start": 71,
+               "end": 71,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-keep3(s)",
+               "description": "\n\n",
+               "start": 72,
+               "end": 72,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-keep4(s)",
+               "description": "\n\n",
+               "start": 73,
+               "end": 73,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-keep5(s)",
+               "description": "\n\n",
+               "start": 74,
+               "end": 74,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-keep6(s)",
+               "description": "\n\n",
+               "start": 75,
+               "end": 75,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-keep7(s)",
+               "description": "\n\n",
+               "start": 76,
+               "end": 76,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

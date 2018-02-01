@@ -1,0 +1,61 @@
+{
+"name": "strategy/general/free-variables",
+"description": "\n\nExtraction of free variables from an expression is governed\nby the shape of variables and the shape of variable bindings.\n\n\n",
+"strategies": [{
+               "name": "free-vars(getvars, boundvars)",
+               "description": "\n\n",
+               "start": 45,
+               "end": 47,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "free-vars(getvars, boundvars, boundin: term -> term * term -> term * term -> term * term -> term)",
+               "description": "\n\n",
+               "start": 49,
+               "end": 55,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "free-vars(getvars, boundvars, boundin: term -> term * term -> term * term -> term * term -> term, eq)",
+               "description": "// if we had strategy abstraction /\\(x1,...,xn) -> s\n\nfree-vars(getvars, boundvars, boundin) =\ncollect(getvars\n,/\\ (x,nil) ->\n{vs: where(boundvars => vs);\nboundin(split(x, !vs); diff, x, nil)})\n\n",
+               "start": 66,
+               "end": 73,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "free-vars2(getvars, boundvars)",
+               "description": "\n\n",
+               "start": 86,
+               "end": 89,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "free-vars2(getvars, boundvars, boundin: term -> term * term -> term * term -> term * term -> term)",
+               "description": "\n\n",
+               "start": 91,
+               "end": 98,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "free-vars2(getvars, boundvars, boundin: term -> term * term -> term * term -> term * term -> term, eq)",
+               "description": "\n\n",
+               "start": 100,
+               "end": 108,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

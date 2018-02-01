@@ -1,0 +1,29 @@
+pre.code {
+  font-size: 11px;
+  white-space: pre-wrap;
+  background-color: #fff;
+}
+
+/* Line numbering */
+pre.code:before {
+  counter-reset: listing;
+}
+
+pre.code code {
+  counter-increment: listing;
+}
+
+pre.code code::before {
+  content: counter(listing) " ";
+  display: inline-block;
+  width: 4em;
+  padding-left: auto;
+  margin-left: auto;
+  text-align: right;
+  color: rgba(27,31,35,0.6);
+}
+
+/* Highlighted line */
+pre.code code.highlight {
+  background-color: #fffbdd;
+}

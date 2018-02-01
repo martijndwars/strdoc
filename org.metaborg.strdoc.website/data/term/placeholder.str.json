@@ -1,0 +1,34 @@
+{
+"name": "term/placeholder",
+"description": "\nPrimitives for ATerm placeholders.\n\n",
+"strategies": [{
+               "name": "get-placeholder",
+               "description": "\nReturns the placeholder of an ATerm placeholder.\n\ne.g. applied to the placeholder <Foo()> this returns Foo().\n\n",
+               "start": 11,
+               "end": 12,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "make-placeholder",
+               "description": "\nCreates a placeholder.\n\ne.g. applied to the Foo() this returns <Foo()>.\n\n",
+               "start": 19,
+               "end": 20,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-placeholder",
+               "description": "\nChecks if the current term is a placeholder.\n\nSucceeds if it is.\n\n",
+               "start": 27,
+               "end": 28,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

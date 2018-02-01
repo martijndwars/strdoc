@@ -1,0 +1,28 @@
+
+<module>
+  <name>strategy/general/memo</name>
+  <description><![CDATA[
+                        The memo operator makes a strategy
+                        into a memoizing strategy that looks up the term to be transformed
+                        in a memo table and only computes the transformation if the
+                        term is not found.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>memo</name>
+    <description><![CDATA[
+                          <memo(tbl, s)> t first looks up the term t in the memo table. If
+                          present the association in the table is produced, else the result
+                          of <s> t is computed and stored in the table.
+                          
+                          ]]></description>
+    <start>19</start>
+    <end>22</end>
+    
+    
+  </strategy>
+  
+</module>

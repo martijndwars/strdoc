@@ -1,0 +1,33 @@
+/**
+ * This module contains basic functionality for manipulating lists.
+ *
+ */
+module collection/list/common
+imports 
+  collection/list/cons
+  collection/list/index
+  term/integer
+
+strategies
+
+  /**
+   * Iterative loop over a list applying s to each element.
+   *
+   * @param Strategy to apply to every element (a -> _)
+   * @type List(a) -> List(a)
+   */
+  list-loop(s) =
+    ?xs; prim("SSL_list_loop", s | xs)
+
+  /**
+   * Iterative fold over a list applying s to each element and 
+   * accumulator acc from left to right.
+   *
+   * @param Strategy applied for folding. The current
+   *        intermediate result is a term argument. The next element
+   *        of the list is the current term.
+   * @param Initial value for folding (type: c)
+   * @type List(a) -> c
+   */
+  list-fold(s : c * a -> c | acc) =
+    ?xs; prim("SSL_list_fold", s | acc, xs)

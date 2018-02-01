@@ -1,0 +1,79 @@
+
+<module>
+  <name>system/posix-xsi/file</name>
+  <description><![CDATA[
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>mkstemp</name>
+    <description><![CDATA[
+                          Creates a unique temporary file
+                          
+                          returns a fd if succesful, fails on error
+                          
+                          ]]></description>
+    <start>40</start>
+    <end>43</end>
+    <type><![CDATA[String -> String * Int]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>mkdtemp</name>
+    <description><![CDATA[
+                          Creates a unique temporary directory
+                          
+                          returns a fd if succesful, fails on error
+                          
+                          ]]></description>
+    <start>51</start>
+    <end>54</end>
+    <type><![CDATA[String -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>rename-file</name>
+    <description><![CDATA[
+                          rename renames a file, moving it between directories if required.
+                          Any  other  hard links to the file (as created using link(2)) are unaffected.
+                          
+                          If newpath already exists it will be atomically replaced (subject to  a
+                          few  conditions ~ see ERRORS below), so that there is no point at which
+                          another process attempting to access newpath will find it missing.
+                          
+                          If newpath exists but the operation fails for some reason rename  guarantees
+                          to leave an instance of newpath in place.
+                          
+                          From 0.9.4 this implementation copies the file if the primitive rename
+                          fails because of an XDEV error.
+                          
+                          ]]></description>
+    <start>72</start>
+    <end>80</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>copy-file</name>
+    <description><![CDATA[
+                          Copy a file using memory mapped I/O.
+                          
+                          If newname is a directory the file is copied to a file in the directory
+                          with the same base name as the old file.
+                          
+                          ]]></description>
+    <start>88</start>
+    <end>95</end>
+    
+    
+  </strategy>
+  
+</module>

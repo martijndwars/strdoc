@@ -1,0 +1,124 @@
+{
+"name": "term/annotation",
+"description": "\nPrimitives for getting and setting term annotations.\n\nThe preferred way to access annotations, however,\nis through the term syntax t1{t2}, which allows matching and\nbuilding terms with annotations.\n\n",
+"strategies": [{
+               "name": "get-annos",
+               "description": "\nAlias of get-annotations.\n\n\n",
+               "start": 19,
+               "end": 20,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-annotations",
+               "description": "\nReturns the list of annotations of the current term.\n\n",
+               "start": 25,
+               "end": 26,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "set-annos",
+               "description": "\nAlias of set-annotations.\n\n\n",
+               "start": 33,
+               "end": 34,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "set-annotations",
+               "description": "\nSets the annotations of the given term t to the annotations a.\n\n",
+               "start": 39,
+               "end": 40,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "set-anno",
+               "description": "\n\n",
+               "start": 42,
+               "end": 43,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rm-annotations",
+               "description": "\n\n",
+               "start": 49,
+               "end": 49,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "has-annos",
+               "description": "\nSucceeds if a term has annotations.\n\n\n",
+               "start": 56,
+               "end": 57,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "has-annotation",
+               "description": "\n\n",
+               "start": 59,
+               "end": 60,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-annotation(s1, s2)",
+               "description": "\n\n",
+               "start": 62,
+               "end": 63,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "strip-annos",
+               "description": "\n\n",
+               "start": 65,
+               "end": 66,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "catch-annos",
+               "description": "\n\n",
+               "start": 68,
+               "end": 69,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "preserve-annotation(s)",
+               "description": "\nAlias of preserve-annos\n\n",
+               "start": 74,
+               "end": 75,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "preserve-annos(s)",
+               "description": "\n\n",
+               "start": 77,
+               "end": 79,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

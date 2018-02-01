@@ -1,0 +1,49 @@
+DocBlock(
+  "/**\n * This module contains basic functionality for manipulating lists.\n *\n */"
+, Module(
+    "collection/list/common"
+  , [ Imports([Import("collection/list/cons"), Import("collection/list/index"), Import("term/integer")])
+    , Strategies(
+        [ DocBlock(
+            "/**\n   * Iterative loop over a list applying s to each element.\n   *\n   * @param Strategy to apply to every element (a -> _)\n   * @type List(a) -> List(a)\n   */"
+          , SDef(
+              "list-loop"
+            , [DefaultVarDec("s")]
+            , Seq(
+                Match(Var("xs"))
+              , DocBlock(
+                  PrimT(
+                    "\"SSL_list_loop\""
+                  , [CallNoArgs(SVar("s"))]
+                  , [Var("xs")]
+                  )
+                , "/**\n   * Iterative fold over a list applying s to each element and \n   * accumulator acc from left to right.\n   *\n   * @param Strategy applied for folding. The current\n   *        intermediate result is a term argument. The next element\n   *        of the list is the current term.\n   * @param Initial value for folding (type: c)\n   * @type List(a) -> c\n   */"
+                )
+              )
+            )
+          )
+        , SDefT(
+            "list-fold"
+          , [ VarDec(
+                "s"
+              , FunType(
+                  [ConstType(SortVar("c")), ConstType(SortVar("a"))]
+                , ConstType(SortVar("c"))
+                )
+              )
+            ]
+          , [DefaultVarDec("acc")]
+          , Seq(
+              Match(Var("xs"))
+            , PrimT(
+                "\"SSL_list_fold\""
+              , [CallNoArgs(SVar("s"))]
+              , [Var("acc"), Var("xs")]
+              )
+            )
+          )
+        ]
+      )
+    ]
+  )
+)

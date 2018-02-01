@@ -1,0 +1,106 @@
+{
+"name": "strategy/iteration",
+"description": "\nVarious iteration strategies.\n\n",
+"strategies": [{
+               "name": "repeat(s)",
+               "description": "\nRepeatedly apply s until it fails.\n\n",
+               "start": 10,
+               "end": 11,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "repeat(s, c)",
+               "description": "\nRepeatedly apply s until it fails and terminate with application of c.\n\n",
+               "start": 16,
+               "end": 17,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "repeat1(s, c)",
+               "description": "\nRepeatedly apply s (at least once) and terminate with application of c.\n\n",
+               "start": 22,
+               "end": 23,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "repeat1(s)",
+               "description": "\nRepeatedly apply s (at least once).\n\n",
+               "start": 28,
+               "end": 29,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "repeat-until(s, c)",
+               "description": "\nRepeatedly apply s until c succeeds.\n\n",
+               "start": 34,
+               "end": 35,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "repeat(s | n)",
+               "description": "\nApplies s repeatedly exactly n times. If s fails at some point during\nthe n applications, the entire strategy fails. The result of the\nstrategy is that of the nth application of s.\n\n",
+               "start": 42,
+               "end": 48,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "while(c, s)",
+               "description": "\nWhile c succeeds apply s.\n\n",
+               "start": 53,
+               "end": 54,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "while-not(c, s)",
+               "description": "\nWhile c does not succeed apply s.\n\n",
+               "start": 59,
+               "end": 60,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "do-while(s, c)",
+               "description": "\nApply s at least once and then repeat while c succeeds.\n\n",
+               "start": 65,
+               "end": 66,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "for(i, c, s)",
+               "description": "\nRepeat application of s after initialization with i\nwhile c fails.\n\n",
+               "start": 72,
+               "end": 73,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "for(s: Int * a -> a | low, up)",
+               "description": "\nApply s for each integer from low to up (inclusive).\n\n",
+               "start": 78,
+               "end": 82,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

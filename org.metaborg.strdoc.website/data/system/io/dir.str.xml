@@ -1,0 +1,38 @@
+
+<module>
+  <name>system/io/dir</name>
+  <description><![CDATA[
+                        Strategies for exploring directories.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>remove-file</name>
+    <description><![CDATA[
+                          Removes a file from a directory.
+                          
+                          ]]></description>
+    <start>9</start>
+    <end>10</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>getenv</name>
+    <description><![CDATA[
+                          The  getenv() function searches the environment list for a
+                          string that matches the string pointed to  by  name.   The
+                          strings are of the form name = value.
+                          
+                          ]]></description>
+    <start>17</start>
+    <end>18</end>
+    
+    
+  </strategy>
+  
+</module>

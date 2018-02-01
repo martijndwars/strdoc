@@ -1,0 +1,79 @@
+{
+"name": "term/properties",
+"description": "\nThis module contains strategies for checking local structural properties\non terms.\n\n\n\n",
+"strategies": [{
+               "name": "is-subterm",
+               "description": "\nSucceeds if the first argument is a subterm of the second.\n\nA term x is a subterm of a term y if x = y\nor if x is a subterm of one of the chuldren of y.\n\n\n",
+               "start": 22,
+               "end": 23,
+               "types": [" (a, b) -> (a, b)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-proper-subterm",
+               "description": "\nSucceeds if the first argument (x) is a subterm of the second (y) and x is not y.\n\n\n",
+               "start": 30,
+               "end": 31,
+               "types": [" (a, b) -> (a, b)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-superterm",
+               "description": "\nSucceeds if the first argument (x) is a superterm of the second (y).\n\n\n",
+               "start": 40,
+               "end": 41,
+               "types": [" (a, b) -> (a, b)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-proper-superterm",
+               "description": "\nSucceeds if the first argument (x) is a superterm of the second (y) and x is not y.\n\n\n",
+               "start": 48,
+               "end": 49,
+               "types": [" (a, b) -> (a, b)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-proper-subterm-set",
+               "description": "\n\n",
+               "start": 53,
+               "end": 54,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-proper-superterm-set",
+               "description": "\n\n",
+               "start": 56,
+               "end": 57,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-leaf",
+               "description": "\nSucceeds if the current term has no direct subterms.\n\n\n",
+               "start": 67,
+               "end": 68,
+               "types": [" a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-inner-node",
+               "description": "\nSucceeds if the current term has at least one direct subterm.\n\n\n",
+               "start": 75,
+               "end": 76,
+               "types": [" a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],
+"see": []
+}

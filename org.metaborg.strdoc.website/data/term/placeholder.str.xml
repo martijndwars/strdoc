@@ -1,0 +1,55 @@
+
+<module>
+  <name>term/placeholder</name>
+  <description><![CDATA[
+                        Primitives for ATerm placeholders.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>get-placeholder</name>
+    <description><![CDATA[
+                          Returns the placeholder of an ATerm placeholder.
+                          
+                          e.g. applied to the placeholder <Foo()> this returns Foo().
+                          
+                          ]]></description>
+    <start>11</start>
+    <end>12</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>make-placeholder</name>
+    <description><![CDATA[
+                          Creates a placeholder.
+                          
+                          e.g. applied to the Foo() this returns <Foo()>.
+                          
+                          ]]></description>
+    <start>19</start>
+    <end>20</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-placeholder</name>
+    <description><![CDATA[
+                          Checks if the current term is a placeholder.
+                          
+                          Succeeds if it is.
+                          
+                          ]]></description>
+    <start>27</start>
+    <end>28</end>
+    
+    
+  </strategy>
+  
+</module>

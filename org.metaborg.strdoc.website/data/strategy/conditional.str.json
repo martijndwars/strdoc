@@ -1,0 +1,169 @@
+{
+"name": "strategy/conditional",
+"description": "\nConditionals\n\n",
+"strategies": [{
+               "name": "eq",
+               "description": "\nTests whether two terms are equal.\n\n",
+               "start": 12,
+               "end": 13,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "equal",
+               "description": "\nTests whether two terms are equal.\n\n",
+               "start": 19,
+               "end": 20,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "equal( | x)",
+               "description": "\nTests whether current term is equal to argument term.\n\n",
+               "start": 26,
+               "end": 27,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "equal( | x, y)",
+               "description": "\nTests whether two argument terms are equal to each other.\n\n",
+               "start": 33,
+               "end": 34,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "try(s)",
+               "description": "\ntry(s) tries to apply s to the current term, but\nreturns it unchanged (and succeeds) when s fails.\n\n",
+               "start": 43,
+               "end": 44,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if(c, b)",
+               "description": "\n\n",
+               "start": 46,
+               "end": 47,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if(c, b1, b2)",
+               "description": "\n\n",
+               "start": 49,
+               "end": 50,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "restore(s, rest)",
+               "description": "\nApply restoring action 'rest' if s fails, and then fail.\n\nTypically useful if s performs side effects that should be\nrestored/undone in case s fails.\n\n",
+               "start": 59,
+               "end": 60,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "restore-always(s, rest)",
+               "description": "\nApply restoring action 'rest' after s terminates, and preserve\nsuccess/failure behaviour of s.\n\nTypically useful if s performs side effects that should be\nrestored always, e.g., when maintaining scope information.\n\n",
+               "start": 70,
+               "end": 71,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "finally(s, f)",
+               "description": "\nApplies s followed by f whether s failed or not.\n\n\n",
+               "start": 81,
+               "end": 82,
+               "types": ["  a -> b, (a or b) -> _ :: a -> b"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "true",
+               "description": "\ntrue is a synonym for id.\n\n",
+               "start": 90,
+               "end": 91,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "false",
+               "description": "\nfalse is a synonym for fail.\n\n",
+               "start": 97,
+               "end": 98,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "ior(s1, s2)",
+               "description": "\nior(s1, s2) implements 'inclusive or', that is, the\ninclusive choice of s1 and s2. It first tries s1, if\nthat fails it applies s2 (just like s1 <+ s2). However,\nwhen s1 succeeds it also tries to apply s2.\n\nThe results of the transformations are returned.\n\n",
+               "start": 109,
+               "end": 110,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "or(s1, s2)",
+               "description": "\nor(s1, s2) is similar to ior(s1,s2), but the application\nof the strategies is only tested.\n\n",
+               "start": 117,
+               "end": 118,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "and(s1, s2)",
+               "description": "\nand(s1, s2) applies s1 and s2 to the current\nterm and succeeds if both succeed. s2 will always\nbe applied, i.e., and is *not* a short-circuit\noperator\n\n",
+               "start": 127,
+               "end": 128,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "maybe(s)",
+               "description": "\n\n",
+               "start": 133,
+               "end": 133,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "maybe(s1, s2)",
+               "description": "\n\n",
+               "start": 136,
+               "end": 136,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "maybe(s1, s2)",
+               "description": "\n\n",
+               "start": 137,
+               "end": 137,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

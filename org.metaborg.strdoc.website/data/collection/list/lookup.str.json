@@ -1,0 +1,70 @@
+{
+"name": "collection/list/lookup",
+"description": "\nThis module contains strategies for working on associative lists.\n\nAssociative lists are on the form [(key1, value1), (key2, value2), ...]\nEach key must be unique for the strategies in this module to operate\ncorrectly. Any term can be used as key.\n\nThe associative lists must be created correctly by the application code;\nthis module only contains strategies for searching associative lists.\n\nKeys may have annotations. These are considered to be part of the key,\nso identical term with differing annotations are effectively different\nkeys.\n\n\n\n",
+"strategies": [{
+               "name": "lookup",
+               "description": "\nLookup the first value associated with a key in an associative\nlist. An associative list is a list of key-value pairs.\n\nNote: If multiple identical keys exist, only the value for the\nfirst will be retrieved.\n\nExample:\n<lookup> (2, [(1, \"a\"), (2, \"b\"), (3, \"c\")]) => \"b\"\n\n\n",
+               "start": 36,
+               "end": 36,
+               "types": [" k * List(k * v) -> v"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "getfirst(s)",
+               "description": "\nFind first element of a list to which s applies.\nThe result is the application of s to this element.\n\n\n",
+               "start": 45,
+               "end": 45,
+               "types": ["s    a  -> b","    List(a) -> b"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lookup'",
+               "description": "\nFaster version of lookup.\n\nThe advantage over lookup is that lookup' does not construct\nintermediate pairs.\n\n\n",
+               "start": 56,
+               "end": 56,
+               "types": [" k * List(k * v) -> v"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lookup(keyeq)",
+               "description": "\nLooks up the first value associated with a particular key\nin an associative list, using keyeq to do key comparisons.\n\n\n",
+               "start": 64,
+               "end": 64,
+               "types": ["k * List(k * v) -> v"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Look1",
+               "description": "\n",
+               "start": 69,
+               "end": 69,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Look2",
+               "description": "\n",
+               "start": 72,
+               "end": 72,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Look1'(keyeq)",
+               "description": "\n",
+               "start": 75,
+               "end": 75,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],
+"see": []
+}

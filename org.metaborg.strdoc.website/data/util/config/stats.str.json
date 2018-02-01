@@ -1,0 +1,178 @@
+{
+"name": "util/config/stats",
+"description": "\n\n",
+"strategies": [{
+               "name": "set-statistics",
+               "description": "\nSets the 'statistics' level.\n\nE.g. <set-statistics>4 sets the statistics level to 4.\n\n",
+               "start": 9,
+               "end": 10,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-statistics",
+               "description": "\nGive the current 'statistics' level. Default is 0.\n\n",
+               "start": 15,
+               "end": 16,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "pass-statistics",
+               "description": "\nBuilds command-line parameter for 'statistics' levels for calling XT tools.\n\nE.g. xtc-transform(!\"abox2text\", pass-statistics ) passes the 'statistics' level\nto abox2text.\n\n",
+               "start": 24,
+               "end": 25,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-statistics(s | t)",
+               "description": "\n\n",
+               "start": 37,
+               "end": 40,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-statistics1(s)",
+               "description": "\n\n",
+               "start": 42,
+               "end": 42,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-statistics2(s)",
+               "description": "\n\n",
+               "start": 43,
+               "end": 43,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-statistics3(s)",
+               "description": "\n\n",
+               "start": 44,
+               "end": 44,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-statistics4(s)",
+               "description": "\n\n",
+               "start": 45,
+               "end": 45,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-statistics5(s)",
+               "description": "\n\n",
+               "start": 46,
+               "end": 46,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-statistics6(s)",
+               "description": "\n\n",
+               "start": 47,
+               "end": 47,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-statistics7(s)",
+               "description": "\n\n",
+               "start": 48,
+               "end": 48,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-statistics(s | t)",
+               "description": "\n\n",
+               "start": 60,
+               "end": 63,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-statistics1(s)",
+               "description": "\n\n",
+               "start": 65,
+               "end": 65,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-statistics2(s)",
+               "description": "\n\n",
+               "start": 66,
+               "end": 66,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-statistics3(s)",
+               "description": "\n\n",
+               "start": 67,
+               "end": 67,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-statistics4(s)",
+               "description": "\n\n",
+               "start": 68,
+               "end": 68,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-statistics5(s)",
+               "description": "\n\n",
+               "start": 69,
+               "end": 69,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-statistics6(s)",
+               "description": "\n\n",
+               "start": 70,
+               "end": 70,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-statistics7(s)",
+               "description": "\n\n",
+               "start": 71,
+               "end": 71,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

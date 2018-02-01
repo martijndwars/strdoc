@@ -1,0 +1,259 @@
+{
+"name": "util/sunit",
+"description": "\nsunit: Unit Testing Framework.\n\n",
+"strategies": [{
+               "name": "test-suite(name, tests)",
+               "description": "\n\n",
+               "start": 12,
+               "end": 18,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-test(name, s, in-term, out)",
+               "description": "\n\n",
+               "start": 20,
+               "end": 26,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-test(name, s, in-term)",
+               "description": "\n\n",
+               "start": 28,
+               "end": 31,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-and-check(name, s, in-term, check)",
+               "description": "\n\n",
+               "start": 33,
+               "end": 37,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-and-fail(name, s, in-term)",
+               "description": "\n\n",
+               "start": 39,
+               "end": 40,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-and-fail(name, s, in-term, out)",
+               "description": "\n\n",
+               "start": 42,
+               "end": 45,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-and-show(name, s, in-term)",
+               "description": "\n\n",
+               "start": 47,
+               "end": 51,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-test(s | name, in-term, out)",
+               "description": "\n\n",
+               "start": 58,
+               "end": 59,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-test(s | name, in-term)",
+               "description": "\n\n",
+               "start": 61,
+               "end": 62,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-and-check(s | name, in-term, check)",
+               "description": "\n\n",
+               "start": 64,
+               "end": 65,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-and-fail(s | name, in-term)",
+               "description": "\n\n",
+               "start": 67,
+               "end": 68,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-and-fail(s | name, in-term, out)",
+               "description": "\n\n",
+               "start": 70,
+               "end": 71,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "apply-and-show(s | name, in-term)",
+               "description": "\n\n",
+               "start": 73,
+               "end": 74,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "sunit-create-input(s)",
+               "description": "\n\n",
+               "start": 81,
+               "end": 82,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "sunit-create-output(s)",
+               "description": "\n\n",
+               "start": 84,
+               "end": 85,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "do-test(nr, s)",
+               "description": "\n\n",
+               "start": 87,
+               "end": 90,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "testing(nr, s)",
+               "description": "\n\n",
+               "start": 92,
+               "end": 94,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "do-test(s | nr)",
+               "description": "\n\n",
+               "start": 96,
+               "end": 98,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "init-record",
+               "description": "\n\n",
+               "start": 106,
+               "end": 107,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "record-success",
+               "description": "\nInternal: record a successful test\n\n",
+               "start": 112,
+               "end": 113,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "record-failure",
+               "description": "\nInternal: record a failed test\n\n",
+               "start": 118,
+               "end": 119,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "check-for-failures",
+               "description": "\nInternal: fails if there was a failure\n\n",
+               "start": 124,
+               "end": 125,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "report-test",
+               "description": "\nInternal: report the number of successes and failures\n\n",
+               "start": 130,
+               "end": 131,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "print-failure",
+               "description": "\n\n",
+               "start": 133,
+               "end": 135,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "print-failure( | msg)",
+               "description": "\n\n",
+               "start": 137,
+               "end": 138,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "sunit-failure-string",
+               "description": "\n\n",
+               "start": 145,
+               "end": 152,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "sunit-color-red",
+               "description": "\n\n",
+               "start": 154,
+               "end": 155,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "sunit-color-plain",
+               "description": "\n\n",
+               "start": 157,
+               "end": 158,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

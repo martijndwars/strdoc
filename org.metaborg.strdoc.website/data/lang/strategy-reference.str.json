@@ -1,0 +1,25 @@
+{
+"name": "lang/strategy-reference",
+"description": "\nThis module provides a mechanism for capturing a reference to a strategy and for applying the referred strategy.\n\n\n",
+"strategies": [{
+               "name": "to-sref(s)",
+               "description": "\nCapture a reference to a strategy as a term. The strategy s must be fully specified (i.e. all its arguments must be specified).\n\nto the strategy is only valid within the instance of the interpreter which produced it\n\n\n",
+               "start": 18,
+               "end": 18,
+               "types": ["_ -> ___StrategyRef___()"],
+               "params": ["a -?> b"],
+               "notes": ["The resulting reference term cannot be pretty-printed or matched against (at least not realiably). The reference"],
+               "since": ""
+               },{
+               "name": "apply-sref( | t)",
+               "description": "\nApply the strategy referenced by the term. The referenced strategy is applied to the input term.\n\n\n",
+               "start": 25,
+               "end": 25,
+               "types": ["a -> <t> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Vlad Vergu <v.a.vergu add tudelft.nl>"],
+"see": []
+}

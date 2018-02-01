@@ -1,0 +1,637 @@
+{
+"name": "collection/hash-table/common",
+"description": "\nThis module contains strategies for operating on hashtables.\n\nIt is important to note that hashtables do not have value semantics;\nall operations on hashtables will modify the existing hashtable.\nTherefore, when you pass a hashtable to a strategy, it will modify\nthe hashtable by side-effect.\n\nHash tables support constant time storing and retrieving of\nvalues associated with keys. This module wraps the hashtable\nfacility provided by the ATerm library.\n\n\n\n",
+"strategies": [{
+               "name": "new-hashtable",
+               "description": "\nCreate a new hashtable with default size and load.\n\n\n",
+               "start": 39,
+               "end": 40,
+               "types": ["_ -> HashTable(K, V)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "new-hashtable( | initial_size, max_load)",
+               "description": "\nCreate a new hashtable with specified size and load.\n\n\n",
+               "start": 49,
+               "end": 50,
+               "types": ["_ -> HashTable(K, V)"],
+               "params": ["initial_size - the initial capacity of the hashtable","max_load - the load percentage at which the hashtable is expanded"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-destroy",
+               "description": "\nDestroys and deallocates memory consumed by an existing hashtable.\n\n\n",
+               "start": 57,
+               "end": 58,
+               "types": ["HashTable(K, V) -> HashTable(K, V)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-clear",
+               "description": "\nClears the contents of an existing hashtable.\n\n\n",
+               "start": 65,
+               "end": 66,
+               "types": ["HashTable(K, V) -> HashTable(K, V)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-put( | key, value)",
+               "description": "\nPuts a new key, value pair into the hash table. If the key is\nalready bound to a value, the old value will be replaced.\n\n\n",
+               "start": 81,
+               "end": 82,
+               "types": ["HashTable(K, V) -> HashTable(K, V)"],
+               "params": ["key - any term can be used as a key","value - any term can be used as a value"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-get( | key)",
+               "description": "\nGets the value for a key. If the key does not exist, this strategy\nfails.\n\n\n",
+               "start": 91,
+               "end": 92,
+               "types": ["HashTable(K, V) -> V"],
+               "params": ["key"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-remove( | key)",
+               "description": "\nRemoves a key (with its associated value) from the hashtable. This\nstrategy will succeed even if the key does not exist.\n\n\n",
+               "start": 100,
+               "end": 101,
+               "types": ["HashTable(K, V) -> HashTable(K, V)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-keys",
+               "description": "\nGet a list containing all keys of a hashtable.\n\n\n",
+               "start": 108,
+               "end": 109,
+               "types": ["HashTable(K, V) -> List(K)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-values",
+               "description": "\nGet a list containing all values of a hashtable\n\n\n",
+               "start": 116,
+               "end": 119,
+               "types": ["HashTable(K, V) -> List(V)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-fold(s: k * v * a -> a | t)",
+               "description": "\nApply an iterative fold left (starting with first element) over\nthe keys of a hash table; useful for applying an operation to each\nkey without constructing a list of keys.\n\n\n",
+               "start": 130,
+               "end": 132,
+               "types": ["HashTable(k, v) -> a"],
+               "params": ["(k, v) * a -> a","a"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-fold-keys(s: k * a -> a | t)",
+               "description": "\nApply an iterative fold left (starting with first element) over\nthe keys of a hash table; useful for applying an operation to each\nkey without constructing a list of keys.\n\n\n",
+               "start": 143,
+               "end": 145,
+               "types": ["HashTable(k, v) -> a"],
+               "params": ["k * a -> a","a"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-fold-values(s: v * a -> a | t)",
+               "description": "\nApply an iterative fold left (starting with first element) over\nthe values of a hash table; useful for applying an operation to each\nvalue without constructing a list of values.\n\n\n",
+               "start": 156,
+               "end": 158,
+               "types": ["(v * a -> a) * a * HashTable(k, v) -> a"],
+               "params": ["v * a -> a","a"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-getlist",
+               "description": "\nGet the contents of a hashtable as a list of key-value tuples.\n\n\n",
+               "start": 170,
+               "end": 174,
+               "types": ["HashTable(k,v) -> List((k,v), ...)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-putlist( | kv*)",
+               "description": "\nPut a list of key,value tuples into a hashtable.\n\n\n",
+               "start": 182,
+               "end": 184,
+               "types": ["HashTable(K, V) -> HashTable(K, V)"],
+               "params": ["kv         List(Tuple(K, V), ...)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-putlist(f: ATerm * ATerm * Hashtable -> Hashtable | kv*)",
+               "description": "\n\n",
+               "start": 186,
+               "end": 188,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-init",
+               "description": "\nCreate a new hashtable and initialize it from a key-value pair list.\n\n\n",
+               "start": 195,
+               "end": 198,
+               "types": ["List(Tuple(K, V), ...) -> HashTable(K, V)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-copy",
+               "description": "\nCreate a new hashtable and copies the entire contents of the current\ntable into the new one.\n\n\n",
+               "start": 206,
+               "end": 208,
+               "types": ["HashTable(K, V) -> HashTable(K,V)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-push( | key, value)",
+               "description": "\nPushes value on top of the stack for key.\nCurrent term is the hashtable and remains untouched.\n\n\n",
+               "start": 223,
+               "end": 224,
+               "types": [" HashTable(K, V) -> HashTable(K, V)"],
+               "params": ["key        t - the key used for lookup","value      a - the value to insert"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-pushlist( | key, value)",
+               "description": "\nPushes values on top of the stack for key.\nCurrent term is the hashtable and remains untouched.\n\n\n",
+               "start": 234,
+               "end": 235,
+               "types": [" HashTable(K, V) -> HashTable(K, V')"],
+               "params": ["key        t       - the key used for lookup","value      List(a) - the values to insert"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-pushunion( | key, value)",
+               "description": "\nPushes union of values and already present values\nCurrent term is the hashtable.\n\n\n",
+               "start": 245,
+               "end": 246,
+               "types": [" HashTable(K, V) -> HashTable(K, V')"],
+               "params": ["key        t       - the key used for lookup","value      List(a) - the values to insert"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-pop( | key)",
+               "description": "\nPops off the top element of the stack for key.\nCurrent term is the hashtable and remains untouched.\n\n\n",
+               "start": 255,
+               "end": 256,
+               "types": [" HashTable(K, (V, ...)) -> V"],
+               "params": ["key        t       - the key used for lookup"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-peek( | key)",
+               "description": "\nGets the top value from the stack for key (the stack remains untouched)\nCurrent term is the hashtable, output is the top value.\n\n\n",
+               "start": 265,
+               "end": 266,
+               "types": [" HashTable(K, (V, ...)) -> V"],
+               "params": ["key        t       - the key used for lookup"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-peekpop( | key)",
+               "description": "\nGets the top value from the stack for key and pops it off the stack.\nCurrent term is the hashtable, output is the top value.\n\n\n",
+               "start": 275,
+               "end": 278,
+               "types": [" HashTable(K, (V, ...)) -> V"],
+               "params": ["key        t       - the key used for lookup"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "symmetric-yes",
+               "description": "\n\n",
+               "start": 286,
+               "end": 286,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "symmetric-no",
+               "description": "\n\n",
+               "start": 287,
+               "end": 287,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iterate1-yes",
+               "description": "\n\n",
+               "start": 288,
+               "end": 288,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iterate1-no",
+               "description": "\n\n",
+               "start": 289,
+               "end": 289,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iterate2-yes",
+               "description": "\n\n",
+               "start": 290,
+               "end": 290,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iterate2-no",
+               "description": "\n\n",
+               "start": 291,
+               "end": 291,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "remove-yes",
+               "description": "\n\n",
+               "start": 292,
+               "end": 292,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "remove-no",
+               "description": "\n\n",
+               "start": 293,
+               "end": 293,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "default-no",
+               "description": "\n\n",
+               "start": 294,
+               "end": 294,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "change1-yes",
+               "description": "\n\n",
+               "start": 295,
+               "end": 295,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "change1-no",
+               "description": "\n\n",
+               "start": 296,
+               "end": 296,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "change2-yes",
+               "description": "\n\n",
+               "start": 297,
+               "end": 297,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "change2-no",
+               "description": "\n\n",
+               "start": 298,
+               "end": 298,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-merge(symm, iterate1, iterate2, remove, merge, default, change1, change2, lookup1, lookup2)",
+               "description": "\nMerge two hashtables changing one or both.\n\nThis a highly generic strategy for merging two hashtables. The algorithm\nis parameterized with a number of knobs that determine its behaviour.\n\n(A little language for table merging!-)\n\n\nused to create appropriately specialized algorithms.\n\n",
+               "start": 322,
+               "end": 410,
+               "types": [],
+               "params": ["symm     : apply changes to both tables, if not apply to tbl1.","iterate1 : iterate over keys of tbl1","iterate2 : iterate over keys of tbl2","remove   : remove table entry if undefined in other table","merge    : operation on pair of values","default  : default value in case lookup in other table fails","lookup1  : given a key produce value for left table","lookup2  : given a key produce value for right table"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-merge(symm, iterate1, iterate2, remove, merge, default, lookup1, lookup2)",
+               "description": "\nVersion without change arguments for backward compatibility\n\n",
+               "start": 416,
+               "end": 419,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-merge-func(iterate1, iterate2, remove, merge, default, lookup1, lookup2)",
+               "description": "\nMerge hashtables creating a new one.\n\n",
+               "start": 424,
+               "end": 427,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-intersect( | tbl2)",
+               "description": "\nIntersect hashtables.\n\nChanges tbl1; fails if no changes are made\nAssumes that both hashtables contains lists as values, and intersects\nthe two listvalues for each key.\nThis is a 'pure' intersection: only keys that appear in both tables\nremain in the input table, rest is removed.\n\n",
+               "start": 440,
+               "end": 452,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-intersect-wempty( | tbl2, emptyElt)",
+               "description": "\nIntersect hashtables with default element.\n\nChanges tbl1; fails if no changes are made\nAssumes that both hashtables contains lists as values, and intersects\nthe two listvalues for each key.\nPlaces a dummy value if key does not exist in one of the tables.\n\n",
+               "start": 462,
+               "end": 474,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-intersect-symm-wempty( | emptyElt)",
+               "description": "\nIntersect hashtables symmetrically with default element.\n\nChanges tbl1 and tbl2; fails if no changes are made in tbl1\nAssumes that both hashtables contains lists as values, and intersects\nthe two listvalues for each key.\nPlaces a dummy value if key does not exist in one of the tables.\n\n",
+               "start": 485,
+               "end": 496,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-intersect-symm-wempty-ignore-left( | emptyElt)",
+               "description": "\nIntersect hashtables symmetrically with default element.\n\nChanges tbl1 and tbl2; fails if no changes are made in tbl1\nAssumes that both hashtables contains lists as values, and intersects\nthe two listvalues for each key.\nPlaces a dummy value if key does not exist in one of the tables.\n\n",
+               "start": 507,
+               "end": 520,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-union( | tbl2)",
+               "description": "\nUnion of hashtables\n\nChanges tbl1; fails if no changes are made\n\n",
+               "start": 530,
+               "end": 542,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-union-wempty( | tbl2, emptyElt)",
+               "description": "\n\n",
+               "start": 544,
+               "end": 556,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-union-symm-wempty( | emptyElt)",
+               "description": "\n\n",
+               "start": 558,
+               "end": 569,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-eq",
+               "description": "\nChecks whether two hashtables have equal contents.\nThis strategy uses the basic `eq` to compare the elements.\n\n\n",
+               "start": 579,
+               "end": 580,
+               "types": ["Tuple(HashTable(K, V), HashTable(K,V)) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hashtable-eq(eq)",
+               "description": "\nChecks whether two tables have the same keys, and for each key whether\nthe associated values are the same (order of keys thus doesn't matter)\n\n\n\n",
+               "start": 591,
+               "end": 593,
+               "types": ["Tuple(HashTable(K, V), HashTable(K,V)) -> _"],
+               "params": ["test strategy that will compare two elements upon their equality."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-hashtable",
+               "description": "\nRetrieves the primitive table-table as a Hashtable\n\n\n",
+               "start": 604,
+               "end": 605,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lookup-table( | name)",
+               "description": "\nRetrieves a named table by looking it up in the table-table.\n\n",
+               "start": 610,
+               "end": 613,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-create",
+               "description": "\nCreates a table with a given name, which can be any term.\n\n",
+               "start": 618,
+               "end": 621,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-destroy",
+               "description": "\nDestroy a table with a given name, which can be any term.\n\n",
+               "start": 626,
+               "end": 632,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-put",
+               "description": "\nAssociate a value with a key in a table.\n\nE.g. <table-put> (t1, key, value) associates value with key in the t1 table.\n\n",
+               "start": 639,
+               "end": 644,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-get",
+               "description": "\nGet the value associated with a key from a table.\n\nE.g. <table-get> (t1, key) yields the value associated to key or fails in the t1 table.\n\n",
+               "start": 651,
+               "end": 654,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-remove",
+               "description": "\nRemove association of a key in a table.\n\nE.g. <table-remove> (t1, key) removes the entry for key from table t1.\n\n",
+               "start": 661,
+               "end": 666,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-keys",
+               "description": "\nProduce a list of keys of a table.\n\nE.g. <table-keys>t1 produces the list of keys of table t1.\n\n",
+               "start": 673,
+               "end": 676,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-rename",
+               "description": "\nRenames a table, i.e. only the entry in the table-table is renamed,\nthe table contents remain untouched.\n\n",
+               "start": 682,
+               "end": 688,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-getlist",
+               "description": "\nGet a list of key-value pairs.\n\nE.g. <table-getlist>t1 produces the list of (key,value) pairs in the table t1.\n\n",
+               "start": 698,
+               "end": 699,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-putlist",
+               "description": "\nPut a list of key-value pairs in a table.\n\nE.g. <table-putlist>(name, list) puts the (key,value) pairs in list into table t1.\n\n",
+               "start": 706,
+               "end": 707,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-putlist(s)",
+               "description": "\n\n",
+               "start": 709,
+               "end": 710,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-copy",
+               "description": "\n\n",
+               "start": 712,
+               "end": 713,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-push",
+               "description": "\n\n",
+               "start": 725,
+               "end": 726,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-pop",
+               "description": "\n\n",
+               "start": 728,
+               "end": 729,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-pop-rm",
+               "description": "\n\n",
+               "start": 731,
+               "end": 736,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-pop-get",
+               "description": "\n\n",
+               "start": 738,
+               "end": 741,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-lookup",
+               "description": "\n\n",
+               "start": 743,
+               "end": 744,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-replace",
+               "description": "\n\n",
+               "start": 746,
+               "end": 749,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-union",
+               "description": "\n\n",
+               "start": 751,
+               "end": 752,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-diff",
+               "description": "\n\n",
+               "start": 754,
+               "end": 755,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "table-append",
+               "description": "\n\n",
+               "start": 757,
+               "end": 758,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Eelco Visser <visser@acm.org>","Martin Bravenboer <martin.bravenboer@gmail.com>","Karl Trygve Kalleberg <karltk@strategoxt.org> - some documentation"],
+"see": []
+}

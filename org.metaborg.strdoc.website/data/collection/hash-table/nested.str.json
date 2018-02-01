@@ -1,0 +1,106 @@
+{
+"name": "collection/hash-table/nested",
+"description": "\n\n",
+"strategies": [{
+               "name": "nestedtable-put( | keys, value)",
+               "description": "\n\n",
+               "start": 10,
+               "end": 13,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nestedtable-put(forward | keys, value)",
+               "description": "\n\n",
+               "start": 15,
+               "end": 16,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nestedtable-put(forward, changed | keys, value)",
+               "description": "\n\n",
+               "start": 18,
+               "end": 23,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nestedtable-get( | keys)",
+               "description": "\n\n",
+               "start": 25,
+               "end": 26,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nestedtable-get(forward | keys)",
+               "description": "\n\n",
+               "start": 28,
+               "end": 31,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nestedtable-get-aux(forward | tbl)",
+               "description": "\n\n",
+               "start": 43,
+               "end": 44,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nestedtable-get-aux(forward | tbl)",
+               "description": "\n\n",
+               "start": 46,
+               "end": 48,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nestedtable-get-aux(forward | tbl1)",
+               "description": "\n\n",
+               "start": 50,
+               "end": 53,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nestedtable-put-aux(forward, changed | tbl, value)",
+               "description": "\n\n",
+               "start": 57,
+               "end": 59,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nestedtable-put-aux(forward, changed | tbl, value)",
+               "description": "\n\n",
+               "start": 61,
+               "end": 65,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nestedtable-put-aux(forward, changed | tbl1, value)",
+               "description": "\n\n",
+               "start": 67,
+               "end": 75,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

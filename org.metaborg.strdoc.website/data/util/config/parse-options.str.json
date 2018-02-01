@@ -1,0 +1,376 @@
+{
+"name": "util/config/parse-options",
+"description": "\nStrategies for handling command-line options.\n\nExample:\n---------------------------------------------------------------------------\nmodule option-demo\nimports options\n\nstrategies\n\nmain =\nio-wrap(demo-options, demo-usage, default-system-about, demo-impl)\n\ndemo-impl = id\n\ndemo-options =\nOption(\"--option1\"\n, <set-config> (\"--option1\", ())\n, !\"--option1        This is a an example option\"\n)\n+ ArgOption(\"--arg1\"\n, <set-config> (\"--arg1\", <id>)\n, !\"--arg1           This is an example arg option\"\n)\n\ndemo-usage =\ndefault-system-usage(\n!\"Usage: option-demo [options]\"\n, !\n\"   This is a test program to demonstrate use of\nparse-options and  generation of usage info\nfrom option and switch specificatios. These\nnow contain usage info as additional third\nargument.\"\n)\n---------------------------------------------------------------------------\n\noption-demo --help now displays:\n---------------------------------------------------------------------------\nUsage: option-demo [options]\n\nOptions:\n--option1        This is a an example option\n--arg1           This is an example arg option\n-i f|--input f   Read input from f\n-o f|--output f  Write output to f\n-b               Write binary output\n-S|--silent      Silent execution (same as --verbose 0)\n--verbose i      Verbosity level i (default 1)\n-s               Turn on statistics\n-k i | --keep i  Keep intermediates (default 0)\n-h|-?|--help     Display usage information\n--about          Display information about this program\n--version        Same as --about\n\nDescription:\nThis is a test program to demonstrate use of\nparse-options and  generation of usage info\nfrom option and switch specificatios. These\nnow contain usage info as additional third\nargument.\n---------------------------------------------------------------------------\n\n",
+"strategies": [{
+               "name": "system-usage-switch",
+               "description": "\nAlways provide --help switch.\n\n",
+               "start": 78,
+               "end": 82,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "system-about-switch",
+               "description": "\nAlways provide the --about and --version switch.\n\n",
+               "start": 87,
+               "end": 95,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "parse-options(s)",
+               "description": "\nInvokes system-usage and system-about on help and about.\n\n",
+               "start": 105,
+               "end": 106,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "parse-options(s, usage, about)",
+               "description": "\nParse options. Add system-usage switch and display usage info when user\nspecified '-h' switch.\n\n",
+               "start": 112,
+               "end": 127,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "parse-options'(s)",
+               "description": "\nRegister all usages of all defined switches; then parse switches as\nspecified by the user.\n\n",
+               "start": 133,
+               "end": 154,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "register-usage(s)",
+               "description": "\nRegister useage info 's' by storing 's' in the table \"usage-table\".\nUse fail, such that program execution continues with the next\nalternative Option or ArgOption. This way we collect all usage info.\n\n",
+               "start": 163,
+               "end": 165,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "system-usage",
+               "description": "\n\n",
+               "start": 167,
+               "end": 169,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "system-about",
+               "description": "\n\n",
+               "start": 171,
+               "end": 173,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "short-description(s)",
+               "description": "\nNo default long description. Overrule to include program description in usage info.\n\n",
+               "start": 178,
+               "end": 178,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "long-description(s)",
+               "description": "\nNo default short description. Overrule to include in usage info.\n\n",
+               "start": 183,
+               "end": 183,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "override-system-usage",
+               "description": "\nNo override of the default system usage.\n\n",
+               "start": 189,
+               "end": 189,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "override-system-about",
+               "description": "\nNo override of the default system about.\n\n",
+               "start": 194,
+               "end": 194,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "default-system-usage",
+               "description": "\nDefault system usage that invokes the short-description and long-description hook.\n\n",
+               "start": 199,
+               "end": 201,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "default-system-usage(short, long)",
+               "description": "\nDisplay usage info containing a short description of the program., if\ndefined, followed by the usages of all switches. Finally, the long\ndescription of the program is displayed when it is defined.\n\n",
+               "start": 208,
+               "end": 215,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "default-system-about",
+               "description": "\nJust shows the name of the program.\n\n",
+               "start": 220,
+               "end": 221,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Option(is-flag, label, s)",
+               "description": "\n\n",
+               "start": 225,
+               "end": 228,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Option(is-flag, label)",
+               "description": "\n\n",
+               "start": 230,
+               "end": 231,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Option(is-flag, label, s)",
+               "description": "\nRegistere usage info, when Option is applied to the term \"register-usage-info\"\n\n",
+               "start": 236,
+               "end": 238,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "ArgOption(is-flag, label, s)",
+               "description": "\n\n",
+               "start": 242,
+               "end": 244,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "ArgOption(is-flag, label)",
+               "description": "\n\n",
+               "start": 246,
+               "end": 247,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "ArgOption(is-flag, label, s)",
+               "description": "\n\n",
+               "start": 249,
+               "end": 251,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Arg2Option(is-flag, label)",
+               "description": "\n\n",
+               "start": 255,
+               "end": 256,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Arg2Option(is-flag, label, s)",
+               "description": "\n\n",
+               "start": 258,
+               "end": 261,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Arg2Option(is-flag, label, s)",
+               "description": "\n\n",
+               "start": 263,
+               "end": 265,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UndefinedOption",
+               "description": "\n\n",
+               "start": 269,
+               "end": 270,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "option-defined(s)",
+               "description": "\n\n",
+               "start": 274,
+               "end": 274,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Option(is-flag, handlers | msg)",
+               "description": "\nThe handlers argument of this ArgOption variant must be an OptionHandler.\n\n",
+               "start": 281,
+               "end": 284,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Option(is-flag, handlers | msg)",
+               "description": "\nHandle a special action, which is specified by a tuple.\n\n",
+               "start": 289,
+               "end": 290,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "ArgOption(is-flag, handlers | msg)",
+               "description": "\nThe handlers argument of this ArgOption variant must be an OptionHandler.\n\n",
+               "start": 297,
+               "end": 300,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "ArgOption(is-flag, handlers | msg)",
+               "description": "\nHandle a special action, which is specified by a tuple.\n\n",
+               "start": 305,
+               "end": 306,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "OptionHandlerHelper(is-flag, handlers)",
+               "description": "\n\n",
+               "start": 316,
+               "end": 321,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "OptionHandlerHelper(is-flag, handlers)",
+               "description": "\n\n",
+               "start": 323,
+               "end": 327,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "OptionHandler(user)",
+               "description": "\n\n",
+               "start": 329,
+               "end": 330,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "OptionHandler(init, user, default)",
+               "description": "\n\n",
+               "start": 332,
+               "end": 334,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "OptionHandler(init, user, default)",
+               "description": "\n\n",
+               "start": 336,
+               "end": 338,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "OptionHandler(init, user, default)",
+               "description": "\n\n",
+               "start": 340,
+               "end": 342,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "OptionCheck(exit, checks | msg)",
+               "description": "\nThe exit parameter can\n- be <exit> 1 for immediate failure\n- be <set-config> \"--help\" to report the usage and exit.\n- not fail: failure will silently be ignored\n\n",
+               "start": 355,
+               "end": 361,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "OptionNotCombinedCheck(is-flag, other-flags)",
+               "description": "\nChecks that this option is not used together with other options.\n\n",
+               "start": 366,
+               "end": 373,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "OptionZeroOrOneCheck(is-flag)",
+               "description": "\nChecks that this option is specified just once, or not at all.\n\n",
+               "start": 378,
+               "end": 384,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "OptionOneCheck(is-flag)",
+               "description": "\nChecks that this option is used exactly once.\n\n",
+               "start": 389,
+               "end": 395,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "OptionOneOrMoreCheck(is-flag)",
+               "description": "\nChecks that this option is used one or more times.\n\n",
+               "start": 400,
+               "end": 406,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

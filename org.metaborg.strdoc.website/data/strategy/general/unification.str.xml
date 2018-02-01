@@ -1,0 +1,47 @@
+
+<module>
+  <name>strategy/general/unification</name>
+  <description><![CDATA[
+                        Syntactic unification, no variable bindings are taken into account.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>unify</name>
+    <description><![CDATA[
+                          The strategy unify unifies a list of pairs of terms and creates the
+                          most general unifier for them. The strategy is parameterized
+                          by a strategy \verb|isvar| that determines the shape of variables.
+                          
+                          The result is a list of pairs \verb|(x1,p1)|, where \verb|x1| is
+                          a term for which \verb|isvar| succeeds and \verb|p1| is the term
+                          it should be substituted with to unify the terms.
+                          
+                          E.g. <unify(isvar)> [(t1,t2),(t3,t4),...] => [(x1,p1),(x2,p2),...]
+                          
+                          ]]></description>
+    <start>61</start>
+    <end>64</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>equal</name>
+    <description><![CDATA[
+                          The following equality strategy has an additional filter
+                          that can be used for checking equality modulo alpha renaming.
+                          The filter applies to the entire pair and can change something
+                          in one term based on the other term.
+                          
+                          ]]></description>
+    <start>93</start>
+    <end>97</end>
+    
+    
+  </strategy>
+  
+</module>

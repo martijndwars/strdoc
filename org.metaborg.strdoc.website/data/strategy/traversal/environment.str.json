@@ -1,0 +1,133 @@
+{
+"name": "strategy/traversal/environment",
+"description": "\nTraversals that carry an environment.\n\n",
+"strategies": [{
+               "name": "all-dist(s)",
+               "description": "\n\n",
+               "start": 6,
+               "end": 7,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "one-dist(s)",
+               "description": "\n\n",
+               "start": 9,
+               "end": 10,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "d(s)",
+               "description": "\n\n",
+               "start": 12,
+               "end": 13,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "t(s)",
+               "description": "\n\n",
+               "start": 15,
+               "end": 16,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "coll(s)",
+               "description": "\n\n",
+               "start": 18,
+               "end": 20,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "env-alltd(s)",
+               "description": "\n\n",
+               "start": 24,
+               "end": 25,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "env-topdown(s)",
+               "description": "\n\n",
+               "start": 27,
+               "end": 28,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "env-topdown(s, skip: term -> term * term -> term)",
+               "description": "\n\n",
+               "start": 30,
+               "end": 31,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "env-bottomup(s)",
+               "description": "\n\n",
+               "start": 33,
+               "end": 34,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "thread-replacement(s)",
+               "description": "\nthread(s) :\n(c#(ts), x) -> (c#(ts'), y)\nwhere <thread-map(s)> (ts, x) => (ts', y)\n\n",
+               "start": 42,
+               "end": 44,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "thread-alltd(s)",
+               "description": "\n\n",
+               "start": 46,
+               "end": 47,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "thread-bottomup(s)",
+               "description": "\n\n",
+               "start": 49,
+               "end": 50,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "count-bottomup(s)",
+               "description": "\n\n",
+               "start": 52,
+               "end": 53,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "env-oncetd(s)",
+               "description": "\n\n",
+               "start": 55,
+               "end": 56,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

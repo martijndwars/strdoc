@@ -1,0 +1,88 @@
+{
+"name": "system/posix-xsi/file",
+"description": "\n\n",
+"strategies": [{
+               "name": "new-temp-file",
+               "description": "\nSafe, mkstemp based, creation of temporary file\n\n\n",
+               "start": 12,
+               "end": 14,
+               "types": ["_ -> (String, FileDescr)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "new-temp-dir",
+               "description": "\nSafe, mkdtemp based, creation of temporary directory\n\n\n",
+               "start": 21,
+               "end": 23,
+               "types": [" _ -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "temp-dir",
+               "description": "\n\n",
+               "start": 27,
+               "end": 29,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "P_tmpdir",
+               "description": "\n\n",
+               "start": 31,
+               "end": 32,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "mkstemp",
+               "description": "\nCreates a unique temporary file\n\nreturns a fd if succesful, fails on error\n\n",
+               "start": 40,
+               "end": 43,
+               "types": ["String -> String * Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "mkdtemp",
+               "description": "\nCreates a unique temporary directory\n\nreturns a fd if succesful, fails on error\n\n",
+               "start": 51,
+               "end": 54,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rename-file",
+               "description": "\nrename renames a file, moving it between directories if required.\nAny  other  hard links to the file (as created using link(2)) are unaffected.\n\nIf newpath already exists it will be atomically replaced (subject to  a\nfew  conditions ~ see ERRORS below), so that there is no point at which\nanother process attempting to access newpath will find it missing.\n\nIf newpath exists but the operation fails for some reason rename  guarantees\nto leave an instance of newpath in place.\n\nFrom 0.9.4 this implementation copies the file if the primitive rename\nfails because of an XDEV error.\n\n",
+               "start": 72,
+               "end": 80,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "copy-file",
+               "description": "\nCopy a file using memory mapped I/O.\n\nIf newname is a directory the file is copied to a file in the directory\nwith the same base name as the old file.\n\n",
+               "start": 88,
+               "end": 95,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fdcopy",
+               "description": "\n\n",
+               "start": 97,
+               "end": 98,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

@@ -1,0 +1,31 @@
+<code id="0"><span style="color: rgb(63, 127, 95)">/**</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="1"></span><span style="color: rgb(63, 127, 95)"> * Primitives for ATerm placeholders.</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="2"></span><span style="color: rgb(63, 127, 95)"> */</code>
+<code id="3"></span><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">term/placeholder</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="4"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="5"></span><span style="color: rgb(63, 127, 95)"></code>
+<code id="6"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="7"></span><span style="color: rgb(63, 127, 95)">   * Returns the placeholder of an ATerm placeholder.</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="8"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="9"></span><span style="color: rgb(63, 127, 95)">   * e.g. applied to the placeholder &lt;Foo()&gt; this returns Foo().</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="10"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="11"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">get-placeholder</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
+<code id="12"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">t</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_getPlaceholder&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">t</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="13"></span><span style="color: rgb(63, 127, 95)"></code>
+<code id="14"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="15"></span><span style="color: rgb(63, 127, 95)">   * Creates a placeholder.</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="16"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="17"></span><span style="color: rgb(63, 127, 95)">   * e.g. applied to the Foo() this returns &lt;Foo()&gt;.</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="18"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="19"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">make-placeholder</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
+<code id="20"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">t</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_makePlaceholder&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">t</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="21"></span><span style="color: rgb(63, 127, 95)"></code>
+<code id="22"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="23"></span><span style="color: rgb(63, 127, 95)">   * Checks if the current term is a placeholder.</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="24"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="25"></span><span style="color: rgb(63, 127, 95)">   * Succeeds if it is.</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="26"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="27"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">is-placeholder</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
+<code id="28"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">t</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_isPlaceholder&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">t</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
+<code id="29"></span><span style="color: rgb(63, 127, 95)"></code>
+<code id="30"></span></code>

@@ -1,0 +1,457 @@
+{
+"name": "util/time",
+"description": "\nThe primitive \\verb|dtime| returns the CPU time in seconds\nsince the last call to \\verb|dtime|. Can be used to time\nstrategies.\n\n",
+"strategies": [{
+               "name": "time",
+               "description": "\nStrategy time returns the time since the Epoch (00:00:00 UTC, January 1, 1970),\nmeasured in seconds. It is an alias of now-epoch-time.\n\n",
+               "start": 48,
+               "end": 49,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "now-epoch-time",
+               "description": "\n\n",
+               "start": 52,
+               "end": 53,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "now-local-time",
+               "description": "\n\n",
+               "start": 56,
+               "end": 57,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "now-UTC",
+               "description": "\n\n",
+               "start": 60,
+               "end": 61,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "epoch2local-time",
+               "description": "\n\n",
+               "start": 64,
+               "end": 65,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "epoch2utc",
+               "description": "\n\n",
+               "start": 68,
+               "end": 69,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "epoch2UTC",
+               "description": "\n\n",
+               "start": 71,
+               "end": 72,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "just-day-time",
+               "description": "\n\n",
+               "start": 75,
+               "end": 76,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "just-date",
+               "description": "\n\n",
+               "start": 79,
+               "end": 80,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "prim-tuple-to-ComponentTime",
+               "description": "\n\n",
+               "start": 82,
+               "end": 85,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2day-of-week",
+               "description": "\n\n",
+               "start": 98,
+               "end": 98,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2day-of-week",
+               "description": "\n\n",
+               "start": 99,
+               "end": 99,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2day-of-week",
+               "description": "\n\n",
+               "start": 100,
+               "end": 100,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2day-of-week",
+               "description": "\n\n",
+               "start": 101,
+               "end": 101,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2day-of-week",
+               "description": "\n\n",
+               "start": 102,
+               "end": 102,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2day-of-week",
+               "description": "\n\n",
+               "start": 103,
+               "end": 103,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2day-of-week",
+               "description": "\n\n",
+               "start": 104,
+               "end": 104,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2index",
+               "description": "\n\n",
+               "start": 116,
+               "end": 116,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2index",
+               "description": "\n\n",
+               "start": 117,
+               "end": 117,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2index",
+               "description": "\n\n",
+               "start": 118,
+               "end": 118,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2index",
+               "description": "\n\n",
+               "start": 119,
+               "end": 119,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2index",
+               "description": "\n\n",
+               "start": 120,
+               "end": 120,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2index",
+               "description": "\n\n",
+               "start": 121,
+               "end": 121,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2index",
+               "description": "\n\n",
+               "start": 122,
+               "end": 122,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 134,
+               "end": 134,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 135,
+               "end": 135,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 136,
+               "end": 136,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 137,
+               "end": 137,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 138,
+               "end": 138,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 139,
+               "end": 139,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 140,
+               "end": 140,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 141,
+               "end": 141,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 142,
+               "end": 142,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 143,
+               "end": 143,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 144,
+               "end": 144,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2index",
+               "description": "\n\n",
+               "start": 145,
+               "end": 145,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 157,
+               "end": 157,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 158,
+               "end": 158,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 159,
+               "end": 159,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 160,
+               "end": 160,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 161,
+               "end": 161,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 162,
+               "end": 162,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 163,
+               "end": 163,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 164,
+               "end": 164,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 165,
+               "end": 165,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 166,
+               "end": 166,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 167,
+               "end": 167,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "index2month",
+               "description": "\n\n",
+               "start": 168,
+               "end": 168,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "clock-to-seconds",
+               "description": "\n\n",
+               "start": 174,
+               "end": 175,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "clock",
+               "description": "\n\n",
+               "start": 177,
+               "end": 178,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

@@ -1,0 +1,9 @@
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+td.truncate {
+  max-width: 0;
+}

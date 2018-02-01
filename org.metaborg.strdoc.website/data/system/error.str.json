@@ -1,0 +1,52 @@
+{
+"name": "system/error",
+"description": "\nError handling for system strategies.\n\n\n",
+"strategies": [{
+               "name": "get-last-error",
+               "description": "\n\n",
+               "start": 18,
+               "end": 19,
+               "types": ["   _ -> Error"],
+               "params": [],
+               "notes": [],
+               "since": "  0.9.4"
+               },{
+               "name": "get-errno",
+               "description": "\n\n",
+               "start": 26,
+               "end": 27,
+               "types": ["   _ -> Int"],
+               "params": [],
+               "notes": [],
+               "since": "  0.9.4"
+               },{
+               "name": "perror",
+               "description": "\nPrint a system error message.\n\n\n",
+               "start": 36,
+               "end": 37,
+               "types": ["  String -> String"],
+               "params": [],
+               "notes": [],
+               "since": " 0.9.4"
+               },{
+               "name": "strerror",
+               "description": "\nReturn string describing error code\n\n\n",
+               "start": 46,
+               "end": 47,
+               "types": ["  Int -> String"],
+               "params": [],
+               "notes": [],
+               "since": " 0.9.4"
+               },{
+               "name": "EXDEV",
+               "description": "\n\n",
+               "start": 51,
+               "end": 51,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [" Martin Bravenboer <mbravenb@cs.uu.nl>"],
+"see": []
+}

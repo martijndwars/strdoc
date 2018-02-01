@@ -1,0 +1,61 @@
+{
+"name": "strategy/general/substitution",
+"description": "\n\nSubstituting terms for variables depends mainly on\nthe shape of variables.\nThis module implements several generic strategies for different\nstyles of parallel substitution, including ones that rename\nbound variables to prevent name capture.\n\n\\end{abstract}\n\n\nA substitution is a mapping from variables to terms. Given a\nsubstitution the strategy \\verb|substitute(...)| traverses\na term and replaces variables in the domain of the mapping by\ntheir associated term.\nThe strategy can be applied in two ways; (1) to a pair of a\nsubstitution and a term\n\\verb|<substitute(...)> (sbs, t)|\nand (2) to a triple of a list of variables, a list of (equal\nlength) of terms and a term\n\\verb|<substitute(...)> (xs, ts, t)|. This entails that the type of\n\\verb|substitute(...)| is either\n\\verb|Prod([List(Prod([a,b])),b]) -> b|\nor\n\\verb|Prod([List(a),List(b),b]) -> b|, with \\verb|a| the type of variables\nand \\verb|b| the type of terms.\n\nThere are four versions of the substitution strategy that\ndepend on two factors; (1) renaming of bound variables in\nterms substituted for variables (2) renaming of bound\nvariables in the context of substituted variables.\n\nAll versions are parameterized with a strategy \\verb|isvar|\nrecognizing variables and mapping them to a substitution key,\nwhich can be the entire variable structure or just its\nname. That is, \\verb|isvar| should have type \\verb|b -> a|.\n\nThe substitution strategy can be parameterized with a variable\nrenaming strategy \\verb|ren| (of type \\verb|b -> b|) that will\nbe applied to each term after it is substituted for a\nvariable. This\ncan be used to ensure that all bound variables are unique throughout\nan abstract syntax tree and thus prevent free variable\ncapture.\n\nA better way to ensure that free variables are not captured\nwhen substituting under bindings requires renaming the bound variables\nin the context of the variables that are substituted for. This\nis achieved by combining the generic bound variable renaming techniques\nfrom module \\verb|rename| with replacing a variable by a term.\nFor this purpose there are two variants of the\nsubstitution strategy that are parameterized with strategies indicating\nshape of variables, the bound variables, the arguments\nthat they are binding in and a replacement strategy.\nSee module \\verb|rename| for an explanation of these parameters.\n\n\n",
+"strategies": [{
+               "name": "subs-args",
+               "description": "\n\n",
+               "start": 72,
+               "end": 73,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "SubsVar(isvar, mksbs)",
+               "description": "\n\n",
+               "start": 79,
+               "end": 81,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "substitute(isvar, ren)",
+               "description": "\n\n",
+               "start": 88,
+               "end": 90,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "substitute(isvar)",
+               "description": "\n\n",
+               "start": 94,
+               "end": 95,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "substitute(isvar, varshape: name -> env * name -> term, bndvars, boundin: term -> term * term -> term * term -> term * term -> term, paste: term -> vars * term -> term, ren)",
+               "description": "\n\n",
+               "start": 101,
+               "end": 111,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "substitute(isvar, varshape: name -> env * name -> term, bndvars, boundin: term -> term * term -> term * term -> term * term -> term, paste: term -> vars * term -> term)",
+               "description": "\n\n",
+               "start": 117,
+               "end": 122,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

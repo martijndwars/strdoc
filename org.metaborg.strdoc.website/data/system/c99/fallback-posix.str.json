@@ -1,0 +1,16 @@
+{
+"name": "system/c99/fallback-posix",
+"description": "\n\n",
+"strategies": [{
+               "name": "report-run-time",
+               "description": "\n\n",
+               "start": 3,
+               "end": 4,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

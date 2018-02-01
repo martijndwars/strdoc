@@ -1,0 +1,61 @@
+{
+"name": "strategy/pack/common",
+"description": "\nThis module defines generic strategies for packing a\nset of modules reachable from a root module and for\nflattening a set of modules into a single program.\n\nModule systems allow the definition of a program to be\nsplit into separate units stored in separate files. For\nlanguages that do not support separate compilation (such\nas grammar formalisms) these separate units need to be\ncombined to create the whole program.\n\nAspects of module packing and flattening\n\n- finding the module associated with the module name\n- doing something with the module, i.e., adding it to the result\n- finding the imports in a module\n- keeping track of which modules have already been inlined\n\n",
+"strategies": [{
+               "name": "PackInit",
+               "description": "\n\n",
+               "start": 25,
+               "end": 25,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "pack(parser, imp)",
+               "description": "\nPacking a module consists of collecting all modules into\na single file.\n\n",
+               "start": 33,
+               "end": 35,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-imports(imp)",
+               "description": "\n\n",
+               "start": 37,
+               "end": 38,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "WriteMod(getname, write, ext)",
+               "description": "\n\n",
+               "start": 42,
+               "end": 43,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unpack(wrapper: term -> term * term -> term, getname, ext)",
+               "description": "\nUnpacking is the reverse of packing, i.e., writing each module\nin a list of modules to a separate file.\n\n",
+               "start": 51,
+               "end": 52,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "flatten(imp, nameeq, getcontent)",
+               "description": "\n<flatten> (root, mods)| produces a flattened version of the root module.\n\n",
+               "start": 59,
+               "end": 63,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

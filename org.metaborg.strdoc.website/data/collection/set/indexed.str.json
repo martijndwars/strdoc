@@ -1,0 +1,160 @@
+{
+"name": "collection/set/indexed",
+"description": "\nInterface to ATerm's IndexedSets.\n\n\n",
+"strategies": [{
+               "name": "new-iset",
+               "description": "\nCreates a new set with default initial size and maximum load.\n\n\n",
+               "start": 25,
+               "end": 26,
+               "types": [" _ -> IndexedSet"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "new-iset( | initial_size, max_load)",
+               "description": "\nCreates a new set with specified initial size and maximum load.\n\n\n",
+               "start": 35,
+               "end": 36,
+               "types": ["  _ -> IndexedSet"],
+               "params": [" Int, Initial size of internal storage"," Int, 0-100."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-destroy",
+               "description": "\nReleases all memory occupied by the set.\nA destroyed set can no longer be used.\n\n\n",
+               "start": 44,
+               "end": 45,
+               "types": [" IndexedSet -> IndexedSet"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-clear",
+               "description": "\nRemoves all elements from the set.\n\n\n",
+               "start": 52,
+               "end": 53,
+               "types": [" IndexedSet -> IndexedSet"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-add(on_old | elem)",
+               "description": "\nAdds elem to the set.\n\nIf the elem is already in the set, then on_old is applied to\nits index.\n\n\n",
+               "start": 69,
+               "end": 70,
+               "types": ["  IndexedSet -> (Int | a )"],
+               "params": [" Int -> a"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-add( | elem)",
+               "description": "\nEnsures that elem is in the set.\n\n\n",
+               "start": 77,
+               "end": 78,
+               "types": ["IndexedSet -> IndexedSet"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-addlist( | lst)",
+               "description": "\nEnsures that all elems in the specified list are in the set.\n\n\n",
+               "start": 85,
+               "end": 86,
+               "types": ["IndexedSet -> IndexedSet"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-contains( | elem)",
+               "description": "\nFails if elem is not in the set.\n\n\n",
+               "start": 93,
+               "end": 94,
+               "types": [" IndexedSet -> IndexedSet"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-remove( | elem)",
+               "description": "\nRemoves elem from set.\n\nIf the elements is not in the set, then this strategy does not fail.\n\n\n",
+               "start": 103,
+               "end": 104,
+               "types": [" IndexedSet -> IndexedSet"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-elements",
+               "description": "\nReturns all elements of the set.\n\n\n",
+               "start": 111,
+               "end": 112,
+               "types": [" IndexedSet(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-union( | set2)",
+               "description": "\nUnites a set with another.\n\n\n",
+               "start": 121,
+               "end": 123,
+               "types": ["  IndexedSet -> IndexedSet"],
+               "params": [" IndexedSet"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-isect( | set2)",
+               "description": "\nIntersects a set with another.\n\n\n",
+               "start": 131,
+               "end": 138,
+               "types": ["  IndexedSet -> IndexedSet"],
+               "params": [" IndexedSet"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-subset( | set2)",
+               "description": "\nChecks whether one set is a subset of another.\n\n\n",
+               "start": 146,
+               "end": 148,
+               "types": ["  IndexedSet -> IndexedSet"],
+               "params": [" IndexedSet"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-eq( | set2)",
+               "description": "\nChecks whether a set has equal contents as another.\n\n\n",
+               "start": 156,
+               "end": 159,
+               "types": ["  IndexedSet -> IndexedSet"],
+               "params": [" IndexedSet"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-fixpoint(s)",
+               "description": "\nApplies s to the elements of a Set until it no more elements are added to this set.\n\n\n",
+               "start": 167,
+               "end": 180,
+               "types": [" Set(A) -> Set(A)"],
+               "params": ["a -> List(a)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-get-index( | elem)",
+               "description": "\nGets the index of elem in the set.\n\nFails if elem is not in the set.\n\n\n",
+               "start": 194,
+               "end": 195,
+               "types": [" IndexedSet -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iset-get-elem( | index)",
+               "description": "\nGets the element at index in the set.\n\nAlways provide a valid index: behaviour is undefined if the index\nis not in the set.\n\n\n",
+               "start": 205,
+               "end": 206,
+               "types": [" IndexedSet -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [" Martin Bravenboer <martin.bravenboer@gmail.com>"],
+"see": []
+}

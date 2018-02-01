@@ -1,0 +1,106 @@
+{
+"name": "collection/list/sort",
+"description": "\nThis module contains strategies for sorting lists.\n\nqsort is the easiest strategy to use for sorting lists.\n\nUsing SortL, LSort and sort-list, isort-list, you can\ncompose your own sorting routine.\n\nAdditionally, LMerge can be used with sort-list and\nisort-list to do list folding.\n\n",
+"strategies": [{
+               "name": "SortL(s)",
+               "description": "\nSwaps the two first elements in a list if s succeeds on this pair.\nAs the swapping occurs if the predicate succeeds, lt and gt will\nseem to have inverse semantics.\n\nThis rule is designed to plug into sort-list and isort-list. See\nthese strategies for examples.\n\nExample: <SortL(gt)> [3,1,2,4] => [1,3,2,4]\n\n\n",
+               "start": 29,
+               "end": 31,
+               "types": ["   List(a) -> List(a)"],
+               "params": ["s   a * b -> _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "LSort(s)",
+               "description": "\nMoves a particular element of a list to the front, determined by\nthe strategy argument s. Given the first element of the list x,\neach succeeding element y will be compared to x using <s> (x,y).\nThe first y that makes s succeed, is moved to the front.\n\nExample: <LSort(gt)> [3,5,6,1] => [1,3,5,6]\n\nHere, 3 is compared with 5, 6, using gt, and will fail in both\ncases. <gt> (3,1) will succeed, and 1 will be moved to the\nfront of the list.\n\n\n",
+               "start": 48,
+               "end": 50,
+               "types": ["    List(a) -> List(a)"],
+               "params": ["s  a * b -> _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "LMerge(s)",
+               "description": "\nMerges the first and a particular element of the list, determined\nby the strategy argument s. Let x be the first element of the list,\nand y be selected in succession from the tail. s will be applied\nto (x,y) in turn, and when it succeeds, the result will be placed\nat the head of the list, replacing x.\n\nExample: LMerge(gt ; add)> [3,5,6,1] => [4,5,6]\n\n\n",
+               "start": 64,
+               "end": 66,
+               "types": ["   List(a) -> List(c | a)"],
+               "params": ["s   a * b -> c"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "sort-list(s)",
+               "description": "\nSorts a list when given a suitable comparsion strategy s. The\nstrategy s should be selected from LSort, SortL and LMerge.\n\nExample: <sort-list(LSort(gt))> [3,5,6,1] => [1,3,5,6]\nExample: <sort-list(LMerge(add))> [3,6,5,1] => [15]\n\n\n",
+               "start": 80,
+               "end": 81,
+               "types": ["   List(a) -> List(a)"],
+               "params": ["s List(a) -> List(a)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "isort-list(s)",
+               "description": "\nSorts a list when given a suitable comparsion strategy s. The\nstrategy s should be selected from LSort, SortL and LMerge.\n\nExample: <isort-list(LSort(gt))> [3,5,6,1] => [1,3,5,6]\nExample: <isort-list(LMerge(add))> [3,6,5,1] => [15]\n\n\n",
+               "start": 93,
+               "end": 94,
+               "types": ["   List(a) -> List(a)"],
+               "params": ["s List(a) -> List(a)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "jsort-list(s)",
+               "description": "\n",
+               "start": 97,
+               "end": 98,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "uniq",
+               "description": "\nRemoves duplicates from a list, returning a list of mutually unique terms.\n\n\n\n",
+               "start": 107,
+               "end": 110,
+               "types": ["List(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "qsort(swap)",
+               "description": "\nSort a list using the quick-sort algorithm.\n\nqsort(lt) sorts a list of integers in ascending order.\n\n\n",
+               "start": 122,
+               "end": 125,
+               "types": ["        List(a) -> List(a)"],
+               "params": [" swap  (a, a)  -> _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "quick-sort(swap: a * a -> b)",
+               "description": "\n\n",
+               "start": 132,
+               "end": 133,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "quick-sort(swap: a * a -> b | tail)",
+               "description": "\n\n",
+               "start": 135,
+               "end": 136,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "quick-sort(swap: a * a -> b | tail)",
+               "description": "\n\n",
+               "start": 138,
+               "end": 143,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

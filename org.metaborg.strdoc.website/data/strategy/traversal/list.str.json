@@ -1,0 +1,133 @@
+{
+"name": "strategy/traversal/list",
+"description": "\nThis module defines a collection of generic one-pass traversals over\nlists.\n\nThe primitive term traversal operators of Strateg -- all, some, one --\ncan be combined with the other control operators in a wide variety\nof ways to define full term traversals.\n\n\n",
+"strategies": [{
+               "name": "all-l(s)",
+               "description": "\n\nTerm traversals can be categorized into classes according to\nhow much of the term they traverse and to which parts\nof the term they modify.\n\n\\paragraph{Everywhere}\n\nThe most general class of traversals visits every node\nof a term and applies a transformation to it. The following\noperators define traversals that apply a strategy \\verb|s|\nto all nodes of a term.\n\n\n",
+               "start": 29,
+               "end": 29,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "topdown-l(s)",
+               "description": "\n\n",
+               "start": 32,
+               "end": 33,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bottomup-l(s)",
+               "description": "\n\n",
+               "start": 35,
+               "end": 36,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "downup-l(s)",
+               "description": "\n\n",
+               "start": 38,
+               "end": 39,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "downup-l(s1, s2)",
+               "description": "\n\n",
+               "start": 41,
+               "end": 42,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "downup2-l(s1, s2)",
+               "description": "\n\n",
+               "start": 44,
+               "end": 45,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "topdownS-l(s, stop: a -> a * a -> a)",
+               "description": "\n\nThe traversals above go through all constructors. If it\nis not necessary to traverse the entire tree, the following\nversions of the traversals can be used. They are parameterized\nwith a strategy operator \\verb|stop| that\n\n\n",
+               "start": 56,
+               "end": 57,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bottomupS-l(s, stop: a -> a * a -> a)",
+               "description": "\n\n",
+               "start": 59,
+               "end": 60,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "downupS-l(s, stop: a -> a * a -> a)",
+               "description": "\n\n",
+               "start": 62,
+               "end": 63,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "downupS-l(s1, s2, stop: a -> a * a -> a)",
+               "description": "\n\n",
+               "start": 65,
+               "end": 66,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bottomup-para-l(s)",
+               "description": "\n\nA variation on bottomup is a traversal that also provides the\noriginal term as well as the term in which the direct subterms\nhave been transformed. (also known as a paramorphism?)\n\n\n",
+               "start": 76,
+               "end": 77,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "alltd-l(s)",
+               "description": "\n\n\\paragraph{Frontier}\n\nFind all topmost applications of \\verb|s|;\n\n\n",
+               "start": 87,
+               "end": 88,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "alldownup2-l(s1, s2)",
+               "description": "\n\n",
+               "start": 90,
+               "end": 91,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "alltd-fold-l(s1, s2)",
+               "description": "\n\n",
+               "start": 93,
+               "end": 94,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

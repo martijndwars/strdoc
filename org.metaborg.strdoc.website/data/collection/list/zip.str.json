@@ -1,0 +1,394 @@
+{
+"name": "collection/list/zip",
+"description": "\nZipping two lists into a list of pairs is a useful operation\nin many situations. There are many variants of zipping, for\ninstance in the way lists of unequal length are treated. This\nmodule defines a collection of zip-like strategies for lists\nbased on one underlying control scheme.\n\n",
+"strategies": [{
+               "name": "cart(s)",
+               "description": "\nCreate the cartesian product of two lists, i.e., combine\neach element of the first list which each element from the second\nlist. The strategy s is used to combine the pairs of elements\n<s>(x,y).\n\nExample: <cart(id)> ([1,2],[5,6]) => [(1,5),(1,6),(2,5),(2,6)]\n\n\n",
+               "start": 25,
+               "end": 27,
+               "types": ["    List(a) * List(b) -> List(c)"],
+               "params": ["s              a * b -> c"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "join(s)",
+               "description": "\nCreates the cartesian product of two lists and select only\nthose combined elements <s>(x, y) that succeed.\n\n\n",
+               "start": 36,
+               "end": 38,
+               "types": ["    List(a) * List(b) -> List(c)"],
+               "params": ["s              a * b -> c"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Skip(s)",
+               "description": "\n",
+               "start": 41,
+               "end": 41,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "genzip(a, b, c, s)",
+               "description": "\n",
+               "start": 46,
+               "end": 47,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zip",
+               "description": "\nCombines two lists into one by pairing up the elements from both lists.\nBoth lists must be of equal length.\n\nExample: <zip> ([1,2], [3,4]) => [(1,3),(2,4)]\n\n\n\n",
+               "start": 59,
+               "end": 59,
+               "types": ["List(a) * List(b) -> List(a * b)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zip(s)",
+               "description": "\nCombines two lists into one by pairing up the elements from both lists,\napplying s to the pair. Starts at the beginning of the lists. Both lists\nmust be of equal length.\n\nExample: <zip(add)> ([1,2], [3,4]) => [4,6]\n\n\n",
+               "start": 71,
+               "end": 72,
+               "types": ["    List(a) * List(b) -> List(c)"],
+               "params": ["s              a * b -> c"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zip'(s)",
+               "description": "\n\n",
+               "start": 74,
+               "end": 75,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zipl(s)",
+               "description": "\n\n",
+               "start": 77,
+               "end": 78,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zipr(s)",
+               "description": "\n\n",
+               "start": 80,
+               "end": 81,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rest-zip(s)",
+               "description": "\n\n",
+               "start": 83,
+               "end": 85,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zip(s: t * t -> t | ys)",
+               "description": "\nCombines two lists into one by pairing up the elements from both lists.\nBoth lists must be of equal length.\n\n\n",
+               "start": 95,
+               "end": 101,
+               "types": ["List(a) -> List(c)"],
+               "params": ["Strategy s(|y : b) : a -> c","Second list : List(b)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unzip",
+               "description": "\nSplits a list of pairs into two separate lists. This strategy\nis the inverse of zip.\n\nExample: <unzip> [(1,2),(3,4)] => ([1,3],[2,4])\n\n\n",
+               "start": 115,
+               "end": 115,
+               "types": ["    List(a * b) -> List(a) * List(b)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unzip(s)",
+               "description": "\nSplits a list of pairs into two separate lists, applying s to\nthe pair before splitting. This strategy\nis the inverse of zip.\n\nExample: <unzip((inc, inc))> [(1,2),(3,4)] => ([2,4],[3,5])\n\n\n",
+               "start": 126,
+               "end": 127,
+               "types": ["    List(a * b) -> List(a) * List(b)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nzip0(s)",
+               "description": "\n\n",
+               "start": 132,
+               "end": 133,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "nzip(s)",
+               "description": "\n\n",
+               "start": 134,
+               "end": 135,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lzip(s)",
+               "description": "\n\n",
+               "start": 137,
+               "end": 138,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rzip(s)",
+               "description": "\n\n",
+               "start": 139,
+               "end": 140,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zipFetch(s)",
+               "description": "\n\n",
+               "start": 142,
+               "end": 143,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lzipFetch(s)",
+               "description": "\n\n",
+               "start": 144,
+               "end": 145,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rzipFetch(s)",
+               "description": "\n\n",
+               "start": 146,
+               "end": 147,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zipPad(s, padding)",
+               "description": "\nCombines two lists, which may have different lengths, into one by pairing\nup the elements from both lists, applying s to the pair. Starts at the\nbeginning of the lists. The shorter list will be padded with the result\nthe padding strategy.\n\nExample: <zipPad(id, !0)> ([1,2], [3,4,5]) => [(1,3),(2,4),(0,5)]\n\n\n",
+               "start": 161,
+               "end": 164,
+               "types": ["    List(a) * List(b) -> List(c)"],
+               "params": ["s              a * b -> c","padding            _ -> d"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zip-tail",
+               "description": "\n\n",
+               "start": 166,
+               "end": 167,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zipl-tail-match(s)",
+               "description": "\n\n",
+               "start": 168,
+               "end": 169,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zipr-tail-match(s)",
+               "description": "\n\n",
+               "start": 170,
+               "end": 171,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "zip-skip(pred, s)",
+               "description": "\n\n",
+               "start": 173,
+               "end": 174,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Zip1",
+               "description": "\n",
+               "start": 179,
+               "end": 179,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Zip1a'",
+               "description": "\n",
+               "start": 181,
+               "end": 181,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Zip1b'",
+               "description": "\n",
+               "start": 183,
+               "end": 183,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Zip1c",
+               "description": "\n",
+               "start": 185,
+               "end": 185,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Zip1c'",
+               "description": "\n",
+               "start": 187,
+               "end": 187,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Zip1d",
+               "description": "\n",
+               "start": 189,
+               "end": 189,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Zip2",
+               "description": "\n",
+               "start": 191,
+               "end": 191,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "LZip2",
+               "description": "\n",
+               "start": 194,
+               "end": 194,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "RZip2",
+               "description": "\n",
+               "start": 196,
+               "end": 196,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Zip3",
+               "description": "\n",
+               "start": 199,
+               "end": 199,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnZip1",
+               "description": "\n",
+               "start": 202,
+               "end": 202,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnZip2",
+               "description": "\n",
+               "start": 204,
+               "end": 204,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UnZip3",
+               "description": "\n",
+               "start": 206,
+               "end": 206,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "NZip00",
+               "description": "\n",
+               "start": 209,
+               "end": 209,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "NZip01",
+               "description": "\n",
+               "start": 211,
+               "end": 211,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "NZip1",
+               "description": "\n",
+               "start": 213,
+               "end": 213,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "NZip2",
+               "description": "\n",
+               "start": 215,
+               "end": 215,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "NZip3",
+               "description": "\n",
+               "start": 217,
+               "end": 217,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

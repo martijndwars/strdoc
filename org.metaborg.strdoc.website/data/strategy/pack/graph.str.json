@@ -1,0 +1,115 @@
+{
+"name": "strategy/pack/graph",
+"description": "\nA generic algorithm for mapping a graph to a collection of nodes reachable\nfrom a given root node.\n\nBasic idea: configuration of the form (todo, done, files),\nkeep adding files corresponding to the names in \\verb|todo| until empty\n\n",
+"strategies": [{
+               "name": "GnInit",
+               "description": "\n\n",
+               "start": 14,
+               "end": 15,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "GnInitRoots",
+               "description": "\n\n",
+               "start": 17,
+               "end": 18,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "GnNext(get-node, out-edges, add-node)",
+               "description": "\n\n",
+               "start": 20,
+               "end": 26,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "GnNextChangeGraph(get-node, out-edges, add-node)",
+               "description": "\n\n",
+               "start": 28,
+               "end": 34,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "GnUndefined",
+               "description": "\n\n",
+               "start": 36,
+               "end": 38,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "GnExit",
+               "description": "\n\n",
+               "start": 40,
+               "end": 41,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "graph-nodes-undef-roots(get-node, out-edges, add-node)",
+               "description": "\n\n",
+               "start": 45,
+               "end": 47,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "graph-nodes-undef(get-node, out-edges, add-node)",
+               "description": "\n\n",
+               "start": 49,
+               "end": 51,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "graph-nodes-undef-roots-chgr(get-node, out-edges, add-node)",
+               "description": "\n\n",
+               "start": 53,
+               "end": 55,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "graph-nodes-undef-chgr(get-node, out-edges, add-node)",
+               "description": "\n\n",
+               "start": 57,
+               "end": 59,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "graph-nodes(get-node, out-edges, add-node)",
+               "description": "\nThe strategy 'graph-nodes' is a generic\nalgorithm for mapping a graph to a collection of nodes reachable\nfrom a given root node. The algorithm is parameterized with the\nfollowing notions: 'get-node' maps a node name and a graph to the\nnode itself, 'out-edges' maps a node to the names of its out\nedges, 'add-node' that adds a name and its corresponding node to a\ncollection of nodes.\n\nget-node  :: name * graph -> node\nout-edges :: node -> List(name)\nadd-node  :: name * node * nodes -> nodes\n\n",
+               "start": 74,
+               "end": 76,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "graph-nodes-roots(get-node, out-edges, add-node)",
+               "description": "\n\n",
+               "start": 78,
+               "end": 80,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

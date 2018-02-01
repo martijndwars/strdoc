@@ -1,0 +1,25 @@
+{
+"name": "system/c99/file",
+"description": "\nThis module provides standard fallbacks to important Stratego strategies.\n\nThe strategies are usually less efficient or feature rich than\ntheir POSIX+XSI equivalents.\n\nWarning: this file is currently also included in the POSIX library.\n\n",
+"strategies": [{
+               "name": "copy-file",
+               "description": "\nAlternative to the POSIX+XSI copy-file\n\n",
+               "start": 14,
+               "end": 16,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rename-file",
+               "description": "\nAlternative to the POSIX+XSI rename-file\n\n",
+               "start": 21,
+               "end": 23,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

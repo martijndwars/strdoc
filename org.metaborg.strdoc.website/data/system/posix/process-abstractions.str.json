@@ -1,0 +1,106 @@
+{
+"name": "system/posix/process-abstractions",
+"description": "\n\n",
+"strategies": [{
+               "name": "fork(child)",
+               "description": "\nExecutes \"child\" in the child process and returns a tuple\nof the pid of the child process and the current term in the\nparent process.\n\n",
+               "start": 16,
+               "end": 17,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fork(child, parent)",
+               "description": "\n\n",
+               "start": 19,
+               "end": 20,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fork-and-wait(child)",
+               "description": "\n\n",
+               "start": 22,
+               "end": 23,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "call",
+               "description": "\nCall a program with list of string arguments.\n\n\n",
+               "start": 35,
+               "end": 36,
+               "types": ["(String, List(String)) -> (String, List(String))"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "call(init-child)",
+               "description": "\n\n",
+               "start": 38,
+               "end": 40,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "call-noisy",
+               "description": "\nCall program with a list of strings arguments and print\ninformation to stderr.\n\n\n",
+               "start": 48,
+               "end": 50,
+               "types": ["(String, List(String)) -> (String, List(String))"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "exited",
+               "description": "\nSucceeds if the process of this WaitStatus exited.\n\n\n",
+               "start": 62,
+               "end": 65,
+               "types": ["WaitStatus -> WaitStatus"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "signaled",
+               "description": "\nSucceeds if the process of this WaitStatus was signaled.\n\n\n",
+               "start": 72,
+               "end": 75,
+               "types": ["WaitStatus -> WaitStatus"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "stopped",
+               "description": "\nSucceeds if the process of this WaitStatus was stopped.\n\n\n",
+               "start": 82,
+               "end": 85,
+               "types": ["WaitStatus -> WaitStatus"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "warn-ifsignaled",
+               "description": "\nPrints a warning if the process of this WaitStatus was signaled.\n\n\n",
+               "start": 92,
+               "end": 99,
+               "types": ["WaitStatus -> WaitStatus"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "call( | opt-fdin, opt-fdout, opt-fderr)",
+               "description": "\nExecute program in a new process with list of string args,\nwith the specified exec strategy.\n\nOptionally you can define file descriptors to use for stdin, stdout,\nstderr.\n\n\n\n",
+               "start": 114,
+               "end": 123,
+               "types": [" (String, List(String)) -> ()"],
+               "params": [" opt-fdin   Option(FileDescr)"," opt-fdout  Option(FileDescr)"," opt-fderr  Option(FileDescr)"],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

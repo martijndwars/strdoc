@@ -1,0 +1,115 @@
+{
+"name": "strategy/general/parenthesize",
+"description": "\nThis module defines a generic strategy for placing parentheses in\nabstract syntax trees based on priority and associativity declarations.\n\nReference\n\nEelco Visser. Syntax Definition for Language Prototyping. PhD Thesis,\nUniversity of Amsterdam, 1997.\n\nTypical usage: (from module Tiger-Ensugar in the tiger/tiger-front\npackage)\n\nTigerParenthesize =\n!Seq([<id>])\n\ntiger-parenthesize =\nparenthesize(TigerParenthesize, tiger-priorities)\n\ntiger-priorities =\n![(None,\t\t\t[\"Uminus\",\"FieldVar\",\"Subscript\"]),\n(Some(\"left\"),\t\t[\"Power\"]),\n(Some(\"left\"),\t\t[\"Times\",\"Divide\"]),\n(Some(\"left\"),\t\t[\"Plus\",\"Minus\"]),\n(Some(\"non-assoc\"),\t[\"CPlus\",\"CMinus\",\"Eq\",\"Neq\",\"Gt\",\"Lt\",\"Geq\",\"Leq\"]),\n(Some(\"left\"),\t\t[\"And\"]),\n(Some(\"left\"),\t\t[\"Or\"]),\n(None,\t\t\t[\"Array\"]),\n(None,\t\t\t[\"Assign\"]),\n(Some(\"right\"),\t\t[\"If\",\"While\",\"For\"])]\n\n\n",
+"strategies": [{
+               "name": "parenthesize(paren, prios)",
+               "description": "\n\n",
+               "start": 36,
+               "end": 38,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "parenthesize(paren)",
+               "description": "\n\n",
+               "start": 42,
+               "end": 43,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Disambiguate(paren)",
+               "description": "\n\n",
+               "start": 45,
+               "end": 50,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Disambiguate(paren)",
+               "description": "\n\n",
+               "start": 52,
+               "end": 54,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "init-parenthesation-rules",
+               "description": "\n\n",
+               "start": 61,
+               "end": 63,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "gen-left",
+               "description": "\n\n",
+               "start": 65,
+               "end": 68,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "gen-right",
+               "description": "\n\n",
+               "start": 70,
+               "end": 73,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "gen-non-assoc",
+               "description": "\n\n",
+               "start": 75,
+               "end": 78,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "gen-none",
+               "description": "\n\n",
+               "start": 80,
+               "end": 82,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "GenLeftAssoc",
+               "description": "\n\n",
+               "start": 84,
+               "end": 88,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "GenRightAssoc",
+               "description": "\n\n",
+               "start": 90,
+               "end": 94,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "GenGreaterThan",
+               "description": "\n\n",
+               "start": 96,
+               "end": 100,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

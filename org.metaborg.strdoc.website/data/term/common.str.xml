@@ -1,0 +1,175 @@
+
+<module>
+  <name>term/common</name>
+  <description><![CDATA[
+                        Some primitives for the manipulation of terms.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>mkterm</name>
+    <description><![CDATA[
+                          Build a term given a constructor name and a list of terms.
+                          
+                          Note that this primitive strategy has been turned into a language construct.
+                          
+                          The pattern f#(xs) denotes the decomposition of a term into its function symbol
+                          f and its list of arguments xs. This pattern can be used in matching ?f#(xs)
+                          and building !f#(xs) terms (so also in left- and right-hand sides of rules) and
+                          also as a congruence s1#(s2).
+                          
+                          E.g. <mkterm> (f, [t1,...,tn])  builds the constructor application f(t1,...,tn).
+                          
+                          ]]></description>
+    <start>23</start>
+    <end>23</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>explode-term</name>
+    <description><![CDATA[
+                          Decompose a term into a constructor name and a list of terms.
+                          
+                          Note that this primitive strategy has been turned into a language construct.
+                          
+                          The pattern f#(xs) denotes the decomposition of a term into its function symbol
+                          f and its list of arguments xs. This pattern can be used in matching ?f#(xs)
+                          and building !f#(xs) terms (so also in left- and right-hand sides of rules) and
+                          also as a congruence s1#(s2).
+                          
+                          E.g. <explode-term> f(t1,...,tn) is the inverse of mkterm and produces (f, [t1,...,tn]).
+                          
+                          Note that explode-term is equivalent to !(<get-constructor>, <get-arguments>).
+                          
+                          ]]></description>
+    <start>39</start>
+    <end>39</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>get-constructor</name>
+    <description><![CDATA[
+                          Get the constructor of a term.
+                          
+                          Note that explode-term is equivalent to !(<get-constructor>, <get-arguments>).
+                          
+                          ]]></description>
+    <start>46</start>
+    <end>46</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>get-arguments</name>
+    <description><![CDATA[
+                          Get the arguments of a term.
+                          
+                          Note that explode-term is equivalent to !(<get-constructor>, <get-arguments>).
+                          
+                          ]]></description>
+    <start>53</start>
+    <end>53</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>get-appl-arguments</name>
+    <description><![CDATA[
+                          Get the arguments of a term application.
+                          
+                          ]]></description>
+    <start>58</start>
+    <end>59</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>get-appl-arguments</name>
+    <description><![CDATA[
+                          Get the arguments of a term application, applying s to the individual arguments.
+                          
+                          
+                          ]]></description>
+    <start>67</start>
+    <end>68</end>
+    <type><![CDATA[f(a1 ... an) -> [b1 ... bn]]]></type>
+    <param><![CDATA[a -> b]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>address-lt</name>
+    <description><![CDATA[
+                          Compare the address of two terms and succeeds if the address of the first is
+                          smaller than the address of the second.
+                          
+                          This predicate induces a total ordering on terms and can be used to sort terms.
+                          Note that this relation is valid in one session (but what happens after
+                          rehashing), but not necessarily between two sessions.
+                          
+                          ]]></description>
+    <start>78</start>
+    <end>79</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>term-address-lt</name>
+    <description><![CDATA[
+                          Compare the address of two terms and succeeds if the address of the current
+                          term is smaller than the address of the argument.
+                          
+                          ]]></description>
+    <start>85</start>
+    <end>86</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>address</name>
+    <description><![CDATA[
+                          Give the address of a term.
+                          
+                          <address> t replaces t with its address (represented as a string).
+                          This can be used to obtain a unique symbolic reference to a term.
+                          
+                          
+                          ]]></description>
+    <start>96</start>
+    <end>97</end>
+    <type><![CDATA[t -> String]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>checksum</name>
+    <description><![CDATA[
+                          Give checksum of a term. Similar to atsum from aterm package.
+                          
+                          ]]></description>
+    <start>102</start>
+    <end>102</end>
+    
+    
+  </strategy>
+  
+</module>

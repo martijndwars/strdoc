@@ -1,0 +1,313 @@
+{
+"name": "system/io/term",
+"description": "\nTerm input and output.\n\n",
+"strategies": [{
+               "name": "ReadFromFile",
+               "description": "\n<ReadFromFile> file reads the term in file.\nThe file needs to be in textual or binary ATerm format.\n\n\n",
+               "start": 27,
+               "end": 32,
+               "types": ["File -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "WriteToBinaryFile",
+               "description": "\n<WriteToBinaryFile> (file, term) writes term to file in BAF format.i\n\n\n",
+               "start": 39,
+               "end": 40,
+               "types": ["File * a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "WriteToTextFile",
+               "description": "\n<WriteToTextFile> (file, term) writes term to file in textual ATerm format.\n\n\n",
+               "start": 47,
+               "end": 48,
+               "types": ["File * a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "WriteToFile(writer)",
+               "description": "\n<WriteToFile(s)> (file, term) writes term to file with the writer s.\n\n\n",
+               "start": 55,
+               "end": 60,
+               "types": ["(Stream * a -> Stream) * File * a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "open(file)",
+               "description": "\n\n",
+               "start": 62,
+               "end": 63,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "save(file)",
+               "description": "\n\n",
+               "start": 65,
+               "end": 66,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "write-to-stream",
+               "description": "\nWrites an ATerm to a Stream.\n\n\n",
+               "start": 80,
+               "end": 81,
+               "types": ["Stream * _ -> Stream"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "write-in-baf-to-stream",
+               "description": "\n\n",
+               "start": 83,
+               "end": 84,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "write-in-taf-to-stream",
+               "description": "\n\n",
+               "start": 86,
+               "end": 87,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "write-in-text-to-stream",
+               "description": "\n\n",
+               "start": 89,
+               "end": 90,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "read-from-stream",
+               "description": "\nReads an ATerm from a Stream\n\n\n",
+               "start": 97,
+               "end": 98,
+               "types": ["Stream -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "read-from-string",
+               "description": "\nReads an ATerm from a String\n\n\n",
+               "start": 105,
+               "end": 106,
+               "types": ["String -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "write-to-string",
+               "description": "\nWrites an ATerm to a String\n\n\n",
+               "start": 113,
+               "end": 114,
+               "types": ["a -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "write-to-binary-string",
+               "description": "\nWrites an ATerm to a binary string represented as a list of chars.\n\n\n",
+               "start": 121,
+               "end": 122,
+               "types": ["a -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "write-to-shared-string",
+               "description": "\nWrites an ATerm to a shared string represented as a list of chars.\n\n\n",
+               "start": 129,
+               "end": 130,
+               "types": ["a -> List(Char)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fprint",
+               "description": "\nPrints the terms to a stream. If a term is a string it is printed\nwithout quotes, otherwise it is printed as a term.\n\n\n",
+               "start": 140,
+               "end": 150,
+               "types": ["Stream * [a] -> Stream"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fprintnl",
+               "description": "\nfprint, followed by a newline.\n\n\n",
+               "start": 157,
+               "end": 158,
+               "types": ["Stream * [a] -> Stream"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "print",
+               "description": "\nPrints terms to a file. If \\verb|ti| is a string it is printed without\nquotes, otherwise it is printed as a term. \\verb|printnl| has the same\nbehaviour, but also prints a newline after \\verb|tn|.\n\nE.g. <print> (file, [t1,...,tn]) prints terms ti to file. Terms ti\nthat are strings are printed without quotes\n\n\n",
+               "start": 170,
+               "end": 173,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "printnl",
+               "description": "\nSame as print, but prints a newline at the end.\n\n\n",
+               "start": 180,
+               "end": 182,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "debug",
+               "description": "\nPrints the current term to stderr without changing it.\nThis is a useful strategy for debugging specifications (hence its name).\n\n\n",
+               "start": 192,
+               "end": 193,
+               "types": [" a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "debug(msg)",
+               "description": "\nPrints the term produced by applying msg followed by the current term to stderr.\n\n\n",
+               "start": 200,
+               "end": 201,
+               "types": [" a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "debug-depth",
+               "description": "\n\n",
+               "start": 205,
+               "end": 206,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "debug-depth(depth)",
+               "description": "\n\n",
+               "start": 208,
+               "end": 209,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "debug-depth(depth, s)",
+               "description": "\n\n",
+               "start": 211,
+               "end": 215,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "say(msg)",
+               "description": "\nPrints the term produced by applying msg to stderr.\n\n\n",
+               "start": 225,
+               "end": 226,
+               "types": ["  a -> a"],
+               "params": [" term to print to stderr"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "trace(msg, s)",
+               "description": "\n\n",
+               "start": 228,
+               "end": 229,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "error",
+               "description": "\nPrints a list of terms to stderr using fprintnl.\n\n\n",
+               "start": 236,
+               "end": 237,
+               "types": ["List(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fatal-error",
+               "description": "\nPrints a list of terms to stderr using fprintnl and exits with code 1.\n\n\n",
+               "start": 244,
+               "end": 245,
+               "types": ["List(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "giving-up",
+               "description": "\nPrints giving-up to stderr and exits with code 1.\n\n\n",
+               "start": 252,
+               "end": 253,
+               "types": ["_ -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "obsolete(msg)",
+               "description": "\nLogs an obsolete strategy message with the given message.\n\n\n",
+               "start": 261,
+               "end": 262,
+               "types": [" a -> a"],
+               "params": ["Strategy that produces a string message."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "risky(msg, s)",
+               "description": "\nTries to apply s and prints msg to stderr if this fails.\nRisky preserves the failure of s: if s fails, then risky will\nfail as well.\n\n\n",
+               "start": 273,
+               "end": 274,
+               "types": [" a -> a"],
+               "params": ["Strategy that produces a string message","Strategy to apply"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "echo",
+               "description": "\n\n",
+               "start": 281,
+               "end": 282,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "echo(msg)",
+               "description": "\n\n",
+               "start": 284,
+               "end": 285,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "printstring",
+               "description": "\n\n",
+               "start": 287,
+               "end": 288,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

@@ -1,0 +1,79 @@
+{
+"name": "strategy/general/rename",
+"description": "\nRenaming of bound variables is determined by the shape of\nvariables and binding constructs. Three generic strategies\nare defined that cater for different complexities of binding\nconstructs.\n\nVariable binding constructs protect variables from clashing\nwith variables in other parts of a program when their names\nare the same. To prevent the introduction of name clashes\nduring program transformation it can be useful to give\nall variable bindings a unique name. This module defines three\ngeneric strategies for bound variable renaming all based on\nthe same idea, but dealing with increasingly complex variable\nbinding models.\n\nRenaming depends \\emph{only} on the shape of variable bindings\nand variable occurences. Other language constructs are irrelevant.\n\nIn the generic strategies the following assumptions about\nbinding constructs are made: (1)\nThere is a subtree that covers the scope in which the\nvariables are bound. (2) variables are atomic, i.e., do not\ncontain subterms that are\nvariables or binding constructs.\n\nApproach: indicate shape of variable occurences and variable\nbinders\n\n",
+"strategies": [{
+               "name": "RnVar(isvar: name -> env * name -> term)",
+               "description": "\n\n",
+               "start": 36,
+               "end": 37,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "RnBinding(bndvrs)",
+               "description": "\n\n",
+               "start": 39,
+               "end": 42,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "DistBinding(s)",
+               "description": "\n\n",
+               "start": 44,
+               "end": 45,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rename(isvar: name -> env * name -> term, bndvars)",
+               "description": "\nrenaming bound variables assuming that variables are bound\nin all subterms of a binding construct\nvariable declarations in binding constructs are assumed to\nhave the same shape as variable uses\n\n",
+               "start": 55,
+               "end": 60,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "DistBinding(s, boundin: term -> term * term -> term * term -> term * term -> term)",
+               "description": "\n\n",
+               "start": 64,
+               "end": 67,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rename(isvar: name -> env * name -> term, bndvars, boundin: term -> term * term -> term * term -> term * term -> term)",
+               "description": "\nThe strategy \\verb|rename(isvar, mkvar, bnd)| renames all\nbound variables in a term to fresh variables;\n\nParameters:\n\nisvar: Succeeds if applied to a variable\nnewvar: Takes a string and builds a variable\nbnd: Maps a binding construct to the list of bound variables\n\nrenaming while making a distinction between subterms\nin which the variables are bound or not\nvariables at binding sites are assumed to have\nthe same shape as other variable occurences\n\n",
+               "start": 86,
+               "end": 92,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "RnBinding(bndvrs, paste: term -> vars * term -> term)",
+               "description": "\n\n",
+               "start": 96,
+               "end": 99,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rename(isvar: name -> env * name -> term, bndvars, boundin: term -> term * term -> term * term -> term * term -> term, paste: term -> vars * term -> term)",
+               "description": "\n\n",
+               "start": 104,
+               "end": 112,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

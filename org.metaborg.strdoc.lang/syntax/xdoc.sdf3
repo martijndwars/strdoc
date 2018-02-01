@@ -1,0 +1,27 @@
+module xdoc
+
+imports
+
+  Comment
+
+context-free start-symbols
+  
+  Start
+
+context-free syntax
+
+  Module.Module = <<ID> <Function*>>
+  
+  Function.Function = <<ID> <ID>>
+
+context-free syntax
+  
+  Start.Empty = <>
+
+  DocBlock.DocBlock = <//abc<ID>>
+
+lexical syntax
+
+  ID = [a-zA-Z]+
+  
+  XINT = [0-9]+

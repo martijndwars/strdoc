@@ -1,0 +1,41 @@
+
+<module>
+  <name>system/c99/file</name>
+  <description><![CDATA[
+                        This module provides standard fallbacks to important Stratego strategies.
+                        
+                        The strategies are usually less efficient or feature rich than
+                        their POSIX+XSI equivalents.
+                        
+                        Warning: this file is currently also included in the POSIX library.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>copy-file</name>
+    <description><![CDATA[
+                          Alternative to the POSIX+XSI copy-file
+                          
+                          ]]></description>
+    <start>14</start>
+    <end>16</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>rename-file</name>
+    <description><![CDATA[
+                          Alternative to the POSIX+XSI rename-file
+                          
+                          ]]></description>
+    <start>21</start>
+    <end>23</end>
+    
+    
+  </strategy>
+  
+</module>

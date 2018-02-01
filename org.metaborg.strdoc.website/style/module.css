@@ -1,0 +1,22 @@
+.description {
+  white-space: pre-wrap;
+}
+
+ul.strategies {
+	list-style: none;
+	padding: 0;
+}
+
+ul.strategies li h5 {
+	background-color: #f5f5f5;
+	padding: 10px;
+}
+
+ul.strategies li h5 span {
+	float: right;
+	font-weight: normal;
+}
+
+ul.strategies li p {
+	margin: 1em 20px;
+}

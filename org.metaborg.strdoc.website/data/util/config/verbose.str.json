@@ -1,0 +1,178 @@
+{
+"name": "util/config/verbose",
+"description": "\nVerbosity management.\n\n",
+"strategies": [{
+               "name": "set-verbosity",
+               "description": "\nSets the verbosity level.\n\nE.g. <set-verbosity> 4 sets the verbosity level to 4.\n\n\n",
+               "start": 14,
+               "end": 15,
+               "types": ["Int -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbosity",
+               "description": "\nGive the current verbosity level. Default is 1.\n\n\n",
+               "start": 22,
+               "end": 23,
+               "types": ["_ -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "pass-verbose",
+               "description": "\nBuilds command-line parameter for verbosity levels for calling XT tools.\n\nE.g. xtc-transform(!\"abox2text\", pass-verbose ) passes the verbosity level\nto abox2text.\n\n\n",
+               "start": 33,
+               "end": 34,
+               "types": ["_ -> List(String)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-verbose(s | t)",
+               "description": "\n\n",
+               "start": 46,
+               "end": 49,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-verbose1(s)",
+               "description": "\n\n",
+               "start": 51,
+               "end": 51,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-verbose2(s)",
+               "description": "\n\n",
+               "start": 52,
+               "end": 52,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-verbose3(s)",
+               "description": "\n\n",
+               "start": 53,
+               "end": 53,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-verbose4(s)",
+               "description": "\n\n",
+               "start": 54,
+               "end": 54,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-verbose5(s)",
+               "description": "\n\n",
+               "start": 55,
+               "end": 55,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-verbose6(s)",
+               "description": "\n\n",
+               "start": 56,
+               "end": 56,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-verbose7(s)",
+               "description": "\n\n",
+               "start": 57,
+               "end": 57,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-verbose(s | t)",
+               "description": "\n\n",
+               "start": 69,
+               "end": 72,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-verbose1(s)",
+               "description": "\n\n",
+               "start": 74,
+               "end": 74,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-verbose2(s)",
+               "description": "\n\n",
+               "start": 75,
+               "end": 75,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-verbose3(s)",
+               "description": "\n\n",
+               "start": 76,
+               "end": 76,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-verbose4(s)",
+               "description": "\n\n",
+               "start": 77,
+               "end": 77,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-verbose5(s)",
+               "description": "\n\n",
+               "start": 78,
+               "end": 78,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-verbose6(s)",
+               "description": "\n\n",
+               "start": 79,
+               "end": 79,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-less-verbose7(s)",
+               "description": "\n\n",
+               "start": 80,
+               "end": 80,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

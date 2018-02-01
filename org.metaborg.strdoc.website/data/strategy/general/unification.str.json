@@ -1,0 +1,115 @@
+{
+"name": "strategy/general/unification",
+"description": "\nSyntactic unification, no variable bindings are taken into account.\n\n",
+"strategies": [{
+               "name": "equal",
+               "description": "\n\n",
+               "start": 12,
+               "end": 15,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UfIdem",
+               "description": "\n\n",
+               "start": 19,
+               "end": 20,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UfDecompose",
+               "description": "\n\n",
+               "start": 22,
+               "end": 23,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "diff",
+               "description": "\n\n",
+               "start": 27,
+               "end": 28,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UfShift",
+               "description": "\n\n",
+               "start": 32,
+               "end": 33,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "pattern-match(isvar)",
+               "description": "\n\n",
+               "start": 37,
+               "end": 40,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "MatchVar(isvar)",
+               "description": "\n\n",
+               "start": 44,
+               "end": 46,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "unify(isvar)",
+               "description": "\nThe strategy unify unifies a list of pairs of terms and creates the\nmost general unifier for them. The strategy is parameterized\nby a strategy \\verb|isvar| that determines the shape of variables.\n\nThe result is a list of pairs \\verb|(x1,p1)|, where \\verb|x1| is\na term for which \\verb|isvar| succeeds and \\verb|p1| is the term\nit should be substituted with to unify the terms.\n\nE.g. <unify(isvar)> [(t1,t2),(t3,t4),...] => [(x1,p1),(x2,p2),...]\n\n",
+               "start": 61,
+               "end": 64,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UfVar(isvar)",
+               "description": "\n\n",
+               "start": 68,
+               "end": 71,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UfSwap(isvar)",
+               "description": "\n\n",
+               "start": 73,
+               "end": 75,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "equal(fltr)",
+               "description": "\n\n",
+               "start": 79,
+               "end": 83,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "equal(fltr1, fltr2)",
+               "description": "\nThe following equality strategy has an additional filter\nthat can be used for checking equality modulo alpha renaming.\nThe filter applies to the entire pair and can change something\nin one term based on the other term.\n\n",
+               "start": 93,
+               "end": 97,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

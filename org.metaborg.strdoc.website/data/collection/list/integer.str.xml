@@ -1,0 +1,294 @@
+
+<module>
+  <name>collection/list/integer</name>
+  <description><![CDATA[
+                        This module contains a collection of strategies for working with
+                        lists of integers.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>sum</name>
+    <description><![CDATA[
+                          Returns the sum of all integers in a list of integers
+                          
+                          
+                          ]]></description>
+    <start>16</start>
+    <end>16</end>
+    <type><![CDATA[List(Int) -> Int]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>average</name>
+    <description><![CDATA[
+                          Returns the average of all integers in a list of
+                          integers. The result is an integer, which is
+                          truncated (rounded down).
+                          
+                          
+                          ]]></description>
+    <start>25</start>
+    <end>25</end>
+    <type><![CDATA[List(Int) -> Int]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>list-min</name>
+    <description><![CDATA[
+                          Returns the lowest integer in a list of integers.
+                          
+                          
+                          ]]></description>
+    <start>32</start>
+    <end>32</end>
+    <type><![CDATA[List(Int) -> Int]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>list-max</name>
+    <description><![CDATA[
+                          Returns the highest integer in a list of integers.
+                          
+                          
+                          ]]></description>
+    <start>39</start>
+    <end>39</end>
+    <type><![CDATA[List(Int) -> Int]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>list-accum</name>
+    <description><![CDATA[
+                          Reduces a list, applying s successively between
+                          the head and tail of the list. This strategy is
+                          related to foldl.
+                          
+                          Example: <list-accum(id)> [1,2,3] => (3,(2,1))
+                          
+                          
+                          ]]></description>
+    <start>51</start>
+    <end>51</end>
+    <type><![CDATA[ List(a) -> d]]></type>
+    <param><![CDATA[(a,b)   -> c]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>add-lists</name>
+    <description><![CDATA[
+                          Adds together multiple lists of numbers. The input
+                          is a list of integer (or real) lists, which all must
+                          be of the same length. The result is one list of
+                          the same length, i.e. a sum of vectors.
+                          
+                          Example: <add-lists> [[1.0,2.0],[3,4],[6,7]] => [1.000000000000000e+01,1.300000000000000e+01]
+                          
+                          
+                          ]]></description>
+    <start>63</start>
+    <end>63</end>
+    <type><![CDATA[List(List(Number)) -> List(Number)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>int-sort</name>
+    <description><![CDATA[
+                          Sort a list of integers in ascending order.
+                          
+                          
+                          
+                          ]]></description>
+    <start>72</start>
+    <end>72</end>
+    <type><![CDATA[List(Int) -> List(Int)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-interval-from</name>
+    <description><![CDATA[
+                          Succeeds if the integer list is an ascending number
+                          sequence, increasing by one, starting at a given
+                          number. The range strategy can be used to
+                          
+                          Example: <is-interval-from> (3, [4,5,6,7]) => 7
+                          
+                          
+                          
+                          ]]></description>
+    <start>85</start>
+    <end>91</end>
+    <type><![CDATA[List(Int) -> _]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>range</name>
+    <description><![CDATA[
+                          Generates range of numbers in the form of an integer list. This
+                          version of range accepts only one integer as input. The generated
+                          sequence of integers is generated, starts at 0 and increases by one
+                          until the specified end point is reached.  The end point is never
+                          part of the generated list.
+                          
+                          Example: <range> 10 => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                          
+                          
+                          ]]></description>
+    <start>108</start>
+    <end>108</end>
+    <type><![CDATA[ Int       -> List(Int)]]></type>
+    <type><![CDATA[ Int * Int -> List(Int)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>range</name>
+    <description><![CDATA[
+                          Generates a range of numbers in the form of an integer list. This version
+                          of range accepts two integers as input. The first is the lower bound, of
+                          the sequence, the second is the upper bound. The upper bound is never
+                          part of the generated list.
+                          
+                          Example: <range> (5, 10)     => [5, 6, 7, 8, 9]
+                          
+                          
+                          ]]></description>
+    <start>121</start>
+    <end>121</end>
+    <type><![CDATA[ Int * Int -> List(Int)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>range</name>
+    <description><![CDATA[
+                          Generates a sequence of integers, using a specified step size. This version
+                          of range starts at zero and adds one integer to the sequence for every
+                          step specified by the term argument. The input term gives the upper bound
+                          of the sequence, and is never included. The step size is allowed
+                          to be negative.
+                          
+                          Example: <range(|3)>   10          => [0, 3, 6, 9]
+                          Example: <range(|-30)> (-10, -100) => [-10, -40, -70]
+                          
+                          
+                          ]]></description>
+    <start>140</start>
+    <end>140</end>
+    <type><![CDATA[step Int]]></type>
+    <type><![CDATA[     Int       -> List(Int)]]></type>
+    <type><![CDATA[     Int * Int -> List(Int)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>range</name>
+    <description><![CDATA[
+                          Generates a sequence of integers, using a specified step size. This version
+                          of range starts at zero and adds one integer to the sequence for every
+                          step specified by the term argument. The input terms give the lower and
+                          upper bound of the sequence, respectively. The upper bound is never
+                          included. The step size is allowed to be negative.
+                          
+                          Example: <range(|3)>   (0, 10)     => [0, 3, 6, 9]
+                          
+                          
+                          ]]></description>
+    <start>156</start>
+    <end>156</end>
+    <type><![CDATA[step Int]]></type>
+    <type><![CDATA[     Int       -> List(Int)]]></type>
+    <type><![CDATA[     Int * Int -> List(Int)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>range</name>
+    <description><![CDATA[
+                          Generates a sequence of numbers using a generator strategy. The
+                          input integer is the upper bound. The strategy argument is a
+                          generator which specifies how to go from the current number in
+                          the sequence to the next. The sequence starts at 0.
+                          
+                          Example: <range(inc)> 5 => [0,1,2,3,4]
+                          
+                          
+                          ]]></description>
+    <start>171</start>
+    <end>171</end>
+    <type><![CDATA[next Int -> Int]]></type>
+    <type><![CDATA[     Int       -> List(Int)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>range</name>
+    <description><![CDATA[
+                          Generates a sequence of numbers using a generator strategy. The
+                          input integers are the lower and upper bounds, respectively. The
+                          strategy argument is a generator which specifies how to go from
+                          the current number in the sequence to the next.
+                          
+                          
+                          Example: <range(inc)> (2,5) => [2,3,4]
+                          
+                          
+                          ]]></description>
+    <start>185</start>
+    <end>185</end>
+    <type><![CDATA[     Int * Int -> List(Int)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>range-next</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>188</start>
+    <end>195</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>is-interval</name>
+    <description><![CDATA[
+                          Succeeds if the input term is a list of monotonously increasing
+                          integers and the difference between two adjacent integers is
+                          always one.
+                          
+                          Example: <is-interval> [1,2,3,4,5] => (1,5)
+                          
+                          
+                          ]]></description>
+    <start>208</start>
+    <end>209</end>
+    <type><![CDATA[List(Int) -> _]]></type>
+    
+  </strategy>
+  
+</module>

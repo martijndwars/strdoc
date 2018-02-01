@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="xdoc">
+  <head>
+    <title>Stratego API Documentation</title>
+
+    <link rel="icon" href="favicon.ico"/>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="style/global.css"/>
+    <link rel="stylesheet" href="style/module.css"/>
+    <link rel="stylesheet" href="style/source.css"/>
+    <link rel="stylesheet" href="style/search.css"/>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-resource.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    
+    <script src="app.js"></script>
+    <script src="controller/ModuleController.js"></script>
+    <script src="controller/SearchController.js"></script>
+    <script src="controller/SourceController.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <input
+        placeholder="Click or press 'S' to search"
+        ng-model="query"
+        ng-change="search()"
+        ng-model-options='{debounce: 200}'/>
+      
+      <div ng-view></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,268 @@
+{
+"name": "system/posix/file",
+"description": "\n\n",
+"strategies": [{
+               "name": "STDIN_FILENO",
+               "description": "\n\n",
+               "start": 11,
+               "end": 12,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "STDOUT_FILENO",
+               "description": "\n\n",
+               "start": 15,
+               "end": 16,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "STDERR_FILENO",
+               "description": "\n\n",
+               "start": 19,
+               "end": 20,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "isatty",
+               "description": "\nSucceeds if file descriptor refers to a terminal device.\n\n",
+               "start": 30,
+               "end": 31,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "modification-time",
+               "description": "\nReturns the modification time of a file in sections since\nepoch.\n\n\n",
+               "start": 47,
+               "end": 48,
+               "types": ["String -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "link-file",
+               "description": "\nlink-file creats a hard link from file 'new' to file 'old'.\n\n",
+               "start": 58,
+               "end": 59,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "readdir",
+               "description": "\nGiven a path to a directory, returns a list of files in that directory,\nincluding the self (.) and parent pointers (..).\n\n\n",
+               "start": 72,
+               "end": 73,
+               "types": ["String -> List(String)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "getcwd",
+               "description": "\nReturns the current working directory.\n\n",
+               "start": 78,
+               "end": 79,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "chdir",
+               "description": "\nChange current working directory.\n\n\n",
+               "start": 86,
+               "end": 87,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "mkdir( | mode)",
+               "description": "\nCreate directory\n\n\n",
+               "start": 94,
+               "end": 97,
+               "types": ["String -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "mkdir",
+               "description": "\n\n",
+               "start": 99,
+               "end": 100,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rmdir",
+               "description": "\nRemove empty directory\n\n\n",
+               "start": 107,
+               "end": 108,
+               "types": ["String -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "creat",
+               "description": "\nOpening a file\n\n",
+               "start": 120,
+               "end": 121,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "open",
+               "description": "\n\n",
+               "start": 124,
+               "end": 125,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "close",
+               "description": "\nClosing a file\n\nDeallocates a file descriptor\n\n",
+               "start": 132,
+               "end": 133,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dup",
+               "description": "\nDuplicating a file descriptor\n\n",
+               "start": 138,
+               "end": 139,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dup2",
+               "description": "\n\n",
+               "start": 141,
+               "end": 142,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "access",
+               "description": "\nchecks the accessibility of the specified file wrt to the\nspecified permissions. Fails if the access is not allowed,\nreturns the path otherwise.\n\n\n\n",
+               "start": 153,
+               "end": 154,
+               "types": ["(String, List(AccessPermission)) -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fdopen",
+               "description": "\nThe fdopen function associates a stream with the existing file\ndescriptor, fd.\n\nThe mode of the stream (\"r\", \"r+\", \"w\", \"w+\",  \"a\", \"a+\") must be\ncompatible with the mode of the file descriptor.  The file position\n\n\n",
+               "start": 177,
+               "end": 178,
+               "types": ["(FileDescr, String) -> Stream"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fileno",
+               "description": "\nThe function fileno examines the argument stream and returns its\ninteger descriptor\n\n\n",
+               "start": 187,
+               "end": 188,
+               "types": ["Stream -> FileDescr"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "filemode",
+               "description": "\nMode of a file\n\n",
+               "start": 194,
+               "end": 195,
+               "types": ["String -> FileMode"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "isreg",
+               "description": "\n\n",
+               "start": 200,
+               "end": 201,
+               "types": ["File -> FileMode"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "isdir",
+               "description": "\nSucceeds when applied to a File which is a directory.\n\nIdiom: <file-exists ; filemode ; isdir> \"/etc\"\n\n\n",
+               "start": 210,
+               "end": 211,
+               "types": ["File -> FileMode"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "ischr",
+               "description": "\n\n",
+               "start": 216,
+               "end": 217,
+               "types": ["File -> FileMode"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "isblk",
+               "description": "\n\n",
+               "start": 222,
+               "end": 223,
+               "types": ["File -> FileMode"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "isfifo",
+               "description": "\n\n",
+               "start": 228,
+               "end": 229,
+               "types": ["File -> FileMode"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "islnk",
+               "description": "\n\n",
+               "start": 234,
+               "end": 235,
+               "types": ["File -> FileMode"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "issock",
+               "description": "\n\n",
+               "start": 240,
+               "end": 241,
+               "types": ["File -> FileMode"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "pipe",
+               "description": "\nPipe creates a pair Pipe(fd1, fd2) of file descriptors, pointing\nto a pipe inode, and places them in the array pointed to by filedes.\nfd1 is for reading, fd2 is for writing.\n\n\n",
+               "start": 255,
+               "end": 256,
+               "types": ["_ -> Pipe"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

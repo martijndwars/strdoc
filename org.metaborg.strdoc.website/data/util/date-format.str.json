@@ -1,0 +1,529 @@
+{
+"name": "util/date-format",
+"description": "\nThis module offers strategies to format a ComponentTime to a String.\n\nYou have to specify the output with a list of patterns. The\npatterns are the ones used in the SimpleDateFormat class of Java.\nNot all of the patterns are however implemented in this module.\n\nSupported patterns: yyyy, yy, M, MM, MMM, MMMM, d, dd, D, DD, EEE, EEEE,\na, HH, kk, hh, KK, mm, ss. For documentation of the meaning of the\npatterns please visit:\nhttp://java.sun.com/j2se/1.4.1/docs/api/java/text/SimpleDateFormat.html\n\nLimitations (and future work):\n- No way of using i18n and locales. Introduction of locales might\nchange the type of pattern-to rules. It's wise to use the\ndate-format strategy as long as possible: this strategy is stable\nand will use the default locale in the future.\n- This modules doesn't parse a String containing patterns like\nJava's SimpleDateFormat. This simplifies the implementation\nand is not a big deal because of the list syntax in Stratego.\n\nExamples:\n- [\"EEEE\", \" \", \"dd\", \" \", \"MMMM\", \" \", \"yyyy\"]\n\"Thursday 02 January 2003\"\n- [\"EEE\", \" \", \"HH\", \":\", \"mm\", \":\", \"ss\"]\n\"Thu 21:35:30\"\n- [\"EEE\", \" \", \"hh\", \":\", \"mm\", \":\", \"ss\", \" \", \"a\"]\n\"Thu 09:38:46 p.m.\"\n\n\n",
+"strategies": [{
+               "name": "date-format",
+               "description": "\n\n",
+               "start": 43,
+               "end": 44,
+               "types": ["List(String) * ComponentTime -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-string",
+               "description": "\n\n",
+               "start": 51,
+               "end": 54,
+               "types": ["String * ComponentTime -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "\n\n",
+               "start": 64,
+               "end": 64,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "month\n",
+               "start": 67,
+               "end": 67,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "\n\n",
+               "start": 68,
+               "end": 68,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-string",
+               "description": "\n\n",
+               "start": 76,
+               "end": 76,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "\n\n",
+               "start": 83,
+               "end": 83,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "\n\n",
+               "start": 84,
+               "end": 84,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "\n\n",
+               "start": 85,
+               "end": 85,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-string",
+               "description": "\n\n",
+               "start": 92,
+               "end": 92,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-string",
+               "description": "am/pm marker\n",
+               "start": 95,
+               "end": 96,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-string",
+               "description": "\n\n",
+               "start": 98,
+               "end": 99,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "\n\n",
+               "start": 106,
+               "end": 106,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "\n\n",
+               "start": 107,
+               "end": 107,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "\n\n",
+               "start": 108,
+               "end": 109,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "\n\n",
+               "start": 111,
+               "end": 112,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "\n\n",
+               "start": 114,
+               "end": 115,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "\n\n",
+               "start": 117,
+               "end": 118,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "minutes\n",
+               "start": 121,
+               "end": 121,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "date-pattern-to-int",
+               "description": "seconds\n",
+               "start": 124,
+               "end": 124,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2abbr",
+               "description": "\n\n",
+               "start": 134,
+               "end": 134,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2abbr",
+               "description": "\n\n",
+               "start": 135,
+               "end": 135,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2abbr",
+               "description": "\n\n",
+               "start": 136,
+               "end": 136,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2abbr",
+               "description": "\n\n",
+               "start": 137,
+               "end": 137,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2abbr",
+               "description": "\n\n",
+               "start": 138,
+               "end": 138,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2abbr",
+               "description": "\n\n",
+               "start": 139,
+               "end": 139,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2abbr",
+               "description": "\n\n",
+               "start": 140,
+               "end": 140,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2text",
+               "description": "\n\n",
+               "start": 150,
+               "end": 150,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2text",
+               "description": "\n\n",
+               "start": 151,
+               "end": 151,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2text",
+               "description": "\n\n",
+               "start": 152,
+               "end": 152,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2text",
+               "description": "\n\n",
+               "start": 153,
+               "end": 153,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2text",
+               "description": "\n\n",
+               "start": 154,
+               "end": 154,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2text",
+               "description": "\n\n",
+               "start": 155,
+               "end": 155,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "day-of-week2text",
+               "description": "\n\n",
+               "start": 156,
+               "end": 156,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 167,
+               "end": 167,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 168,
+               "end": 168,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 169,
+               "end": 169,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 170,
+               "end": 170,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 171,
+               "end": 171,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 172,
+               "end": 172,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 173,
+               "end": 173,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 174,
+               "end": 174,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 175,
+               "end": 175,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 176,
+               "end": 176,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 177,
+               "end": 177,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2abbr",
+               "description": "\n\n",
+               "start": 178,
+               "end": 178,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 189,
+               "end": 189,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 190,
+               "end": 190,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 191,
+               "end": 191,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 192,
+               "end": 192,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 193,
+               "end": 193,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 194,
+               "end": 194,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 195,
+               "end": 195,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 196,
+               "end": 196,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 197,
+               "end": 197,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 198,
+               "end": 198,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 199,
+               "end": 199,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "month2text",
+               "description": "\n\n",
+               "start": 200,
+               "end": 200,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Martin Bravenboer <martin@mbravenboer.org>"],
+"see": []
+}

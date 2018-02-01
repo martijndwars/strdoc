@@ -1,0 +1,34 @@
+{
+"name": "lang/with",
+"description": "\nThis module provides a basic strategy for specifying\nrun-time verified strategies.\n\n\n",
+"strategies": [{
+               "name": "with(s | message)",
+               "description": "\nEvaluate a strategy s, or, if s fails, end with a fatal error.\n\nfailures raised by with clauses and uses of this strategy.\n\n",
+               "start": 20,
+               "end": 21,
+               "types": [],
+               "params": [],
+               "notes": ["In future revisions, a facility may be provided to \"catch\""],
+               "since": ""
+               },{
+               "name": "catch-with(s1, s2)",
+               "description": "\nEvaluate strategy s1 and catch with-failures that get thrown.\nIf s1 throws a with-failure then s2 is called on the original input term\nand a List(String) representation of the stack trace.\nThe following defines the behaviour of catch-with on input term t:\n\n<s1> t if success(s1) or fail(s1)\n<s2> (message, t, trace) if withfail(s1)\n\n\n",
+               "start": 36,
+               "end": 36,
+               "types": ["a -> b | c"],
+               "params": ["a -> b","(String, a, List(String)) -> c"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "report-with-failure( | strategyname)",
+               "description": "\n\n",
+               "start": 41,
+               "end": 42,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Lennart Kats <lennart add lclnet.nl>"],
+"see": []
+}

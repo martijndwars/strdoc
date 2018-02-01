@@ -1,0 +1,7 @@
+{
+"name": "collection/list/cons",
+"description": "\nLists are represented by means of the constructors Nil and Cons. They can\neither be written as terms with these constructors, e.g. Cons(0, Cons(1, Nil)),\nor using concrete list syntax: [0, 1]\n\nStratego pretty-printers and the Stratego Shell will always prefer to display\nlists using the concrete syntax.\n\n",
+"strategies": [],
+"authors": [],
+"see": []
+}

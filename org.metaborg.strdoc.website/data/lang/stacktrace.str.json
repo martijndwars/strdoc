@@ -1,0 +1,43 @@
+{
+"name": "lang/stacktrace",
+"description": "\nThis module provides some basic strategies for inspecting\nthe runtime stack of strategies.\n\nThere are numerous caveats to be aware of:\n\n<ul>\n<li>Because of inlining, the trace might not contain all\nstrategies which are on the stack.</li>\n<li>If libraries compiled with other compilers are called,\nstack frames from strategies here will be invisible.</li>\n<li>Lifted strategies will appear in the trace, but the names\nmight be non-instructive, depending on the compiler version\nused.</li>\n</ul>\n\n\n\n",
+"strategies": [{
+               "name": "stacktrace-get-all-frame-names",
+               "description": "\nReturn a list of all the current stack frame namess. A stack\nframe name is the name of the rule or strategy on a given\nstack frame. The list might not be complete; refer to the module\ndocumentation for lang/stacktrace for details.\n\n\n",
+               "start": 31,
+               "end": 31,
+               "types": ["-> List(String)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "stacktrace-get-current-frame-name",
+               "description": "\nReturn the name of the currently active stack frame. This\nstrategy returns the name of the strategy that calls\nstacktrace-get-current-frame, with certain restrictions,\nsee the lang/stacktrace module documentation.\n\n\n",
+               "start": 41,
+               "end": 41,
+               "types": ["-> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "stacktrace-get-current-frame-index",
+               "description": "\nReturn the index (depth) of the current stack, including the call to this\nstrategy.\n\n\n",
+               "start": 49,
+               "end": 49,
+               "types": ["-> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "print-stacktrace",
+               "description": "\n\n",
+               "start": 51,
+               "end": 57,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Karl Trygve Kalleberg <karltk@strategoxt.org>"],
+"see": []
+}

@@ -1,0 +1,53 @@
+
+<module>
+  <name>util/config/stats</name>
+  <description><![CDATA[
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>set-statistics</name>
+    <description><![CDATA[
+                          Sets the 'statistics' level.
+                          
+                          E.g. <set-statistics>4 sets the statistics level to 4.
+                          
+                          ]]></description>
+    <start>9</start>
+    <end>10</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>get-statistics</name>
+    <description><![CDATA[
+                          Give the current 'statistics' level. Default is 0.
+                          
+                          ]]></description>
+    <start>15</start>
+    <end>16</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>pass-statistics</name>
+    <description><![CDATA[
+                          Builds command-line parameter for 'statistics' levels for calling XT tools.
+                          
+                          E.g. xtc-transform(!"abox2text", pass-statistics ) passes the 'statistics' level
+                          to abox2text.
+                          
+                          ]]></description>
+    <start>24</start>
+    <end>25</end>
+    
+    
+  </strategy>
+  
+</module>

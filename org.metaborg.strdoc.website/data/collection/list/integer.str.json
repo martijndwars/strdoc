@@ -1,0 +1,151 @@
+{
+"name": "collection/list/integer",
+"description": "\nThis module contains a collection of strategies for working with\nlists of integers.\n\n",
+"strategies": [{
+               "name": "sum",
+               "description": "\nReturns the sum of all integers in a list of integers\n\n\n",
+               "start": 16,
+               "end": 16,
+               "types": ["List(Int) -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "average",
+               "description": "\nReturns the average of all integers in a list of\nintegers. The result is an integer, which is\ntruncated (rounded down).\n\n\n",
+               "start": 25,
+               "end": 25,
+               "types": ["List(Int) -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "list-min",
+               "description": "\nReturns the lowest integer in a list of integers.\n\n\n",
+               "start": 32,
+               "end": 32,
+               "types": ["List(Int) -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "list-max",
+               "description": "\nReturns the highest integer in a list of integers.\n\n\n",
+               "start": 39,
+               "end": 39,
+               "types": ["List(Int) -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "list-accum(s)",
+               "description": "\nReduces a list, applying s successively between\nthe head and tail of the list. This strategy is\nrelated to foldl.\n\nExample: <list-accum(id)> [1,2,3] => (3,(2,1))\n\n\n",
+               "start": 51,
+               "end": 51,
+               "types": [" List(a) -> d"],
+               "params": ["(a,b)   -> c"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "add-lists",
+               "description": "\nAdds together multiple lists of numbers. The input\nis a list of integer (or real) lists, which all must\nbe of the same length. The result is one list of\nthe same length, i.e. a sum of vectors.\n\nExample: <add-lists> [[1.0,2.0],[3,4],[6,7]] => [1.000000000000000e+01,1.300000000000000e+01]\n\n\n",
+               "start": 63,
+               "end": 63,
+               "types": ["List(List(Number)) -> List(Number)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "int-sort",
+               "description": "\nSort a list of integers in ascending order.\n\n\n\n",
+               "start": 72,
+               "end": 72,
+               "types": ["List(Int) -> List(Int)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-interval-from",
+               "description": "\nSucceeds if the integer list is an ascending number\nsequence, increasing by one, starting at a given\nnumber. The range strategy can be used to\n\nExample: <is-interval-from> (3, [4,5,6,7]) => 7\n\n\n\n",
+               "start": 85,
+               "end": 91,
+               "types": ["List(Int) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "range",
+               "description": "\nGenerates range of numbers in the form of an integer list. This\nversion of range accepts only one integer as input. The generated\nsequence of integers is generated, starts at 0 and increases by one\nuntil the specified end point is reached.  The end point is never\npart of the generated list.\n\nExample: <range> 10 => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n",
+               "start": 108,
+               "end": 108,
+               "types": [" Int       -> List(Int)"," Int * Int -> List(Int)"],
+               "params": [],
+               "notes": [],
+               "since": "0.9.3"
+               },{
+               "name": "range",
+               "description": "\nGenerates a range of numbers in the form of an integer list. This version\nof range accepts two integers as input. The first is the lower bound, of\nthe sequence, the second is the upper bound. The upper bound is never\npart of the generated list.\n\nExample: <range> (5, 10)     => [5, 6, 7, 8, 9]\n\n\n",
+               "start": 121,
+               "end": 121,
+               "types": [" Int * Int -> List(Int)"],
+               "params": [],
+               "notes": [],
+               "since": "0.9.3"
+               },{
+               "name": "range( | step)",
+               "description": "\nGenerates a sequence of integers, using a specified step size. This version\nof range starts at zero and adds one integer to the sequence for every\nstep specified by the term argument. The input term gives the upper bound\nof the sequence, and is never included. The step size is allowed\nto be negative.\n\nExample: <range(|3)>   10          => [0, 3, 6, 9]\nExample: <range(|-30)> (-10, -100) => [-10, -40, -70]\n\n\n",
+               "start": 140,
+               "end": 140,
+               "types": ["step Int","     Int       -> List(Int)","     Int * Int -> List(Int)"],
+               "params": [],
+               "notes": [],
+               "since": "    0.9.3"
+               },{
+               "name": "range( | step)",
+               "description": "\nGenerates a sequence of integers, using a specified step size. This version\nof range starts at zero and adds one integer to the sequence for every\nstep specified by the term argument. The input terms give the lower and\nupper bound of the sequence, respectively. The upper bound is never\nincluded. The step size is allowed to be negative.\n\nExample: <range(|3)>   (0, 10)     => [0, 3, 6, 9]\n\n\n",
+               "start": 156,
+               "end": 156,
+               "types": ["step Int","     Int       -> List(Int)","     Int * Int -> List(Int)"],
+               "params": [],
+               "notes": [],
+               "since": "    0.9.3"
+               },{
+               "name": "range(next)",
+               "description": "\nGenerates a sequence of numbers using a generator strategy. The\ninput integer is the upper bound. The strategy argument is a\ngenerator which specifies how to go from the current number in\nthe sequence to the next. The sequence starts at 0.\n\nExample: <range(inc)> 5 => [0,1,2,3,4]\n\n\n",
+               "start": 171,
+               "end": 171,
+               "types": ["next Int -> Int","     Int       -> List(Int)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "range(next)",
+               "description": "\nGenerates a sequence of numbers using a generator strategy. The\ninput integers are the lower and upper bounds, respectively. The\nstrategy argument is a generator which specifies how to go from\nthe current number in the sequence to the next.\n\n\nExample: <range(inc)> (2,5) => [2,3,4]\n\n\n",
+               "start": 185,
+               "end": 185,
+               "types": ["     Int * Int -> List(Int)"],
+               "params": [],
+               "notes": [],
+               "since": "0.9.3"
+               },{
+               "name": "range-next(inc)",
+               "description": "\n",
+               "start": 188,
+               "end": 195,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-interval",
+               "description": "\nSucceeds if the input term is a list of monotonously increasing\nintegers and the difference between two adjacent integers is\nalways one.\n\nExample: <is-interval> [1,2,3,4,5] => (1,5)\n\n\n",
+               "start": 208,
+               "end": 209,
+               "types": ["List(Int) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

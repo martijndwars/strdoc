@@ -1,0 +1,124 @@
+{
+"name": "collection/list/filter",
+"description": "\nThis module contains strategies for filtering and partitioning\nlists.\n\n",
+"strategies": [{
+               "name": "filter(s)",
+               "description": "\nReturns all elements in a list that satisfy s, as a list.\n\n\n\n",
+               "start": 17,
+               "end": 18,
+               "types": ["    List(a) -> List(b)"],
+               "params": ["s  a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "filter(s, tail)",
+               "description": "\n\n",
+               "start": 21,
+               "end": 24,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "retain-all(s)",
+               "description": "\nReturns all elements in a list that satisfy s, as a list.\n\n\n",
+               "start": 34,
+               "end": 35,
+               "types": ["    List(a) -> List(b)"],
+               "params": ["s  a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "remove-all(s)",
+               "description": "\nRemoves all elements from a list that satisfy s\n\n\n",
+               "start": 43,
+               "end": 44,
+               "types": ["    List(a) -> List(a)"],
+               "params": ["s  a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "reverse-filter(s)",
+               "description": "\nReturns all elements in a list that satisfy s, as a list.\nTraverses the list in reverse order.\n\n\n",
+               "start": 55,
+               "end": 56,
+               "types": [" List(a) -> List(b)"],
+               "params": ["s a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "reverse-filter(s, tail)",
+               "description": "\n\n",
+               "start": 58,
+               "end": 62,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "filter-gen(pred, cont: term -> term * term -> term)",
+               "description": "\n",
+               "start": 65,
+               "end": 66,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "filter-option-args(flag)",
+               "description": "\n",
+               "start": 69,
+               "end": 72,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "filter-options(flag)",
+               "description": "\n",
+               "start": 75,
+               "end": 78,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "list-some-filter(s)",
+               "description": "\n",
+               "start": 81,
+               "end": 82,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "partition(s)",
+               "description": "\nPartitions a list into a tuple of two lists.\n\nThe argument s is applied to all elements of the list. The\nresults of the succesful applications are returned in the first\nlist. The terms to which s cannot be applied are returned in the\nsecond list.\n\n\n\n",
+               "start": 97,
+               "end": 98,
+               "types": ["     List(a) -> (List(b), List(a))"],
+               "params": ["s   a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "partition(s1, s2)",
+               "description": "\nPartitions a list into a tuple of two lists.\n\n\n",
+               "start": 107,
+               "end": 111,
+               "types": ["     List(a) -> (List(b), List(c))"],
+               "params": ["s1   a -> b","s2   a -> c"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "partition'(s)",
+               "description": "\n",
+               "start": 114,
+               "end": 118,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

@@ -1,0 +1,12 @@
+module Comment
+
+lexical syntax
+
+  MLC            = "/*" InsideCommentX* "*/"
+  InsideCommentX  = ~[\*]
+  InsideCommentX  = Asterisk
+  Asterisk        = [\*]
+  
+lexical restrictions
+
+  Asterisk -/- [\/]

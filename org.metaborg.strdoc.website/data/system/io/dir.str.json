@@ -1,0 +1,34 @@
+{
+"name": "system/io/dir",
+"description": "\nStrategies for exploring directories.\n\n",
+"strategies": [{
+               "name": "remove-file",
+               "description": "\nRemoves a file from a directory.\n\n",
+               "start": 9,
+               "end": 10,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "getenv",
+               "description": "\nThe  getenv() function searches the environment list for a\nstring that matches the string pointed to  by  name.   The\nstrings are of the form name = value.\n\n",
+               "start": 17,
+               "end": 18,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "home-dir",
+               "description": "\n\n",
+               "start": 22,
+               "end": 23,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

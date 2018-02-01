@@ -1,0 +1,4 @@
+module stratego/Stratego
+imports stratego/Stratego-Sugar
+hiddens
+  context-free start-symbols Module

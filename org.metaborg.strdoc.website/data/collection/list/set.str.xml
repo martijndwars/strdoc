@@ -1,0 +1,369 @@
+
+<module>
+  <name>collection/list/set</name>
+  <description><![CDATA[
+                        This module contains strategies for dealing with sets.
+                        
+                        The strategies in this module assume that sets are encoded as lists.
+                        A list is converted to a set by excising duplicates, using the
+                        make-set strategy .
+                        
+                        An implementation of indexed sets can be found in collection/set/indexed.
+                        
+                        Given this notion of sets, we can perform the traditional
+                        set operations such as intersect (isect), union, one-way
+                        difference (diff) and symmetric difference (sym-diff).
+                        
+                        We can also check sets for equality (set-eq), strict and
+                        non-strict subset relation (subset and subseteq, respectively).
+                        
+                        
+                        
+                        ]]></description>
+  <author><![CDATA[Eelco Visser <visser@acm.org>]]></author>
+  <author><![CDATA[Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation]]></author>
+  <see>collection/set/indexed</see>
+  
+  <strategy>
+    <name>HdMember</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>30</start>
+    <end>31</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>HdMember'</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>34</start>
+    <end>36</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>make-set</name>
+    <description><![CDATA[
+                          Removes duplicate elements from a list. This effectively
+                          converts a list to a set.
+                          
+                          
+                          ]]></description>
+    <start>46</start>
+    <end>47</end>
+    <type><![CDATA[ List(a) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>nub</name>
+    <description><![CDATA[
+                          Removes duplicate elements from a list. This effectively
+                          converts a list to a set.
+                          
+                          
+                          ]]></description>
+    <start>57</start>
+    <end>57</end>
+    <type><![CDATA[  List(a) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>union</name>
+    <description><![CDATA[
+                          Union: Concatenation of two lists, only those elements in the
+                          first list are added that are not already in the second list.
+                          
+                          
+                          ]]></description>
+    <start>72</start>
+    <end>72</end>
+    <type><![CDATA[List(a) * List(a) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>union</name>
+    <description><![CDATA[
+                          Takes the union of two sets. The result is a set
+                          where all elements found in both sets are present,
+                          but each element occurs only once. The strategy
+                          parameter is the equality operator to be used on the
+                          elements.
+                          
+                          
+                          ]]></description>
+    <start>85</start>
+    <end>90</end>
+    <type><![CDATA[List(a) * List(a) -> List(a)]]></type>
+    <param><![CDATA[Equality operator to be used on the elements]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>unions</name>
+    <description><![CDATA[
+                          Takes the union of a list of sets. All the sets are
+                          sets are flattened into one list, and all duplicates
+                          are removed, to obtain a new set.
+                          
+                          Example: <unions> [[1,2,3],[3,4,5],[5,6,7]] => [1,2,3,4,5,6,7]
+                          
+                          
+                          ]]></description>
+    <start>103</start>
+    <end>103</end>
+    <type><![CDATA[ List(List(a)) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>unions</name>
+    <description><![CDATA[
+                          Takes the union of a list of sets. The result is a set
+                          where all elements found in either of the sets are present,
+                          i.e. where each element occurs only once. The strategy
+                          parameter is the equality operator to be used on the
+                          elements.
+                          
+                          
+                          ]]></description>
+    <start>116</start>
+    <end>116</end>
+    <type><![CDATA[List(List(a)) -> List(a)]]></type>
+    <param><![CDATA[Equality operator used on the elements.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>diff</name>
+    <description><![CDATA[
+                          Computes the difference between two sets. That is, it
+                          returns the elements found in the first set, but not in
+                          the second.
+                          
+                          
+                          ]]></description>
+    <start>132</start>
+    <end>132</end>
+    <type><![CDATA[ (List(a), List(a)) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>diff</name>
+    <description><![CDATA[
+                          Computes the difference between two sets. That is, the elements
+                          found in the first set, but not in the second. The strategy
+                          argument is used to compare elements of the sets.
+                          
+                          Example: <diff(eq)> ([1,2,3], [5,1,2]) => [3]
+                          
+                          
+                          ]]></description>
+    <start>144</start>
+    <end>149</end>
+    <type><![CDATA[  (List(a), List(a)) -> List(a)]]></type>
+    <param><![CDATA[ Used to compare the elements. If an application succeeds, then two elements are equal.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>sym-diff</name>
+    <description><![CDATA[
+                          Takes the symmetric difference of two sets. That is, it returns
+                          all elements not found in both sets.
+                          
+                          Example: <sym-diff> ([1,2,3],[5,1,2,6]) => [3,5,6]
+                          
+                          
+                          ]]></description>
+    <start>164</start>
+    <end>164</end>
+    <type><![CDATA[ (List(a), List(a)) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>sym-diff</name>
+    <description><![CDATA[
+                          Takes the symmetric difference of two sets. That is, it returns
+                          all elements not found in both sets. the strategy argument is
+                          used to compare elements of the sets.
+                          
+                          Example: <sym-diff(eq)> ([1,2,3],[5,1,2,6]) => [3,5,6]
+                          
+                          
+                          ]]></description>
+    <start>176</start>
+    <end>177</end>
+    <type><![CDATA[  (List(a), List(a)) -> List(a)]]></type>
+    <param><![CDATA[ Equality operator to use on the elements. If it succeeds, the elements are equal.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>isect</name>
+    <description><![CDATA[
+                          Take the intersection of two sets. That is, it returns
+                          all elements found in both sets.
+                          
+                          Example: <isect> ([1,2,3],[5,1,2,6]) => [1,2]
+                          
+                          
+                          ]]></description>
+    <start>194</start>
+    <end>194</end>
+    <type><![CDATA[List(a) * List(a) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>isect</name>
+    <description><![CDATA[
+                          Take the intersection of two sets.
+                          
+                          The result is the first list, without the elements
+                          that are not in the second list. If the first list is not
+                          a set (it has duplicates), the result will
+                          have duplicates. Note that because of this <isect> (l1, l2) is
+                          not always equal to <isect> (l2, l1).
+                          
+                          
+                          ]]></description>
+    <start>209</start>
+    <end>214</end>
+    <type><![CDATA[eq  a * a ->? _]]></type>
+    <type><![CDATA[    [a] * [a] -> [a]]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>set-eq</name>
+    <description><![CDATA[
+                          Check equality of two list sets.
+                          
+                          This strategy uses the basic `eq` to compare the elements.
+                          
+                          ]]></description>
+    <start>224</start>
+    <end>224</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>set-eq</name>
+    <description><![CDATA[
+                          Check equality of two list sets.
+                          
+                          The input remains untouched, set-eq just succeeds or fails.
+                          
+                          
+                          ]]></description>
+    <start>238</start>
+    <end>238</end>
+    
+    <param><![CDATA[test strategy that will compare two elements upon their equality.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>subset</name>
+    <description><![CDATA[
+                          Succeeds if the first set is a strict subset of the second.
+                          
+                          Example: <subset> ([1,2],[1,2,3])
+                          
+                          
+                          ]]></description>
+    <start>247</start>
+    <end>247</end>
+    <type><![CDATA[List(a) * List(a) -> _]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>subset</name>
+    <description><![CDATA[
+                          Succeeds if the first set is a strict subset of the second. The
+                          strategy parameter is the equality operator that will be used
+                          to check if two elements are equal.
+                          
+                          
+                          ]]></description>
+    <start>257</start>
+    <end>257</end>
+    <type><![CDATA[List(a) -> List(a) -> _]]></type>
+    <param><![CDATA[Equality operator to be used on elements on the set.]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>subseteq</name>
+    <description><![CDATA[
+                          Succeeds if the first set is a (non-strict) subset of the second.
+                          
+                          Example: <subseteq> ([1,2],[1,2])
+                          
+                          
+                          ]]></description>
+    <start>266</start>
+    <end>266</end>
+    <type><![CDATA[List(a) * List(a) -> _]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>subseteq</name>
+    <description><![CDATA[
+                          Succeeds if the first set is a (non-strict) subset of the second.
+                          The strategy parameter is the equality operator that will be used
+                          to check if two elements are equal.
+                          
+                          Example: <subseteq> ([1,2],[1,2])
+                          
+                          
+                          ]]></description>
+    <start>277</start>
+    <end>277</end>
+    <type><![CDATA[List(a) * List(a) -> _]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>subset-gen</name>
+    <description><![CDATA[
+                          General strategy for comparing two list sets.
+                          
+                          Other strategies call this one to check for equality, subset or subseteq.
+                          
+                          set after comparing all elements from the first list.
+                          
+                          ]]></description>
+    <start>288</start>
+    <end>296</end>
+    
+    <param><![CDATA[Equality operator to be used on elements in the set.]]></param>
+    <param><![CDATA[Matching strategy that tests the remainder of the right (2nd)]]></param>
+  </strategy>
+  
+</module>

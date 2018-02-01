@@ -1,0 +1,205 @@
+{
+"name": "collection/tuple/common",
+"description": "\nThis module contains strategies for operating on tuples.\n\nIn Stratego, tuples are a terms, separate from lists.\n\n\n\n",
+"strategies": [{
+               "name": "TupleToList",
+               "description": "Convert a tuple to a list.\n\n\n",
+               "start": 22,
+               "end": 22,
+               "types": ["List(a) -> Tuple(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "ListToTuple",
+               "description": "Convert a list to a tuple.\n\n\n",
+               "start": 28,
+               "end": 28,
+               "types": ["Tuple(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Fst",
+               "description": "Retrieve the first element of a tuple.\n\n\n",
+               "start": 34,
+               "end": 34,
+               "types": ["Tuple(a, xs...) -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Snd",
+               "description": "Retrieve the second element of a tuple.\n\n\n",
+               "start": 40,
+               "end": 40,
+               "types": ["Tuple(a, b, xs...) -> b"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Third",
+               "description": "Retrieve the third element of a tuple.\n\n\n",
+               "start": 46,
+               "end": 46,
+               "types": ["Tuple(a, b, c, xs...) -> c"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Dupl",
+               "description": "Duplicate a term into a two-element tuple\n\n\n",
+               "start": 52,
+               "end": 52,
+               "types": ["a -> Tuple(a, a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split(f, g)",
+               "description": "Apply a pair of strategies, f and g, to an element.\n\n\n",
+               "start": 60,
+               "end": 60,
+               "types": ["          a -> Tuple(a', b')"],
+               "params": ["f        a -> a'","g        a -> b'"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split3(f, g, h)",
+               "description": "Apply a triple of strategies, f, g and h to an element.\n\n\n",
+               "start": 69,
+               "end": 69,
+               "types": ["          a -> Tuple(a', b', c')"],
+               "params": ["f        a -> a'","g        a -> b'","h        a -> c'"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Swap",
+               "description": "Swap two elements in a tuple.\n\n\n",
+               "start": 75,
+               "end": 75,
+               "types": ["Tuple(a, b) -> Tuple(b, a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Thd",
+               "description": "Retrieve the head of a tuple.\n\n\n",
+               "start": 82,
+               "end": 82,
+               "types": ["Tuple(a) -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Ttl",
+               "description": "Retrieve the tail of a tuple. A new tuple with all elements except\nthe first will be returned.\n\n\n",
+               "start": 89,
+               "end": 89,
+               "types": ["Tuple(a) -> Tuple(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "tindex",
+               "description": "Get the nth element of a tuple. The index must be smaller than the\nnumber of elements in the tuple.\n\n\n",
+               "start": 97,
+               "end": 98,
+               "types": ["(Int, Tuple(a)) -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-tuple",
+               "description": "Predicate that checks if the supplied term is a tuple.\n\n\n",
+               "start": 104,
+               "end": 105,
+               "types": ["Tuple(a) -?> Tuple(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "flip(s)",
+               "description": "Apply a strategy s to a swapped version of the supplied tuple.\nThe supplied tuple will be swapped, then is s applied.\n\n\n",
+               "start": 113,
+               "end": 113,
+               "types": ["            Tuple(a,b) -> Tuple(b', a')"],
+               "params": ["s          Tuple(b,a) -> Tuple(b', a')"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "tmap(s)",
+               "description": "Apply a strategy to each element of a tuple. This strategy maps\na strategy s over all elements in a tuple.\n\n\n",
+               "start": 121,
+               "end": 122,
+               "types": ["             Tuple(a) -> Tuple(b)"],
+               "params": ["s           a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "tconcat(s)",
+               "description": "Concatenate the lists in a tuple of lists, using s as the\nconcatenation strategy.\n\nThe concatenation strategy is asked to concatenate a two-element\ntuple of lists and produce a list. Concatenation goes from right to\nleft.\n\n\n",
+               "start": 134,
+               "end": 135,
+               "types": ["            Tuple(List(a))"],
+               "params": ["s          Tuple(List(a), List(a)) -> List(a)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "tconcat'(s1, s2)",
+               "description": "Concatenate the lists in a tuple of lists, using s2 as the\nconcatenation strategy and s1 as the startup strategy.\n\nThe strategy s1 is applied once initially to an empty list, and\ncan be used to create a custom tail on the resulting list. It can\nalso be used to concatenate into non-list types.\n\nThe concatenation strategy s2 is asked to concatenate a\ntwo-element tuple of lists and produce list. Concatenation goes\nfrom right to left.\n\nExample: <tconcat'(!0, \\([a],b)-><add> (a,b)\\)> ([1],[2],[3]) => 6\n\n\n",
+               "start": 155,
+               "end": 156,
+               "types": ["            Tuple(List(a))"],
+               "params": ["s1         Nil -> b","s2         Tuple(List(a), b) -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "tcata(s1, s2)",
+               "description": "Apply a s1 and s2 in a catamorphic way to reduce a tuple.\n\ns2 must be a catamorphism, i.e. it must be able to reduce the\nelements of the tuple from right to left.\n\nThis strategy is also named tfoldr, as it is equivalent to a\nright-fold on tuples.\n\n\n",
+               "start": 171,
+               "end": 172,
+               "types": ["            Tuple(a) -> b"],
+               "params": ["s1         Nil -> b","s2         Tuple(a, b) -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "tfoldr(s1, s2)",
+               "description": "\nFold a tuple from right to left using s2 as the folding strategy.\ns1 is used to obtain the right-element (of type b) for s2.\n\n\n",
+               "start": 183,
+               "end": 184,
+               "types": ["            Tuple(a) -> b"],
+               "params": ["s1         Nil -> b","s2         Tuple(a, b) -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "tzip(s)",
+               "description": "Zip two tuples with s as the zipping strategy.\n\nExample: <tzip(add)> ((1,2,3),(5,4,3)) -> [6,6,6]\n\n\n",
+               "start": 194,
+               "end": 195,
+               "types": ["            Tuple(Tuple(a), Tuple(b)) -> c"],
+               "params": ["s          Tuple(a,b) -> c"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "tuple-zip(s)",
+               "description": "\n\n",
+               "start": 200,
+               "end": 202,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "tuple-unzip(s)",
+               "description": "\n\n",
+               "start": 207,
+               "end": 209,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],
+"see": ["collection/list/common"]
+}

@@ -1,0 +1,79 @@
+{
+"name": "term/share",
+"description": "\nThe ATerm library preserves maximal sharing of subterms\nthrough hash-consing. This sharing is not directly available\nto the user of an ATerm. For some applications it is necessary\nto make the implicit sharing in terms explicit in the form of\na let construct in which all occurences of a shared subterm\nare replaced by a symbolic pointer (variable).\n\n",
+"strategies": [{
+               "name": "share(mkvar, always, mklet)",
+               "description": "\nThe strategy share defined in this module achieves such\nan explicit sharing for arbitrary terms. The approach used by\nthe strategy is to first turn the term into its underlying\ngraph and then inlining those subterms that are not shared\n(only occur once) or that cannot be shared in this way (upto\nthe needs of an application).\n\n",
+               "start": 24,
+               "end": 26,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "edge(mkvar)",
+               "description": "\n\n",
+               "start": 30,
+               "end": 30,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "list-edge(mkvar)",
+               "description": "\n\n",
+               "start": 31,
+               "end": 31,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "graph(mkvar)",
+               "description": "\nThe graph of a term is obtained by turning each node\n\\verb|F(t1,...,tn)| into an edge \\verb|(a, F(a1,...,an))|,\nwhere \\verb|a| is the address of the node and the \\verb|ai|\nare the addresses of its direct subterms. The \\verb|mkvar|\nparameter is used to embed the address in some constructor.\n(If \\verb|mkvar| is \\verb|id|, nothing is done.)\n\nThe first edge in the graph is the root of the tree. By\ndefinition it is never shared. The graph can be turned into\none big let-expression with the root as its body. That is what\nthe first line of the definition of \\verb|inline-graph|\naccomplishes.\n\nSubsequently, nodes that are not shared, i.e., a pointer to\nwhich only occurs once, can be inlined. Some nodes may always\nhave to be inlined (for application specific reasons). The\nshape of such nodes is specified by the parameter\n\\verb|always|.  Edges that cannot be inlined are turned into a\nlet-binding the form of which is determined by the parameter\n\\verb|mklet|.\n\nAfter all graph edges have either been inlined or turned into\nlet-bindings the, now empty, \\verb|GraphLet| is discarded and\nreplaced by its body.\n\n",
+               "start": 60,
+               "end": 63,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "inline-graph(always, mklet)",
+               "description": "\n\n",
+               "start": 71,
+               "end": 77,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "term-share-inline",
+               "description": "\n\n",
+               "start": 81,
+               "end": 84,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "term-share-dead",
+               "description": "\n\n",
+               "start": 86,
+               "end": 89,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "term-share-dont-inline(mklet)",
+               "description": "\n\n",
+               "start": 91,
+               "end": 93,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

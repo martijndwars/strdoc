@@ -1,0 +1,16 @@
+{
+"name": "system/posix-xsi/pipe-abstractions",
+"description": "\n\n",
+"strategies": [{
+               "name": "copy-pipe-to-file",
+               "description": "\n\n",
+               "start": 6,
+               "end": 9,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

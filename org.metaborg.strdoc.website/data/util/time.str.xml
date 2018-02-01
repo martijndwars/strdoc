@@ -1,0 +1,26 @@
+
+<module>
+  <name>util/time</name>
+  <description><![CDATA[
+                        The primitive \verb|dtime| returns the CPU time in seconds
+                        since the last call to \verb|dtime|. Can be used to time
+                        strategies.
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>time</name>
+    <description><![CDATA[
+                          Strategy time returns the time since the Epoch (00:00:00 UTC, January 1, 1970),
+                          measured in seconds. It is an alias of now-epoch-time.
+                          
+                          ]]></description>
+    <start>48</start>
+    <end>49</end>
+    
+    
+  </strategy>
+  
+</module>

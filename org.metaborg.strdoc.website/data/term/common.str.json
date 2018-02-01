@@ -1,0 +1,160 @@
+{
+"name": "term/common",
+"description": "\nSome primitives for the manipulation of terms.\n\n",
+"strategies": [{
+               "name": "mkterm",
+               "description": "\nBuild a term given a constructor name and a list of terms.\n\nNote that this primitive strategy has been turned into a language construct.\n\nThe pattern f#(xs) denotes the decomposition of a term into its function symbol\nf and its list of arguments xs. This pattern can be used in matching ?f#(xs)\nand building !f#(xs) terms (so also in left- and right-hand sides of rules) and\nalso as a congruence s1#(s2).\n\nE.g. <mkterm> (f, [t1,...,tn])  builds the constructor application f(t1,...,tn).\n\n",
+               "start": 23,
+               "end": 23,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "explode-term",
+               "description": "\nDecompose a term into a constructor name and a list of terms.\n\nNote that this primitive strategy has been turned into a language construct.\n\nThe pattern f#(xs) denotes the decomposition of a term into its function symbol\nf and its list of arguments xs. This pattern can be used in matching ?f#(xs)\nand building !f#(xs) terms (so also in left- and right-hand sides of rules) and\nalso as a congruence s1#(s2).\n\nE.g. <explode-term> f(t1,...,tn) is the inverse of mkterm and produces (f, [t1,...,tn]).\n\nNote that explode-term is equivalent to !(<get-constructor>, <get-arguments>).\n\n",
+               "start": 39,
+               "end": 39,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-constructor",
+               "description": "\nGet the constructor of a term.\n\nNote that explode-term is equivalent to !(<get-constructor>, <get-arguments>).\n\n",
+               "start": 46,
+               "end": 46,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-arguments",
+               "description": "\nGet the arguments of a term.\n\nNote that explode-term is equivalent to !(<get-constructor>, <get-arguments>).\n\n",
+               "start": 53,
+               "end": 53,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-appl-arguments",
+               "description": "\nGet the arguments of a term application.\n\n",
+               "start": 58,
+               "end": 59,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-appl-arguments(s)",
+               "description": "\nGet the arguments of a term application, applying s to the individual arguments.\n\n\n",
+               "start": 67,
+               "end": 68,
+               "types": ["f(a1 ... an) -> [b1 ... bn]"],
+               "params": ["a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "address-lt",
+               "description": "\nCompare the address of two terms and succeeds if the address of the first is\nsmaller than the address of the second.\n\nThis predicate induces a total ordering on terms and can be used to sort terms.\nNote that this relation is valid in one session (but what happens after\nrehashing), but not necessarily between two sessions.\n\n",
+               "start": 78,
+               "end": 79,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "term-address-lt( | t2)",
+               "description": "\nCompare the address of two terms and succeeds if the address of the current\nterm is smaller than the address of the argument.\n\n",
+               "start": 85,
+               "end": 86,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "address",
+               "description": "\nGive the address of a term.\n\n<address> t replaces t with its address (represented as a string).\nThis can be used to obtain a unique symbolic reference to a term.\n\n\n",
+               "start": 96,
+               "end": 97,
+               "types": ["t -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "checksum",
+               "description": "\nGive checksum of a term. Similar to atsum from aterm package.\n\n",
+               "start": 102,
+               "end": 102,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "crush(nul, sum)",
+               "description": "\n\n",
+               "start": 106,
+               "end": 107,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "crush(nul, sum, s)",
+               "description": "\n\n",
+               "start": 109,
+               "end": 110,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "node-size",
+               "description": "\n\n",
+               "start": 114,
+               "end": 115,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "term-size",
+               "description": "\n\n",
+               "start": 117,
+               "end": 118,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "at-depth(depth, s)",
+               "description": "\n\n",
+               "start": 122,
+               "end": 129,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "om-occurrences(s)",
+               "description": "\n\n",
+               "start": 136,
+               "end": 137,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "occurrences(s)",
+               "description": "\n\n",
+               "start": 139,
+               "end": 140,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

@@ -1,0 +1,871 @@
+{
+"name": "collection/list/common",
+"description": "\nThis module contains basic functionality for manipulating lists.\n\n\n",
+"strategies": [{
+               "name": "list-loop(s)",
+               "description": "\nIterative loop over a list applying s to each element.\n\n\n",
+               "start": 18,
+               "end": 19,
+               "types": ["List(a) -> List(a)"],
+               "params": ["Strategy to apply to every element (a -> _)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "list-fold(s: c * a -> c | acc)",
+               "description": "\nIterative fold over a list applying s to each element and\naccumulator acc from left to right.\n\nintermediate result is a term argument. The next element\nof the list is the current term.\n\n",
+               "start": 31,
+               "end": 32,
+               "types": ["List(a) -> c"],
+               "params": ["Strategy applied for folding. The current","Initial value for folding (type: c)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Hd",
+               "description": "\n",
+               "start": 37,
+               "end": 37,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Tl",
+               "description": "\n",
+               "start": 40,
+               "end": 40,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Last",
+               "description": "\n",
+               "start": 43,
+               "end": 43,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "MkSingleton",
+               "description": "\n\n",
+               "start": 49,
+               "end": 50,
+               "types": ["a -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split-Cons",
+               "description": "\nSplits a Cons into a tuple with head and tail.\n\n\n",
+               "start": 57,
+               "end": 58,
+               "types": ["List(a) -> (a, List(a))"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "MkCons",
+               "description": "\nMakes a Cons out of a tuple with head and tail. The\ntail must be a list, but may be the empty list.\n\n\n",
+               "start": 66,
+               "end": 67,
+               "types": ["(a, List(a)) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-list",
+               "description": "\nSucceeds if the input term is a list.\n\n\n",
+               "start": 76,
+               "end": 76,
+               "types": ["List(a) -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "map(s)",
+               "description": "\nApply a strategy to each element of a list.\n\n\n",
+               "start": 85,
+               "end": 86,
+               "types": [" List(a) -> List(b)"],
+               "params": ["s is applied to all elements: a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "map1(s)",
+               "description": "\n",
+               "start": 89,
+               "end": 90,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "reverse-map(s)",
+               "description": "\nIn reverse order, apply a strategy to each element of a list.\n\n\n",
+               "start": 98,
+               "end": 99,
+               "types": [" List(a) -> List(b)"],
+               "params": ["s is applied to all elements: a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "list(s)",
+               "description": "\n\n\n",
+               "start": 106,
+               "end": 107,
+               "types": [],
+               "params": [],
+               "notes": ["list(s) is an alias for map"],
+               "since": ""
+               },{
+               "name": "list-some(s)",
+               "description": "\nApply a strategy to some elements in a list. The elements\nof the original list will be kept unchanged when the\nstrategy s fails.\n\n\n",
+               "start": 117,
+               "end": 118,
+               "types": ["   List(a) -> List(b)"],
+               "params": ["s       a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "length",
+               "description": "\nReturns the length of a list.\n\n\n",
+               "start": 126,
+               "end": 127,
+               "types": ["List(a) -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "elem",
+               "description": "\nSucceeds if the term is in the list.\n\n\n",
+               "start": 134,
+               "end": 135,
+               "types": [" (a, List(a)) ->? List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "elem(eq)",
+               "description": "\nSucceeds if the term is in the list, using the given\nstrategy for determining equality.\n\n\n",
+               "start": 144,
+               "end": 145,
+               "types": [" (a, List(a)) ->? List(a or b)"],
+               "params": ["(a, a) ->? b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fetch(s)",
+               "description": "\nFind first list element for which s succeeds.\n\n\n",
+               "start": 154,
+               "end": 155,
+               "types": [" List(a) -> List(a or b)"],
+               "params": ["a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fetch-elem(s)",
+               "description": "\nReturn first list element for which s succeeds.\n\n\n",
+               "start": 163,
+               "end": 164,
+               "types": [" List(a) -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split-fetch(s)",
+               "description": "\nSplits a list in two parts at the first point where s succeeds.\n\nThe element to which s was applied is not part of the result. split-fetch\nfails if s cannot be applied to any of the elements.\n\nExamples:\n<split-fetch(\\ 3 -> 6 \\)> [1, 2, 3] => ([1,2], [])\n<split-fetch(\\ 3 -> 6 \\)> [2, 3, 4] => ([2], [4])\n<split-fetch(\\ 3 -> 6 \\)> [3, 4, 5] => ([], [4,5])\nnot(<split-fetch(\\ 3 -> 6 \\)> [8, 7, 6])\n\n\n",
+               "start": 182,
+               "end": 183,
+               "types": [" List(a) -> (List(a), List(a))"],
+               "params": ["a ->? _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split-fetch-keep(s)",
+               "description": "\nSplits a list in two parts at the point where s succeeds, keeping the\nelement at which s succeeded.\n\nUnlike split-fetch, this strategy keeps the dividing element as part of\nthe result as the second element in the triple: (before, split, after)\n\nsplit-fetch-keep fails if s cannot be applied to any of the elements.\n\n\n",
+               "start": 197,
+               "end": 198,
+               "types": [" List(a) -> (List(a), b, List(a))"],
+               "params": ["a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "list-tokenize( | sep)",
+               "description": "\nBreaks a list into multiple parts (tokens).\n\nThe term argument sep is a list of delimiters (elements that separate\ntokens from one another), which is used to split the list\ninto multiple tokens. The result is a list of lists, i.e. a list\nof tokens.\n\n\n",
+               "start": 211,
+               "end": 212,
+               "types": [" List(a) -> List(List(a))"],
+               "params": ["List of separator elements."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "list-tokenize(sep)",
+               "description": "\nBreaks a list into multiple parts (tokens).\n\nThe strategy argument sep is used to split the list. Wherever it\nsucceeds, the original list is split, and the parts are returned\nas a list of lists, i.e. a list of tokens.\n\n\n",
+               "start": 224,
+               "end": 230,
+               "types": ["    List(a) -> List(List(a))"],
+               "params": ["s  a -> fail?"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "at-tail(s)",
+               "description": "\nApply a strategy to the tail of a list.\n\n\n",
+               "start": 240,
+               "end": 241,
+               "types": [" List(a) -> List(a or b)"],
+               "params": ["is applied to the tail: List(a) -> List(b)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "at-end(s)",
+               "description": "\nApply s to the Nil of a list.\n\n\n",
+               "start": 249,
+               "end": 250,
+               "types": [" List(a) -> List(a)"],
+               "params": ["is applied to Nil ([]) and must return a list: List(a) -> List(a)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "at-suffix(s)",
+               "description": "\nApply a strategy to some suffix of a list.\n\nThe longest suffix (that is, the first application in a list)\nis preferred.\n\n\n",
+               "start": 261,
+               "end": 262,
+               "types": [" List(a) -> List(a or b)"],
+               "params": ["is applied to the suffix : List(a) -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "at-suffix-rev(s)",
+               "description": "\nApply a strategy to some suffix of a list.\n\nThe shortest suffix (that is, the last application in a list)\nis preferred.\n\n\n",
+               "start": 273,
+               "end": 274,
+               "types": [" List(a) -> List(a or b)"],
+               "params": ["is applied to the suffix : List(a) -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "at-last(s)",
+               "description": "\nApply s to the last Cons ([_]) of a list.\n\n\n",
+               "start": 282,
+               "end": 283,
+               "types": [" List(a) -> List(a)"],
+               "params": ["Is applied to the [x] and must return a list: List(a) -> List(a)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split-init-last",
+               "description": "\nSplits a list into a tuple of its init list and last element.\n\nExample:\n<split-init-last> [1, 2, 3, 4] => ([1, 2, 3], 4)\n<split-init-last> [1]          => ([], 1)\n\n\n",
+               "start": 296,
+               "end": 297,
+               "types": ["  List(a) -> (List(a), a)"],
+               "params": [],
+               "notes": [],
+               "since": " 0.9.4"
+               },{
+               "name": "at-init(s1, s2)",
+               "description": "\nApplies s1 to all elements in a list, except the last, where\ns2 is applied.\n\n\n",
+               "start": 307,
+               "end": 308,
+               "types": ["List(a) -> List(b)"],
+               "params": ["s1 a -> b","s2 a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "listbu(s)",
+               "description": "\nApplies a strategy to a list in bottom up order. That is to say,\nthe strategy s will be applied to successively longer excerpts\nof the list, starting from the end.\n\nAt the first invocation, s will be applied to the tail of the list,\nand is expected to return a new list. The last element of the list\nwill then be added in front of this result, and s is applied to\nthis. The recursion continues through all elements from last to\nfirst, each time on a longer list, hence \"bottom up\".\n\nExample: <listbu(![9 | <id>])> [1,2,3,4] => [9,1,9,2,9,3,9,4,9]\n\n\n",
+               "start": 326,
+               "end": 327,
+               "types": ["    List(a) -> List(b)"],
+               "params": ["s  List(a) -> List(b)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "listbu1(s)",
+               "description": "\n\n",
+               "start": 332,
+               "end": 333,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "listtd(s)",
+               "description": "\nApplies a strategy to a list in top down order. That is to say,\nthe strategy s will first be applied to the whole list, then\nsuccessively shorter excerpts, all the way chopping of elements from\nthe start of the list.\n\nAt the first invocation, s will be applied to the whole list, and\nis expected to return a new list. The first element is chopped off\nthis result, and s is applied again, until s has been applied to\nthe empty list. The recursion continues through successively\nshorter list, hence \"top down\".\n\nit is given, because that will result in non-termination.\n\nExample: <listtd(not(?[]) ; ![<sum>] <+ ![])> [1,2,3,4] => [10]\n\n\n",
+               "start": 355,
+               "end": 356,
+               "types": ["    List(a) -> List(b)"],
+               "params": ["s  List(a) -> List(b)"],
+               "notes": ["The strategy s cannot result in a list which is longer than"],
+               "since": ""
+               },{
+               "name": "listdu(s)",
+               "description": "\nApplies s in a top down then bottom up, i.e. down up, order. See\nlisttd and listbu for a detailed description of each phase.\n\nwhich is longer than given to it.\n\n\n",
+               "start": 368,
+               "end": 369,
+               "types": ["   List(a) -> List(b)"],
+               "params": ["s List(a) -> List(b)"],
+               "notes": ["As with listtd, the strategy s can never result in a list"],
+               "since": ""
+               },{
+               "name": "listdu2(s1, s2)",
+               "description": "\nApplies s1 in a top down order then s2 in a bottom up order. See\nlistd and listbu for a detailed description of each phase.\n\nwhich is longer than given to it.\n\n\n",
+               "start": 382,
+               "end": 383,
+               "types": ["    List(a) -> List(b)"],
+               "params": ["s1 List(a) -> List(b)","s2 List(a) -> List(b)"],
+               "notes": ["As with listtd, the strategy s2 can never result in a list"],
+               "since": ""
+               },{
+               "name": "RevInit",
+               "description": "\n",
+               "start": 386,
+               "end": 386,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "Rev",
+               "description": "\n",
+               "start": 389,
+               "end": 389,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "RevExit",
+               "description": "\n",
+               "start": 392,
+               "end": 392,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "reverse",
+               "description": "\nReverses a list.\n\n\n",
+               "start": 400,
+               "end": 401,
+               "types": ["List(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "reverse(s)",
+               "description": "\nReverses a list and applies s to all the elements.\n\n\n",
+               "start": 409,
+               "end": 410,
+               "types": [" List(a) -> List(b)"],
+               "params": ["a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "reverse-acc(s, acc)",
+               "description": "\n",
+               "start": 413,
+               "end": 414,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "reverse-acc(s, acc)",
+               "description": "\n",
+               "start": 417,
+               "end": 418,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UptoInit",
+               "description": "\n",
+               "start": 423,
+               "end": 423,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UptoExit",
+               "description": "\n",
+               "start": 426,
+               "end": 426,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "UptoStep",
+               "description": "\n",
+               "start": 429,
+               "end": 429,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "upto",
+               "description": "\nGenerates a sequence of numbers from 0 up to the given input\ninteger, inclusive.\n\nSee also range.\n\n\n\n",
+               "start": 443,
+               "end": 444,
+               "types": ["Int -> List(Int)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "conc",
+               "description": "\nConcatenates all lists of a tuple.\n\n\n",
+               "start": 454,
+               "end": 456,
+               "types": ["(List(a), List(a), ...) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "concat",
+               "description": "\nConcatenates a list of lists into one list.\n\nExample: <concat> [[1,2],[3,4],[5,6]] => [1,2,3,4,5,6]\n\n\n",
+               "start": 466,
+               "end": 467,
+               "types": ["List(List(a)) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "makeConc",
+               "description": "\nConcats two elements if both elements are lists. Otherwise, constructs\na Conc term.\n\nGeneric term construction is used to avoid infinite recursion: makeConc\nis used in the compilation of Conc itself.\n\n\n",
+               "start": 479,
+               "end": 481,
+               "types": ["List(a) * List(b) -> List(a|b)","a * b -> Conc(a,b)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "separate-by",
+               "description": "\nSeparates the elements of the list by the specified separator.\nThe separate-by variant that uses a term argument is prefered.\n\n\n",
+               "start": 491,
+               "end": 493,
+               "types": ["(sep, List(a)) -> List(a or sep)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "separate-by(sep)",
+               "description": "\nSeparates the elements of the list by the specified separator.\nThe separate-by variant that uses a term argument is prefered.\n\n\n",
+               "start": 502,
+               "end": 503,
+               "types": [" List(a) -> List(a or sep)"],
+               "params": ["Strategy that results in a separator."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "separate-by( | sep)",
+               "description": "\nSeparates the elements of the list by the specified separator.\n\n\n",
+               "start": 511,
+               "end": 518,
+               "types": [" List(a) -> List(a or sep)"],
+               "params": ["Separator term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "matrix-transpose",
+               "description": "\nTransposes an n by m matrix. The matrix must be represented as\na list of n elements, where each element is a list of length m.\nThe element of the inner lists may be of any type.\n\nExample: <matrix-transpose> [[1,2],[3,4]] => [[1,3],[2,4]]\n\n\n",
+               "start": 531,
+               "end": 536,
+               "types": ["List(List(a)) -> List(List(a))"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "for-each-pair(s)",
+               "description": "\n<for-each-pair(s)> (xs, ys) produces the list of pairs <s> (x,y).\nfor each pair of x from xs and y from ys.\n\n\n\n",
+               "start": 546,
+               "end": 547,
+               "types": ["List(a) * List(b) -> List((a,b), ...)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "member",
+               "description": "\nSucceeds if the first input term is a member of the second.\n\n\n",
+               "start": 556,
+               "end": 556,
+               "types": ["a * List(a) -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "FoldR1",
+               "description": "\n",
+               "start": 561,
+               "end": 561,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "FoldR",
+               "description": "\n",
+               "start": 564,
+               "end": 564,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "FoldL(s)",
+               "description": "\n",
+               "start": 567,
+               "end": 567,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lsplit(f, g)",
+               "description": "\n",
+               "start": 570,
+               "end": 570,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "foldr1(s1, s2)",
+               "description": "\nfoldr, requires a list of length > 1.\n\n\n",
+               "start": 582,
+               "end": 583,
+               "types": ["  List(a) -> b"],
+               "params": [" List(a) -> b"," (a, b) -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "foldr1(s1, s2, f)",
+               "description": "\nfoldr, requires a list of length > 1.\nThe additional parameter strategy f is applied to each element just\nbefore each folding step.\n\n\n",
+               "start": 596,
+               "end": 597,
+               "types": [" List(a) -> b"],
+               "params": ["List(c) -> b","(c, b) -> b","a -> c"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "foldr1(s)",
+               "description": "\nfoldr, requires a list of length > 1.\nNote that s maps (a, a) to a, only one type is involved.\n\n\n",
+               "start": 607,
+               "end": 608,
+               "types": [" List(a) -> a"],
+               "params": ["(a, a) -> a"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "foldr(s1, s2)",
+               "description": "\nRight folds a list. That is, the strategy s2 is applied as a\nbinary operator between all adjacent elements in the list.\nfoldr starts by applying s2 to the last element in the list\nand the result of s1. s1 is therefore the starting point of\nthe folding.\n\nExample: <foldr(!0, add)> [1,2,3,4] => 10\n\n\n",
+               "start": 623,
+               "end": 625,
+               "types": [" List(a) -> b"],
+               "params": ["[] -> b","(a, b) -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "foldr(s1, s2, f)",
+               "description": "\nRight folds a list. That is, the strategy s2 is applied as a\nbinary operator between all adjacent elements in the list.\nfoldr starts by applying s2 to the last element in the list\nand the result of s1. s1 is therefore the starting point of\nthe folding.\n\nThe additional parameter strategy f is applied to each element just\nbefore each folding step.\n\nExample: <foldr(!0, add, inc)> [1,2,3,4] => 14\n\n\n",
+               "start": 644,
+               "end": 646,
+               "types": [" List(a) -> b"],
+               "params": ["[] -> b","(c, b) -> b","a -> c"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "foldl(s)",
+               "description": "\nLeft folds a list. That is, the strategy sis applied as a\nbinary operator between all adjacent elements in the list.\nfoldr starts by applying s to b and the first element in\nthe list. b is therefore the starting point of the folding.\n\nExample: <foldl(add)> ([1,2,3,4], 0)\n\n\n",
+               "start": 659,
+               "end": 660,
+               "types": [" (List(a), b) -> b"],
+               "params": ["(a, b) -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "mapfoldr1(s1, s2, s3)",
+               "description": "\n",
+               "start": 663,
+               "end": 664,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "mapconcat(s)",
+               "description": "\nTransform the elements of a list into lists (map)\nand concatenate into a single list (concat).\n\nNote: equivalent to map(s); concat\n\n\n",
+               "start": 675,
+               "end": 676,
+               "types": [" List(a) -> List(b)"],
+               "params": ["a -> List(b)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "last",
+               "description": "\nReturns the last element of a list.\n\nFails if applied to the empty list.\n\n\n",
+               "start": 685,
+               "end": 686,
+               "types": ["List(a) -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "first-last",
+               "description": "\nReturns a list with the first and the last element of\nthe input list. For the empty list and the singleton\nlist, this is equivalent to id.\n\n\n",
+               "start": 696,
+               "end": 697,
+               "types": ["List(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "init",
+               "description": "\nReturns a list of all elements of a list, except the last.\n\nFails if applied to the empty list.\n\n\n\n",
+               "start": 709,
+               "end": 710,
+               "types": ["List(a) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split-last",
+               "description": "\n\n",
+               "start": 716,
+               "end": 717,
+               "types": [],
+               "params": [],
+               "notes": ["Alias for split-init-last."],
+               "since": ""
+               },{
+               "name": "copy",
+               "description": "\nMakes n copies of a term into a list of duplicates. The\nfirst input term is the integer n, the second is the term\nto duplicate.\n\n\nExample: <copy> (3, \"foo\") => [\"foo\", \"foo\", \"foo\"]\n\n\n",
+               "start": 730,
+               "end": 733,
+               "types": ["Int * a -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "copy(s)",
+               "description": "\nMakes n copies of a term into a list of duplicates, applying\nthe strategy s to every copy. The first input term is the\ninteger n, the second is the term to duplicate.\n\nExample: <copy(\\ \"foo\" -> \"bar\" \\)> (3, \"foo\") => [\"bar\",\"bar,\"bar\"]\n\n\n",
+               "start": 745,
+               "end": 748,
+               "types": ["   Int * a -> List(n)"],
+               "params": ["s       a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "thread-map(s)",
+               "description": "\n",
+               "start": 751,
+               "end": 752,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "thread-map(s)",
+               "description": "\nApplies s to each element in the list, keeping along a separate\ncontext term.\n\nFor each element in the list, a tuple (a, b) is constructed and\ngiven to s. From the result, (a', b'), a' goes to the final list\nreturned by this strategy, and b' becomes the new b as s is\napplied to the next element.\n\nExample: <thread-map(add ; !(<id>, <id>))> ([1,2,3,4], 1) => ([2,4,7,11],11)\n\n\n",
+               "start": 768,
+               "end": 771,
+               "types": ["List(a) * b -> List(a') * b'"],
+               "params": ["s a * b -> a' * b'"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "number(s)",
+               "description": "\nNumbers each element in a list successively with an\ninteger, starting at 0. The result is a list of pairs,\n(elem, num) where elem is the original element and num\nis its associated number. s is applied to each pair\nbefore inserting it into the list\n\nExample: <number(id)> [\"a\",\"b\",\"c\"] => [(\"a\",0),(\"b\",1),(\"c\",2)]\n\n\n\n",
+               "start": 787,
+               "end": 788,
+               "types": ["List(a) -> List((a,n),...)"],
+               "params": ["s a * Int -> a' * Int"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "take-while(s)",
+               "description": "\nTake elements from the start of a list while s succeeds.\nEach element of the list is tested against s, starting at\nthe head of the list. For as long as s succeeds, the elements\nare accumulated in a list, which is returned as s fails, or\nthe end of the list is reached. The actual term returned by\ns is ignored.\n\nExample: <take-while(?2 ; !3)> [2,2,3] => [2,2]\n\n\n",
+               "start": 803,
+               "end": 804,
+               "types": ["   List(a) -> List(a)"],
+               "params": ["s       a -> _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "take-until(s)",
+               "description": "\nTake elements from the start of a list until s succeeds.\nEach element of the list is tested against s, starting at\nthe head of the list. For as long as s does not succeed, the\nelements are accumulated in a list, which is returned at\nthe instant s fails. The actual term returned by s is\nignored. If s never succeeds, the entire list is returned.\n\nExample: <take-until(?2; !3)> [3,3,2,4] => [3,3]\n\n\n",
+               "start": 819,
+               "end": 820,
+               "types": ["   List(a) -> List(a)"],
+               "params": ["s       a -> _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "take(isn)",
+               "description": "\nTake the first n elements of a list, given by isn. The\nstrategy argument isn must produce an integer, which\ngives the length of the sublist to return. If there are\nnot enough elements, this strategy fails.\n\n\n",
+               "start": 831,
+               "end": 832,
+               "types": ["List(a) -> List(a)"],
+               "params": ["isn _ -> Int"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "take( | n)",
+               "description": "\nReturns the first n elements of a list, fails\nif list has fewer than n elements.\n\n\n",
+               "start": 841,
+               "end": 846,
+               "types": ["List(a) -> List(a)"],
+               "params": ["n The number of elements to take."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "takemap(s | n)",
+               "description": "\nReturns the n first elements after s has been applied to them.\nWith the exception of side effects, takemap(s|n) is equal to\ntake(|n); map(s). The difference when considering side-effects\nis that s is applied while taking elements, so if s has a\nside-effect these will be performed, even if take fails.\n\n\n",
+               "start": 859,
+               "end": 864,
+               "types": ["List(a) -> List(b)"],
+               "params": ["n - The number of elements to retrieve","s a -> b"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "drop-while(s)",
+               "description": "\nDrops elements from the start of a list while s succeeds. The\nfirst element at which s fails and all following it will be\nreturned.\n\nExample: <drop-while(?2)> [2,2,3,4] => [3,4]\n\n\n",
+               "start": 876,
+               "end": 877,
+               "types": ["   List(a) -> List(a)"],
+               "params": ["s       a -> _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "drop-until(s)",
+               "description": "\nDrops elements from the start of a list until s succeeds. The\nfirst element at which s succeeds and all following it will be\nreturned.\n\nExample: <drop-until(?3)> [2,2,3,4] => [3,4]\n\n\n",
+               "start": 889,
+               "end": 890,
+               "types": ["   List(a) -> List(a)"],
+               "params": ["s       a -> _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "drop( | n)",
+               "description": "\nDrops the first n elements from a list. If the list has\nfewer than n elements, the strategy fails.\n\n\n",
+               "start": 899,
+               "end": 904,
+               "types": [" List(a) -> List(a)"],
+               "params": ["n - the number of elements to drop"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "splitmap(s | n)",
+               "description": "\nSplits a list after n elements and applies strategy s to the\nfirst sublist. The second sublist is left untouched.\nDisregarding side-effects, splitmap is equal to\n!(<take(|n); map(s)>, <drop(|n)>). If side-effects are\nconsidered, note that application of s happens while\ntraversing and splitting.\n\n\n",
+               "start": 918,
+               "end": 925,
+               "types": ["List(a) -> (List(b), List(a))"],
+               "params": ["s a -> b","n - the number of elements to apply s to, from the start"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split-at(s)",
+               "description": "\n\n",
+               "start": 931,
+               "end": 932,
+               "types": [],
+               "params": [],
+               "notes": ["Alias for split-fetch/1"],
+               "since": ""
+               },{
+               "name": "back-split-at( | n)",
+               "description": "\nSplits a list in two, with the second part containing the last\nn elements and and first part containing all elements except the\nlast n.\n\n\n",
+               "start": 942,
+               "end": 952,
+               "types": ["List(a) -> (List(a), List(a))"],
+               "params": ["n - the number of elements to split at (counting from the back)"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "drop(isn)",
+               "description": "\nDrops a number of terms from the front of a list.\n\nThe number is specified by the strategy argument, which should\nproduce an integer.\n\n\n",
+               "start": 963,
+               "end": 967,
+               "types": [" List(a) -> List(a)"],
+               "params": ["_ -> Int"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "split-at( | n)",
+               "description": "\nSplits the list in two sublists, containing elements from 0 to\nn and from n onwards.\n\nExample: <split-at(|4)>[1,2,3,4,5,6,7,8,9] => ([1,2,3,4], [5,6,7,8,9])\n\n\n",
+               "start": 977,
+               "end": 979,
+               "types": ["List(a) -> (List(a), List(a))"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "rtrim(s)",
+               "description": "\nTrim elements from the end of a list\n\nRemoves the longest sublist from the end of a list, for which\nall elements satisfy the strategy s.\n\n\n",
+               "start": 994,
+               "end": 1000,
+               "types": [" List(a) -> List(a)"],
+               "params": ["should succeed for all elements that have to be trimmed."],
+               "notes": [],
+               "since": "0.9.5"
+               },{
+               "name": "ltrim(s)",
+               "description": "\nTrim elements from the start of a list.\n\nRemoves the longest sublist from the start of a list, for which\nall elements satisfy the strategy s.\n\n\n",
+               "start": 1014,
+               "end": 1014,
+               "types": [" List(a) -> List(a)"],
+               "params": ["should succeed for all elements that have to be trimmed."],
+               "notes": ["Alias for drop-while"],
+               "since": "0.9.5"
+               },{
+               "name": "trim(s)",
+               "description": "\nTrim elements from both start and end of a list.\n\nRemovest the longest sublist from both start and end of a\nlist for which all elements satisfy s.\n\n\n",
+               "start": 1027,
+               "end": 1027,
+               "types": ["List(a) -> List(a)"],
+               "params": ["s a -> -"],
+               "notes": [],
+               "since": "0.9.5"
+               },{
+               "name": "flatten-list",
+               "description": "\nCompletely flattens a list and its sublists to a single list.\n\nSee list-misc-test for examples.\n\n\n",
+               "start": 1039,
+               "end": 1040,
+               "types": ["List(rec x(a or List(x))) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "eliminate-common-suffix",
+               "description": "\nEliminates all elements at the end of the two lists that are equal.\nOnly works correctly on lists of equal length!\n\nExample: <eliminate-common-suffix>([1,3,4], [1,2,4]) => ([1,3], [1,2])\n\n\n",
+               "start": 1051,
+               "end": 1058,
+               "types": ["(List(a), List(a)) -> (List(a), List(a))"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "common-prefix",
+               "description": "\nReturns the common prefix of two lists.\n\nExamples:\n<common-prefix>([1,2,3], [1,2,4,5]) => [1,2]\n<common-prefix>([1,2,3], [2,3,4]) => []\n\n\n",
+               "start": 1069,
+               "end": 1072,
+               "types": ["(List(a), List(a)) -> List(a)"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "list-combinations",
+               "description": "\nReturns a list of combinations by choosing one element from every\nlist, in every possible combination.\n\nExamples:\n\n$ <list-combinations> [[1, 2]]\n[[1],[2]]\n\n$ <list-combinations> [[1, 2], []]\n[]\n\n$ <list-combinations> [[1, 2], [\"a\", \"b\"]]\n[[1,\"a\"],[2,\"a\"],[1,\"b\"],[2,\"b\"]]\n\n$ <list-combinations> []\n[[]]\n\n\n",
+               "start": 1099,
+               "end": 1134,
+               "types": ["List(List(a)) -> List(List(a))"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

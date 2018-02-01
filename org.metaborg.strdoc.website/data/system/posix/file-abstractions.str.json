@@ -1,0 +1,178 @@
+{
+"name": "system/posix/file-abstractions",
+"description": "\n\n",
+"strategies": [{
+               "name": "abspath",
+               "description": "\nReturn the absolute path of a pathname.\n\n\n",
+               "start": 12,
+               "end": 15,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": "0.9.4"
+               },{
+               "name": "file-newer",
+               "description": "\n\n",
+               "start": 17,
+               "end": 18,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "file-exists",
+               "description": "\n\n",
+               "start": 32,
+               "end": 33,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "can-read-file",
+               "description": "\n\n",
+               "start": 38,
+               "end": 39,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-readable",
+               "description": "\n\n",
+               "start": 41,
+               "end": 41,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "can-write-file",
+               "description": "\n\n",
+               "start": 46,
+               "end": 47,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-writable",
+               "description": "\n\n",
+               "start": 49,
+               "end": 49,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "can-execute-file",
+               "description": "\n\n",
+               "start": 54,
+               "end": 55,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "is-executable",
+               "description": "\n\n",
+               "start": 57,
+               "end": 57,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "can-create-file",
+               "description": "\n\n",
+               "start": 63,
+               "end": 64,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "find-in-path(strict | path)",
+               "description": "\nFinds a file in a list of directories (a path).\n\n<find-path(strict|path)> f looks for a file with name f in the list of\ndirectories path. If the file is not found the behaviour depends on the\nstrategy strict, if it succeeds a fatal-error is flagged, otherwise the\nstrategy just fails.\n\nExample (when run in strategoxt root):\n<find-in-path(id|[\"ssl/spec\",\"ssl/tests\"])> \"file.str\" => \"ssl/spec/file.str\"\n\n",
+               "start": 85,
+               "end": 90,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "find-in-path( | path)",
+               "description": "\nFinds a file in a list of directories (a path).\n\nDiffers from find-in-path/(0,0) in that it exits with fatal-error if file is\nnot found.\n\n\n",
+               "start": 101,
+               "end": 102,
+               "types": [],
+               "params": ["should build a list of paths in which the search is performed."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "find-in-path",
+               "description": "\nFinds a file in a list of directories (a path)\n\n\nThis strategy operates on a tuple (f, [d*]) where f is the name of the file\nto be found, and d* are the directories to search in. The full path of the\nfirst match is the output term.\n\nExample (when run in strategoxt root):\n<find-in-path> (\"file.str\", [\"ssl/spec\", \"ssl/tests\"]) => \"ssl/spec/file.str\"\n\n",
+               "start": 117,
+               "end": 118,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "find-in-path(mkpath)",
+               "description": "\n\n",
+               "start": 124,
+               "end": 125,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "find-file( | ext, path)",
+               "description": "\nFinds one file with a specific file extension in a list of directories.\n\nThis strategy operates on a tuple (f, [d*]). The one file that will be\nsearched for is determined by the basename of f and the requested file\nextension.\nExample:\n<find-file(!\"rtree\")> (\"file.str\", [\".\"])\nsearches for file.rtree in the current dir.\n\n\n",
+               "start": 140,
+               "end": 142,
+               "types": [],
+               "params": ["should build the file extension as a string."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "find-file( | ext)",
+               "description": "\n\n",
+               "start": 144,
+               "end": 146,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "find-file(ext)",
+               "description": "\n\n",
+               "start": 151,
+               "end": 152,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "find-file(mkpath, ext)",
+               "description": "\nFinds one file with a specific file extension in a list of directories.\n\nDiffers from find-file/(1,0) in that it exits with fatal error if file is\nnot found.\n\n\n",
+               "start": 163,
+               "end": 165,
+               "types": [],
+               "params": ["should build a list of paths in which the search is performed.","should build the file extension as a string."],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "new-file",
+               "description": "\nCreates a fresh file in the current directory.\n\n\n",
+               "start": 177,
+               "end": 179,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

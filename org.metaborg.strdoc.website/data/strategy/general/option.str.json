@@ -1,0 +1,16 @@
+{
+"name": "strategy/general/option",
+"description": "\n\n",
+"strategies": [{
+               "name": "option(s)",
+               "description": "\n\n",
+               "start": 8,
+               "end": 8,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

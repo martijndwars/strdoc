@@ -1,0 +1,286 @@
+{
+"name": "strategy/traversal/simple",
+"description": "\nThis module contains generic one-pass traversals over terms.\n\nThese traversals have been defined using the primitive term traversal\noperators of Stratego, all, some and one, and the control operators of\nlanguage. This results is a wide variety of resuable term traversals.\n\nTerm traversals can be categorized into classes according to\nhow much of the term they traverse and to which parts\nof the term they modify. Please read the annotated source code\nto see the breakdown.\n\n\n",
+"strategies": [{
+               "name": "topdown(s)",
+               "description": "Apply strategy s to each term in a top down, left to right,\n(prefix) order.\n\nNote: new terms resulting from rewrites during the traversal will\nalso be traversed.\n\n\n",
+               "start": 40,
+               "end": 41,
+               "types": ["Term -> Term"],
+               "params": ["s - the strategy to apply"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bottomup(s)",
+               "description": "Apply strategy s to each term in a bottom up, left to right,\n(postfix) order.\n\n\n",
+               "start": 49,
+               "end": 50,
+               "types": ["Term -> Term"],
+               "params": ["s - the strategy to apply"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "downup(s)",
+               "description": "Apply strategy s to all terms going down then going up. The traversal\nwill traverse the spine until a leaf is reached, then proceed to the\nother leaves, before it returns up the spine.\n\nEach term, including the leaves, will be visited in both the down and\nup directions.\n\n\n",
+               "start": 62,
+               "end": 63,
+               "types": ["Term -> Term"],
+               "params": ["s - the strategy to apply"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "downup(s1, s2)",
+               "description": "Apply strategy s1 to all terms going down then apply s2 to all terms\nwhen going up. This strategy will traverse the spine until a leaf is\nreached, then proceed to the other leaves until none are left, before\nit returns up the spine.\n\nEach term, including the leaves, will be visited in both the down and\nup directions, with s1 then s2 applied to it, respectively.\n\n\n",
+               "start": 78,
+               "end": 79,
+               "types": ["Term -> Term"],
+               "params": ["s1 - the strategy applied on the way down","s2 - the strategy applied on the way up"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "downup2(s1, s2)",
+               "description": "\n\n",
+               "start": 81,
+               "end": 82,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "topdownS(s, stop: a -> a * a -> a)",
+               "description": "Apply strategy s to each term in a top down, left to right, (prefix)\norder, but stop traversal when stop succeeds.\n\n\n",
+               "start": 103,
+               "end": 105,
+               "types": ["Term -> Term"],
+               "params": ["s         Term -> Term","stop      (a -> a) * a -> a"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bottomupS(s, stop: a -> a * a -> a)",
+               "description": "Apply strategy s to each term in a bottom up, left to right,  (postfix)\norder, but stop traversal when stop succeeds.\n\n\n",
+               "start": 115,
+               "end": 117,
+               "types": ["Term -> Term"],
+               "params": ["s         Term -> Term","stop      (a -> a) * a -> a"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "downupS(s, stop: a -> a * a -> a)",
+               "description": "Apply strategy s to all terms when going down then when going up,\nbut stop traversal when stop succeeds.\n\n\n",
+               "start": 127,
+               "end": 129,
+               "types": ["Term -> Term"],
+               "params": ["s         Term -> Term","stop      (a -> a) * a -> a"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "downupS(s1, s2, stop: a -> a * a -> a)",
+               "description": "Apply strategy s1 to all terms going down then apply s2 to all terms\nwhen going up, but stop travesal when stop succeeds.\n\n\n",
+               "start": 140,
+               "end": 143,
+               "types": [" Term -> Term"],
+               "params": ["s1         Term -> Term","s2         Term -> Term","stop      (a -> a) * a -> a"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "don't-stop(s)",
+               "description": "\nA unit for topdownS, bottomupS and downupS. For example,\ntopdown(s) is equivalent to topdownS(s,don't-stop).\n\n\n",
+               "start": 155,
+               "end": 156,
+               "types": ["_ -> fail"],
+               "params": ["s Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bottomup-para(s)",
+               "description": "\nA variation on bottomup is a traversal that also provides the\noriginal term as well as the term in which the direct subterms\nhave been transformed. (also known as a paramorphism?)\n\n",
+               "start": 163,
+               "end": 165,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "spinetd(s)",
+               "description": "\nApply s along the spine of a term, in top down order.\n\nA spine of a term is a chain of nodes from the root to some\nsubterm. The traversal stops when 's' fails for all children\nof a node.\n\n\n",
+               "start": 187,
+               "end": 188,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "spinebu(s)",
+               "description": "\nApply s along the spine of a term, in bottom up order.\n\nA spine of a term is a chain of nodes from the root to some\nsubterm. The traversal stops when 's' fails for all children\nof a node.\n\n\n",
+               "start": 200,
+               "end": 201,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "spinetd'(s)",
+               "description": "\n\n",
+               "start": 203,
+               "end": 204,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "spinebu'(s)",
+               "description": "\n\n",
+               "start": 206,
+               "end": 207,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "somespinetd(s)",
+               "description": "Apply s everywhere along all spines where s applies, in top down\norder.\n\n\n",
+               "start": 222,
+               "end": 223,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "somespinebu(s)",
+               "description": "Apply s everywhere along all spines where s applies, in bottom\nup order.\n\n\n",
+               "start": 232,
+               "end": 233,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "oncetd(s)",
+               "description": "Apply s at one position inside a term, in top down order. Once\ns has succeeded, the traversal stops. If s never succeeds, this\nstrategy fails.\n\n\n\n",
+               "start": 249,
+               "end": 250,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "oncebu(s)",
+               "description": "Apply s at one position inside a term, in bottom up order. Once\ns has succeeded, the traversal stops. If s never succeeds, this\nstrategy fails.\n\n\n",
+               "start": 259,
+               "end": 260,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "oncetd-skip(s, skip: a -> a * a -> a)",
+               "description": "\n\n",
+               "start": 262,
+               "end": 263,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "sometd(s)",
+               "description": "Apply s at some positions inside a term, at least once, in top\ndown order. Once s succeeds, the traversal stopped.\n\n\n",
+               "start": 281,
+               "end": 282,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "somebu(s)",
+               "description": "Apply s at some positions inside a term, at least once, in bottom\nup order. Once s succeeds, the traversal stopped.\n\n\n",
+               "start": 291,
+               "end": 292,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "alltd(s)",
+               "description": "Find all topmost applications of s.\n\n\n",
+               "start": 306,
+               "end": 307,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "alldownup2(s1, s2)",
+               "description": "\n\n",
+               "start": 309,
+               "end": 310,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "alltd-fold(s1, s2)",
+               "description": "\n\n",
+               "start": 312,
+               "end": 313,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "leaves(s, is-leaf, skip: a -> a * a -> a)",
+               "description": "\n\n",
+               "start": 320,
+               "end": 321,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "leaves(s, is-leaf)",
+               "description": "\n\n",
+               "start": 323,
+               "end": 324,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "manybu(s)",
+               "description": "Apply s as many times as possible, but at least once, in bottom up\norder.\n\n\n",
+               "start": 337,
+               "end": 338,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "manytd(s)",
+               "description": "Apply s as many times as possible, but at least once, in top down\norder.\n\n\n",
+               "start": 346,
+               "end": 347,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "somedownup(s)",
+               "description": "\n\n",
+               "start": 351,
+               "end": 352,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "breadthfirst(s)",
+               "description": "Apply s to a term in breadth first order.\n\n\n",
+               "start": 359,
+               "end": 360,
+               "types": [" Term -> Term"],
+               "params": ["s          Term -> Term"],
+               "notes": [],
+               "since": ""
+               }],
+"authors": ["Eelco Visser <visser@acm.org>","Martin Bravenboer <martin.bravenboer@gmail.com>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],
+"see": []
+}

@@ -1,0 +1,43 @@
+{
+"name": "strategy/pack/modules",
+"description": "\nCHANGES (by Joost Visser)\n\nStrategy pack-modules(pack, dep-base) now takes two additonal\noptions:\n-dep target\n-nodep\n\nThe first one specifies the maketarget and basename of the\ndependency file that is created. If this option is not passed,\nthe argument dep-base is used instead. Finally, the -nodep option\ncan be used to disable this and prevent any dependency file to\nbe created. Note that -dep takes precendence over -nodep.\n\nAn additional strategy pack-modules(pack) was added that behaves\nlike pack-modules, except no default for the dependency file\nbase name needs to be specified. Hence, only the command line\noptions are relevant.\n\nby Eelco Visser (2002-12-18):\nRefactored using new (config-style) option handling.\n\n",
+"strategies": [{
+               "name": "pack-options",
+               "description": "\n\n",
+               "start": 32,
+               "end": 43,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "pack-modules(pack: term -> term * term -> term)",
+               "description": "\n\n",
+               "start": 45,
+               "end": 47,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "pack-modules(pack: term -> term * term -> term, dep-base)",
+               "description": "\n\n",
+               "start": 49,
+               "end": 59,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "create-dep-file(dep-base)",
+               "description": "\n\n",
+               "start": 61,
+               "end": 66,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

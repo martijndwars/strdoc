@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="modules.xsl" ?>
+<modules>
+  <name>collection/list/bag</name>
+  <name>collection/list/common</name>
+  <name>collection/list/cons</name>
+  <name>collection/list/filter</name>
+  <name>collection/list/index</name>
+  <name>collection/list/integer</name>
+  <name>collection/list/lookup</name>
+  <name>collection/list/set</name>
+  <name>collection/list/sort</name>
+  <name>collection/list/zip</name>
+  <name>collection/tuple/common</name>
+
+  <name>lang/dynamic-rules</name>
+  <name>lang/stacktrace</name>
+  <name>lang/strategy-reference</name>
+  <name>lang/with</name>
+
+  <name>strategy/general/free-variables</name>
+  <name>strategy/general/memo</name>
+  <name>strategy/general/option</name>
+  <name>strategy/general/parenthesize</name>
+  <name>strategy/general/rename</name>
+  <name>strategy/general/substitution</name>
+  <name>strategy/general/unification</name>
+  <name>strategy/pack/common</name>
+  <name>strategy/pack/graph</name>
+  <name>strategy/pack/modules</name>
+  <name>strategy/traversal/environment</name>
+  <name>strategy/traversal/fixpoint</name>
+  <name>strategy/traversal/list-environment</name>
+  <name>strategy/traversal/list</name>
+  <name>strategy/traversal/simple</name>
+  <name>strategy/collect</name>
+  <name>strategy/conditional</name>
+  <name>strategy/iteration</name>
+
+  <name>system/c99/fallback-posix</name>
+  <name>system/c99/file</name>
+  <name>system/io/char</name>
+  <name>system/io/dir</name>
+  <name>system/io/file</name>
+  <name>system/io/process</name>
+  <name>system/io/term</name>
+  <!-- TODO: system/posix -->
+  <!-- TODO: system/posix-xsi -->
+  <name>system/error</name>
+
+  <name>term/annotation</name>
+  <name>term/common</name>
+  <name>term/integer</name>
+  <name>term/placeholder</name>
+  <name>term/properties</name>
+  <name>term/real</name>
+  <name>term/share</name>
+  <name>term/string</name>
+  <name>term/zip</name>
+
+  <name>util/config/common</name>
+  <name>util/config/keep</name>
+  <name>util/config/options</name>
+  <name>util/config/parse-options</name>
+  <name>util/config/stats</name>
+  <name>util/config/verbose</name>
+  <name>util/date-format</name>
+  <name>util/log</name>
+  <name>util/sunit</name>
+  <name>util/time</name>
+</modules>

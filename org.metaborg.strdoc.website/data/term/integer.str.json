@@ -1,0 +1,808 @@
+{
+"name": "term/integer",
+"description": "\nInteger arithmetic and comparison.\n\n",
+"strategies": [{
+               "name": "is-int",
+               "description": "\n\n",
+               "start": 9,
+               "end": 10,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "add",
+               "description": "\nAdds two numbers (integer or real)\n\n",
+               "start": 17,
+               "end": 17,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "addi",
+               "description": "\nAdds two integers\n\n",
+               "start": 22,
+               "end": 22,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "int-add( | y)",
+               "description": "\nAdds two integers\n\n",
+               "start": 27,
+               "end": 28,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "addr",
+               "description": "\nAdds two reals\n\n",
+               "start": 33,
+               "end": 33,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "iori",
+               "description": "\nBitwise OR's two integers\n\n",
+               "start": 40,
+               "end": 40,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "xori",
+               "description": "\nBitwise XOR's two integers\n\n",
+               "start": 45,
+               "end": 45,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "andi",
+               "description": "\nBitwise AND's two integers\n\n",
+               "start": 50,
+               "end": 50,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "shli",
+               "description": "\nBitwise shift x to the left by y places\n\n",
+               "start": 55,
+               "end": 55,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "shri",
+               "description": "\nBitwise shift x to the right by y places\n\n",
+               "start": 60,
+               "end": 60,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "subt",
+               "description": "\nSubtracts two numbers (integer or real)\n\n",
+               "start": 67,
+               "end": 67,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "subti",
+               "description": "\nSubtracts two integers\n\n",
+               "start": 72,
+               "end": 72,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "int-subt( | y)",
+               "description": "\nSubtracts two integers\n\n",
+               "start": 77,
+               "end": 78,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "subtr",
+               "description": "\nSubtracts two reals\n\n",
+               "start": 83,
+               "end": 83,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "mul",
+               "description": "\nMultiplies two numbers (integer or real)\n\n",
+               "start": 90,
+               "end": 90,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "muli",
+               "description": "\nMultiplies two integers\n\n",
+               "start": 95,
+               "end": 95,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "mulr",
+               "description": "\nMultiplies two reals\n\n",
+               "start": 100,
+               "end": 100,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "div",
+               "description": "\nDivides two numbers (integer or real)\n\n",
+               "start": 107,
+               "end": 107,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "divi",
+               "description": "\nDivides two integers\n\n",
+               "start": 112,
+               "end": 112,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "divr",
+               "description": "\nDivides two reals\n\n",
+               "start": 117,
+               "end": 117,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "mod",
+               "description": "\nReturns the modulo (remainder after division) of two integers or reals.\n\n",
+               "start": 124,
+               "end": 125,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "modi",
+               "description": "\nReturns the modulo (remainder after division) of two integers\n\n",
+               "start": 130,
+               "end": 131,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "modr",
+               "description": "\nReturns the modulo (remainder after division) of two floats\n\n",
+               "start": 136,
+               "end": 137,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "gt",
+               "description": "\n\n",
+               "start": 141,
+               "end": 141,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "gti",
+               "description": "\n\n",
+               "start": 142,
+               "end": 142,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "gtr",
+               "description": "\n\n",
+               "start": 143,
+               "end": 143,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "geq",
+               "description": "\n\n",
+               "start": 145,
+               "end": 145,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lt",
+               "description": "\n\n",
+               "start": 146,
+               "end": 146,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "leq",
+               "description": "\n\n",
+               "start": 147,
+               "end": 147,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "int-leq( | y)",
+               "description": "\n\n",
+               "start": 154,
+               "end": 155,
+               "types": ["Int -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "int-gt( | y)",
+               "description": "\n\n",
+               "start": 160,
+               "end": 161,
+               "types": ["Int -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "int-lt( | y)",
+               "description": "\n\n",
+               "start": 166,
+               "end": 167,
+               "types": ["Int -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "leq-leq",
+               "description": "\n\n",
+               "start": 172,
+               "end": 172,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "leq-lt",
+               "description": "\n\n",
+               "start": 173,
+               "end": 173,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lt-leq",
+               "description": "\n\n",
+               "start": 174,
+               "end": 174,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lt-lt",
+               "description": "\n\n",
+               "start": 175,
+               "end": 175,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "comp-comp(s1, s2)",
+               "description": "\n\n",
+               "start": 178,
+               "end": 180,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "even",
+               "description": "\n\n",
+               "start": 187,
+               "end": 187,
+               "types": [" Int -> fail?"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "max",
+               "description": "\n\n",
+               "start": 192,
+               "end": 192,
+               "types": ["(Int, Int) -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "min",
+               "description": "\n\n",
+               "start": 193,
+               "end": 193,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "pos",
+               "description": "\n\n",
+               "start": 198,
+               "end": 198,
+               "types": [" Int -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "neg",
+               "description": "\n\n",
+               "start": 199,
+               "end": 199,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "int",
+               "description": "\n\n",
+               "start": 201,
+               "end": 201,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "set-random-seed",
+               "description": "\nSets a seed for the following sequence of next-random calls.\nTypically, the seed is set to the Unix time (the result of the strategy time).\n\n\n",
+               "start": 213,
+               "end": 213,
+               "types": ["  Int -> ()"],
+               "params": [],
+               "notes": [],
+               "since": " 0.9.4"
+               },{
+               "name": "get-random-max",
+               "description": "\nGets the maximum random number that will be returned by the next-random number generator.\nCorresponds to RAND_MAX in C.\n\n\n",
+               "start": 221,
+               "end": 221,
+               "types": ["_ -> Int()"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "next-random",
+               "description": "\nReturns a random number between 0 and get-random-max.\n\nFor a given seed, this strategy always returns the same sequence  of numbers.\nIf no seed value has been set using set-random-seed, then the seed is 1, which\nmeans that the sequence of random numbers will always be the same if you set no seed.\n\n\n",
+               "start": 234,
+               "end": 234,
+               "types": ["  _ -> Int"],
+               "params": [],
+               "notes": [],
+               "since": " 0.9.4"
+               },{
+               "name": "apply-int-to-str-tuple(s)",
+               "description": "\n\n",
+               "start": 238,
+               "end": 239,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "addS",
+               "description": "\n\n",
+               "start": 241,
+               "end": 241,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "subtS",
+               "description": "\n\n",
+               "start": 242,
+               "end": 242,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "mulS",
+               "description": "\n\n",
+               "start": 243,
+               "end": 243,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "divS",
+               "description": "\n\n",
+               "start": 244,
+               "end": 244,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "modS",
+               "description": "\n\n",
+               "start": 245,
+               "end": 245,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "maxS",
+               "description": "\n\n",
+               "start": 246,
+               "end": 246,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "minS",
+               "description": "\n\n",
+               "start": 247,
+               "end": 247,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "gtS",
+               "description": "\n\n",
+               "start": 249,
+               "end": 249,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "geqS",
+               "description": "\n\n",
+               "start": 250,
+               "end": 250,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "ltS",
+               "description": "\n\n",
+               "start": 251,
+               "end": 251,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "leqS",
+               "description": "\n\n",
+               "start": 252,
+               "end": 252,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "inc",
+               "description": "\nIncrements a number.\n\n\n",
+               "start": 259,
+               "end": 259,
+               "types": ["Int -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "int-inc",
+               "description": "\nIncrements an integer\n\n\n",
+               "start": 266,
+               "end": 267,
+               "types": ["Int -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dec",
+               "description": "\nDecrements a number.\n\n\n",
+               "start": 274,
+               "end": 274,
+               "types": ["Int -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "int-dec",
+               "description": "\nDecrements an integer.\n\n\n",
+               "start": 281,
+               "end": 282,
+               "types": ["Int -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "log2",
+               "description": "\n\n",
+               "start": 286,
+               "end": 289,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "gcd",
+               "description": "\n\n",
+               "start": 293,
+               "end": 298,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "abs",
+               "description": "\n\n",
+               "start": 300,
+               "end": 304,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "add-inf",
+               "description": "\n\n",
+               "start": 313,
+               "end": 317,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "lt-inf",
+               "description": "\n\n",
+               "start": 319,
+               "end": 319,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "new-counter",
+               "description": "\n\n",
+               "start": 323,
+               "end": 324,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "reset-counter",
+               "description": "\n\n",
+               "start": 326,
+               "end": 327,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "set-counter",
+               "description": "\n\n",
+               "start": 329,
+               "end": 330,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "get-counter",
+               "description": "\n\n",
+               "start": 332,
+               "end": 333,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "next-counter",
+               "description": "\n\n",
+               "start": 335,
+               "end": 336,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "int-to-string",
+               "description": "\n\n",
+               "start": 340,
+               "end": 340,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-int",
+               "description": "\n\n",
+               "start": 341,
+               "end": 341,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hex-string-to-int",
+               "description": "\n\n",
+               "start": 352,
+               "end": 352,
+               "types": ["String -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dec-string-to-int",
+               "description": "\n\n",
+               "start": 358,
+               "end": 358,
+               "types": ["String -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "oct-string-to-int",
+               "description": "\n\n",
+               "start": 360,
+               "end": 360,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bin-string-to-int",
+               "description": "\n\n",
+               "start": 366,
+               "end": 366,
+               "types": ["String -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "hex-chars-to-int",
+               "description": "\n\n",
+               "start": 371,
+               "end": 371,
+               "types": ["List(Char) -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dec-chars-to-int",
+               "description": "\n\n",
+               "start": 376,
+               "end": 376,
+               "types": ["List(Char) -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "oct-chars-to-int",
+               "description": "\n\n",
+               "start": 381,
+               "end": 381,
+               "types": ["List(Char) -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "bin-chars-to-int",
+               "description": "\n\n",
+               "start": 386,
+               "end": 386,
+               "types": ["List(Char) -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "generic-string-to-int",
+               "description": "\n\n",
+               "start": 391,
+               "end": 393,
+               "types": ["String * Int -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "generic-chars-to-int",
+               "description": "\n\n",
+               "start": 398,
+               "end": 399,
+               "types": ["List(Char) * Int -> Int"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "neg-chars-to-int",
+               "description": "\n\n",
+               "start": 402,
+               "end": 404,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "pos-chars-to-int",
+               "description": "\n\n",
+               "start": 407,
+               "end": 410,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "char-to-digit",
+               "description": "\n\n",
+               "start": 413,
+               "end": 417,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "char-to-digit",
+               "description": "\n\n",
+               "start": 419,
+               "end": 421,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "char-to-digit",
+               "description": "\n\n",
+               "start": 423,
+               "end": 425,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

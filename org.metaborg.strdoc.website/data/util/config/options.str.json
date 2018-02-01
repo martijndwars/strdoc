@@ -1,0 +1,349 @@
+{
+"name": "util/config/options",
+"description": "\nThis module contains strategies for handling command line options\nand simple serialization/unserialization of ATerms. These strategies\nare particularly useful for writing command line tools in Stratego\nthat may be connected into pipelines by the standard Unix piping\nmechanism.\n\n\n",
+"strategies": [{
+               "name": "io-wrap(s)",
+               "description": "\nWraps a strategy into a strategy handling options and io of terms.\n\n\n",
+               "start": 32,
+               "end": 33,
+               "types": [],
+               "params": [" strategy to apply on the input term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "io-wrap(extra-opts, s)",
+               "description": "\nWraps a strategy into a strategy handling options and io of terms.\n\nuse fail if you have no additional options.\n\n",
+               "start": 42,
+               "end": 43,
+               "types": [],
+               "params": ["  extra options besides the default io-options","  strategy to apply on the input term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "io-wrap(extra-opts, usage, about, s)",
+               "description": "\n\nuse fail if you have no additional options.\n\n\n",
+               "start": 52,
+               "end": 53,
+               "types": [],
+               "params": ["  extra options besides the default io-options.","  strategy to apply on the input term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "output-wrap(s)",
+               "description": "\n\n",
+               "start": 55,
+               "end": 56,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "output-wrap(extra-opts, s)",
+               "description": "\n\n",
+               "start": 58,
+               "end": 59,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "input-wrap(s)",
+               "description": "\n\n",
+               "start": 61,
+               "end": 62,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "input-wrap(extra-opts, s)",
+               "description": "\n\n",
+               "start": 64,
+               "end": 65,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "io(s)",
+               "description": "\nWraps a strategy into a strategy that handles io options.\n\nReads a term from the file specified by the -i option (or stdin).\nWrites to a file specified by the -o option (or stdout).\n\n\n",
+               "start": 77,
+               "end": 78,
+               "types": [],
+               "params": ["  strategy to apply on the input term"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "output(s)",
+               "description": "\nWraps a strategy into a strategy that handles output options.\n\nWrites to a file specified by the -o option (or stdout).\n\n",
+               "start": 85,
+               "end": 88,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "input(s)",
+               "description": "\nWraps a strategy into a strategy that handles input options.\n\nReads a term from the file specified by the -i option (or stdin).\n\n",
+               "start": 95,
+               "end": 98,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "io-stream-wrap(s)",
+               "description": "\nWraps a strategy into a strategy that handles input and output options.\nThe strategy arguments is applied to a tuple of streams: the input and the output stream.\n\n\n",
+               "start": 111,
+               "end": 112,
+               "types": [],
+               "params": ["(Stream, Stream) -> _"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "io-stream-wrap(extra-opts, s)",
+               "description": "\n\n",
+               "start": 114,
+               "end": 115,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "io-stream-wrap(extra-opts, usage, about, s)",
+               "description": "\n\n",
+               "start": 117,
+               "end": 118,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "io-stream(s)",
+               "description": "\n\n",
+               "start": 120,
+               "end": 135,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "option-wrap(opts, s)",
+               "description": "\n\n",
+               "start": 139,
+               "end": 140,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "option-wrap(opts, usage, announce, s)",
+               "description": "\n\n",
+               "start": 142,
+               "end": 143,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "option-wrap(opts, usage, about, announce, s)",
+               "description": "\nRead options, display help, report success or failure, call strategy\n\n",
+               "start": 148,
+               "end": 151,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "io-options",
+               "description": "\nHandles all common options for a transformation tool.\n\n",
+               "start": 158,
+               "end": 161,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "input-options",
+               "description": "\n\n",
+               "start": 163,
+               "end": 165,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "output-options",
+               "description": "\n\n",
+               "start": 167,
+               "end": 169,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "general-options",
+               "description": "\n\n",
+               "start": 171,
+               "end": 175,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "aterm-lib-options",
+               "description": "\nAllow all flag starting with -at-* (these are ATerm library flags)\n\n",
+               "start": 180,
+               "end": 185,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "keep-option",
+               "description": "\nOption specifcation for level of keeping intermediate results.\n\n",
+               "start": 192,
+               "end": 196,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "statistics-option",
+               "description": "\nOption specifcation for level of statistics printing\n\n",
+               "start": 201,
+               "end": 205,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "input-option",
+               "description": "\nOption specifications for reading input.\n\nDefines -i.\n\n",
+               "start": 212,
+               "end": 216,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "output-option",
+               "description": "\nOption specifications for writing output.\n\nDefines -o.\n\n",
+               "start": 223,
+               "end": 227,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "aterm-output-option",
+               "description": "\nOption specifications for ATerm output.\n\nDefines -b option for binary output.\n\n",
+               "start": 234,
+               "end": 239,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbose-option",
+               "description": "\nOption specifications for verbosity.\n\nDefines -S, --silent, --verbose and -s.\n\n",
+               "start": 246,
+               "end": 257,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbose-to-int",
+               "description": "\n\n",
+               "start": 261,
+               "end": 264,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "need-help(u)",
+               "description": "\n\n",
+               "start": 266,
+               "end": 268,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-not-silent(s)",
+               "description": "\n\n",
+               "start": 270,
+               "end": 271,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "report-success",
+               "description": "\n\n",
+               "start": 273,
+               "end": 275,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "report-failure(exit)",
+               "description": "\nReport the failure of this program. Must be applied to a list of\nstrings obtained by calling the SSL_stacktrace_get_all_frame_names\ndirectly after the failure occurred (without any intervening calls\nto any rules/strategies).\n\n\nThe exit strategy to use, e.g., xtc-exit.\n\n",
+               "start": 288,
+               "end": 293,
+               "types": ["List(String) -> _"],
+               "params": ["exit"],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "report-failure",
+               "description": "\n\n",
+               "start": 295,
+               "end": 296,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "report-failure( | message, term)",
+               "description": "\n\n",
+               "start": 298,
+               "end": 302,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "report-failure-no-trace",
+               "description": "\nReport the failure of this program, without showing a stack trace.\n\n\n",
+               "start": 310,
+               "end": 311,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "report-failure-no-trace(exit)",
+               "description": "\n\n",
+               "start": 313,
+               "end": 315,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "whoami",
+               "description": "\n\n",
+               "start": 317,
+               "end": 318,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

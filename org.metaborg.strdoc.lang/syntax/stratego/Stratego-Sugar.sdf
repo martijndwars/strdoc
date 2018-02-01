@@ -1,0 +1,15 @@
+module stratego/Stratego-Sugar
+imports
+  stratego/Stratego-Sugar-Layout
+  stratego/Stratego-Core-Identifiers
+  stratego/Stratego-Sugar-Constants 
+  stratego/Stratego-Sugar-Modules
+  stratego/Stratego-Sugar-Signatures
+  stratego/Stratego-Sugar-Terms
+  stratego/Stratego-Sugar-Strategies
+  stratego/Stratego-Sugar-Rules
+  stratego/Stratego-Sugar-DynamicRules
+  stratego/Stratego-Sugar-Overlays
+
+hiddens
+  context-free start-symbols Module

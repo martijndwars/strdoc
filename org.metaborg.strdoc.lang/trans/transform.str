@@ -1,0 +1,149 @@
+module transform
+
+imports
+
+  signatures/xdoc-sig
+  libspoofax/stratego/debug
+  xsignature
+  names
+
+strategies
+
+  external get-row-start(|)
+  external get-row-end(|)
+
+rules // Mixed to XDoc
+
+  stratego-to-xdoc:
+    DocBlock(text, Module(name, declaration*)) -> Module(name, text, declaration'*)
+    with
+      declaration'* := <mapconcat(stratego-to-xdoc <+ ![])> declaration*
+
+  stratego-to-xdoc:
+    Module(name, declaration*) -> Module(name, "", declaration'*)
+    with
+      declaration'* := <mapconcat(stratego-to-xdoc <+ ![])> declaration*
+
+  stratego-to-xdoc:
+    DocBlock(text, decl) -> function*
+    where
+      Strategies(_) := decl
+    + Rules(_) := decl
+    with
+      function* := <stratego-to-xdoc> decl
+
+  stratego-to-xdoc:
+    _ -> def'*
+    where
+    	  ?Strategies(def*)
+    	+ ?Rules(def*)
+    with
+      def'* := <mapconcat(strategy-to-function < ![<id>] + ![])> def*
+
+  strategy-to-function:
+    DocBlock(text, definition) -> Function(name, text, line-start, line-end)
+    where
+      name       := <definition-to-name> definition
+    ; line-start := <get-row-start> definition
+    ; line-end   := <get-row-end> definition
+
+  strategy-to-function:
+    definition -> Function(name, "", line-start, line-end)
+    where
+      name       := <definition-to-name> definition
+    ; line-start := <get-row-start> definition
+    ; line-end   := <get-row-end> definition
+
+rules // XDoc to JSON
+
+  xdoc-to-json:
+    Module(name, text, declaration*) -> $<{
+      "name": "<name>",
+      "description": "<description>",
+      "strategies": [<<mkstring(|",")> declaration'*>],
+      "authors": [<<mkstring(|",")> author*>],
+      "see": [<<mkstring(|",")> see*>]
+    }>
+    with
+      text'         := <strip-margin> text
+    ; line*         := <get-lines> text'
+    ; author*       := <retain-all(is-meta(|"@author ")); map(escape-json; quote)> line*
+    ; see*          := <retain-all(is-meta(|"@see ")); map(escape-json; quote)> line*
+    ; description   := <remove-all(is-meta); lines; escape-json> line*
+    ; declaration'* := <map(xdoc-to-json)> declaration*
+
+  xdoc-to-json:
+    Function(name, text, line-start, line-end) -> $<{
+      "name": "<name>",
+      "description": "<<escape-json> description>",
+      "start": <line-start>,
+      "end": <line-end>,
+      "types": [<<mkstring(|",")> type*>],
+      "params": [<<mkstring(|",")> param*>],
+      "notes": [<<mkstring(|",")> note*>],
+      "since": "<since>"
+    }>
+    with
+      text'       := <strip-margin> text
+    ; line*       := <get-lines> text'
+    ; type*       := <retain-all(is-meta(|"@type ")); map(escape-json; quote)> line*
+    ; param*      := <retain-all(is-meta(|"@param ")); map(escape-json; quote)> line*
+    ; note*       := <retain-all(is-meta(|"@note ")); map(escape-json; quote)> line*
+    ; since       := <getfirst(is-meta(|"@since ")) < escape-json + !""> line*
+    ; description := <remove-all(is-meta); lines> line*
+
+  escape-json =
+    string-replace(|"\\", "\\\\")
+  ; string-replace(|"\"", "\\\"")
+  ; string-replace(|"\n", "\\n")
+  ; string-replace(|"\t", "\\t")
+
+  quote = !$["[<id>]"]
+
+  is-meta = string-starts-with(|"@")
+
+  is-meta(|prefix):
+    line -> line'
+    where
+      <string-starts-with(|prefix)> line
+    with
+      length := <string-length> prefix
+    ; line'  := <string-as-chars(drop(|length))> line
+
+rules // Utils
+
+  // Add `glue` in between every two strings in the list, then concatenate the strings
+  mkstring(|glue):
+    [x | xs@[_|_]] -> <concat-strings> [x, glue, <mkstring(|glue)> xs]
+
+  mkstring(|glue):
+    [x] -> x
+
+  mkstring(|glue):
+    [] -> ""
+
+  // Version of mkstring(|glue) where glue is a newline
+  mkstring = mkstring(|"\n")
+
+  // Strip comment/irrelevant whitespace from the docblock
+  strip-margin:
+    text -> text'
+    with
+      text' := <trim-markers; all-lines(strip-margin-left; trim-whitespace)> text
+
+  // Drop the first and last two characters (/*x*/ -> x)
+  trim-markers:
+    text -> text'
+    with
+      text' := <string-as-chars(Tl; Tl; init; init) <+ id> text
+
+  strip-margin-left:
+    line -> line'
+    with
+      line' := <string-as-chars(drop-while(is-comment))> line
+
+  is-comment =
+    is-whitespace
+  + is-asterisk
+
+  is-asterisk = ?'*'

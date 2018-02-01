@@ -1,0 +1,266 @@
+
+<module>
+  <name>util/config/options</name>
+  <description><![CDATA[
+                        This module contains strategies for handling command line options
+                        and simple serialization/unserialization of ATerms. These strategies
+                        are particularly useful for writing command line tools in Stratego
+                        that may be connected into pipelines by the standard Unix piping
+                        mechanism.
+                        
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>io-wrap</name>
+    <description><![CDATA[
+                          Wraps a strategy into a strategy handling options and io of terms.
+                          
+                          
+                          ]]></description>
+    <start>32</start>
+    <end>33</end>
+    
+    <param><![CDATA[ strategy to apply on the input term]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>io-wrap</name>
+    <description><![CDATA[
+                          Wraps a strategy into a strategy handling options and io of terms.
+                          
+                          use fail if you have no additional options.
+                          
+                          ]]></description>
+    <start>42</start>
+    <end>43</end>
+    
+    <param><![CDATA[  extra options besides the default io-options]]></param>
+    <param><![CDATA[  strategy to apply on the input term]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>io-wrap</name>
+    <description><![CDATA[
+                          
+                          use fail if you have no additional options.
+                          
+                          
+                          ]]></description>
+    <start>52</start>
+    <end>53</end>
+    
+    <param><![CDATA[  extra options besides the default io-options.]]></param>
+    <param><![CDATA[  strategy to apply on the input term]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>io</name>
+    <description><![CDATA[
+                          Wraps a strategy into a strategy that handles io options.
+                          
+                          Reads a term from the file specified by the -i option (or stdin).
+                          Writes to a file specified by the -o option (or stdout).
+                          
+                          
+                          ]]></description>
+    <start>77</start>
+    <end>78</end>
+    
+    <param><![CDATA[  strategy to apply on the input term]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>output</name>
+    <description><![CDATA[
+                          Wraps a strategy into a strategy that handles output options.
+                          
+                          Writes to a file specified by the -o option (or stdout).
+                          
+                          ]]></description>
+    <start>85</start>
+    <end>88</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>input</name>
+    <description><![CDATA[
+                          Wraps a strategy into a strategy that handles input options.
+                          
+                          Reads a term from the file specified by the -i option (or stdin).
+                          
+                          ]]></description>
+    <start>95</start>
+    <end>98</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>option-wrap</name>
+    <description><![CDATA[
+                          Read options, display help, report success or failure, call strategy
+                          
+                          ]]></description>
+    <start>148</start>
+    <end>151</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>io-options</name>
+    <description><![CDATA[
+                          Handles all common options for a transformation tool.
+                          
+                          ]]></description>
+    <start>158</start>
+    <end>161</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>aterm-lib-options</name>
+    <description><![CDATA[
+                          Allow all flag starting with -at-* (these are ATerm library flags)
+                          
+                          ]]></description>
+    <start>180</start>
+    <end>185</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>keep-option</name>
+    <description><![CDATA[
+                          Option specifcation for level of keeping intermediate results.
+                          
+                          ]]></description>
+    <start>192</start>
+    <end>196</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>statistics-option</name>
+    <description><![CDATA[
+                          Option specifcation for level of statistics printing
+                          
+                          ]]></description>
+    <start>201</start>
+    <end>205</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>input-option</name>
+    <description><![CDATA[
+                          Option specifications for reading input.
+                          
+                          Defines -i.
+                          
+                          ]]></description>
+    <start>212</start>
+    <end>216</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>output-option</name>
+    <description><![CDATA[
+                          Option specifications for writing output.
+                          
+                          Defines -o.
+                          
+                          ]]></description>
+    <start>223</start>
+    <end>227</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>aterm-output-option</name>
+    <description><![CDATA[
+                          Option specifications for ATerm output.
+                          
+                          Defines -b option for binary output.
+                          
+                          ]]></description>
+    <start>234</start>
+    <end>239</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>verbose-option</name>
+    <description><![CDATA[
+                          Option specifications for verbosity.
+                          
+                          Defines -S, --silent, --verbose and -s.
+                          
+                          ]]></description>
+    <start>246</start>
+    <end>257</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>report-failure</name>
+    <description><![CDATA[
+                          Report the failure of this program. Must be applied to a list of
+                          strings obtained by calling the SSL_stacktrace_get_all_frame_names
+                          directly after the failure occurred (without any intervening calls
+                          to any rules/strategies).
+                          
+                          
+                          The exit strategy to use, e.g., xtc-exit.
+                          
+                          ]]></description>
+    <start>288</start>
+    <end>293</end>
+    <type><![CDATA[List(String) -> _]]></type>
+    <param><![CDATA[exit]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>report-failure-no-trace</name>
+    <description><![CDATA[
+                          Report the failure of this program, without showing a stack trace.
+                          
+                          
+                          ]]></description>
+    <start>310</start>
+    <end>311</end>
+    
+    
+  </strategy>
+  
+</module>

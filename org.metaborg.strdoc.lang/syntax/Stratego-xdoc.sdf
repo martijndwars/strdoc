@@ -1,0 +1,9 @@
+module Stratego-xdoc
+
+imports
+  stratego/StrategoMixx[StrategoHost]
+  EmbeddedXdoc[Def[[StrategoHost]] Module[[StrategoHost]] Decl[[StrategoHost]] Opdecl[[StrategoHost]] Overlay[[StrategoHost]] Strategy[[StrategoHost]]]
+
+exports
+  context-free start-symbols
+    Module[[StrategoHost]]

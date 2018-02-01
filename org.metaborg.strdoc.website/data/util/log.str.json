@@ -1,0 +1,421 @@
+{
+"name": "util/log",
+"description": "\nStrategies for logging\n\n",
+"strategies": [{
+               "name": "debug-area(s | msg)",
+               "description": "\n\n",
+               "start": 23,
+               "end": 26,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "risky(s | msg)",
+               "description": "\n\n",
+               "start": 28,
+               "end": 29,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "risky(s | severity, msg)",
+               "description": "\n\n",
+               "start": 31,
+               "end": 32,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "log( | severity: Severity, msg, term)",
+               "description": "\n\n",
+               "start": 36,
+               "end": 45,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "log( | severity: Severity, msg)",
+               "description": "\n\n",
+               "start": 47,
+               "end": 56,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "if-log-severity(s | severity)",
+               "description": "\n\n",
+               "start": 58,
+               "end": 59,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "log-stream",
+               "description": "\n\n",
+               "start": 63,
+               "end": 67,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "set-log-stream",
+               "description": "\n\n",
+               "start": 69,
+               "end": 70,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "log-puts",
+               "description": "\n\n",
+               "start": 72,
+               "end": 73,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "log-src",
+               "description": "\n\n",
+               "start": 75,
+               "end": 77,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbose-level",
+               "description": "\n\n",
+               "start": 81,
+               "end": 81,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbose-level",
+               "description": "\n\n",
+               "start": 82,
+               "end": 82,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbose-level",
+               "description": "\n\n",
+               "start": 83,
+               "end": 83,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbose-level",
+               "description": "\n\n",
+               "start": 84,
+               "end": 84,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbose-level",
+               "description": "\n\n",
+               "start": 85,
+               "end": 85,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbose-level",
+               "description": "\n\n",
+               "start": 86,
+               "end": 86,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbose-level",
+               "description": "\n\n",
+               "start": 87,
+               "end": 87,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbose-level",
+               "description": "\n\n",
+               "start": 88,
+               "end": 88,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "verbose-level",
+               "description": "\n\n",
+               "start": 89,
+               "end": 89,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "severity-string",
+               "description": "\n\n",
+               "start": 91,
+               "end": 91,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "severity-string",
+               "description": "\n\n",
+               "start": 92,
+               "end": 92,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "severity-string",
+               "description": "\n\n",
+               "start": 93,
+               "end": 93,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "severity-string",
+               "description": "\n\n",
+               "start": 94,
+               "end": 94,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "severity-string",
+               "description": "\n\n",
+               "start": 95,
+               "end": 95,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "severity-string",
+               "description": "\n\n",
+               "start": 96,
+               "end": 96,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "severity-string",
+               "description": "\n\n",
+               "start": 97,
+               "end": 97,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "severity-string",
+               "description": "\n\n",
+               "start": 98,
+               "end": 98,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "severity-string",
+               "description": "\n\n",
+               "start": 99,
+               "end": 99,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-level",
+               "description": "\n\n",
+               "start": 101,
+               "end": 102,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-level",
+               "description": "\n\n",
+               "start": 104,
+               "end": 105,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-level",
+               "description": "\n\n",
+               "start": 107,
+               "end": 108,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-level",
+               "description": "\n\n",
+               "start": 110,
+               "end": 111,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-level",
+               "description": "\n\n",
+               "start": 113,
+               "end": 114,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-level",
+               "description": "\n\n",
+               "start": 116,
+               "end": 117,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-level",
+               "description": "\n\n",
+               "start": 119,
+               "end": 120,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-level",
+               "description": "\n\n",
+               "start": 122,
+               "end": 123,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "string-to-level",
+               "description": "\n\n",
+               "start": 125,
+               "end": 126,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fatal-err( | msg: String)",
+               "description": "\nLogs the specified message as critical and terminates the program\nwith exit code 1.\n\n\n",
+               "start": 136,
+               "end": 137,
+               "types": ["a -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "err( | msg: String)",
+               "description": "\nLogs the specified message as an error.\n\n\n",
+               "start": 144,
+               "end": 145,
+               "types": ["a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "warn( | msg: String)",
+               "description": "\nLogs the specified message as a warning.\n\n\n",
+               "start": 152,
+               "end": 153,
+               "types": ["a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "notice( | msg: String)",
+               "description": "\nLogs the specified message as a notice.\n\n\n",
+               "start": 160,
+               "end": 161,
+               "types": ["a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "dbg( | msg: String)",
+               "description": "\nLogs the specified message as a debug.\n\n\n",
+               "start": 168,
+               "end": 169,
+               "types": ["a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "fatal-err-msg( | msg: String)",
+               "description": "\nLogs the specified message as critical and terminates the program\nwith exit code 1.\n\n\n",
+               "start": 179,
+               "end": 180,
+               "types": ["a -> _"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "err-msg( | msg: String)",
+               "description": "\nLogs the specified message as an error.\n\n\n",
+               "start": 187,
+               "end": 188,
+               "types": ["a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "warn-msg( | msg: String)",
+               "description": "\nLogs the specified message as a warning.\n\n\n",
+               "start": 195,
+               "end": 196,
+               "types": ["a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               },{
+               "name": "notice-msg( | msg: String)",
+               "description": "\nLogs the specified message as a notice.\n\n\n",
+               "start": 203,
+               "end": 204,
+               "types": ["a -> a"],
+               "params": [],
+               "notes": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

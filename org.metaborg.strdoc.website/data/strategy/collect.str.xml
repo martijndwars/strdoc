@@ -1,0 +1,88 @@
+
+<module>
+  <name>strategy/collect</name>
+  <description><![CDATA[
+                        Collecting subterms.
+                        
+                        There are two main variants of collect strategies: collect-all
+                        and collect-om.
+                        
+                        The collect-all strategies continue collecting terms in the
+                        subterms of a term that has already been collected.
+                        
+                        The collect-om strategies do not collect subterms of collected
+                        terms. They collect only the outermost subterms that satisfy
+                        some condition.
+                        
+                        For example: if terms matching the term pattern A(_,_) should be
+                        collected, then in the term
+                        
+                        A(1, A(1, 2))
+                        
+                        collect-all variant will return
+                        
+                        A(1, A(1, 2)) and A(1, 2).
+                        
+                        collect-om will only return the outermost result, that is,
+                        
+                        A(1, A(1, 2)).
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>collect-split</name>
+    <description><![CDATA[
+                          Produces pair of a reduced term and a list of extracted subterms.
+                          
+                          Reduces terms with f and extracts information with g resulting in a
+                          pair (t, xs) of a reduced term and the list of extracted subterms.
+                          
+                          ]]></description>
+    <start>146</start>
+    <end>147</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>CollectSplit</name>
+    <description><![CDATA[
+                          Helper of collect-split. Don't use.
+                          
+                          ]]></description>
+    <start>155</start>
+    <end>158</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>CollectSplit</name>
+    <description><![CDATA[
+                          Helper of collect-split. Don't use.
+                          
+                          ]]></description>
+    <start>163</start>
+    <end>164</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>collect-one</name>
+    <description><![CDATA[
+                          collect a single, outermost value from a tree.
+                          
+                          ]]></description>
+    <start>204</start>
+    <end>205</end>
+    
+    
+  </strategy>
+  
+</module>

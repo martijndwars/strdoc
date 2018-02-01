@@ -1,0 +1,250 @@
+
+<module>
+  <name>collection/list/index</name>
+  <description><![CDATA[
+                        This module contains strategies for working on lists using indexes.
+                        An indexed list works similarly to an array in that every element of
+                        the list is associated with in an integer index, and the first
+                        element has index 1.
+                        
+                        Adding the indices to a list is done by add-indices.
+                        
+                        
+                        ]]></description>
+  
+  
+  
+  <strategy>
+    <name>index</name>
+    <description><![CDATA[
+                          Get the n-th element of a list.
+                          The first element has index 1.
+                          
+                          
+                          ]]></description>
+    <start>23</start>
+    <end>24</end>
+    <type><![CDATA[(Int, List(a)) -> a]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>index</name>
+    <description><![CDATA[
+                          Get the i-th element of a list.
+                          The first element has index 1.
+                          
+                          
+                          ]]></description>
+    <start>34</start>
+    <end>35</end>
+    <type><![CDATA[List(a) -> a]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>get-index</name>
+    <description><![CDATA[
+                          Get index of element in list.
+                          
+                          
+                          ]]></description>
+    <start>44</start>
+    <end>45</end>
+    <type><![CDATA[(a, List(a)) -> Int]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Gind0</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>49</start>
+    <end>49</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Gind1</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>52</start>
+    <end>52</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Gind2</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>55</start>
+    <end>55</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>set-index</name>
+    <description><![CDATA[
+                          Change element in list.
+                          The first element has index 0.
+                          
+                          
+                          ]]></description>
+    <start>68</start>
+    <end>70</end>
+    <type><![CDATA[(Int, a, List(a)) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>at-index</name>
+    <description><![CDATA[
+                          Apply s at the specified index
+                          The first element has index 0.
+                          
+                          
+                          ]]></description>
+    <start>78</start>
+    <end>80</end>
+    <type><![CDATA[(Int, List(a)) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>at-index</name>
+    <description><![CDATA[
+                          Apply s at the specified index i.
+                          The first element has index 0.
+                          
+                          
+                          ]]></description>
+    <start>88</start>
+    <end>96</end>
+    <type><![CDATA[List(a)) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>at-index-tail</name>
+    <description><![CDATA[
+                          Apply s to the list containing the elements
+                          from index i onwards from the original list.
+                          The first element has index 0.
+                          
+                          
+                          ]]></description>
+    <start>105</start>
+    <end>113</end>
+    <type><![CDATA[List(a) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>insert</name>
+    <description><![CDATA[
+                          Insert element in list.
+                          
+                          
+                          ]]></description>
+    <start>123</start>
+    <end>124</end>
+    <type><![CDATA[(Int, a, List(a)) -> List(a)]]></type>
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Ins0</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>127</start>
+    <end>127</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Ins1</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>130</start>
+    <end>130</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>Ins2</name>
+    <description><![CDATA[
+                          ]]></description>
+    <start>133</start>
+    <end>133</end>
+    
+    
+  </strategy>
+  
+  
+  <strategy>
+    <name>nmap</name>
+    <description><![CDATA[
+                          Map a strategy over a list where the strategy takes the index as a term argument.
+                          
+                          
+                          ]]></description>
+    <start>145</start>
+    <end>146</end>
+    <type><![CDATA[ List(a) -> List(b)]]></type>
+    <param><![CDATA[Strategy to apply to all the elements of the list.]]></param>
+    <param><![CDATA[The first index (e.g. 0 or 1)]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>map-with-index</name>
+    <description><![CDATA[
+                          Apply strategies that require some knowledge of the index of an element
+                          to the elements of the list.
+                          
+                          The index of the first element is 1.
+                          
+                          
+                          ]]></description>
+    <start>159</start>
+    <end>162</end>
+    <type><![CDATA[ List(a) -> List(b)]]></type>
+    <param><![CDATA[Int * a -> b]]></param>
+  </strategy>
+  
+  
+  <strategy>
+    <name>add-indices</name>
+    <description><![CDATA[
+                          Adds indices to the elements of a list.
+                          The index of the first element is 1.
+                          
+                          Example: <add-indices> [1,2,3] => [(1,1),(2,2),(3,3)]
+                          
+                          
+                          ]]></description>
+    <start>173</start>
+    <end>174</end>
+    <type><![CDATA[List(a) -> List((Int, a))]]></type>
+    
+  </strategy>
+  
+</module>
