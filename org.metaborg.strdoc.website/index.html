@@ -40,9 +40,10 @@
             <div ng-view></div>
         </div>
         <div class="col-md-4">
-            <ul>
+            <h5>Packages</h5>
+            <ul class="packages">
                 <li ng-repeat="package in packages">
-                    {{package.name}}
+                    <a ng-href="#/package/{{package.name}}">{{package.name}}</a>
                     <ul>
                         <li ng-repeat="module in package.modules">
                             <a ng-href="#/module/{{module}}">{{module.substr(package.name.length+1)}}</a>

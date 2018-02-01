@@ -42,8 +42,7 @@ $ org.metaborg.strdoc.website/deploy.sh
 
 ## Todo
 
-* Feature: Link to source on module page.
-* Feature: Improve structure/hierarchy (package -> module -> strategies).
+* Feature: Link to source on module page. Currently, only strategies link to their specific region.
 * Bug: Some whitespace gets lost in the description (see util/config/parse-options)
 * Bug: When pretty-printing the type of a parameter it looses its parenthesis, so the string looses associativity/precedence.
 * Bug: Cannot parse `collection/hash-table/scoped-finite-map.str`, `system/io/file.str`, and `system/posix/pipe-abstractions.str`.

@@ -11,3 +11,8 @@ input {
 .table > thead > tr > th {
 	background: #ecede5;
 }
+
+ul.packages {
+	padding-left: 0;
+	list-style: none;
+}
