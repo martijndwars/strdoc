@@ -61,4 +61,5 @@ For the presentation:
 - Current Stratego docs: releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/
 - Rust API docs: https://doc.rust-lang.org/std/
 - Scala API docs: http://www.scala-lang.org/api/current/
+- AngularJS API docs: https://docs.angularjs.org/api/
 - PHP API generator: http://www.apigen.org/ApiGen/

@@ -1,0 +1,160 @@
+[
+  {
+    "name": "collection/hash-table",
+    "modules": [
+      "collection/hash-table/common",
+      "collection/hash-table/nested"
+    ]
+  },
+  {
+    "name": "collection/list",
+    "modules": [
+      "collection/list/bag",
+      "collection/list/common",
+      "collection/list/cons",
+      "collection/list/filter",
+      "collection/list/index",
+      "collection/list/integer",
+      "collection/list/lookup",
+      "collection/list/set",
+      "collection/list/sort",
+      "collection/list/zip"
+    ]
+  },
+  {
+    "name": "collection/set",
+    "modules": [
+      "collection/set/indexed"
+    ]
+  },
+  {
+    "name": "collection/tuple",
+    "modules": [
+      "collection/tuple/common",
+      "collection/tuple/cons"
+    ]
+  },
+  {
+    "name": "lang",
+    "modules": [
+      "lang/dynamic-rules",
+      "lang/stacktrace",
+      "lang/strategy-reference",
+      "lang/with"
+    ]
+  },
+  {
+    "name": "strategy",
+    "modules": [
+      "strategy/collect",
+      "strategy/conditional",
+      "strategy/iteration"
+    ]
+  },
+  {
+    "name": "strategy/general",
+    "modules": [
+      "strategy/general/free-variables",
+      "strategy/general/memo",
+      "strategy/general/option",
+      "strategy/general/parenthesize",
+      "strategy/general/rename",
+      "strategy/general/substitution",
+      "strategy/general/unification"
+    ]
+  },
+  {
+    "name": "strategy/pack",
+    "modules": [
+      "strategy/pack/common",
+      "strategy/pack/graph",
+      "strategy/pack/modules"
+    ]
+  },
+  {
+    "name": "strategy/traversal",
+    "modules": [
+      "strategy/traversal/environment",
+      "strategy/traversal/fixpoint",
+      "strategy/traversal/list-environment",
+      "strategy/traversal/list",
+      "strategy/traversal/simple"
+    ]
+  },
+  {
+    "name": "system",
+    "modules": [
+      "system/error"
+    ]
+  },
+  {
+    "name": "system/c99",
+    "modules": [
+      "system/c99/fallback-posix",
+      "system/c99/file"
+    ]
+  },
+  {
+    "name": "system/io",
+    "modules": [
+      "system/io/char",
+      "system/io/dir",
+      "system/io/process",
+      "system/io/term"
+    ]
+  },
+  {
+    "name": "system/posix",
+    "modules": [
+      "system/posix/error",
+      "system/posix/file-abstractions",
+      "system/posix/file",
+      "system/posix/process-abstractions",
+      "system/posix/process",
+      "system/posix/signal",
+      "system/posix/time"
+    ]
+  },
+  {
+    "name": "system/posix-xsi",
+    "modules": [
+      "system/posix-xsi/file",
+      "system/posix-xsi/pipe-abstractions",
+      "system/posix-xsi/time"
+    ]
+  },
+  {
+    "name": "term",
+    "modules": [
+      "term/annotation",
+      "term/common",
+      "term/integer",
+      "term/placeholder",
+      "term/properties",
+      "term/real",
+      "term/share",
+      "term/string",
+      "term/zip"
+    ]
+  },
+  {
+    "name": "util",
+    "modules": [
+      "util/date-format",
+      "util/log",
+      "util/sunit",
+      "util/time"
+    ]
+  },
+  {
+    "name": "util/config",
+    "modules": [
+      "util/config/common",
+      "util/config/keep",
+      "util/config/options",
+      "util/config/parse-options",
+      "util/config/stats",
+      "util/config/verbose"
+    ]
+  }
+]

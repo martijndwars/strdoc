@@ -5,31 +5,30 @@
   </ol>
 </nav>
 
-<h2>Module {{module.name}}</h2>
-
-<p class="description">{{module.description}}</p>
-
-<dl>
-	<dt ng-repeat-start="see in module.see">See:</dt>
-	<dd ng-repeat-end><a ng-href="#/module/{{see}}">{{see}}</a></dd>
-
-	<dt ng-repeat-start="author in module.authors">Author:</dt>
-	<dd ng-repeat-end>{{author}}</dd>
-</dl>
-
-<h3>Summary</h3>
-<div class="row">
-	<div class="col-md-4">
-		<table class="table">
-			<tr>
-				<td>Strategies:</td>
-				<td>{{module.strategies.length}}</td>
-			</tr>
-		</table>
-	</div>
+<div class="page-header">
+	<h1>{{module.name}}</h1>
 </div>
 
-<h3>Strategies</h3>
+<h2>Summary</h2>
+<table class="table table-bordered summary">
+	<tr>
+		<th>Strategies</th>
+		<td>{{module.strategies.length}}</td>
+	</tr>
+	<tr ng-repeat="author in module.authors">
+		<th>Author</th>
+		<td>{{author}}</td>
+	</tr>
+	<tr ng-repeat="see in module.sees">
+		<th>See</th>
+		<td><a ng-href="#/module/{{see}}">{{see}}</a></td>
+	</tr>
+</table>
+
+<h2>Description</h2>
+<p class="description">{{module.description}}</p>
+
+<h2>Strategies</h2>
 <input type="search" id="filter" placeholder="Click 'F' to filter" ng-model="filter"/>
 
 <ul class="strategies">

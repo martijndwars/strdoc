@@ -18,6 +18,7 @@
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     
     <script src="app.js"></script>
+    <script src="controller/PackageController.js"></script>
     <script src="controller/ModuleController.js"></script>
     <script src="controller/SearchController.js"></script>
     <script src="controller/SourceController.js"></script>
@@ -33,7 +34,22 @@
         ng-change="search()"
         ng-model-options='{debounce: 200}'/>
       
-      <div ng-view></div>
+      <div class="row">
+        <div class="col-md-8">
+            <div ng-view></div>
+        </div>
+        <div class="col-md-4">
+            <ul>
+                <li ng-repeat="package in packages">
+                    {{package.name}}
+                    <ul>
+                        <li ng-repeat="module in package.modules">
+                            <a ng-href="#/module/{{module}}">{{module.substr(package.name.length+1)}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
   </body>
 </html>

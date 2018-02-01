@@ -28,7 +28,7 @@ Strategy.prototype.lines = function () {
   return this.start + '-' + this.end;
 };
 
-app.run(function($rootScope, $location) {
+app.run(function($rootScope, $location, moduleService) {
   $rootScope.query = '';
 
   $rootScope.search = function() {
@@ -51,9 +51,20 @@ app.run(function($rootScope, $location) {
       }
     }
   });
+
+  // Populate right menu
+  moduleService.getPackages().then(function (packages) {
+    $rootScope.packages = packages;
+  });
 });
 
 app.factory('moduleService', function (baseUrl, $http) {
+  var getPackages = function () {
+    return $http.get(baseUrl + 'data/packages.json').then(function (response) {
+      return response.data;
+    });
+  };
+
   var getModules = function () {
     return $http.get(baseUrl + 'data/modules.json').then(function (response) {
       return response.data;
@@ -79,6 +90,7 @@ app.factory('moduleService', function (baseUrl, $http) {
   };
 
   return {
+    getPackages: getPackages,
     getModules: getModules,
     getModule: getModule
   };
@@ -89,8 +101,11 @@ app.config(function ($routeProvider, $locationProvider) {
 
   $routeProvider
     .when('/', {
-      controller: 'ModuleListController',
       templateUrl: 'list.html'
+    })
+    .when('/package/:name*', {
+      controller: 'PackageViewController',
+      templateUrl: 'package.html'
     })
     .when('/module/:name*/strategy/:strategy*', {
       controller: 'ModuleViewController',

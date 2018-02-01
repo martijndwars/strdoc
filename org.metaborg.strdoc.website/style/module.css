@@ -2,6 +2,10 @@
   white-space: pre-wrap;
 }
 
+table.summary th {
+  background-color: #f0f0f0;
+}
+
 ul.strategies {
 	list-style: none;
 	padding: 0;

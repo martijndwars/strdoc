@@ -4,17 +4,15 @@
   </ol>
 </nav>
 
-<h2>Stratego API</h2>
-
 <table class="table table-responsive table-bordered table-striped">
 	<thead>
 		<tr>
-			<th>Modules Summary</th>
+			<th>Packages</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="module in modules">
-			<td><a ng-href="#/module/{{module}}">{{module}}</a></td>
+		<tr ng-repeat="package in packages">
+			<td><a ng-href="#/package/{{package.name}}">{{package.name}}</a></td>
 		</tr>
 	</tbody>
 </table>
