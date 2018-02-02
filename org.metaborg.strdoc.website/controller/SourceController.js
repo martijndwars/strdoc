@@ -1,6 +1,8 @@
 app.controller('SourceViewController', function (baseUrl, $scope, $routeParams, $http, $sce, $timeout, $anchorScroll) {
   var name = $routeParams.name;
 
+  $scope.module = name.substring(0, name.length-9);
+
   $http.get(baseUrl + 'source/' + name).then(function (response) {
     $scope.source = $sce.trustAsHtml(response.data);
 
