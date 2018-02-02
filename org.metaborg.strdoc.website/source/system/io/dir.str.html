@@ -1,25 +1,24 @@
-<code id="0"><span style="color: rgb(63, 127, 95)">/**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="1"></span><span style="color: rgb(63, 127, 95)"> * Strategies for exploring directories.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="2"></span><span style="color: rgb(63, 127, 95)"> */</code>
-<code id="3"></span><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">system/io/dir</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="4"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="5"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="6"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="7"></span><span style="color: rgb(63, 127, 95)">   * Removes a file from a directory.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="8"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="9"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">remove-file</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"></code>
-<code id="10"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_remove&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="11"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="12"></span><span style="color: rgb(63, 127, 95)"> /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="13"></span><span style="color: rgb(63, 127, 95)">  * The  getenv() function searches the environment list for a</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="14"></span><span style="color: rgb(63, 127, 95)">  * string that matches the string pointed to  by  name.   The</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="15"></span><span style="color: rgb(63, 127, 95)">  * strings are of the form name = value. </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="16"></span><span style="color: rgb(63, 127, 95)">  */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="17"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">getenv</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
-<code id="18"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_getenv&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="19"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="20"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="21"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="22"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">home-dir</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"></code>
-<code id="23"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">getenv</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 255)">&quot;HOME&quot;</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="24"></span></code>
+<code id="0"><span style="color: rgb(63, 127, 95)">/**</span></code>
+<code id="1"><span style="color: rgb(63, 127, 95)"> * Strategies for exploring directories.</span></code>
+<code id="2"><span style="color: rgb(63, 127, 95)"> */</code>
+<code id="3"></span><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">system/io/dir</span></code>
+<code id="4"><span style="color: rgb(127, 0, 85)">strategies</span></code>
+<code id="5"></code>
+<code id="6"><span style="color: rgb(63, 127, 95)">  /**</span></code>
+<code id="7"><span style="color: rgb(63, 127, 95)">   * Removes a file from a directory.</span></code>
+<code id="8"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="9"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">remove-file</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span></code>
+<code id="10"><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_remove&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="11"></code>
+<code id="12"><span style="color: rgb(63, 127, 95)"> /**</span></code>
+<code id="13"><span style="color: rgb(63, 127, 95)">  * The  getenv() function searches the environment list for a</span></code>
+<code id="14"><span style="color: rgb(63, 127, 95)">  * string that matches the string pointed to  by  name.   The</span></code>
+<code id="15"><span style="color: rgb(63, 127, 95)">  * strings are of the form name = value. </span></code>
+<code id="16"><span style="color: rgb(63, 127, 95)">  */</span></code>
+<code id="17"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">getenv</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
+<code id="18"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_getenv&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="19"></code>
+<code id="20"><span style="color: rgb(127, 0, 85)">strategies</span></code>
+<code id="21"></code>
+<code id="22"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">home-dir</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span></code>
+<code id="23"><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">getenv</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 255)">&quot;HOME&quot;</span></code>

@@ -1,81 +1,80 @@
-<code id="0"><span style="color: rgb(63, 127, 95)">/**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="1"></span><span style="color: rgb(63, 127, 95)"> * This module contains strategies for operating on real numbers.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="2"></span><span style="color: rgb(63, 127, 95)"> * </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="3"></span><span style="color: rgb(63, 127, 95)"> * In Stratego, real numbers are primitive terms, separate from</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="4"></span><span style="color: rgb(63, 127, 95)"> * integers. The precision of the reals match that of the underlying</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="5"></span><span style="color: rgb(63, 127, 95)"> * runtime platform, which currently always is the ANSI C library.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="6"></span><span style="color: rgb(63, 127, 95)"> *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="7"></span><span style="color: rgb(63, 127, 95)"> * @author Eelco Visser &lt;visser@acm.org&gt;</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="8"></span><span style="color: rgb(63, 127, 95)"> * @author Karl Trygve Kalleberg &lt;karltk@strategoxt.org&gt; - documentation</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="9"></span><span style="color: rgb(63, 127, 95)"> */</code>
-<code id="10"></span><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">term/real</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="11"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="12"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="13"></span><span style="color: rgb(63, 127, 95)">  /** Predicate to check if the current term is a real number.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="14"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="15"></span><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; Real</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="16"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="17"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">is-real</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_is_real&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="18"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="19"></span><span style="color: rgb(63, 127, 95)">  /** Compute cosine of a real number.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="20"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="21"></span><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; Real</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="22"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="23"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">cos</span><span style="color: rgb(0, 64, 128)">   </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_cos&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="24"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="25"></span><span style="color: rgb(63, 127, 95)">  /** Compute sine of a real number.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="26"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="27"></span><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; Real</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="28"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="29"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">sin</span><span style="color: rgb(0, 64, 128)">   </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_sin&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="30"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="31"></span><span style="color: rgb(63, 127, 95)">  /** Compute square of a real number.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="32"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="33"></span><span style="color: rgb(63, 127, 95)">   * Note: The number sqrt is applied to must be non-negative, as complex</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="34"></span><span style="color: rgb(63, 127, 95)">   * numbers are not supported.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="35"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="36"></span><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; Real</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="37"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="38"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">sqrt</span><span style="color: rgb(0, 64, 128)">  </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_sqrt&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="39"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="40"></span><span style="color: rgb(63, 127, 95)">  /** Compute arc tangent of a par of real numbers. The result, when applied to</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="41"></span><span style="color: rgb(63, 127, 95)">   * the pair (x,y), is the arc tangent of y/x, expressed as radians between</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="42"></span><span style="color: rgb(63, 127, 95)">   * -PI and PI. The signs of the parameters x and y are used to determine the</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="43"></span><span style="color: rgb(63, 127, 95)">   * correct quadrant.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="44"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="45"></span><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; Real</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="46"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="47"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">atan2</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">y</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_atan2&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">y</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="48"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="49"></span><span style="color: rgb(63, 127, 95)">  /** Convert a real to a string with default (maximal) precision.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="50"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="51"></span><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; String</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="52"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="53"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">real-to-string</span><span style="color: rgb(0, 64, 128)">        </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_real_to_string&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="54"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="55"></span><span style="color: rgb(63, 127, 95)">  /** Convert a real to a string with given precision.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="56"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="57"></span><span style="color: rgb(63, 127, 95)">   * The term argument prec specifies the number of digits after the </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="58"></span><span style="color: rgb(63, 127, 95)">   * period is required. The result is rounded. </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="59"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="60"></span><span style="color: rgb(63, 127, 95)">   * Example: &lt;real-to-string(2)&gt; 12.124 =&gt; &quot;12.12&quot;</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="61"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="62"></span><span style="color: rgb(63, 127, 95)">   * @type prec Int </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="63"></span><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; String</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="64"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="65"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">real-to-string</span><span style="color: rgb(0, 64, 128)">(</span><span style="color: rgb(0, 64, 128)">|</span><span style="color: rgb(0, 0, 0)">prec</span><span style="color: rgb(0, 64, 128)">)</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_real_to_string_precision&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">prec</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="66"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="67"></span><span style="color: rgb(63, 127, 95)">  /** Construct a real from a string.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="68"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="69"></span><span style="color: rgb(63, 127, 95)">   * Example: &lt;string-to-real&gt; &quot;123.0e+02&quot;</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="70"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="71"></span><span style="color: rgb(63, 127, 95)">   * @type String -&gt; Real</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="72"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="73"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">string-to-real</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_string_to_real&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="74"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="75"></span><span style="color: rgb(63, 127, 95)">  /** Construct a real from an int. </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="76"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="77"></span><span style="color: rgb(63, 127, 95)">   * @type Int -&gt; Real</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="78"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="79"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">real</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_real&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="80"></span></code>
+<code id="0"><span style="color: rgb(63, 127, 95)">/**</span></code>
+<code id="1"><span style="color: rgb(63, 127, 95)"> * This module contains strategies for operating on real numbers.</span></code>
+<code id="2"><span style="color: rgb(63, 127, 95)"> * </span></code>
+<code id="3"><span style="color: rgb(63, 127, 95)"> * In Stratego, real numbers are primitive terms, separate from</span></code>
+<code id="4"><span style="color: rgb(63, 127, 95)"> * integers. The precision of the reals match that of the underlying</span></code>
+<code id="5"><span style="color: rgb(63, 127, 95)"> * runtime platform, which currently always is the ANSI C library.</span></code>
+<code id="6"><span style="color: rgb(63, 127, 95)"> *</span></code>
+<code id="7"><span style="color: rgb(63, 127, 95)"> * @author Eelco Visser &lt;visser@acm.org&gt;</span></code>
+<code id="8"><span style="color: rgb(63, 127, 95)"> * @author Karl Trygve Kalleberg &lt;karltk@strategoxt.org&gt; - documentation</span></code>
+<code id="9"><span style="color: rgb(63, 127, 95)"> */</code>
+<code id="10"></span><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">term/real</span></code>
+<code id="11"><span style="color: rgb(127, 0, 85)">strategies</span></code>
+<code id="12"></code>
+<code id="13"><span style="color: rgb(63, 127, 95)">  /** Predicate to check if the current term is a real number.</span></code>
+<code id="14"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="15"><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; Real</span></code>
+<code id="16"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="17"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">is-real</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_is_real&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="18"></code>
+<code id="19"><span style="color: rgb(63, 127, 95)">  /** Compute cosine of a real number.</span></code>
+<code id="20"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="21"><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; Real</span></code>
+<code id="22"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="23"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">cos</span><span style="color: rgb(0, 64, 128)">   </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_cos&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="24"></code>
+<code id="25"><span style="color: rgb(63, 127, 95)">  /** Compute sine of a real number.</span></code>
+<code id="26"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="27"><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; Real</span></code>
+<code id="28"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="29"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">sin</span><span style="color: rgb(0, 64, 128)">   </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_sin&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="30"></code>
+<code id="31"><span style="color: rgb(63, 127, 95)">  /** Compute square of a real number.</span></code>
+<code id="32"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="33"><span style="color: rgb(63, 127, 95)">   * Note: The number sqrt is applied to must be non-negative, as complex</span></code>
+<code id="34"><span style="color: rgb(63, 127, 95)">   * numbers are not supported.</span></code>
+<code id="35"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="36"><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; Real</span></code>
+<code id="37"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="38"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">sqrt</span><span style="color: rgb(0, 64, 128)">  </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_sqrt&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="39"></code>
+<code id="40"><span style="color: rgb(63, 127, 95)">  /** Compute arc tangent of a par of real numbers. The result, when applied to</span></code>
+<code id="41"><span style="color: rgb(63, 127, 95)">   * the pair (x,y), is the arc tangent of y/x, expressed as radians between</span></code>
+<code id="42"><span style="color: rgb(63, 127, 95)">   * -PI and PI. The signs of the parameters x and y are used to determine the</span></code>
+<code id="43"><span style="color: rgb(63, 127, 95)">   * correct quadrant.</span></code>
+<code id="44"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="45"><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; Real</span></code>
+<code id="46"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="47"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">atan2</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">y</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_atan2&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">y</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="48"></code>
+<code id="49"><span style="color: rgb(63, 127, 95)">  /** Convert a real to a string with default (maximal) precision.</span></code>
+<code id="50"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="51"><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; String</span></code>
+<code id="52"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="53"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">real-to-string</span><span style="color: rgb(0, 64, 128)">        </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_real_to_string&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="54"></code>
+<code id="55"><span style="color: rgb(63, 127, 95)">  /** Convert a real to a string with given precision.</span></code>
+<code id="56"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="57"><span style="color: rgb(63, 127, 95)">   * The term argument prec specifies the number of digits after the </span></code>
+<code id="58"><span style="color: rgb(63, 127, 95)">   * period is required. The result is rounded. </span></code>
+<code id="59"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="60"><span style="color: rgb(63, 127, 95)">   * Example: &lt;real-to-string(2)&gt; 12.124 =&gt; &quot;12.12&quot;</span></code>
+<code id="61"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="62"><span style="color: rgb(63, 127, 95)">   * @type prec Int </span></code>
+<code id="63"><span style="color: rgb(63, 127, 95)">   * @type Real -&gt; String</span></code>
+<code id="64"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="65"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">real-to-string</span><span style="color: rgb(0, 64, 128)">(</span><span style="color: rgb(0, 64, 128)">|</span><span style="color: rgb(0, 0, 0)">prec</span><span style="color: rgb(0, 64, 128)">)</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_real_to_string_precision&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">prec</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="66"></code>
+<code id="67"><span style="color: rgb(63, 127, 95)">  /** Construct a real from a string.</span></code>
+<code id="68"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="69"><span style="color: rgb(63, 127, 95)">   * Example: &lt;string-to-real&gt; &quot;123.0e+02&quot;</span></code>
+<code id="70"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="71"><span style="color: rgb(63, 127, 95)">   * @type String -&gt; Real</span></code>
+<code id="72"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="73"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">string-to-real</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_string_to_real&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="74"></code>
+<code id="75"><span style="color: rgb(63, 127, 95)">  /** Construct a real from an int. </span></code>
+<code id="76"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="77"><span style="color: rgb(63, 127, 95)">   * @type Int -&gt; Real</span></code>
+<code id="78"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="79"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">real</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_real&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(0, 0, 0)">x</span><span style="color: rgb(0, 0, 128)">)</span></code>

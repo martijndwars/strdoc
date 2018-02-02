@@ -38,30 +38,41 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main {
-    private static final String ARCHIVE = "/Users/martijn/eclipse-workspace/xdoc/target/xdoc-2.4.0-SNAPSHOT.spoofax-language";
-    private static final String NEWLINE = System.getProperty("line.separator");
+    private static final String SSL_DIR = "/Users/martijn/Projects/spoofax-releng/strategoxt/strategoxt/stratego-libraries/lib/spec";
+
+    // Lang: Stratego
     private static final String STRATEGO_ARCHIVE = "/Users/martijn/Projects/spoofax-releng/stratego/org.metaborg.meta.lang.stratego/target/org.metaborg.meta.lang.stratego-2.4.0-SNAPSHOT.spoofax-language";
-    private static final String DATA_DIR = "/Users/martijn/Projects/documentation-xsl/data/";
-    private static final String SOURCE_DIR = "/Users/martijn/Projects/documentation-xsl/source/";
+
+    // Lang: Stratego dialect
+    private static final String DIALECT_NAME = "Stratego-Docx";
+    private static final String DIALECT_START_SYMBOL = "Module";
+    private static final String DIALECT_ARCHIVE = "/Users/martijn/Projects/strdoc/org.metaborg.strdoc.lang/target/xdoc-2.4.0-SNAPSHOT.spoofax-language";
+    private static final String DIALECT_TABLE = "/Users/martijn/Projects/strdoc/org.metaborg.strdoc.lang/trans/Stratego-xdoc.tbl";
     private static final String TRANSFORM_TO_XDOC = "stratego-to-xdoc";
     private static final String TRANSFORM_TO_JSON = "xdoc-to-json";
-    private static final String SSL_DIR = "/Users/martijn/Projects/spoofax-releng/strategoxt/strategoxt/stratego-libraries/lib/spec";
+
+    // Website
+    private static final String WEBSITE_DIR = "/Users/martijn/Projects/strdoc/org.metaborg.strdoc.website/";
+    private static final String DATA_DIR = WEBSITE_DIR + "data/";
+    private static final String SOURCE_DIR = WEBSITE_DIR + "source/";
+
+    // System
+    private static final String NEWLINE = System.getProperty("line.separator");
 
     public static void main(String[] args) {
         try (final Spoofax spoofax = new Spoofax()) {
-            // Load language
-            FileObject directory = spoofax.resourceService.resolve(ARCHIVE);
-            ILanguageImpl languageImpl = spoofax.languageDiscoveryService.languageFromArchive(directory);
-            FileObject parseTable = spoofax.resourceService.resolve("file:///Users/martijn/eclipse-workspace/xdoc/trans/Stratego-xdoc.tbl");
-            FileObject location = spoofax.resourceService.resolve("zip:file:///Users/martijn/eclipse-workspace/org.metaborg.xdoc/target/org.metaborg.xdoc-0.1.0-SNAPSHOT.spoofax-language");
-            SyntaxFacet syntaxFacet = new SyntaxFacet(parseTable, null, Lists.newArrayList("Module"));
-            ILanguageImpl dialect = spoofax.dialectService.add("Stratego-Docx", location, languageImpl, syntaxFacet);
+            FileObject dialectArchive = spoofax.resourceService.resolve(DIALECT_ARCHIVE);
+            ILanguageImpl languageImpl = spoofax.languageDiscoveryService.languageFromArchive(dialectArchive);
+            FileObject parseTable = spoofax.resourceService.resolve("file://" + DIALECT_TABLE);
+            FileObject location = spoofax.resourceService.resolve("zip:file://" + DIALECT_ARCHIVE);
+            SyntaxFacet syntaxFacet = new SyntaxFacet(parseTable, null, Lists.newArrayList(DIALECT_START_SYMBOL));
+            ILanguageImpl dialect = spoofax.dialectService.add(DIALECT_NAME, location, languageImpl, syntaxFacet);
 
             FileObject strategoDirectory = spoofax.resourceService.resolve("file://" + SSL_DIR);
             FileObject[] files = strategoDirectory.findFiles(new AllFileSelector());
 
             SimpleProjectService simpleProjectService = spoofax.injector.getInstance(SimpleProjectService.class);
-            FileObject resource = spoofax.resourceService.resolve(ARCHIVE);
+            FileObject resource = spoofax.resourceService.resolve(DIALECT_ARCHIVE);
             IProject project = simpleProjectService.create(resource);
 
             FileObject strategoArchive = spoofax.resourceService.resolve(STRATEGO_ARCHIVE);
@@ -74,7 +85,6 @@ public class Main {
 
                 // Extract doc, save XML file
                 String doc = extractDoc(spoofax, languageImpl, dialect, project, file);
-
                 String relativeName = strategoDirectory.getName().getRelativeName(file.getName());
                 System.out.println(relativeName);
 
@@ -88,7 +98,6 @@ public class Main {
 
                 // Turn source into HTML
                 String html = htmlSource(spoofax, strategoImpl, project, file);
-
                 File targetSourceFile = new File(SOURCE_DIR + relativeName + ".html");
                 targetSourceFile.getParentFile().mkdirs();
                 targetSourceFile.createNewFile();
@@ -116,75 +125,43 @@ public class Main {
         }
 
         IStrategoTerm ast = parseUnit.ast();
-
-        // TODO: What does this do?
         Iterable<IRegionCategory<IStrategoTerm>> categorization = spoofax.categorizerService.categorize(languageImpl, parseUnit);
         Iterable<IRegionStyle<IStrategoTerm>> styles = spoofax.stylerService.styleParsed(languageImpl, categorization);
-
-        // Transform tokens in source?
         ITokens tokens = ImploderAttachment.get(ast).getLeftToken().getTokenizer();
 
-        // TODO: Zip tokens with styles
-        // TODO: Collapse adjacent tokens with the same style (to get lightweight HTML)
+        // TODO: Collapse adjacent tokens with the same style (to get lighter HTML)
+        // TODO: Do not assign a span to tokens whose region is empty (e.g. newline is not visible, hence empty region).
 
         StringBuilder stringBuilder = new StringBuilder();
 
         for (IToken token : tokens) {
             ISourceRegion tokenRegion = tokenToRegion(token);
-            IStyle style = getStyle(tokenRegion, styles);
-            String string = StringEscapeUtils.escapeHtml4(token.toString());
 
-            if (style != null) {
-                Color color = style.color();
+            if (tokenRegion.length() == 0) {
+                stringBuilder.append(token);
+            } else if (token.toString().equals(NEWLINE)) {
+                stringBuilder.append(token);
+            } else {
+                IStyle style = getStyle(tokenRegion, styles);
+                String string = StringEscapeUtils.escapeHtml4(token.toString());
 
-                if (color != null) {
-                    String rgb = getRgb(color);
+                if (style != null) {
+                    Color color = style.color();
 
-                    stringBuilder.append("<span style=\"color: " + rgb + "\">" + string + "</span>");
+                    if (color != null) {
+                        String rgb = getRgb(color);
+
+                        stringBuilder.append("<span style=\"color: " + rgb + "\">" + string + "</span>");
+                    } else {
+                        stringBuilder.append(string);
+                    }
                 } else {
                     stringBuilder.append(string);
                 }
-            } else {
-                stringBuilder.append(string);
             }
         }
 
         return wrapLines(stringBuilder.toString());
-    }
-
-    private static String wrapLines(String code) {
-        String[] lines = code.split(NEWLINE);
-
-        return IntStream.range(0, lines.length)
-                .mapToObj(i -> "<code id=\"" + i + "\">" + lines[i] + "</code>")
-                .collect(Collectors.joining(NEWLINE));
-    }
-
-    private static String getRgb(Color color) {
-        int r = color.getRed();
-        int g = color.getGreen();
-        int b = color.getBlue();
-
-        return "rgb(" + r + ", " + g + ", " + b + ")";
-    }
-
-    // TODO: Do not loop styles every time
-    private static IStyle getStyle(ISourceRegion tokenRegion, Iterable<IRegionStyle<IStrategoTerm>> styles) {
-        for (IRegionStyle<IStrategoTerm> style : styles) {
-            if (regionEquals(tokenRegion, style.region())) {
-                return style.style();
-            }
-        }
-
-        return null;
-    }
-
-    private static boolean regionEquals(ISourceRegion r1, ISourceRegion r2) {
-        return  r1.contains(r2) && r2.contains(r1);
-    }
-
-    private static ISourceRegion tokenToRegion(IToken token) {
-        return new SourceRegion(token.getStartOffset(), token.getEndOffset());
     }
 
     private static String extractDoc(Spoofax spoofax, ILanguageImpl languageImpl, ILanguageImpl dialect, IProject project, FileObject file) throws IOException, MetaborgException {
@@ -230,5 +207,75 @@ public class Main {
         }
 
         return output;
+    }
+
+    /**
+     * Get the style for the given source region.
+     *
+     * @param sourceRegion
+     * @param styles
+     * @return
+     */
+    private static IStyle getStyle(ISourceRegion sourceRegion, Iterable<IRegionStyle<IStrategoTerm>> styles) {
+        for (IRegionStyle<IStrategoTerm> style : styles) {
+            if (regionEquals(sourceRegion, style.region())) {
+                return style.style();
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Wrap every line in the string in a code-tag.
+     *
+     * @param code
+     * @return
+     */
+    private static String wrapLines(String code) {
+        String[] lines = code.split(NEWLINE);
+
+        return IntStream.range(0, lines.length)
+                .mapToObj(i -> "<code id=\"" + i + "\">" + lines[i] + "</code>")
+                .collect(Collectors.joining(NEWLINE));
+    }
+
+    /**
+     * Convert a Color to a CSS rgb specifier.
+     *
+     * @param color
+     * @return
+     */
+    private static String getRgb(Color color) {
+        int r = color.getRed();
+        int g = color.getGreen();
+        int b = color.getBlue();
+
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
+
+    /**
+     * Check if two source regions are equal.
+     * <p>
+     * Two regions are considered equal if they both contain each other. The default implementation considers two source
+     * regions equal if they have the same start/end row/column. However, a region can also be represented using an
+     * offset instead of a start/end row/column.
+     *
+     * @param r1
+     * @param r2
+     * @return
+     */
+    private static boolean regionEquals(ISourceRegion r1, ISourceRegion r2) {
+        return r1.contains(r2) && r2.contains(r1);
+    }
+
+    /**
+     * Convert a token to a source region.
+     *
+     * @param token
+     * @return
+     */
+    private static ISourceRegion tokenToRegion(IToken token) {
+        return new SourceRegion(token.getStartOffset(), token.getEndOffset());
     }
 }

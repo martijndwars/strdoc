@@ -1,73 +1,72 @@
-<code id="0"><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">stratego-lib-generic</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="1"></span><span style="color: rgb(127, 0, 85)">imports</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="2"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/hash-table/common</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="3"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/hash-table/nested</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="4"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/hash-table/scoped-finite-map</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="5"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/bag</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="6"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/common</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="7"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/cons</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="8"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/filter</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="9"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/index</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="10"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/integer</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="11"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/lookup</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="12"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/set</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="13"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/sort</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="14"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/zip</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="15"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/set/indexed</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="16"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/tuple/common</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="17"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/tuple/cons</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="18"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="19"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">lang/dynamic-rules</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="20"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">lang/stacktrace</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="21"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">lang/with</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="22"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">lang/strategy-reference</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="23"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="24"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/collect</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="25"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/conditional</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="26"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/free-variables</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="27"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/memo</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="28"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/option</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="29"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/parenthesize</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="30"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/rename</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="31"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/substitution</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="32"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/unification</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="33"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/iteration</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="34"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/pack/common</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="35"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/pack/graph</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="36"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/pack/modules</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="37"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="38"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/traversal/simple</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="39"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/traversal/list</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="40"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/traversal/fixpoint</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="41"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/traversal/environment</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="42"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/traversal/list-environment</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="43"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="44"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/error</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="45"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/char</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="46"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/dir</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="47"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/file</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="48"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/process</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="49"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/term</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="50"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="51"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/annotation</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="52"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/common</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="53"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/integer</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="54"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/placeholder</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="55"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/properties</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="56"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/share</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="57"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/string</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="58"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/real</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="59"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/zip</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="60"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="61"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/common</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="62"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/keep</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="63"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/options</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="64"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/stats</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="65"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/parse-options</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="66"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/verbose</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="67"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="68"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/date-format</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="69"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/log</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="70"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/sunit</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="71"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/time</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="72"></span></code>
+<code id="0"><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">stratego-lib-generic</span></code>
+<code id="1"><span style="color: rgb(127, 0, 85)">imports</span></code>
+<code id="2"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/hash-table/common</span></code>
+<code id="3"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/hash-table/nested</span></code>
+<code id="4"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/hash-table/scoped-finite-map</span></code>
+<code id="5"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/bag</span></code>
+<code id="6"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/common</span></code>
+<code id="7"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/cons</span></code>
+<code id="8"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/filter</span></code>
+<code id="9"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/index</span></code>
+<code id="10"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/integer</span></code>
+<code id="11"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/lookup</span></code>
+<code id="12"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/set</span></code>
+<code id="13"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/sort</span></code>
+<code id="14"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/list/zip</span></code>
+<code id="15"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/set/indexed</span></code>
+<code id="16"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/tuple/common</span></code>
+<code id="17"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">collection/tuple/cons</span></code>
+<code id="18"></code>
+<code id="19"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">lang/dynamic-rules</span></code>
+<code id="20"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">lang/stacktrace</span></code>
+<code id="21"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">lang/with</span></code>
+<code id="22"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">lang/strategy-reference</span></code>
+<code id="23"></code>
+<code id="24"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/collect</span></code>
+<code id="25"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/conditional</span></code>
+<code id="26"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/free-variables</span></code>
+<code id="27"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/memo</span></code>
+<code id="28"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/option</span></code>
+<code id="29"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/parenthesize</span></code>
+<code id="30"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/rename</span></code>
+<code id="31"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/substitution</span></code>
+<code id="32"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/general/unification</span></code>
+<code id="33"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/iteration</span></code>
+<code id="34"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/pack/common</span></code>
+<code id="35"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/pack/graph</span></code>
+<code id="36"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/pack/modules</span></code>
+<code id="37"></code>
+<code id="38"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/traversal/simple</span></code>
+<code id="39"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/traversal/list</span></code>
+<code id="40"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/traversal/fixpoint</span></code>
+<code id="41"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/traversal/environment</span></code>
+<code id="42"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">strategy/traversal/list-environment</span></code>
+<code id="43"></code>
+<code id="44"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/error</span></code>
+<code id="45"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/char</span></code>
+<code id="46"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/dir</span></code>
+<code id="47"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/file</span></code>
+<code id="48"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/process</span></code>
+<code id="49"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/term</span></code>
+<code id="50"></code>
+<code id="51"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/annotation</span></code>
+<code id="52"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/common</span></code>
+<code id="53"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/integer</span></code>
+<code id="54"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/placeholder</span></code>
+<code id="55"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/properties</span></code>
+<code id="56"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/share</span></code>
+<code id="57"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/string</span></code>
+<code id="58"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/real</span></code>
+<code id="59"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">term/zip</span></code>
+<code id="60"></code>
+<code id="61"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/common</span></code>
+<code id="62"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/keep</span></code>
+<code id="63"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/options</span></code>
+<code id="64"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/stats</span></code>
+<code id="65"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/parse-options</span></code>
+<code id="66"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/verbose</span></code>
+<code id="67"></code>
+<code id="68"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/date-format</span></code>
+<code id="69"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/log</span></code>
+<code id="70"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/sunit</span></code>
+<code id="71"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/time</span></code>

@@ -1,28 +1,27 @@
-<code id="0"><span style="color: rgb(63, 127, 95)">/**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="1"></span><span style="color: rgb(63, 127, 95)"> * Lists are represented by means of the constructors Nil and Cons. They can</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="2"></span><span style="color: rgb(63, 127, 95)"> * either be written as terms with these constructors, e.g. Cons(0, Cons(1, Nil)),</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="3"></span><span style="color: rgb(63, 127, 95)"> * or using concrete list syntax: [0, 1]</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="4"></span><span style="color: rgb(63, 127, 95)"> *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="5"></span><span style="color: rgb(63, 127, 95)"> * Stratego pretty-printers and the Stratego Shell will always prefer to display</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="6"></span><span style="color: rgb(63, 127, 95)"> * lists using the concrete syntax.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="7"></span><span style="color: rgb(63, 127, 95)"> */</code>
-<code id="8"></span><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">collection/list/cons</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="9"></span><span style="color: rgb(127, 0, 85)">signature</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="10"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(127, 0, 85)">sorts</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="11"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(127, 0, 85)">constructors</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="12"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="13"></span><span style="color: rgb(63, 127, 95)">    /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="14"></span><span style="color: rgb(63, 127, 95)">     * Empty list.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="15"></span><span style="color: rgb(63, 127, 95)">     */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="16"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 0)">Nil</span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 128)">:</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="17"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="18"></span><span style="color: rgb(63, 127, 95)">    /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="19"></span><span style="color: rgb(63, 127, 95)">     * Element of a list.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="20"></span><span style="color: rgb(63, 127, 95)">     */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="21"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 0)">Cons</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">:</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">*</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">-&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="22"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="23"></span><span style="color: rgb(63, 127, 95)">    /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="24"></span><span style="color: rgb(63, 127, 95)">     * Concatenation of two lists.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="25"></span><span style="color: rgb(63, 127, 95)">     */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="26"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 0)">Conc</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">:</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">*</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">-&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="27"></span></code>
+<code id="0"><span style="color: rgb(63, 127, 95)">/**</span></code>
+<code id="1"><span style="color: rgb(63, 127, 95)"> * Lists are represented by means of the constructors Nil and Cons. They can</span></code>
+<code id="2"><span style="color: rgb(63, 127, 95)"> * either be written as terms with these constructors, e.g. Cons(0, Cons(1, Nil)),</span></code>
+<code id="3"><span style="color: rgb(63, 127, 95)"> * or using concrete list syntax: [0, 1]</span></code>
+<code id="4"><span style="color: rgb(63, 127, 95)"> *</span></code>
+<code id="5"><span style="color: rgb(63, 127, 95)"> * Stratego pretty-printers and the Stratego Shell will always prefer to display</span></code>
+<code id="6"><span style="color: rgb(63, 127, 95)"> * lists using the concrete syntax.</span></code>
+<code id="7"><span style="color: rgb(63, 127, 95)"> */</code>
+<code id="8"></span><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">collection/list/cons</span></code>
+<code id="9"><span style="color: rgb(127, 0, 85)">signature</span></code>
+<code id="10"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(127, 0, 85)">sorts</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="11"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(127, 0, 85)">constructors</span></code>
+<code id="12"><span style="color: rgb(63, 127, 95)">  </span></code>
+<code id="13"><span style="color: rgb(63, 127, 95)">    /**</span></code>
+<code id="14"><span style="color: rgb(63, 127, 95)">     * Empty list.</span></code>
+<code id="15"><span style="color: rgb(63, 127, 95)">     */</span></code>
+<code id="16"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 0)">Nil</span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 128)">:</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="17"><span style="color: rgb(63, 127, 95)">    </span></code>
+<code id="18"><span style="color: rgb(63, 127, 95)">    /**</span></code>
+<code id="19"><span style="color: rgb(63, 127, 95)">     * Element of a list.</span></code>
+<code id="20"><span style="color: rgb(63, 127, 95)">     */</span></code>
+<code id="21"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 0)">Cons</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">:</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">*</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">-&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="22"><span style="color: rgb(63, 127, 95)">    </span></code>
+<code id="23"><span style="color: rgb(63, 127, 95)">    /**</span></code>
+<code id="24"><span style="color: rgb(63, 127, 95)">     * Concatenation of two lists.</span></code>
+<code id="25"><span style="color: rgb(63, 127, 95)">     */</span></code>
+<code id="26"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 0)">Conc</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">:</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">*</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">-&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">List</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">a</span><span style="color: rgb(0, 0, 128)">)</span></code>

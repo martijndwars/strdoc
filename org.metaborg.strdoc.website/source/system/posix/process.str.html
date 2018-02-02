@@ -1,120 +1,119 @@
-<code id="0"><span style="color: rgb(63, 127, 95)">/**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="1"></span><span style="color: rgb(63, 127, 95)"> * Run-time process information</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="2"></span><span style="color: rgb(63, 127, 95)"> */</code>
-<code id="3"></span><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">system/posix/process</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="4"></span><span style="color: rgb(127, 0, 85)">imports</span><span style="color: rgb(63, 127, 95)"> </code>
+<code id="0"><span style="color: rgb(63, 127, 95)">/**</span></code>
+<code id="1"><span style="color: rgb(63, 127, 95)"> * Run-time process information</span></code>
+<code id="2"><span style="color: rgb(63, 127, 95)"> */</code>
+<code id="3"></span><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">system/posix/process</span></code>
+<code id="4"><span style="color: rgb(127, 0, 85)">imports</span><span style="color: rgb(63, 127, 95)"> </code>
 <code id="5"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/posix/signal</span><span style="color: rgb(63, 127, 95)"> </code>
 <code id="6"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">util/config/verbose</span><span style="color: rgb(63, 127, 95)"> </code>
 <code id="7"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/file</span><span style="color: rgb(63, 127, 95)"> </code>
 <code id="8"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/dir</span><span style="color: rgb(63, 127, 95)"> </code>
 <code id="9"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/char</span><span style="color: rgb(63, 127, 95)"> </code>
 <code id="10"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 0, 0)">system/io/term</span><span style="color: rgb(63, 127, 95)"> </code>
-<code id="11"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="12"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="13"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="14"></span><span style="color: rgb(63, 127, 95)"> /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="15"></span><span style="color: rgb(63, 127, 95)">  * The  setenv() function adds the variable name to the </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="16"></span><span style="color: rgb(63, 127, 95)">  * environment with the value value, if  name  does  not  already</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="17"></span><span style="color: rgb(63, 127, 95)">  * exist.   If  name  does exist in the environment, then its</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="18"></span><span style="color: rgb(63, 127, 95)">  * value is changed to value if  overwrite  is  non-zero;  if</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="19"></span><span style="color: rgb(63, 127, 95)">  * overwrite  is zero, then the value of name is not changed. </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="20"></span><span style="color: rgb(63, 127, 95)">  */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="21"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">setenv</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
-<code id="22"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">value</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">overwrite</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="23"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">where</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_setenv&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">value</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">overwrite</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="24"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="25"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="26"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="27"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="28"></span><span style="color: rgb(63, 127, 95)">   * Return process identifier of current process</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="29"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="30"></span><span style="color: rgb(63, 127, 95)">   * @type _ -&gt; Int</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="31"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="32"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">get-pid</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
-<code id="33"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_get_pid&quot;</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="34"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="35"></span><span style="color: rgb(63, 127, 95)">/**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="36"></span><span style="color: rgb(63, 127, 95)"> * Process creation</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="37"></span><span style="color: rgb(63, 127, 95)"> */</code>
-<code id="38"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)">   </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="39"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="40"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="41"></span><span style="color: rgb(63, 127, 95)">   * Creates a child process almost equivalent to the parent process.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="42"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="43"></span><span style="color: rgb(63, 127, 95)">   * The new process differs from the parent process</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="44"></span><span style="color: rgb(63, 127, 95)">   * only in its PID and PPID, and in the fact that resource  </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="45"></span><span style="color: rgb(63, 127, 95)">   * utilizations  are  set  to  0. File locks and pending signals are not</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="46"></span><span style="color: rgb(63, 127, 95)">   * inherited. </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="47"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="48"></span><span style="color: rgb(63, 127, 95)">   * Fails if forking fails, in which case no child process is created.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="49"></span><span style="color: rgb(63, 127, 95)">   * On success, the PID of the child process is returned  in  the  parent&rsquo;s</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="50"></span><span style="color: rgb(63, 127, 95)">   * thread  of execution, and a 0 is returned in the child&rsquo;s thread of exe‐</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="51"></span><span style="color: rgb(63, 127, 95)">   * cution.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="52"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="53"></span><span style="color: rgb(63, 127, 95)">   * @type fork :: a -&gt; Int</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="54"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="55"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">fork</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"></code>
-<code id="56"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_fork&quot;</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="57"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="58"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="59"></span><span style="color: rgb(63, 127, 95)">   * Replaces the current process image with a new  process image.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="60"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="61"></span><span style="color: rgb(63, 127, 95)">   * @see      man execvp</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="62"></span><span style="color: rgb(63, 127, 95)">   * @warning  The first arugment is added in the runtime.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="63"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="64"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">execvp</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
-<code id="65"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">argv</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="66"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_execvp&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">argv</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="67"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">where</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">conc-strings</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 64, 128)">perror</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">fail</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 255)">&quot;SSL/execvp: Cannot execute file &quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="68"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="69"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="70"></span><span style="color: rgb(63, 127, 95)">   * Replaces the current process image with a new  process image.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="71"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="72"></span><span style="color: rgb(63, 127, 95)">   * @see      man execv</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="73"></span><span style="color: rgb(63, 127, 95)">   * @warning  The first arugment is not added in the runtime.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="74"></span><span style="color: rgb(63, 127, 95)">   * @warning  If the</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="75"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="76"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">execv</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
-<code id="77"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">argv</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="78"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_execv&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">argv</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="79"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">where</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">conc-strings</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 64, 128)">perror</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">fail</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 255)">&quot;SSL/execv: Cannot execute file &quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="80"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="81"></span><span style="color: rgb(63, 127, 95)">/**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="82"></span><span style="color: rgb(63, 127, 95)"> * Process termination </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="83"></span><span style="color: rgb(63, 127, 95)"> */</code>
+<code id="11"></span></code>
+<code id="12"><span style="color: rgb(127, 0, 85)">strategies</span></code>
+<code id="13"></code>
+<code id="14"><span style="color: rgb(63, 127, 95)"> /**</span></code>
+<code id="15"><span style="color: rgb(63, 127, 95)">  * The  setenv() function adds the variable name to the </span></code>
+<code id="16"><span style="color: rgb(63, 127, 95)">  * environment with the value value, if  name  does  not  already</span></code>
+<code id="17"><span style="color: rgb(63, 127, 95)">  * exist.   If  name  does exist in the environment, then its</span></code>
+<code id="18"><span style="color: rgb(63, 127, 95)">  * value is changed to value if  overwrite  is  non-zero;  if</span></code>
+<code id="19"><span style="color: rgb(63, 127, 95)">  * overwrite  is zero, then the value of name is not changed. </span></code>
+<code id="20"><span style="color: rgb(63, 127, 95)">  */</span></code>
+<code id="21"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">setenv</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
+<code id="22"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">value</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">overwrite</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="23"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">where</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_setenv&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">name</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">value</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">overwrite</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="24"></code>
+<code id="25"><span style="color: rgb(127, 0, 85)">strategies</span></code>
+<code id="26"></code>
+<code id="27"><span style="color: rgb(63, 127, 95)">  /**</span></code>
+<code id="28"><span style="color: rgb(63, 127, 95)">   * Return process identifier of current process</span></code>
+<code id="29"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="30"><span style="color: rgb(63, 127, 95)">   * @type _ -&gt; Int</span></code>
+<code id="31"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="32"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">get-pid</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
+<code id="33"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_get_pid&quot;</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="34"></code>
+<code id="35"><span style="color: rgb(63, 127, 95)">/**</span></code>
+<code id="36"><span style="color: rgb(63, 127, 95)"> * Process creation</span></code>
+<code id="37"><span style="color: rgb(63, 127, 95)"> */</code>
+<code id="38"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)">   </span></code>
+<code id="39"></code>
+<code id="40"><span style="color: rgb(63, 127, 95)">  /**</span></code>
+<code id="41"><span style="color: rgb(63, 127, 95)">   * Creates a child process almost equivalent to the parent process.</span></code>
+<code id="42"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="43"><span style="color: rgb(63, 127, 95)">   * The new process differs from the parent process</span></code>
+<code id="44"><span style="color: rgb(63, 127, 95)">   * only in its PID and PPID, and in the fact that resource  </span></code>
+<code id="45"><span style="color: rgb(63, 127, 95)">   * utilizations  are  set  to  0. File locks and pending signals are not</span></code>
+<code id="46"><span style="color: rgb(63, 127, 95)">   * inherited. </span></code>
+<code id="47"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="48"><span style="color: rgb(63, 127, 95)">   * Fails if forking fails, in which case no child process is created.</span></code>
+<code id="49"><span style="color: rgb(63, 127, 95)">   * On success, the PID of the child process is returned  in  the  parent&rsquo;s</span></code>
+<code id="50"><span style="color: rgb(63, 127, 95)">   * thread  of execution, and a 0 is returned in the child&rsquo;s thread of exe‐</span></code>
+<code id="51"><span style="color: rgb(63, 127, 95)">   * cution.</span></code>
+<code id="52"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="53"><span style="color: rgb(63, 127, 95)">   * @type fork :: a -&gt; Int</span></code>
+<code id="54"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="55"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">fork</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span></code>
+<code id="56"><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_fork&quot;</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="57"><span style="color: rgb(63, 127, 95)">    </span></code>
+<code id="58"><span style="color: rgb(63, 127, 95)">  /**</span></code>
+<code id="59"><span style="color: rgb(63, 127, 95)">   * Replaces the current process image with a new  process image.</span></code>
+<code id="60"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="61"><span style="color: rgb(63, 127, 95)">   * @see      man execvp</span></code>
+<code id="62"><span style="color: rgb(63, 127, 95)">   * @warning  The first arugment is added in the runtime.</span></code>
+<code id="63"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="64"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">execvp</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
+<code id="65"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">argv</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="66"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_execvp&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">argv</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="67"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">where</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">conc-strings</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 64, 128)">perror</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">fail</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 255)">&quot;SSL/execvp: Cannot execute file &quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="68"></code>
+<code id="69"><span style="color: rgb(63, 127, 95)">  /**</span></code>
+<code id="70"><span style="color: rgb(63, 127, 95)">   * Replaces the current process image with a new  process image.</span></code>
+<code id="71"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="72"><span style="color: rgb(63, 127, 95)">   * @see      man execv</span></code>
+<code id="73"><span style="color: rgb(63, 127, 95)">   * @warning  The first arugment is not added in the runtime.</span></code>
+<code id="74"><span style="color: rgb(63, 127, 95)">   * @warning  If the</span></code>
+<code id="75"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="76"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">execv</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </code>
+<code id="77"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">argv</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="78"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_execv&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">argv</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="79"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">where</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">conc-strings</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 64, 128)">perror</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">fail</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 255)">&quot;SSL/execv: Cannot execute file &quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">file</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="80"></code>
+<code id="81"><span style="color: rgb(63, 127, 95)">/**</span></code>
+<code id="82"><span style="color: rgb(63, 127, 95)"> * Process termination </span></code>
+<code id="83"><span style="color: rgb(63, 127, 95)"> */</code>
 <code id="84"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)"> </code>
-<code id="85"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="86"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="87"></span><span style="color: rgb(63, 127, 95)">   * @type Int -&gt; WaitStatus</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="88"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="89"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">waitpid</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"></code>
-<code id="90"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">pid</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_waitpid&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">pid</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="91"></span><span style="color: rgb(63, 127, 95)">    </code>
-<code id="92"></span><span style="color: rgb(127, 0, 85)">signature</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="93"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(127, 0, 85)">constructors</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="94"></span><span style="color: rgb(63, 127, 95)">    /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="95"></span><span style="color: rgb(63, 127, 95)">     * Collects the information returned from a wait call.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="96"></span><span style="color: rgb(63, 127, 95)">     *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="97"></span><span style="color: rgb(63, 127, 95)">     * (1) Exit status or -1 if process did not terminate properly</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="98"></span><span style="color: rgb(63, 127, 95)">     * (2) Signal number or -1 if the process wasn't terminated because of a signal</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="99"></span><span style="color: rgb(63, 127, 95)">     * (3) Signal number or -1 if the process wasn't stopped</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="100"></span><span style="color: rgb(63, 127, 95)">     */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="101"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 0)">WaitStatus</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">:</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">Int</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">*</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">Int</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">*</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">Int</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">-&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">WaitStatus</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="102"></span><span style="color: rgb(63, 127, 95)">      </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="103"></span><span style="color: rgb(63, 127, 95)">/**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="104"></span><span style="color: rgb(63, 127, 95)"> * Terminating Another Process </span><span style="color: rgb(63, 127, 95)"></code>
-<code id="105"></span><span style="color: rgb(63, 127, 95)"> */</code>
-<code id="106"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="107"></span><span style="color: rgb(63, 127, 95)"> </code>
-<code id="108"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="109"></span><span style="color: rgb(63, 127, 95)">   * Sends the specified signal to the specified process.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="110"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="111"></span><span style="color: rgb(63, 127, 95)">   * @fail fails on failure of the kill invocation</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="112"></span><span style="color: rgb(63, 127, 95)">   * @type Int * Signal -&gt; Int * Signal</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="113"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="114"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">kill</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"></code>
-<code id="115"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(127, 0, 85)">where</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="116"></span><span style="color: rgb(63, 127, 95)">      </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">pid</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">number-from-signal</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">sig</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="117"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_kill&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">pid</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">sig</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="118"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="119"></span></code>
+<code id="85"></span></code>
+<code id="86"><span style="color: rgb(63, 127, 95)">  /**</span></code>
+<code id="87"><span style="color: rgb(63, 127, 95)">   * @type Int -&gt; WaitStatus</span></code>
+<code id="88"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="89"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">waitpid</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span></code>
+<code id="90"><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">pid</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_waitpid&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">pid</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="91"><span style="color: rgb(63, 127, 95)">    </code>
+<code id="92"></span><span style="color: rgb(127, 0, 85)">signature</span></code>
+<code id="93"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(127, 0, 85)">constructors</span></code>
+<code id="94"><span style="color: rgb(63, 127, 95)">    /**</span></code>
+<code id="95"><span style="color: rgb(63, 127, 95)">     * Collects the information returned from a wait call.</span></code>
+<code id="96"><span style="color: rgb(63, 127, 95)">     *</span></code>
+<code id="97"><span style="color: rgb(63, 127, 95)">     * (1) Exit status or -1 if process did not terminate properly</span></code>
+<code id="98"><span style="color: rgb(63, 127, 95)">     * (2) Signal number or -1 if the process wasn't terminated because of a signal</span></code>
+<code id="99"><span style="color: rgb(63, 127, 95)">     * (3) Signal number or -1 if the process wasn't stopped</span></code>
+<code id="100"><span style="color: rgb(63, 127, 95)">     */</span></code>
+<code id="101"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 0)">WaitStatus</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">:</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">Int</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">*</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">Int</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">*</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">Int</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">-&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">WaitStatus</span></code>
+<code id="102"><span style="color: rgb(63, 127, 95)">      </span></code>
+<code id="103"><span style="color: rgb(63, 127, 95)">/**</span></code>
+<code id="104"><span style="color: rgb(63, 127, 95)"> * Terminating Another Process </span></code>
+<code id="105"><span style="color: rgb(63, 127, 95)"> */</code>
+<code id="106"></span><span style="color: rgb(127, 0, 85)">strategies</span></code>
+<code id="107"><span style="color: rgb(63, 127, 95)"> </code>
+<code id="108"></span><span style="color: rgb(63, 127, 95)">  /**</span></code>
+<code id="109"><span style="color: rgb(63, 127, 95)">   * Sends the specified signal to the specified process.</span></code>
+<code id="110"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="111"><span style="color: rgb(63, 127, 95)">   * @fail fails on failure of the kill invocation</span></code>
+<code id="112"><span style="color: rgb(63, 127, 95)">   * @type Int * Signal -&gt; Int * Signal</span></code>
+<code id="113"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="114"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">kill</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span></code>
+<code id="115"><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(127, 0, 85)">where</span><span style="color: rgb(0, 0, 128)">(</span></code>
+<code id="116"><span style="color: rgb(63, 127, 95)">      </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">pid</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">number-from-signal</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">sig</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="117"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_kill&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">pid</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">sig</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="118"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 128)">)</span></code>

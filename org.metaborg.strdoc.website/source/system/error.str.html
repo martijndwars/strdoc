@@ -1,53 +1,52 @@
-<code id="0"><span style="color: rgb(63, 127, 95)">/**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="1"></span><span style="color: rgb(63, 127, 95)"> * Error handling for system strategies.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="2"></span><span style="color: rgb(63, 127, 95)"> *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="3"></span><span style="color: rgb(63, 127, 95)"> * @since   0.9.4</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="4"></span><span style="color: rgb(63, 127, 95)"> * @author  Martin Bravenboer &lt;mbravenb@cs.uu.nl&gt;</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="5"></span><span style="color: rgb(63, 127, 95)"> */</code>
-<code id="6"></span><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">system/error</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="7"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="8"></span><span style="color: rgb(127, 0, 85)">signature</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="9"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(127, 0, 85)">constructors</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="10"></span><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 0)">ErrorNumber</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">:</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">Int</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">-&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">Error</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="11"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="12"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="13"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="14"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="15"></span><span style="color: rgb(63, 127, 95)">   * @type    _ -&gt; Error</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="16"></span><span style="color: rgb(63, 127, 95)">   * @since   0.9.4</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="17"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="18"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">get-last-error</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"></code>
-<code id="19"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">!</span><span style="color: rgb(0, 0, 0)">ErrorNumber</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">get-errno</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="20"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="21"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="22"></span><span style="color: rgb(63, 127, 95)">   * @see     man errno</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="23"></span><span style="color: rgb(63, 127, 95)">   * @type    _ -&gt; Int</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="24"></span><span style="color: rgb(63, 127, 95)">   * @since   0.9.4</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="25"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="26"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">get-errno</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"></code>
-<code id="27"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_get_errno&quot;</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="28"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="29"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="30"></span><span style="color: rgb(63, 127, 95)">   * Print a system error message.</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="31"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="32"></span><span style="color: rgb(63, 127, 95)">   * @see    man perror</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="33"></span><span style="color: rgb(63, 127, 95)">   * @type   String -&gt; String</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="34"></span><span style="color: rgb(63, 127, 95)">   * @since  0.9.4</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="35"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="36"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">perror</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"></code>
-<code id="37"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">s</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_perror&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">s</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="38"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="39"></span><span style="color: rgb(63, 127, 95)">  /**</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="40"></span><span style="color: rgb(63, 127, 95)">   * Return string describing error code</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="41"></span><span style="color: rgb(63, 127, 95)">   *</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="42"></span><span style="color: rgb(63, 127, 95)">   * @see    man strerror</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="43"></span><span style="color: rgb(63, 127, 95)">   * @type   Int -&gt; String</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="44"></span><span style="color: rgb(63, 127, 95)">   * @since  0.9.4</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="45"></span><span style="color: rgb(63, 127, 95)">   */</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="46"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">strerror</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"></code>
-<code id="47"></span><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">s</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_strerror&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">s</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="48"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="49"></span><span style="color: rgb(127, 0, 85)">strategies</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="50"></span><span style="color: rgb(63, 127, 95)"></code>
-<code id="51"></span><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">EXDEV</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_EXDEV&quot;</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"></code>
-<code id="52"></span></code>
+<code id="0"><span style="color: rgb(63, 127, 95)">/**</span></code>
+<code id="1"><span style="color: rgb(63, 127, 95)"> * Error handling for system strategies.</span></code>
+<code id="2"><span style="color: rgb(63, 127, 95)"> *</span></code>
+<code id="3"><span style="color: rgb(63, 127, 95)"> * @since   0.9.4</span></code>
+<code id="4"><span style="color: rgb(63, 127, 95)"> * @author  Martin Bravenboer &lt;mbravenb@cs.uu.nl&gt;</span></code>
+<code id="5"><span style="color: rgb(63, 127, 95)"> */</code>
+<code id="6"></span><span style="color: rgb(127, 0, 85)">module</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">system/error</span></code>
+<code id="7"></code>
+<code id="8"><span style="color: rgb(127, 0, 85)">signature</span></code>
+<code id="9"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(127, 0, 85)">constructors</span></code>
+<code id="10"><span style="color: rgb(63, 127, 95)">    </span><span style="color: rgb(0, 0, 0)">ErrorNumber</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">:</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">Int</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">-&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">Error</span></code>
+<code id="11"></code>
+<code id="12"><span style="color: rgb(127, 0, 85)">strategies</span></code>
+<code id="13"></code>
+<code id="14"><span style="color: rgb(63, 127, 95)">  /**</span></code>
+<code id="15"><span style="color: rgb(63, 127, 95)">   * @type    _ -&gt; Error</span></code>
+<code id="16"><span style="color: rgb(63, 127, 95)">   * @since   0.9.4</span></code>
+<code id="17"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="18"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">get-last-error</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span></code>
+<code id="19"><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">!</span><span style="color: rgb(0, 0, 0)">ErrorNumber</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">get-errno</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="20"></code>
+<code id="21"><span style="color: rgb(63, 127, 95)">  /**</span></code>
+<code id="22"><span style="color: rgb(63, 127, 95)">   * @see     man errno</span></code>
+<code id="23"><span style="color: rgb(63, 127, 95)">   * @type    _ -&gt; Int</span></code>
+<code id="24"><span style="color: rgb(63, 127, 95)">   * @since   0.9.4</span></code>
+<code id="25"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="26"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">get-errno</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span></code>
+<code id="27"><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_get_errno&quot;</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="28"></code>
+<code id="29"><span style="color: rgb(63, 127, 95)">  /**</span></code>
+<code id="30"><span style="color: rgb(63, 127, 95)">   * Print a system error message.</span></code>
+<code id="31"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="32"><span style="color: rgb(63, 127, 95)">   * @see    man perror</span></code>
+<code id="33"><span style="color: rgb(63, 127, 95)">   * @type   String -&gt; String</span></code>
+<code id="34"><span style="color: rgb(63, 127, 95)">   * @since  0.9.4</span></code>
+<code id="35"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="36"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">perror</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span></code>
+<code id="37"><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">s</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_perror&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">s</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="38"></code>
+<code id="39"><span style="color: rgb(63, 127, 95)">  /**</span></code>
+<code id="40"><span style="color: rgb(63, 127, 95)">   * Return string describing error code</span></code>
+<code id="41"><span style="color: rgb(63, 127, 95)">   *</span></code>
+<code id="42"><span style="color: rgb(63, 127, 95)">   * @see    man strerror</span></code>
+<code id="43"><span style="color: rgb(63, 127, 95)">   * @type   Int -&gt; String</span></code>
+<code id="44"><span style="color: rgb(63, 127, 95)">   * @since  0.9.4</span></code>
+<code id="45"><span style="color: rgb(63, 127, 95)">   */</span></code>
+<code id="46"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">strerror</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span></code>
+<code id="47"><span style="color: rgb(0, 64, 128)">    </span><span style="color: rgb(0, 0, 128)">?</span><span style="color: rgb(0, 0, 0)">s</span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_strerror&quot;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">s</span><span style="color: rgb(0, 0, 128)">)</span></code>
+<code id="48"></code>
+<code id="49"><span style="color: rgb(127, 0, 85)">strategies</span></code>
+<code id="50"></code>
+<code id="51"><span style="color: rgb(63, 127, 95)">  </span><span style="color: rgb(0, 64, 128)">EXDEV</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(0, 64, 128)">=</span><span style="color: rgb(0, 64, 128)"> </span><span style="color: rgb(127, 0, 85)">prim</span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">&quot;SSL_EXDEV&quot;</span><span style="color: rgb(0, 0, 128)">)</span></code>
