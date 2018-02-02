@@ -1,4 +1,4 @@
-module xdoc
+module strdoc
 
 imports
   

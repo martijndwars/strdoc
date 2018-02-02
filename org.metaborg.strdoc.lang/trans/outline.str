@@ -2,7 +2,7 @@ module outline
 
 imports
   
-  signatures/xdoc-sig
+  signatures/strdoc-sig
   libspoofax/editor/outline
 
 rules

@@ -1,7 +1,7 @@
 module EmbeddedXdoc[E1 E2 E3 E4 E5 E6]
 
 imports
-  xdoc
+  strdoc
   Comment
 
 exports

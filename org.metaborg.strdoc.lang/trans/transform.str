@@ -2,7 +2,7 @@ module transform
 
 imports
 
-  signatures/xdoc-sig
+  signatures/strdoc-sig
   libspoofax/stratego/debug
   xsignature
   names
@@ -14,25 +14,25 @@ strategies
 
 rules // Mixed to XDoc
 
-  stratego-to-xdoc:
+  stratego-to-strdoc:
     DocBlock(text, Module(name, declaration*)) -> Module(name, text, declaration'*)
     with
-      declaration'* := <mapconcat(stratego-to-xdoc <+ ![])> declaration*
+      declaration'* := <mapconcat(stratego-to-strdoc <+ ![])> declaration*
 
-  stratego-to-xdoc:
+  stratego-to-strdoc:
     Module(name, declaration*) -> Module(name, "", declaration'*)
     with
-      declaration'* := <mapconcat(stratego-to-xdoc <+ ![])> declaration*
+      declaration'* := <mapconcat(stratego-to-strdoc <+ ![])> declaration*
 
-  stratego-to-xdoc:
+  stratego-to-strdoc:
     DocBlock(text, decl) -> function*
     where
       Strategies(_) := decl
     + Rules(_) := decl
     with
-      function* := <stratego-to-xdoc> decl
+      function* := <stratego-to-strdoc> decl
 
-  stratego-to-xdoc:
+  stratego-to-strdoc:
     _ -> def'*
     where
     	  ?Strategies(def*)
@@ -56,7 +56,7 @@ rules // Mixed to XDoc
 
 rules // XDoc to JSON
 
-  xdoc-to-json:
+  strdoc-to-json:
     Module(name, text, declaration*) -> $<{
       "name": "<name>",
       "description": "<description>",
@@ -70,9 +70,9 @@ rules // XDoc to JSON
     ; author*       := <retain-all(is-meta(|"@author ")); map(escape-json; quote)> line*
     ; see*          := <retain-all(is-meta(|"@see ")); map(escape-json; quote)> line*
     ; description   := <remove-all(is-meta); lines; escape-json> line*
-    ; declaration'* := <map(xdoc-to-json)> declaration*
+    ; declaration'* := <map(strdoc-to-json)> declaration*
 
-  xdoc-to-json:
+  strdoc-to-json:
     Function(name, text, line-start, line-end) -> $<{
       "name": "<name>",
       "description": "<<escape-json> description>",

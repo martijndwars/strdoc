@@ -1,4 +1,4 @@
-module Stratego-xdoc
+module Stratego-strdoc
 
 imports
   stratego/StrategoMixx[StrategoHost]

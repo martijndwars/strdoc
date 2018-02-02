@@ -5,8 +5,8 @@ imports
   libstratego-gpp
   libspoofax/sdf/pp
   libspoofax/editor/refactoring/-
-  pp/xdoc-parenthesize
-  pp/xdoc-pp
+  pp/strdoc-parenthesize
+  pp/strdoc-pp
 
 rules
 
@@ -19,31 +19,31 @@ rules
 
 rules
   
-  pp-xdoc-string =
-    parenthesize-xdoc
-    ; prettyprint-xdoc-start-symbols
+  pp-strdoc-string =
+    parenthesize-strdoc
+    ; prettyprint-strdoc-start-symbols
     ; !V([], <id>)
     ; box2text-string(|120)
       
-  pp-partial-xdoc-string =
-    parenthesize-xdoc
-    ; prettyprint-xdoc
+  pp-partial-strdoc-string =
+    parenthesize-strdoc
+    ; prettyprint-strdoc
     ; !V([], <id>)
     ; box2text-string(|120)
     
-  pp-partial-xdoc-string(|sort) =
-    parenthesize-xdoc
-    ; prettyprint-xdoc(|sort)
+  pp-partial-strdoc-string(|sort) =
+    parenthesize-strdoc
+    ; prettyprint-strdoc(|sort)
     ; !V([], <id>)
     ; box2text-string(|120)  
       
   pp-debug :
     ast -> result
     with
-       result := <pp-xdoc-string> ast
-    <+ <bottomup(try(not(is-string); not(is-list); not(pp-xdoc-string); debug(!"cannot pp ")))> ast
+       result := <pp-strdoc-string> ast
+    <+ <bottomup(try(not(is-string); not(is-list); not(pp-strdoc-string); debug(!"cannot pp ")))> ast
     ;  result := ""
 
 rules
   
-  construct-textual-change = construct-textual-change(pp-partial-xdoc-string, parenthesize, override-reconstruction, resugar)
+  construct-textual-change = construct-textual-change(pp-partial-strdoc-string, parenthesize, override-reconstruction, resugar)

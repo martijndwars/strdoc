@@ -1,4 +1,4 @@
-package xdoc.strategies;
+package org.metaborg.strdoc.lang.strategies;
 
 import org.strategoxt.lang.Context;
 

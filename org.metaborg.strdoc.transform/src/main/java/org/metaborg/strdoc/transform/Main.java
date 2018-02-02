@@ -46,10 +46,10 @@ public class Main {
     // Lang: Stratego dialect
     private static final String DIALECT_NAME = "Stratego-Docx";
     private static final String DIALECT_START_SYMBOL = "Module";
-    private static final String DIALECT_ARCHIVE = "/Users/martijn/Projects/strdoc/org.metaborg.strdoc.lang/target/xdoc-2.4.0-SNAPSHOT.spoofax-language";
-    private static final String DIALECT_TABLE = "/Users/martijn/Projects/strdoc/org.metaborg.strdoc.lang/trans/Stratego-xdoc.tbl";
-    private static final String TRANSFORM_TO_XDOC = "stratego-to-xdoc";
-    private static final String TRANSFORM_TO_JSON = "xdoc-to-json";
+    private static final String DIALECT_ARCHIVE = "/Users/martijn/Projects/strdoc/org.metaborg.strdoc.lang/target/org.metaborg.strdoc.lang-2.4.0-SNAPSHOT.spoofax-language";
+    private static final String DIALECT_TABLE = "/Users/martijn/Projects/strdoc/org.metaborg.strdoc.lang/trans/Stratego-strdoc.tbl";
+    private static final String TRANSFORM_TO_XDOC = "stratego-to-strdoc";
+    private static final String TRANSFORM_TO_JSON = "strdoc-to-json";
 
     // Website
     private static final String WEBSITE_DIR = "/Users/martijn/Projects/strdoc/org.metaborg.strdoc.website/";

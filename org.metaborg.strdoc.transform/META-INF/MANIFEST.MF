@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1517587503130
+Build-Jdk: 1.8.0_121
+Built-By: martijn
+Bundle-Description: Maven parent POM for Java projects
+Bundle-License: https://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: org.metaborg.strdoc.transform
+Bundle-SymbolicName: org.metaborg.strdoc.transform
+Bundle-Version: 2.4.0.qualifier
+Created-By: Apache Maven Bundle Plugin
+Eclipse-BuddyPolicy: registered
+Embed-Transitive: true
+Export-Package: org.metaborg.strdoc.transform
+Import-Package: org.spoofax.interpreter.terms,org.spoofax.jsglr.client.i
+ mploder,org.metaborg.core,org.metaborg.core.context,org.metaborg.core.l
+ anguage,org.metaborg.core.language.dialect,org.metaborg.core.project,or
+ g.metaborg.core.resource,org.metaborg.core.source,org.metaborg.core.sty
+ le,org.metaborg.core.syntax,org.metaborg.spoofax.core,org.metaborg.spoo
+ fax.core.stratego,org.metaborg.spoofax.core.style,org.metaborg.spoofax.
+ core.syntax,org.metaborg.spoofax.core.unit,org.strategoxt,com.google.co
+ mmon.base;provider=metaborg;mandatory:=provider;version=0,com.google.co
+ mmon.collect;provider=metaborg;mandatory:=provider;version=0,com.google
+ .inject;provider=metaborg;mandatory:=provider;version=0,org.apache.comm
+ ons.lang3;provider=metaborg;mandatory:=provider;version=0,org.apache.co
+ mmons.vfs2;provider=metaborg;mandatory:=provider;version=0
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-2.4.1.201501161923

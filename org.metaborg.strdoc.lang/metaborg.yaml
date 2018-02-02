@@ -1,6 +1,6 @@
 ---
-id: org.metaborg:xdoc:2.4.0-SNAPSHOT
-name: xdoc
+id: org.metaborg:org.metaborg.strdoc.lang:2.4.0-SNAPSHOT
+name: strdoc
 dependencies:
   compile:
   - org.metaborg:org.metaborg.meta.lang.esv:${metaborgVersion}
@@ -15,7 +15,7 @@ debug:
   typesmart: false
 language:
   sdf:
-    pretty-print: xdoc
+    pretty-print: strdoc
     sdf2table: c
     placeholder:
       prefix: "$"
