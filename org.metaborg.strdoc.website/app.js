@@ -58,7 +58,7 @@ app.run(function($rootScope, $location, moduleService) {
   });
 });
 
-app.factory('moduleService', function (baseUrl, $http) {
+app.factory('moduleService', function (baseUrl, $http, $templateCache, $q) {
   var getPackages = function () {
     return $http.get(baseUrl + 'data/packages.json').then(function (response) {
       return response.data;
@@ -91,10 +91,20 @@ app.factory('moduleService', function (baseUrl, $http) {
     });
   };
 
+  var getModuleCached = function (name) {
+    if ($templateCache.get(name) == undefined) {
+      return getModule(name).then(function (module) {
+        return $templateCache.put(name, module);
+      });
+    } else {
+      return $q.when($templateCache.get(name));
+    }
+  };
+
   return {
     getPackages: getPackages,
     getModules: getModules,
-    getModule: getModule
+    getModule: getModuleCached
   };
 });
 
