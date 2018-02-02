@@ -9,6 +9,7 @@
                "types": ["_ -> ___StrategyRef___()"],
                "params": ["a -?> b"],
                "notes": ["The resulting reference term cannot be pretty-printed or matched against (at least not realiably). The reference"],
+               "see": [],
                "since": ""
                },{
                "name": "apply-sref( | t)",
@@ -18,6 +19,7 @@
                "types": ["a -> <t> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": ["Vlad Vergu <v.a.vergu add tudelft.nl>"],

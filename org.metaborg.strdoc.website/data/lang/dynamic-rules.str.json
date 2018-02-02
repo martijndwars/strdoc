@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-get-rule-set( | name)",
@@ -18,6 +19,7 @@
                "types": [" _ -> List(RuleScope)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-rule-set( | name)",
@@ -27,6 +29,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-switch-rule-set( | name)",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-scope(s | name)",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-begin-scope( | name)",
@@ -54,6 +59,7 @@
                "types": [" t -> t"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-end-scope( | name)",
@@ -63,6 +69,7 @@
                "types": [" t -> t"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-scope-all(s)",
@@ -72,6 +79,7 @@
                "types": [],
                "params": [],
                "notes": ["While get-config and set-config do not actually use dynamic rules,"],
+               "see": [],
                "since": ""
                },{
                "name": "dr-scope-all-start",
@@ -81,6 +89,7 @@
                "types": [],
                "params": [],
                "notes": ["While get-config and set-config do not actually use dynamic rules,"],
+               "see": ["dr-scope-all(s)"],
                "since": ""
                },{
                "name": "dr-scope-all-end",
@@ -90,6 +99,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": ["dr-scope-all(s)"],
                "since": ""
                },{
                "name": "dr-scopes(s | names)",
@@ -99,6 +109,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-begin-scopes( | names)",
@@ -108,6 +119,7 @@
                "types": [" t -> t"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-end-scopes( | names)",
@@ -117,6 +129,7 @@
                "types": [" t -> t"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-start-change-set( | name)",
@@ -126,6 +139,7 @@
                "types": [" t -> t"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-commit-change-set( | name)",
@@ -135,6 +149,7 @@
                "types": [" t -> t"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-discard-change-set( | name)",
@@ -144,6 +159,7 @@
                "types": [" t -> t"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-label-scope( | name, label)",
@@ -153,6 +169,7 @@
                "types": [" t -> t"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-get-scope-labels( | name)",
@@ -162,6 +179,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-get-first-scope-label(s | name)",
@@ -171,6 +189,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-ignore-state(s | name)",
@@ -180,6 +199,7 @@
                "types": ["a -> b"],
                "params": ["strategy to apply (a -> b)","name of the dynamic rules (String)"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-ignore-states(s | names)",
@@ -189,6 +209,7 @@
                "types": ["a -> b"],
                "params": ["strategy to apply (a -> b)","names of the dynamic rules (List(String))"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-rule( | name, key)",
@@ -198,6 +219,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-all-rules( | name, key)",
@@ -207,6 +229,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-rule-pointer( | name, key)",
@@ -216,6 +239,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-all-keys( | name)",
@@ -225,6 +249,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-rule( | name, key, value)",
@@ -234,6 +259,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-rule( | name, label, key, value)",
@@ -243,6 +269,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-rule-vis( | name, label, key, value)",
@@ -252,6 +279,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-rules-vis( | name, label, key, values)",
@@ -261,6 +289,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-undefine-rule( | name, key)",
@@ -270,6 +299,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-undefine-rule( | name, label, key)",
@@ -279,6 +309,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-undefine-rule-vis( | name, label, key)",
@@ -288,6 +319,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-rule( | name, key, value)",
@@ -297,6 +329,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-rule( | name, label, key, value)",
@@ -306,6 +339,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-rule-vis( | name, label, key, value)",
@@ -315,6 +349,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-intersect-with( | name)",
@@ -324,6 +359,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-intersect-symm( | name)",
@@ -333,6 +369,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-union-with( | name)",
@@ -342,6 +379,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-union-symm( | name)",
@@ -351,6 +389,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-left-choice(s1, s2 | rulenames)",
@@ -360,6 +399,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-save-rule-set",
@@ -369,6 +409,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-new-scope",
@@ -378,6 +419,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-new-rule-set",
@@ -387,6 +429,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-scope",
@@ -396,6 +439,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-destroy-scope",
@@ -405,6 +449,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-leave-scope",
@@ -414,6 +459,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-get-inner-scope",
@@ -423,6 +469,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-label-scope( | label)",
@@ -432,6 +479,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-get-scope-labels",
@@ -441,6 +489,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-get-first-scope-label(s)",
@@ -450,6 +499,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-new-change-set",
@@ -459,6 +509,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-start-change-set",
@@ -468,6 +519,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-destroy-change-set",
@@ -477,6 +529,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-destroy-and-unmark",
@@ -486,6 +539,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-clone-change-set",
@@ -495,6 +549,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-commit-change-set",
@@ -504,6 +559,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-commit-change-set(destroy)",
@@ -513,6 +569,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-discard-change-set",
@@ -522,6 +579,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-commit-labels( | labelset)",
@@ -531,6 +589,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-apply-change( | tbl)",
@@ -540,6 +599,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-commit-to-rule-set( | scpid, key, value)",
@@ -549,6 +609,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-commit-to-change-set( | scpid, key, value)",
@@ -558,6 +619,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-commit-to-rule-scope( | scpid, key, value)",
@@ -567,6 +629,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-apply-removal",
@@ -576,6 +639,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-remove-from-rule-set( | scpid, key)",
@@ -585,6 +649,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-remove-from-change-set( | scpid, key)",
@@ -594,6 +659,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-remove-from-rule-scope( | scpid, key)",
@@ -603,6 +669,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-rule( | key)",
@@ -612,6 +679,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-rule(look | key, removed)",
@@ -621,6 +689,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-rule(look1 | key, removed)",
@@ -630,6 +699,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-rule-in-scope( | key, scpid)",
@@ -639,6 +709,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-rule-in-scope-rs( | key, scpid)",
@@ -648,6 +719,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-rule-in-scope-cs( | key, scpid)",
@@ -657,6 +729,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-rule-pointer( | key)",
@@ -666,6 +739,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-rule-pointer(look | key, removed)",
@@ -675,6 +749,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-rule-pointer(look1 | key, removed)",
@@ -684,6 +759,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-all-rules( | key)",
@@ -693,6 +769,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-all-rules(look | key, removed)",
@@ -702,6 +779,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-lookup-all-rules(look1 | key, removed)",
@@ -711,6 +789,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-all-keys( | removed, result)",
@@ -720,6 +799,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-all-keys( | removed, result)",
@@ -729,6 +809,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-all-keys( | removed, result)",
@@ -738,6 +819,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-in-rule-set( | key, value)",
@@ -747,6 +829,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-in-rule-set( | label, key, value)",
@@ -756,6 +839,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-fail( | scpid, tbl, key, value)",
@@ -765,6 +849,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-in-rule-set(set: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm | label, key, value)",
@@ -774,6 +859,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-in-rule-set(set1: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm | label, key, value)",
@@ -783,6 +869,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-in-rule-set-vis( | key, value)",
@@ -792,6 +879,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-in-rule-set-vis( | label, key, value)",
@@ -801,6 +889,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-rm-fail( | scpid, tbl, key)",
@@ -810,6 +899,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-in-rule-set-vis(set: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm, rm: ATerm * Hashtable * ATerm * ATerm -> ATerm | label, key, value)",
@@ -819,6 +909,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-set-in-rule-set-vis(set1: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm, rm1: ATerm * Hashtable * ATerm * ATerm -> ATerm | label, key, value)",
@@ -828,6 +919,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-to-rule-set( | key, value)",
@@ -837,6 +929,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-to-rule-set( | label, key, value)",
@@ -846,6 +939,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-fail( | scpid, tbl, key, value)",
@@ -855,6 +949,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-rm-fail( | scpid, tbl, key)",
@@ -864,6 +959,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-to-rule-set(add: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm | label, key, value)",
@@ -873,6 +969,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-to-rule-set(add1: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm | label, key, value)",
@@ -882,6 +979,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-to-rule-set-vis( | label, key, value)",
@@ -891,6 +989,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-to-rule-set-vis(add: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm, rm: ATerm * Hashtable * ATerm * ATerm -> ATerm | label, key, value)",
@@ -900,6 +999,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-add-to-rule-set-vis(add1: ATerm * Hashtable * ATerm * ATerm * ATerm -> ATerm, rm1: ATerm * Hashtable * ATerm * ATerm -> ATerm | label, key, value)",
@@ -909,6 +1009,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-merge-rule-sets(merge-rs, merge-cs)",
@@ -918,6 +1019,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-merge-rule-sets1(merge-rs, merge-rec)",
@@ -927,6 +1029,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-merge-rule-sets2(merge-cs, merge-rec)",
@@ -936,6 +1039,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fix-change-set",
@@ -945,6 +1049,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-intersect-rule-sets",
@@ -954,6 +1059,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "apply-rm-set( | rmset)",
@@ -963,6 +1069,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-intersect-rule-sets-symm",
@@ -972,6 +1079,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-union-rule-sets",
@@ -981,6 +1089,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-union-rule-sets-symm",
@@ -990,6 +1099,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "fork-rule-sets",
@@ -999,6 +1109,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "merge-rule-sets(merge)",
@@ -1008,6 +1119,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fork-and-merge(merge, s1, s2 | rulenames)",
@@ -1017,6 +1129,7 @@
                "types": [],
                "params": ["merge :"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fork-and-merge(merge1, merge2, s1, s2 | rulenames1, rulenames2)",
@@ -1026,6 +1139,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fix-and-merge(merge, s | rulenames, label)",
@@ -1035,6 +1149,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fix-and-merge-internal(merge, s | rulenames)",
@@ -1044,6 +1159,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fix-and-merge(merge1, merge2, s | rulenames1, rulenames2)",
@@ -1053,6 +1169,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-merge-continue-change-sets(merge | label)",
@@ -1062,6 +1179,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-label(merge, s | rulenames, label)",
@@ -1071,6 +1189,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-break( | rulename)",
@@ -1080,6 +1199,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-break( | rulename, label)",
@@ -1089,6 +1209,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-break-bp( | rulename)",
@@ -1098,6 +1219,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-build-bp-change-set( | rmset, tbl, ruleset)",
@@ -1107,6 +1229,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-build-bp-change-set( | rmset, tbl, ruleset)",
@@ -1116,6 +1239,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-continue( | rulename)",
@@ -1125,6 +1249,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-continue( | rulename, label)",
@@ -1134,6 +1259,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-build-aggregated-change-set",
@@ -1143,6 +1269,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-init-exception-block(has-finally | catch-tags, rulenames)",
@@ -1152,6 +1279,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-throw(eq-test | tag, rulename)",
@@ -1161,6 +1289,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "get-matching-id(eq-test | tag, rulename)",
@@ -1170,6 +1299,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "get-matching-id( | catchID, rulename)",
@@ -1179,6 +1309,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-complete-catch(merge, s | rulenames)",
@@ -1188,6 +1319,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-complete-finally(merge, s | rulenames)",
@@ -1197,6 +1329,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-complete-exception-block(merge | rulenames)",
@@ -1206,6 +1339,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-transaction(s | rulenames)",
@@ -1215,6 +1349,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fork-and-union(s1, s2 | rulenames)",
@@ -1224,6 +1359,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fork-and-intersect-union(s1, s2 | rulenames1, rulenames2)",
@@ -1233,6 +1369,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fix-and-intersect(s | rulenames, label)",
@@ -1242,6 +1379,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fix-and-union(s | rulenames)",
@@ -1251,6 +1389,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fix-and-union(s | rulenames, label)",
@@ -1260,6 +1399,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fix-and-intersect-union(s | rulenames1, rulenames2)",
@@ -1269,6 +1409,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-label-union(s | rulenames, label)",
@@ -1278,6 +1419,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-complete-catch-intersect(s | rulenames)",
@@ -1287,6 +1429,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-complete-finally-intersect(s | rulenames)",
@@ -1296,6 +1439,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-complete-exception-block-intersect( | rulenames)",
@@ -1305,6 +1449,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-complete-catch-union(s | rulenames)",
@@ -1314,6 +1459,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-complete-finally-union(s | rulenames)",
@@ -1323,6 +1469,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-complete-exception-block-union( | rulenames)",
@@ -1332,6 +1479,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fold-and-intersect(empty, hd, tl: a -> a * a -> a | rulenames)",
@@ -1341,6 +1489,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-fold-and-intersect(empty, hd, tl: a -> a * a -> a | rulenames, rs0)",
@@ -1350,6 +1499,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-map-and-intersect(s | rulenames)",
@@ -1359,6 +1509,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-define-ignoreB( | csid, label)",
@@ -1368,6 +1519,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-define-ignoreC( | csid, label)",
@@ -1377,6 +1529,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-define-ignoreT( | csid)",
@@ -1386,6 +1539,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-eq-rule-sets",
@@ -1395,6 +1549,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-debug-rule-set( | name)",
@@ -1404,6 +1559,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-debug-rule-set( | name, msg)",
@@ -1413,6 +1569,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-print-rule-set( | name)",
@@ -1422,6 +1579,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-print-rule-sets( | names)",
@@ -1431,6 +1589,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-print-rule-set-msg( | msg)",
@@ -1440,6 +1599,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-print-rule-set",
@@ -1449,6 +1609,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-print-scope",
@@ -1458,6 +1619,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-print-scope",
@@ -1467,6 +1629,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-friendly-debug-rule-set( | name)",
@@ -1476,6 +1639,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-friendly-debug-rule-set( | name, msg)",
@@ -1485,6 +1649,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-friendly-print-rule-set( | name)",
@@ -1494,6 +1659,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-friendly-print-rule-sets( | names)",
@@ -1503,6 +1669,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-friendly-print-rule-set-msg( | msg)",
@@ -1512,6 +1679,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-friendly-print-rule-set",
@@ -1521,6 +1689,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-friendly-print-rule-set-msg( | msg)",
@@ -1530,6 +1699,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-friendly-print-scope",
@@ -1539,6 +1709,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dr-friendly-print-scope",
@@ -1548,6 +1719,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

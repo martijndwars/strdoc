@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "make-placeholder",
@@ -18,6 +19,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-placeholder",
@@ -27,6 +29,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

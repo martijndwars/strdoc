@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "HdMember'(eq, mklst)",
@@ -18,6 +19,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "make-set",
@@ -27,6 +29,7 @@
                "types": [" List(a) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "nub",
@@ -36,6 +39,7 @@
                "types": ["  List(a) -> List(a)"],
                "params": [],
                "notes": ["  nub is an alias of make-set."],
+               "see": [],
                "since": " 0.9.4"
                },{
                "name": "union",
@@ -45,6 +49,7 @@
                "types": ["List(a) * List(a) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "union(eq)",
@@ -54,6 +59,7 @@
                "types": ["List(a) * List(a) -> List(a)"],
                "params": ["Equality operator to be used on the elements"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "unions",
@@ -63,6 +69,7 @@
                "types": [" List(List(a)) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "unions(eq)",
@@ -72,6 +79,7 @@
                "types": ["List(List(a)) -> List(a)"],
                "params": ["Equality operator used on the elements."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "diff",
@@ -81,6 +89,7 @@
                "types": [" (List(a), List(a)) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "diff(eq)",
@@ -90,6 +99,7 @@
                "types": ["  (List(a), List(a)) -> List(a)"],
                "params": [" Used to compare the elements. If an application succeeds, then two elements are equal."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "sym-diff",
@@ -99,6 +109,7 @@
                "types": [" (List(a), List(a)) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "sym-diff(eq)",
@@ -108,6 +119,7 @@
                "types": ["  (List(a), List(a)) -> List(a)"],
                "params": [" Equality operator to use on the elements. If it succeeds, the elements are equal."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "isect",
@@ -117,6 +129,7 @@
                "types": ["List(a) * List(a) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "isect(eq)",
@@ -126,6 +139,7 @@
                "types": ["eq  a * a ->? _","    [a] * [a] -> [a]"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "set-eq",
@@ -135,6 +149,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "set-eq(eq)",
@@ -144,6 +159,7 @@
                "types": [],
                "params": ["test strategy that will compare two elements upon their equality."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "subset",
@@ -153,6 +169,7 @@
                "types": ["List(a) * List(a) -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "subset(eq)",
@@ -162,6 +179,7 @@
                "types": ["List(a) -> List(a) -> _"],
                "params": ["Equality operator to be used on elements on the set."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "subseteq",
@@ -171,6 +189,7 @@
                "types": ["List(a) * List(a) -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "subseteq(eq)",
@@ -180,6 +199,7 @@
                "types": ["List(a) * List(a) -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "subset-gen(eq, rest)",
@@ -189,6 +209,7 @@
                "types": [],
                "params": ["Equality operator to be used on elements in the set.","Matching strategy that tests the remainder of the right (2nd)"],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],

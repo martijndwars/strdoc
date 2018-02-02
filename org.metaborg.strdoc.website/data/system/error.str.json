@@ -9,6 +9,7 @@
                "types": ["   _ -> Error"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "  0.9.4"
                },{
                "name": "get-errno",
@@ -18,6 +19,7 @@
                "types": ["   _ -> Int"],
                "params": [],
                "notes": [],
+               "see": ["    man errno"],
                "since": "  0.9.4"
                },{
                "name": "perror",
@@ -27,6 +29,7 @@
                "types": ["  String -> String"],
                "params": [],
                "notes": [],
+               "see": ["   man perror"],
                "since": " 0.9.4"
                },{
                "name": "strerror",
@@ -36,6 +39,7 @@
                "types": ["  Int -> String"],
                "params": [],
                "notes": [],
+               "see": ["   man strerror"],
                "since": " 0.9.4"
                },{
                "name": "EXDEV",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [" Martin Bravenboer <mbravenb@cs.uu.nl>"],

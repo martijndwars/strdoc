@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "risky(s | msg)",
@@ -18,6 +19,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "risky(s | severity, msg)",
@@ -27,6 +29,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "log( | severity: Severity, msg, term)",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "log( | severity: Severity, msg)",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "if-log-severity(s | severity)",
@@ -54,6 +59,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "log-stream",
@@ -63,6 +69,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "set-log-stream",
@@ -72,6 +79,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "log-puts",
@@ -81,6 +89,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "log-src",
@@ -90,6 +99,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "verbose-level",
@@ -99,6 +109,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "verbose-level",
@@ -108,6 +119,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "verbose-level",
@@ -117,6 +129,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "verbose-level",
@@ -126,6 +139,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "verbose-level",
@@ -135,6 +149,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "verbose-level",
@@ -144,6 +159,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "verbose-level",
@@ -153,6 +169,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "verbose-level",
@@ -162,6 +179,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "verbose-level",
@@ -171,6 +189,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "severity-string",
@@ -180,6 +199,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "severity-string",
@@ -189,6 +209,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "severity-string",
@@ -198,6 +219,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "severity-string",
@@ -207,6 +229,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "severity-string",
@@ -216,6 +239,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "severity-string",
@@ -225,6 +249,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "severity-string",
@@ -234,6 +259,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "severity-string",
@@ -243,6 +269,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "severity-string",
@@ -252,6 +279,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-level",
@@ -261,6 +289,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-level",
@@ -270,6 +299,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-level",
@@ -279,6 +309,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-level",
@@ -288,6 +319,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-level",
@@ -297,6 +329,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-level",
@@ -306,6 +339,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-level",
@@ -315,6 +349,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-level",
@@ -324,6 +359,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-level",
@@ -333,6 +369,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "fatal-err( | msg: String)",
@@ -342,6 +379,7 @@
                "types": ["a -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "err( | msg: String)",
@@ -351,6 +389,7 @@
                "types": ["a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "warn( | msg: String)",
@@ -360,6 +399,7 @@
                "types": ["a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "notice( | msg: String)",
@@ -369,6 +409,7 @@
                "types": ["a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dbg( | msg: String)",
@@ -378,6 +419,7 @@
                "types": ["a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "fatal-err-msg( | msg: String)",
@@ -387,6 +429,7 @@
                "types": ["a -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "err-msg( | msg: String)",
@@ -396,6 +439,7 @@
                "types": ["a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "warn-msg( | msg: String)",
@@ -405,6 +449,7 @@
                "types": ["a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "notice-msg( | msg: String)",
@@ -414,6 +459,7 @@
                "types": ["a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

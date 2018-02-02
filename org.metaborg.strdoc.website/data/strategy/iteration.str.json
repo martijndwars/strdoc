@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "repeat(s, c)",
@@ -18,6 +19,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "repeat1(s, c)",
@@ -27,6 +29,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "repeat1(s)",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "repeat-until(s, c)",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "repeat(s | n)",
@@ -54,6 +59,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "while(c, s)",
@@ -63,6 +69,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "while-not(c, s)",
@@ -72,6 +79,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "do-while(s, c)",
@@ -81,6 +89,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "for(i, c, s)",
@@ -90,6 +99,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "for(s: Int * a -> a | low, up)",
@@ -99,6 +109,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

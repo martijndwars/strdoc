@@ -9,6 +9,7 @@
                "types": [],
                "params": [" strategy to apply on the input term"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "io-wrap(extra-opts, s)",
@@ -18,6 +19,7 @@
                "types": [],
                "params": ["  extra options besides the default io-options","  strategy to apply on the input term"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "io-wrap(extra-opts, usage, about, s)",
@@ -27,6 +29,7 @@
                "types": [],
                "params": ["  extra options besides the default io-options.","  strategy to apply on the input term"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "output-wrap(s)",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "output-wrap(extra-opts, s)",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "input-wrap(s)",
@@ -54,6 +59,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "input-wrap(extra-opts, s)",
@@ -63,6 +69,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "io(s)",
@@ -72,6 +79,7 @@
                "types": [],
                "params": ["  strategy to apply on the input term"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "output(s)",
@@ -81,6 +89,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "input(s)",
@@ -90,6 +99,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "io-stream-wrap(s)",
@@ -99,6 +109,7 @@
                "types": [],
                "params": ["(Stream, Stream) -> _"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "io-stream-wrap(extra-opts, s)",
@@ -108,6 +119,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "io-stream-wrap(extra-opts, usage, about, s)",
@@ -117,6 +129,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "io-stream(s)",
@@ -126,6 +139,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "option-wrap(opts, s)",
@@ -135,6 +149,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "option-wrap(opts, usage, announce, s)",
@@ -144,6 +159,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "option-wrap(opts, usage, about, announce, s)",
@@ -153,6 +169,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "io-options",
@@ -162,6 +179,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "input-options",
@@ -171,6 +189,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "output-options",
@@ -180,6 +199,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "general-options",
@@ -189,6 +209,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "aterm-lib-options",
@@ -198,6 +219,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "keep-option",
@@ -207,6 +229,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "statistics-option",
@@ -216,6 +239,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "input-option",
@@ -225,6 +249,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "output-option",
@@ -234,6 +259,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "aterm-output-option",
@@ -243,6 +269,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "verbose-option",
@@ -252,6 +279,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "verbose-to-int",
@@ -261,6 +289,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "need-help(u)",
@@ -270,6 +299,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "if-not-silent(s)",
@@ -279,6 +309,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "report-success",
@@ -288,6 +319,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "report-failure(exit)",
@@ -297,6 +329,7 @@
                "types": ["List(String) -> _"],
                "params": ["exit"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "report-failure",
@@ -306,6 +339,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "report-failure( | message, term)",
@@ -315,6 +349,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "report-failure-no-trace",
@@ -324,6 +359,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": ["report-failure","fatal-err(|msg)"],
                "since": ""
                },{
                "name": "report-failure-no-trace(exit)",
@@ -333,6 +369,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "whoami",
@@ -342,6 +379,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

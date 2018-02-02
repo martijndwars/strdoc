@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "newname",
@@ -18,6 +19,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "newterm",
@@ -27,6 +29,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.18"
                },{
                "name": "is-string",
@@ -36,6 +39,7 @@
                "types": ["String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-char",
@@ -45,6 +49,7 @@
                "types": ["Char -> Char"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "implode-string",
@@ -54,6 +59,7 @@
                "types": ["List(Char) -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "explode-string",
@@ -63,6 +69,7 @@
                "types": ["String -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-as-chars(s)",
@@ -72,6 +79,7 @@
                "types": [" String -> String"],
                "params": ["List(Char) -> List(Char)"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "conc-strings",
@@ -81,6 +89,7 @@
                "types": ["String * String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "strcat",
@@ -90,6 +99,7 @@
                "types": ["    String * String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "concat-strings",
@@ -99,6 +109,7 @@
                "types": ["List(String) -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-length",
@@ -108,6 +119,7 @@
                "types": ["String -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "strlen",
@@ -117,6 +129,7 @@
                "types": ["String -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "escape",
@@ -126,6 +139,7 @@
                "types": ["String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "escape-chars",
@@ -135,6 +149,7 @@
                "types": ["List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "escape-chars(s)",
@@ -144,6 +159,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "unescape",
@@ -153,6 +169,7 @@
                "types": ["String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "unescape-chars(s)",
@@ -162,6 +179,7 @@
                "types": [" List(Char) -> List(Char)"],
                "params": ["List(Char) -> List(Char)"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "unescape-chars",
@@ -171,6 +189,7 @@
                "types": ["List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Escape",
@@ -180,6 +199,7 @@
                "types": ["List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Escape-double-quote",
@@ -189,6 +209,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Escape-single-quote",
@@ -198,6 +219,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Escape-backslash",
@@ -207,6 +229,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Escape-linefeed",
@@ -216,6 +239,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Escape-carriage-return",
@@ -225,6 +249,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnEscape",
@@ -234,6 +259,7 @@
                "types": ["List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnEscape-double-quote",
@@ -243,6 +269,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnEscape-single-quote",
@@ -252,6 +279,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnEscape-backslash",
@@ -261,6 +289,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnEscape-carriage-return",
@@ -270,6 +299,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnEscape-linefeed",
@@ -279,6 +309,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnEscape-tab",
@@ -288,6 +319,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnEscape( | c)",
@@ -297,6 +329,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "escape(esc: List(String) -> List(String) * List(String) -> List(String))",
@@ -306,6 +339,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "cify",
@@ -315,6 +349,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "uncify",
@@ -324,6 +359,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnCify(x)",
@@ -333,6 +369,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Cify(x)",
@@ -342,6 +379,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Cify(x)",
@@ -351,6 +389,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Cify(x)",
@@ -360,6 +399,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Cify(x)",
@@ -369,6 +409,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Cify(x)",
@@ -378,6 +419,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnCify1(x)",
@@ -387,6 +429,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnCify1(x)",
@@ -396,6 +439,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnCify1(x)",
@@ -405,6 +449,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnCify2(x)",
@@ -414,6 +459,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnCify3(x)",
@@ -423,6 +469,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "quote(c)",
@@ -432,6 +479,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "quote-chars(c)",
@@ -441,6 +489,7 @@
                "types": [" List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "quote-chars",
@@ -450,6 +499,7 @@
                "types": ["Char * List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "single-quote-chars",
@@ -459,6 +509,7 @@
                "types": ["List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "double-quote-chars",
@@ -468,6 +519,7 @@
                "types": ["List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "single-quote",
@@ -477,6 +529,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "double-quote",
@@ -486,6 +539,7 @@
                "types": ["String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "unquote(s)",
@@ -495,6 +549,7 @@
                "types": [" String -> String"],
                "params": ["Char ->? _"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "unquote(s1, s2)",
@@ -504,6 +559,7 @@
                "types": ["  String -> String"],
                "params": [" Char ->? _"," Char ->? _"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "unquote-chars(s)",
@@ -513,6 +569,7 @@
                "types": ["  List(Char) -> List(Char)"],
                "params": [" Char ->? _"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "unquote-chars(s1, s2)",
@@ -522,6 +579,7 @@
                "types": ["  List(Char) -> List(Char)"],
                "params": [" Char ->? _"," Char ->? _"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "un-single-quote-chars",
@@ -531,6 +589,7 @@
                "types": [" List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "un-double-quote-chars",
@@ -540,6 +599,7 @@
                "types": [" List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "un-single-quote",
@@ -549,6 +609,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "un-double-quote",
@@ -558,6 +619,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-double-quoted",
@@ -567,6 +629,7 @@
                "types": ["  String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-single-quoted",
@@ -576,6 +639,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-double-quoted-chars",
@@ -585,6 +649,7 @@
                "types": ["List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-single-quoted-chars",
@@ -594,6 +659,7 @@
                "types": ["List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-quoted( | c)",
@@ -603,6 +669,7 @@
                "types": [" String -> String"],
                "params": ["Char"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-quoted-chars( | c)",
@@ -612,6 +679,7 @@
                "types": ["List(Char) -> List(Char)"],
                "params": ["Char"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-num",
@@ -621,6 +689,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "lower-case",
@@ -630,6 +699,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "upper-case",
@@ -639,6 +709,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "lower-case-chars",
@@ -648,6 +719,7 @@
                "types": [" List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "upper-case-chars",
@@ -657,6 +729,7 @@
                "types": [" List(Char) -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-tokenize( | sepchars)",
@@ -666,6 +739,7 @@
                "types": [" String -> List(String)"],
                "params": ["List of separate characters"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-tokenize(sep)",
@@ -675,6 +749,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-tokenize",
@@ -684,6 +759,7 @@
                "types": [" (List(Char), String) -> List(String)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "padd-with(s)",
@@ -693,6 +769,7 @@
                "types": ["String * Int -> String"],
                "params": ["s  () -> Char"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "remove-padding",
@@ -702,6 +779,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.18"
                },{
                "name": "align-right",
@@ -711,6 +789,7 @@
                "types": ["Char * String * Int -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "align-left",
@@ -720,6 +799,7 @@
                "types": ["Char * String * Int -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "align-center",
@@ -729,6 +809,7 @@
                "types": ["Char * String * Int -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "align-helper( | c, n)",
@@ -738,6 +819,7 @@
                "types": ["String -> String"],
                "params": ["c  Char","n  Int"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "div2",
@@ -747,6 +829,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "SplitInit",
@@ -756,6 +839,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "SplitExit",
@@ -765,6 +849,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "SplitNext",
@@ -774,6 +859,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "SplitNext",
@@ -783,6 +869,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "split-at-space",
@@ -792,6 +879,7 @@
                "types": ["String -> List(String)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "split-at-dot",
@@ -801,6 +889,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "split-before",
@@ -810,6 +899,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "split-after",
@@ -819,6 +909,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-substring(s)",
@@ -828,6 +919,7 @@
                "types": ["String -> _"],
                "params": ["_ -> String"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "copy-char",
@@ -837,6 +929,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-sort",
@@ -846,6 +939,7 @@
                "types": ["List(String) -> List(String)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-sort-desc",
@@ -855,6 +949,7 @@
                "types": ["List(String) -> List(String)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-gt",
@@ -864,6 +959,7 @@
                "types": [" (List(Char), List(Char)) -> 1"," (String, String)         -> 1"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-lt",
@@ -873,6 +969,7 @@
                "types": [" (List(Char), List(Char)) -> 1"," (String, String)         -> 1"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-starts-with( | start)",
@@ -882,6 +979,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-ends-with( | end)",
@@ -891,6 +989,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "left-match",
@@ -900,6 +999,7 @@
                "types": [" (List(a), List(a)) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "right-match",
@@ -909,6 +1009,7 @@
                "types": [" (List(a), List(a)) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "strcmp",
@@ -918,6 +1019,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "strncmp",
@@ -927,6 +1029,7 @@
                "types": ["List(Char) * List(Char) * Int -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "strcasecmp",
@@ -936,6 +1039,7 @@
                "types": ["(List(Char), List(Char)) -> -1, 0,1 or -1."],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-tokenize-keep-empty( | sepChars)",
@@ -945,6 +1049,7 @@
                "types": ["sepChars [char]","   string -> [string]"],
                "params": ["The list of characters that may separate two tokens."],
                "notes": [],
+               "see": [],
                "since": "0.9.5"
                },{
                "name": "string-tokenize-keep-all( | sepChars)",
@@ -954,6 +1059,7 @@
                "types": ["sepChars [char]","   string -> [string]"],
                "params": ["The list of characters that may separate two tokens."],
                "notes": [],
+               "see": [],
                "since": "0.9.5"
                },{
                "name": "get-lines",
@@ -963,6 +1069,7 @@
                "types": ["string -> [string]"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.9.4"
                },{
                "name": "all-lines(s)",
@@ -972,6 +1079,7 @@
                "types": ["s string -> string","  string -> string"],
                "params": ["The strategy that should be applied to each line."],
                "notes": [],
+               "see": [],
                "since": "0.9.4"
                },{
                "name": "lines",
@@ -981,6 +1089,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.9.4"
                },{
                "name": "indent-text( | n)",
@@ -990,6 +1099,7 @@
                "types": ["n int","string -> string"],
                "params": ["The number of spaces to be put in front of every line."],
                "notes": [],
+               "see": [],
                "since": "0.9.4"
                },{
                "name": "prefix-lines( | p)",
@@ -999,6 +1109,7 @@
                "types": ["p string","  string -> string"],
                "params": ["The prefix."],
                "notes": [],
+               "see": [],
                "since": "0.9.4"
                },{
                "name": "ltrim-chars(s)",
@@ -1008,6 +1119,7 @@
                "types": ["String -> String"],
                "params": ["should match all characters to be removed"],
                "notes": [],
+               "see": [],
                "since": "0.9.5"
                },{
                "name": "rtrim-chars(s)",
@@ -1017,6 +1129,7 @@
                "types": ["String -> String"],
                "params": ["should match on all characters to be removed"],
                "notes": [],
+               "see": [],
                "since": "0.9.5"
                },{
                "name": "trim-chars(s)",
@@ -1026,6 +1139,7 @@
                "types": ["String -> String"],
                "params": ["should match all characters to be removed"],
                "notes": [],
+               "see": [],
                "since": "0.9.5"
                },{
                "name": "is-whitespace",
@@ -1035,6 +1149,7 @@
                "types": ["Char -> Char"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.9.5"
                },{
                "name": "trim-trailing-whitespace",
@@ -1044,6 +1159,7 @@
                "types": ["String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.9.5"
                },{
                "name": "trim-leading-whitespace",
@@ -1053,6 +1169,7 @@
                "types": ["String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.9.5"
                },{
                "name": "trim-whitespace",
@@ -1062,6 +1179,7 @@
                "types": ["String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.9.5"
                },{
                "name": "shuffle-forced",
@@ -1071,6 +1189,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "shuffle",
@@ -1080,6 +1199,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "shuffle-word-mids",
@@ -1089,6 +1209,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "shuffle-word-mid",
@@ -1098,6 +1219,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-alphanum",
@@ -1107,6 +1229,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-alpha",
@@ -1116,6 +1239,7 @@
                "types": ["Char -> Char"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-hexnum",
@@ -1125,6 +1249,7 @@
                "types": ["Char -> Char"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-num",
@@ -1134,6 +1259,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-upper",
@@ -1143,6 +1269,7 @@
                "types": ["Char -> Char"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-lower",
@@ -1152,6 +1279,7 @@
                "types": ["Char -> Char"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-ascii",
@@ -1161,6 +1289,7 @@
                "types": ["Char -> Char"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "case-char(s)",
@@ -1170,6 +1299,7 @@
                "types": [" (Char, Char) -> a"],
                "params": ["(Char, Char) -> a"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "to-upper",
@@ -1179,6 +1309,7 @@
                "types": ["Char -> Char"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "to-lower",
@@ -1188,6 +1319,7 @@
                "types": ["Char -> Char"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-replace( | old, new)",
@@ -1197,6 +1329,7 @@
                "types": ["String -> String"],
                "params": ["old - the old substring which is to be excised","new - the new subtring which is to be inserted"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "internal-string-replace( | old, new)",
@@ -1206,6 +1339,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "internal-string-replace( | old, new)",
@@ -1215,6 +1349,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "internal-string-replace-found( | old, new)",
@@ -1224,6 +1359,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "internal-string-replace-found( | old, new)",
@@ -1233,6 +1369,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "internal-ensure-as-string",
@@ -1242,6 +1379,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "internal-string-interpolation( | t, padded_s)",
@@ -1251,6 +1389,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org>","Lennart Kats <lennart add lclnet.nl>"],

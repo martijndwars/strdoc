@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "get-configs(pred)",
@@ -18,6 +19,7 @@
                "types": [" _ -> List(b)"],
                "params": ["  Is applied to the keys of the config table."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "get-config-keys(pred)",
@@ -27,6 +29,7 @@
                "types": ["    _ -> List(a)"],
                "params": ["   Is applied to the keys of the config table."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "set-config",
@@ -36,6 +39,7 @@
                "types": ["(a, b) -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "rm-config",
@@ -45,6 +49,7 @@
                "types": ["(a, b) -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "toggle-config",
@@ -54,6 +59,7 @@
                "types": ["(a, b) -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "extend-config",
@@ -63,6 +69,7 @@
                "types": ["(a, List(b)) -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "post-extend-config",
@@ -72,6 +79,7 @@
                "types": ["(a, List(b)) -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "if-java-platform(s)",
@@ -81,6 +89,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "if-c-platform(s)",
@@ -90,6 +99,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

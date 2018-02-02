@@ -9,6 +9,7 @@
                "types": ["            Tuple(a(c),a(c)) -> a(e)"],
                "params": ["leaf       c -?> d","node       d -> e"],
                "notes": [],
+               "see": ["term-zip"],
                "since": ""
                },{
                "name": "TermZip(s)",
@@ -18,6 +19,7 @@
                "types": ["s           Tuple(a,b) -> c","            Tuple(a,a) -> a"],
                "params": [],
                "notes": [],
+               "see": ["zip","TermTupleZip"],
                "since": ""
                },{
                "name": "term-zip(leaf, node)",
@@ -27,6 +29,7 @@
                "types": ["            Tuple(a(c),a(c)) -> a(e)"],
                "params": ["leaf       c -?> d","node       d -> e"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "TermTupleZip(s)",
@@ -36,6 +39,7 @@
                "types": ["s           Tuple(a,b) -> c","            Tuple(a,a) -> a"],
                "params": [],
                "notes": [],
+               "see": ["zip"],
                "since": ""
                }],
 "authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],

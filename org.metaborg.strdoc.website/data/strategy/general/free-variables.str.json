@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "free-vars(getvars, boundvars, boundin: term -> term * term -> term * term -> term * term -> term)",
@@ -18,6 +19,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "free-vars(getvars, boundvars, boundin: term -> term * term -> term * term -> term * term -> term, eq)",
@@ -27,6 +29,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "free-vars2(getvars, boundvars)",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "free-vars2(getvars, boundvars, boundin: term -> term * term -> term * term -> term * term -> term)",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "free-vars2(getvars, boundvars, boundin: term -> term * term -> term * term -> term * term -> term, eq)",
@@ -54,6 +59,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

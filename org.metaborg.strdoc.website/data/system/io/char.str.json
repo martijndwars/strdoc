@@ -9,6 +9,7 @@
                "types": ["String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "read-text-from-stream",
@@ -18,6 +19,7 @@
                "types": ["Stream -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "read-text-line",
@@ -27,6 +29,7 @@
                "types": ["Stream -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "filter-text-file(more, done)",
@@ -36,6 +39,7 @@
                "types": ["(String, String) -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

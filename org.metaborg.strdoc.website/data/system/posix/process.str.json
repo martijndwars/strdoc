@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "get-pid",
@@ -18,6 +19,7 @@
                "types": ["_ -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "fork",
@@ -27,6 +29,7 @@
                "types": ["fork :: a -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "execvp",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": ["     man execvp"],
                "since": ""
                },{
                "name": "execv",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": ["     man execv"],
                "since": ""
                },{
                "name": "waitpid",
@@ -54,6 +59,7 @@
                "types": ["Int -> WaitStatus"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "kill",
@@ -63,6 +69,7 @@
                "types": ["Int * Signal -> Int * Signal"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

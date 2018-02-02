@@ -9,6 +9,7 @@
                "types": ["Real -> Real"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "cos",
@@ -18,6 +19,7 @@
                "types": ["Real -> Real"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "sin",
@@ -27,6 +29,7 @@
                "types": ["Real -> Real"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "sqrt",
@@ -36,6 +39,7 @@
                "types": ["Real -> Real"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "atan2",
@@ -45,6 +49,7 @@
                "types": ["Real -> Real"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "real-to-string",
@@ -54,6 +59,7 @@
                "types": ["Real -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "real-to-string( | prec)",
@@ -63,6 +69,7 @@
                "types": ["prec Int","Real -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-real",
@@ -72,6 +79,7 @@
                "types": ["String -> Real"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "real",
@@ -81,6 +89,7 @@
                "types": ["Int -> Real"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],

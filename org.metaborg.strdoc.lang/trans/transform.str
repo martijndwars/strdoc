@@ -81,6 +81,7 @@ rules // XDoc to JSON
       "types": [<<mkstring(|",")> type*>],
       "params": [<<mkstring(|",")> param*>],
       "notes": [<<mkstring(|",")> note*>],
+      "see": [<<mkstring(|",")> see*>],
       "since": "<since>"
     }>
     with
@@ -89,6 +90,7 @@ rules // XDoc to JSON
     ; type*       := <retain-all(is-meta(|"@type ")); map(escape-json; quote)> line*
     ; param*      := <retain-all(is-meta(|"@param ")); map(escape-json; quote)> line*
     ; note*       := <retain-all(is-meta(|"@note ")); map(escape-json; quote)> line*
+    ; see*        := <retain-all(is-meta(|"@see ")); map(escape-json; quote)> line*
     ; since       := <getfirst(is-meta(|"@since ")) < escape-json + !""> line*
     ; description := <remove-all(is-meta); lines> line*
 

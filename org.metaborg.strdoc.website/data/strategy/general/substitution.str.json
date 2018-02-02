@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "SubsVar(isvar, mksbs)",
@@ -18,6 +19,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "substitute(isvar, ren)",
@@ -27,6 +29,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "substitute(isvar)",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "substitute(isvar, varshape: name -> env * name -> term, bndvars, boundin: term -> term * term -> term * term -> term * term -> term, paste: term -> vars * term -> term, ren)",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "substitute(isvar, varshape: name -> env * name -> term, bndvars, boundin: term -> term * term -> term * term -> term * term -> term, paste: term -> vars * term -> term)",
@@ -54,6 +59,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

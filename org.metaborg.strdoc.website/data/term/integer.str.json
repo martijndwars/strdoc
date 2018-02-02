@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "add",
@@ -18,6 +19,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "addi",
@@ -27,6 +29,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "int-add( | y)",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "addr",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iori",
@@ -54,6 +59,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "xori",
@@ -63,6 +69,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "andi",
@@ -72,6 +79,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "shli",
@@ -81,6 +89,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "shri",
@@ -90,6 +99,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "subt",
@@ -99,6 +109,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "subti",
@@ -108,6 +119,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "int-subt( | y)",
@@ -117,6 +129,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "subtr",
@@ -126,6 +139,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "mul",
@@ -135,6 +149,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "muli",
@@ -144,6 +159,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "mulr",
@@ -153,6 +169,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "div",
@@ -162,6 +179,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "divi",
@@ -171,6 +189,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "divr",
@@ -180,6 +199,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "mod",
@@ -189,6 +209,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "modi",
@@ -198,6 +219,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "modr",
@@ -207,6 +229,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "gt",
@@ -216,6 +239,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "gti",
@@ -225,6 +249,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "gtr",
@@ -234,6 +259,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "geq",
@@ -243,6 +269,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "lt",
@@ -252,6 +279,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "leq",
@@ -261,6 +289,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "int-leq( | y)",
@@ -270,6 +299,7 @@
                "types": ["Int -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "int-gt( | y)",
@@ -279,6 +309,7 @@
                "types": ["Int -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "int-lt( | y)",
@@ -288,6 +319,7 @@
                "types": ["Int -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "leq-leq",
@@ -297,6 +329,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "leq-lt",
@@ -306,6 +339,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "lt-leq",
@@ -315,6 +349,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "lt-lt",
@@ -324,6 +359,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "comp-comp(s1, s2)",
@@ -333,6 +369,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "even",
@@ -342,6 +379,7 @@
                "types": [" Int -> fail?"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "max",
@@ -351,6 +389,7 @@
                "types": ["(Int, Int) -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "min",
@@ -360,6 +399,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "pos",
@@ -369,6 +409,7 @@
                "types": [" Int -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "neg",
@@ -378,6 +419,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "int",
@@ -387,6 +429,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "set-random-seed",
@@ -396,6 +439,7 @@
                "types": ["  Int -> ()"],
                "params": [],
                "notes": [],
+               "see": ["   man srand"],
                "since": " 0.9.4"
                },{
                "name": "get-random-max",
@@ -405,6 +449,7 @@
                "types": ["_ -> Int()"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "next-random",
@@ -414,6 +459,7 @@
                "types": ["  _ -> Int"],
                "params": [],
                "notes": [],
+               "see": ["   man rand"],
                "since": " 0.9.4"
                },{
                "name": "apply-int-to-str-tuple(s)",
@@ -423,6 +469,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "addS",
@@ -432,6 +479,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "subtS",
@@ -441,6 +489,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "mulS",
@@ -450,6 +499,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "divS",
@@ -459,6 +509,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "modS",
@@ -468,6 +519,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "maxS",
@@ -477,6 +529,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "minS",
@@ -486,6 +539,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "gtS",
@@ -495,6 +549,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "geqS",
@@ -504,6 +559,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "ltS",
@@ -513,6 +569,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "leqS",
@@ -522,6 +579,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "inc",
@@ -531,6 +589,7 @@
                "types": ["Int -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "int-inc",
@@ -540,6 +599,7 @@
                "types": ["Int -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dec",
@@ -549,6 +609,7 @@
                "types": ["Int -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "int-dec",
@@ -558,6 +619,7 @@
                "types": ["Int -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "log2",
@@ -567,6 +629,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "gcd",
@@ -576,6 +639,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "abs",
@@ -585,6 +649,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "add-inf",
@@ -594,6 +659,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "lt-inf",
@@ -603,6 +669,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "new-counter",
@@ -612,6 +679,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "reset-counter",
@@ -621,6 +689,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "set-counter",
@@ -630,6 +699,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "get-counter",
@@ -639,6 +709,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "next-counter",
@@ -648,6 +719,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "int-to-string",
@@ -657,6 +729,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "string-to-int",
@@ -666,6 +739,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "hex-string-to-int",
@@ -675,6 +749,7 @@
                "types": ["String -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dec-string-to-int",
@@ -684,6 +759,7 @@
                "types": ["String -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "oct-string-to-int",
@@ -693,6 +769,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "bin-string-to-int",
@@ -702,6 +779,7 @@
                "types": ["String -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "hex-chars-to-int",
@@ -711,6 +789,7 @@
                "types": ["List(Char) -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dec-chars-to-int",
@@ -720,6 +799,7 @@
                "types": ["List(Char) -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "oct-chars-to-int",
@@ -729,6 +809,7 @@
                "types": ["List(Char) -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "bin-chars-to-int",
@@ -738,6 +819,7 @@
                "types": ["List(Char) -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "generic-string-to-int",
@@ -747,6 +829,7 @@
                "types": ["String * Int -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "generic-chars-to-int",
@@ -756,6 +839,7 @@
                "types": ["List(Char) * Int -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "neg-chars-to-int",
@@ -765,6 +849,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "pos-chars-to-int",
@@ -774,6 +859,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "char-to-digit",
@@ -783,6 +869,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "char-to-digit",
@@ -792,6 +879,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "char-to-digit",
@@ -801,6 +889,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

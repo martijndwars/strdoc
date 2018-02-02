@@ -9,6 +9,7 @@
                "types": ["(Int, List(a)) -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "index( | i)",
@@ -18,6 +19,7 @@
                "types": ["List(a) -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "get-index",
@@ -27,6 +29,7 @@
                "types": ["(a, List(a)) -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Gind0",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Gind1",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Gind2",
@@ -54,6 +59,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "get-index0(s)",
@@ -63,6 +69,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "set-index",
@@ -72,6 +79,7 @@
                "types": ["(Int, a, List(a)) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "at-index(s)",
@@ -81,6 +89,7 @@
                "types": ["(Int, List(a)) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "at-index(s | i)",
@@ -90,6 +99,7 @@
                "types": ["List(a)) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "at-index-tail(s | i)",
@@ -99,6 +109,7 @@
                "types": ["List(a) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "insert",
@@ -108,6 +119,7 @@
                "types": ["(Int, a, List(a)) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Ins0",
@@ -117,6 +129,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Ins1",
@@ -126,6 +139,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Ins2(r)",
@@ -135,6 +149,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "nmap(s: Int * a -> b | i)",
@@ -144,6 +159,7 @@
                "types": [" List(a) -> List(b)"],
                "params": ["Strategy to apply to all the elements of the list.","The first index (e.g. 0 or 1)"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "map-with-index(s)",
@@ -153,6 +169,7 @@
                "types": [" List(a) -> List(b)"],
                "params": ["Int * a -> b"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "add-indices",
@@ -162,6 +179,7 @@
                "types": ["List(a) -> List((Int, a))"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "STDOUT_FILENO",
@@ -18,6 +19,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "STDERR_FILENO",
@@ -27,6 +29,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "isatty",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "modification-time",
@@ -45,6 +49,7 @@
                "types": ["String -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "link-file",
@@ -54,6 +59,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "readdir",
@@ -63,6 +69,7 @@
                "types": ["String -> List(String)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "getcwd",
@@ -72,6 +79,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "chdir",
@@ -81,6 +89,7 @@
                "types": ["String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "mkdir( | mode)",
@@ -90,6 +99,7 @@
                "types": ["String -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "mkdir",
@@ -99,6 +109,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "rmdir",
@@ -108,6 +119,7 @@
                "types": ["String -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "creat",
@@ -117,6 +129,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "open",
@@ -126,6 +139,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "close",
@@ -135,6 +149,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dup",
@@ -144,6 +159,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "dup2",
@@ -153,6 +169,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "access",
@@ -162,6 +179,7 @@
                "types": ["(String, List(AccessPermission)) -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "fdopen",
@@ -171,6 +189,7 @@
                "types": ["(FileDescr, String) -> Stream"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "fileno",
@@ -180,6 +199,7 @@
                "types": ["Stream -> FileDescr"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "filemode",
@@ -189,6 +209,7 @@
                "types": ["String -> FileMode"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "isreg",
@@ -198,6 +219,7 @@
                "types": ["File -> FileMode"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "isdir",
@@ -207,6 +229,7 @@
                "types": ["File -> FileMode"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "ischr",
@@ -216,6 +239,7 @@
                "types": ["File -> FileMode"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "isblk",
@@ -225,6 +249,7 @@
                "types": ["File -> FileMode"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "isfifo",
@@ -234,6 +259,7 @@
                "types": ["File -> FileMode"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "islnk",
@@ -243,6 +269,7 @@
                "types": ["File -> FileMode"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "issock",
@@ -252,6 +279,7 @@
                "types": ["File -> FileMode"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "pipe",
@@ -261,6 +289,7 @@
                "types": ["_ -> Pipe"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

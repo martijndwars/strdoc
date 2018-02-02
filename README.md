@@ -46,7 +46,6 @@ $ org.metaborg.strdoc.website/deploy.sh
 * Bug: Some whitespace gets lost in the description (see util/config/parse-options)
 * Bug: When pretty-printing the type of a parameter it looses its parenthesis, so the string looses associativity/precedence.
 * Bug: Cannot parse `collection/hash-table/scoped-finite-map.str`, `system/io/file.str`, and `system/posix/pipe-abstractions.str`.
-* Feature: Strategy docblock can have @see tag
 * Feature: Update the page title so we get nice history in the browser.
 * Feature: Show method summary.
 * Feature: Extract constructors (with comments)

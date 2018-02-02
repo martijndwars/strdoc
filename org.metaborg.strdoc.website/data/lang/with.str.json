@@ -9,6 +9,7 @@
                "types": [],
                "params": [],
                "notes": ["In future revisions, a facility may be provided to \"catch\""],
+               "see": [],
                "since": ""
                },{
                "name": "catch-with(s1, s2)",
@@ -18,6 +19,7 @@
                "types": ["a -> b | c"],
                "params": ["a -> b","(String, a, List(String)) -> c"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "report-with-failure( | strategyname)",
@@ -27,6 +29,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": ["Lennart Kats <lennart add lclnet.nl>"],

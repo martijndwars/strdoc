@@ -9,6 +9,7 @@
                "types": [" (a, b) -> (a, b)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-proper-subterm",
@@ -18,6 +19,7 @@
                "types": [" (a, b) -> (a, b)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-superterm",
@@ -27,6 +29,7 @@
                "types": [" (a, b) -> (a, b)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-proper-superterm",
@@ -36,6 +39,7 @@
                "types": [" (a, b) -> (a, b)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-proper-subterm-set",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-proper-superterm-set",
@@ -54,6 +59,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-leaf",
@@ -63,6 +69,7 @@
                "types": [" a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-inner-node",
@@ -72,6 +79,7 @@
                "types": [" a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],

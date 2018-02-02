@@ -9,6 +9,7 @@
                "types": ["    List(a) * List(b) -> List(c)"],
                "params": ["s              a * b -> c"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "join(s)",
@@ -18,6 +19,7 @@
                "types": ["    List(a) * List(b) -> List(c)"],
                "params": ["s              a * b -> c"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Skip(s)",
@@ -27,6 +29,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "genzip(a, b, c, s)",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zip",
@@ -45,6 +49,7 @@
                "types": ["List(a) * List(b) -> List(a * b)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zip(s)",
@@ -54,6 +59,7 @@
                "types": ["    List(a) * List(b) -> List(c)"],
                "params": ["s              a * b -> c"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zip'(s)",
@@ -63,6 +69,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zipl(s)",
@@ -72,6 +79,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zipr(s)",
@@ -81,6 +89,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "rest-zip(s)",
@@ -90,6 +99,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zip(s: t * t -> t | ys)",
@@ -99,6 +109,7 @@
                "types": ["List(a) -> List(c)"],
                "params": ["Strategy s(|y : b) : a -> c","Second list : List(b)"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "unzip",
@@ -108,6 +119,7 @@
                "types": ["    List(a * b) -> List(a) * List(b)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "unzip(s)",
@@ -117,6 +129,7 @@
                "types": ["    List(a * b) -> List(a) * List(b)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "nzip0(s)",
@@ -126,6 +139,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "nzip(s)",
@@ -135,6 +149,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "lzip(s)",
@@ -144,6 +159,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "rzip(s)",
@@ -153,6 +169,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zipFetch(s)",
@@ -162,6 +179,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "lzipFetch(s)",
@@ -171,6 +189,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "rzipFetch(s)",
@@ -180,6 +199,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zipPad(s, padding)",
@@ -189,6 +209,7 @@
                "types": ["    List(a) * List(b) -> List(c)"],
                "params": ["s              a * b -> c","padding            _ -> d"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zip-tail",
@@ -198,6 +219,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zipl-tail-match(s)",
@@ -207,6 +229,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zipr-tail-match(s)",
@@ -216,6 +239,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "zip-skip(pred, s)",
@@ -225,6 +249,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Zip1",
@@ -234,6 +259,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Zip1a'",
@@ -243,6 +269,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Zip1b'",
@@ -252,6 +279,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Zip1c",
@@ -261,6 +289,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Zip1c'",
@@ -270,6 +299,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Zip1d",
@@ -279,6 +309,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Zip2",
@@ -288,6 +319,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "LZip2",
@@ -297,6 +329,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "RZip2",
@@ -306,6 +339,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Zip3",
@@ -315,6 +349,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnZip1",
@@ -324,6 +359,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnZip2",
@@ -333,6 +369,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "UnZip3",
@@ -342,6 +379,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "NZip00",
@@ -351,6 +389,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "NZip01",
@@ -360,6 +399,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "NZip1",
@@ -369,6 +409,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "NZip2",
@@ -378,6 +419,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "NZip3",
@@ -387,6 +429,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

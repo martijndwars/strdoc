@@ -10,12 +10,13 @@ function Module(name, description, authors, see, strategies) {
   this.strategies = strategies;
 }
 
-function Strategy(name, description, types, params, notes, start, end) {
+function Strategy(name, description, types, params, notes, see, start, end) {
   this.name = name;
   this.description = description;
   this.types = types;
   this.params = params;
   this.notes = notes;
+  this.see = see;
   this.start = start;
   this.end = end;
 }

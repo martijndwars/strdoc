@@ -9,6 +9,7 @@
                "types": ["    List(a) -> List(b)"],
                "params": ["s  a -> b"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "filter(s, tail)",
@@ -18,6 +19,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "retain-all(s)",
@@ -27,6 +29,7 @@
                "types": ["    List(a) -> List(b)"],
                "params": ["s  a -> b"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "remove-all(s)",
@@ -36,6 +39,7 @@
                "types": ["    List(a) -> List(a)"],
                "params": ["s  a -> b"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "reverse-filter(s)",
@@ -45,6 +49,7 @@
                "types": [" List(a) -> List(b)"],
                "params": ["s a -> b"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "reverse-filter(s, tail)",
@@ -54,6 +59,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "filter-gen(pred, cont: term -> term * term -> term)",
@@ -63,6 +69,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "filter-option-args(flag)",
@@ -72,6 +79,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "filter-options(flag)",
@@ -81,6 +89,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "list-some-filter(s)",
@@ -90,6 +99,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "partition(s)",
@@ -99,6 +109,7 @@
                "types": ["     List(a) -> (List(b), List(a))"],
                "params": ["s   a -> b"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "partition(s1, s2)",
@@ -108,6 +119,7 @@
                "types": ["     List(a) -> (List(b), List(c))"],
                "params": ["s1   a -> b","s2   a -> c"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "partition'(s)",
@@ -117,6 +129,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

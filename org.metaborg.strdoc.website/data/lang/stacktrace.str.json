@@ -9,6 +9,7 @@
                "types": ["-> List(String)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "stacktrace-get-current-frame-name",
@@ -18,6 +19,7 @@
                "types": ["-> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "stacktrace-get-current-frame-index",
@@ -27,6 +29,7 @@
                "types": ["-> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "print-stacktrace",
@@ -36,6 +39,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": ["Karl Trygve Kalleberg <karltk@strategoxt.org>"],

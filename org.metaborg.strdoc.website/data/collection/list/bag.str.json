@@ -9,6 +9,7 @@
                "types": ["(elem, occur) * List(a) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "bag-union",
@@ -18,6 +19,7 @@
                "types": ["List(a) * List(a) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "bag-insert(equ)",
@@ -27,6 +29,7 @@
                "types": ["  (elem, occurrence) * List(a) -> List(a)"],
                "params": [" Used to test equality on elements."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "bag-union(equ)",
@@ -36,6 +39,7 @@
                "types": ["  List(a) * List(a) -> List(a)"],
                "params": [" Used to test equality on elements."],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

@@ -9,6 +9,7 @@
                "types": ["List(a) -> Tuple(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "ListToTuple",
@@ -18,6 +19,7 @@
                "types": ["Tuple(a) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Fst",
@@ -27,6 +29,7 @@
                "types": ["Tuple(a, xs...) -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Snd",
@@ -36,6 +39,7 @@
                "types": ["Tuple(a, b, xs...) -> b"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Third",
@@ -45,6 +49,7 @@
                "types": ["Tuple(a, b, c, xs...) -> c"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Dupl",
@@ -54,6 +59,7 @@
                "types": ["a -> Tuple(a, a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "split(f, g)",
@@ -63,6 +69,7 @@
                "types": ["          a -> Tuple(a', b')"],
                "params": ["f        a -> a'","g        a -> b'"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "split3(f, g, h)",
@@ -72,6 +79,7 @@
                "types": ["          a -> Tuple(a', b', c')"],
                "params": ["f        a -> a'","g        a -> b'","h        a -> c'"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Swap",
@@ -81,6 +89,7 @@
                "types": ["Tuple(a, b) -> Tuple(b, a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "Thd",
@@ -90,6 +99,7 @@
                "types": ["Tuple(a) -> a"],
                "params": [],
                "notes": [],
+               "see": ["Fst"],
                "since": ""
                },{
                "name": "Ttl",
@@ -99,6 +109,7 @@
                "types": ["Tuple(a) -> Tuple(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "tindex",
@@ -108,6 +119,7 @@
                "types": ["(Int, Tuple(a)) -> a"],
                "params": [],
                "notes": [],
+               "see": ["index"],
                "since": ""
                },{
                "name": "is-tuple",
@@ -117,6 +129,7 @@
                "types": ["Tuple(a) -?> Tuple(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "flip(s)",
@@ -126,6 +139,7 @@
                "types": ["            Tuple(a,b) -> Tuple(b', a')"],
                "params": ["s          Tuple(b,a) -> Tuple(b', a')"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "tmap(s)",
@@ -135,6 +149,7 @@
                "types": ["             Tuple(a) -> Tuple(b)"],
                "params": ["s           a -> b"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "tconcat(s)",
@@ -144,6 +159,7 @@
                "types": ["            Tuple(List(a))"],
                "params": ["s          Tuple(List(a), List(a)) -> List(a)"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "tconcat'(s1, s2)",
@@ -153,6 +169,7 @@
                "types": ["            Tuple(List(a))"],
                "params": ["s1         Nil -> b","s2         Tuple(List(a), b) -> b"],
                "notes": [],
+               "see": ["tconcat"],
                "since": ""
                },{
                "name": "tcata(s1, s2)",
@@ -162,6 +179,7 @@
                "types": ["            Tuple(a) -> b"],
                "params": ["s1         Nil -> b","s2         Tuple(a, b) -> b"],
                "notes": [],
+               "see": ["foldr"],
                "since": ""
                },{
                "name": "tfoldr(s1, s2)",
@@ -171,6 +189,7 @@
                "types": ["            Tuple(a) -> b"],
                "params": ["s1         Nil -> b","s2         Tuple(a, b) -> b"],
                "notes": [],
+               "see": ["tcata"],
                "since": ""
                },{
                "name": "tzip(s)",
@@ -180,6 +199,7 @@
                "types": ["            Tuple(Tuple(a), Tuple(b)) -> c"],
                "params": ["s          Tuple(a,b) -> c"],
                "notes": [],
+               "see": ["zip"],
                "since": ""
                },{
                "name": "tuple-zip(s)",
@@ -189,6 +209,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "tuple-unzip(s)",
@@ -198,6 +219,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": ["Eelco Visser <visser@acm.org>","Karl Trygve Kalleberg <karltk@strategoxt.org> - documentation"],

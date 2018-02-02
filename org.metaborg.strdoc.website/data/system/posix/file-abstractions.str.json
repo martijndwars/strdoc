@@ -9,6 +9,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.9.4"
                },{
                "name": "file-newer",
@@ -18,6 +19,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "file-exists",
@@ -27,6 +29,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "can-read-file",
@@ -36,6 +39,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-readable",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "can-write-file",
@@ -54,6 +59,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-writable",
@@ -63,6 +69,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "can-execute-file",
@@ -72,6 +79,7 @@
                "types": [" String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-executable",
@@ -81,6 +89,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "can-create-file",
@@ -90,6 +99,7 @@
                "types": ["String -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "find-in-path(strict | path)",
@@ -99,6 +109,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "find-in-path( | path)",
@@ -108,6 +119,7 @@
                "types": [],
                "params": ["should build a list of paths in which the search is performed."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "find-in-path",
@@ -117,6 +129,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "find-in-path(mkpath)",
@@ -126,6 +139,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "find-file( | ext, path)",
@@ -135,6 +149,7 @@
                "types": [],
                "params": ["should build the file extension as a string."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "find-file( | ext)",
@@ -144,6 +159,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "find-file(ext)",
@@ -153,6 +169,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "find-file(mkpath, ext)",
@@ -162,6 +179,7 @@
                "types": [],
                "params": ["should build a list of paths in which the search is performed.","should build the file extension as a string."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "new-file",
@@ -171,6 +189,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

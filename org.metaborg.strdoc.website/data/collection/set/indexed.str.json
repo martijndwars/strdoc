@@ -9,6 +9,7 @@
                "types": [" _ -> IndexedSet"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "new-iset( | initial_size, max_load)",
@@ -18,6 +19,7 @@
                "types": ["  _ -> IndexedSet"],
                "params": [" Int, Initial size of internal storage"," Int, 0-100."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-destroy",
@@ -27,6 +29,7 @@
                "types": [" IndexedSet -> IndexedSet"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-clear",
@@ -36,6 +39,7 @@
                "types": [" IndexedSet -> IndexedSet"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-add(on_old | elem)",
@@ -45,6 +49,7 @@
                "types": ["  IndexedSet -> (Int | a )"],
                "params": [" Int -> a"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-add( | elem)",
@@ -54,6 +59,7 @@
                "types": ["IndexedSet -> IndexedSet"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-addlist( | lst)",
@@ -63,6 +69,7 @@
                "types": ["IndexedSet -> IndexedSet"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-contains( | elem)",
@@ -72,6 +79,7 @@
                "types": [" IndexedSet -> IndexedSet"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-remove( | elem)",
@@ -81,6 +89,7 @@
                "types": [" IndexedSet -> IndexedSet"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-elements",
@@ -90,6 +99,7 @@
                "types": [" IndexedSet(a) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-union( | set2)",
@@ -99,6 +109,7 @@
                "types": ["  IndexedSet -> IndexedSet"],
                "params": [" IndexedSet"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-isect( | set2)",
@@ -108,6 +119,7 @@
                "types": ["  IndexedSet -> IndexedSet"],
                "params": [" IndexedSet"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-subset( | set2)",
@@ -117,6 +129,7 @@
                "types": ["  IndexedSet -> IndexedSet"],
                "params": [" IndexedSet"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-eq( | set2)",
@@ -126,6 +139,7 @@
                "types": ["  IndexedSet -> IndexedSet"],
                "params": [" IndexedSet"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-fixpoint(s)",
@@ -135,6 +149,7 @@
                "types": [" Set(A) -> Set(A)"],
                "params": ["a -> List(a)"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-get-index( | elem)",
@@ -144,6 +159,7 @@
                "types": [" IndexedSet -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "iset-get-elem( | index)",
@@ -153,6 +169,7 @@
                "types": [" IndexedSet -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [" Martin Bravenboer <martin.bravenboer@gmail.com>"],

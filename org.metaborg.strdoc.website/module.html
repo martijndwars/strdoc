@@ -19,7 +19,7 @@
 		<th>Author</th>
 		<td>{{author}}</td>
 	</tr>
-	<tr ng-repeat="see in module.sees">
+	<tr ng-repeat="see in module.see">
 		<th>See</th>
 		<td><a ng-href="#/module/{{see}}">{{see}}</a></td>
 	</tr>
@@ -65,6 +65,11 @@
 			<div ng-repeat="note in strategy.notes">
 				<dt>Note:</dt>
 				<dd>{{note}}</dd>
+			</div>
+
+			<div ng-repeat="see in strategy.see">
+				<dt>See:</dt>
+				<dd>{{see}}</dd>
 			</div>
 		</dl>
 	</li>

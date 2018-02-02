@@ -9,6 +9,7 @@
                "types": ["File -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "WriteToBinaryFile",
@@ -18,6 +19,7 @@
                "types": ["File * a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "WriteToTextFile",
@@ -27,6 +29,7 @@
                "types": ["File * a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "WriteToFile(writer)",
@@ -36,6 +39,7 @@
                "types": ["(Stream * a -> Stream) * File * a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "open(file)",
@@ -45,6 +49,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "save(file)",
@@ -54,6 +59,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "write-to-stream",
@@ -63,6 +69,7 @@
                "types": ["Stream * _ -> Stream"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "write-in-baf-to-stream",
@@ -72,6 +79,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "write-in-taf-to-stream",
@@ -81,6 +89,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "write-in-text-to-stream",
@@ -90,6 +99,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "read-from-stream",
@@ -99,6 +109,7 @@
                "types": ["Stream -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "read-from-string",
@@ -108,6 +119,7 @@
                "types": ["String -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "write-to-string",
@@ -117,6 +129,7 @@
                "types": ["a -> String"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "write-to-binary-string",
@@ -126,6 +139,7 @@
                "types": ["a -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "write-to-shared-string",
@@ -135,6 +149,7 @@
                "types": ["a -> List(Char)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "fprint",
@@ -144,6 +159,7 @@
                "types": ["Stream * [a] -> Stream"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "fprintnl",
@@ -153,6 +169,7 @@
                "types": ["Stream * [a] -> Stream"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "print",
@@ -162,6 +179,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "printnl",
@@ -171,6 +189,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "debug",
@@ -180,6 +199,7 @@
                "types": [" a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "debug(msg)",
@@ -189,6 +209,7 @@
                "types": [" a -> a"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "debug-depth",
@@ -198,6 +219,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "debug-depth(depth)",
@@ -207,6 +229,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "debug-depth(depth, s)",
@@ -216,6 +239,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "say(msg)",
@@ -225,6 +249,7 @@
                "types": ["  a -> a"],
                "params": [" term to print to stderr"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "trace(msg, s)",
@@ -234,6 +259,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "error",
@@ -243,6 +269,7 @@
                "types": ["List(a) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "fatal-error",
@@ -252,6 +279,7 @@
                "types": ["List(a) -> List(a)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "giving-up",
@@ -261,6 +289,7 @@
                "types": ["_ -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "obsolete(msg)",
@@ -270,6 +299,7 @@
                "types": [" a -> a"],
                "params": ["Strategy that produces a string message."],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "risky(msg, s)",
@@ -279,6 +309,7 @@
                "types": [" a -> a"],
                "params": ["Strategy that produces a string message","Strategy to apply"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "echo",
@@ -288,6 +319,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "echo(msg)",
@@ -297,6 +329,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "printstring",
@@ -306,6 +339,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],

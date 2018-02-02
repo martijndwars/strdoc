@@ -9,6 +9,7 @@
                "types": ["List(Int) -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "average",
@@ -18,6 +19,7 @@
                "types": ["List(Int) -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "list-min",
@@ -27,6 +29,7 @@
                "types": ["List(Int) -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "list-max",
@@ -36,6 +39,7 @@
                "types": ["List(Int) -> Int"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "list-accum(s)",
@@ -45,6 +49,7 @@
                "types": [" List(a) -> d"],
                "params": ["(a,b)   -> c"],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "add-lists",
@@ -54,6 +59,7 @@
                "types": ["List(List(Number)) -> List(Number)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "int-sort",
@@ -63,6 +69,7 @@
                "types": ["List(Int) -> List(Int)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-interval-from",
@@ -72,6 +79,7 @@
                "types": ["List(Int) -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "range",
@@ -81,6 +89,7 @@
                "types": [" Int       -> List(Int)"," Int * Int -> List(Int)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.9.3"
                },{
                "name": "range",
@@ -90,6 +99,7 @@
                "types": [" Int * Int -> List(Int)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.9.3"
                },{
                "name": "range( | step)",
@@ -99,6 +109,7 @@
                "types": ["step Int","     Int       -> List(Int)","     Int * Int -> List(Int)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "    0.9.3"
                },{
                "name": "range( | step)",
@@ -108,6 +119,7 @@
                "types": ["step Int","     Int       -> List(Int)","     Int * Int -> List(Int)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "    0.9.3"
                },{
                "name": "range(next)",
@@ -117,6 +129,7 @@
                "types": ["next Int -> Int","     Int       -> List(Int)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "range(next)",
@@ -126,6 +139,7 @@
                "types": ["     Int * Int -> List(Int)"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": "0.9.3"
                },{
                "name": "range-next(inc)",
@@ -135,6 +149,7 @@
                "types": [],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                },{
                "name": "is-interval",
@@ -144,6 +159,7 @@
                "types": ["List(Int) -> _"],
                "params": [],
                "notes": [],
+               "see": [],
                "since": ""
                }],
 "authors": [],
