@@ -1,3 +1,27 @@
+div.search-container {
+  position: relative;
+}
+
+div.search-container:before {
+  display: block;
+  width: 24px;
+  height: 24px;
+  content: "\e003";
+  font-family: 'Glyphicons Halflings';
+  background-position: -48px 0;
+  position: absolute;
+  top: 15px;
+  left: 8px;
+  opacity: .3;
+  font-size: 18px;
+  z-index: 1000;
+}
+
+div.search-container input {
+  display: block;
+  padding-left: 35px;
+}
+
 input {
   border: 0;
   border-bottom: 1px solid #dee0df;

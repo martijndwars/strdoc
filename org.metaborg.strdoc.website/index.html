@@ -27,13 +27,16 @@
 
   <body>
     <div class="container">
-      <input
-        type="search"
-        id="search"
-        placeholder="Click 'S' to search"
-        ng-model="query"
-        ng-change="search()"
-        ng-model-options='{debounce: 200}'/>
+      <div class="search-container">
+        <input
+          type="search"
+          id="search"
+          placeholder="Click 'S' to search"
+          ng-model="query"
+          ng-change="search()"
+          ng-model-options="{debounce: 200}"
+          />
+      </div>
       
       <div class="row">
         <div class="col-md-8">
