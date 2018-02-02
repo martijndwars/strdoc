@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">{{package.name}}</li>
   </ol>
 </nav>
@@ -13,7 +13,7 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="module in package.modules">
-			<td><a ng-href="#/module/{{module}}">{{module}}</a></td>
+			<td><a ng-href="module/{{module}}">{{module}}</a></td>
 		</tr>
 	</tbody>
 </table>

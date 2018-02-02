@@ -110,7 +110,7 @@ app.factory('moduleService', function (baseUrl, $http, $templateCache, $q) {
 });
 
 app.config(function ($routeProvider, $locationProvider) {
-  $locationProvider.hashPrefix('');
+  $locationProvider.html5Mode(true);
 
   $routeProvider
     .when('/', {

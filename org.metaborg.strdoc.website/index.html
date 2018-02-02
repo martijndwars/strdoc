@@ -3,6 +3,8 @@
   <head>
     <title>Stratego API Documentation</title>
 
+    <base href="/">
+
     <link rel="icon" href="favicon.ico"/>
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -46,10 +48,10 @@
             <h5>Packages</h5>
             <ul class="packages">
                 <li ng-repeat="package in packages">
-                    <a ng-href="#/package/{{package.name}}">{{package.name}}</a>
+                    <a ng-href="package/{{package.name}}">{{package.name}}</a>
                     <ul>
                         <li ng-repeat="module in package.modules">
-                            <a ng-href="#/module/{{module}}">{{module.substr(package.name.length+1)}}</a>
+                            <a ng-href="module/{{module}}">{{module.substr(package.name.length+1)}}</a>
                         </li>
                     </ul>
                 </li>

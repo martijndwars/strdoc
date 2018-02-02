@@ -30,10 +30,12 @@ Then, run `strdoc.transform` to extract the documentation and save it as .json:
 $ java -jar org.metaborg.strdoc.transform/target/org.metaborg.strdoc.transform-2.4.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
-If you don't have a webserver, install Node's `http-server`:
+Install `nginx` and setup a site with the following location block:
 
 ```
-$ npm install -g http-server
+location / {
+    try_files $uri /index.html;
+}
 ```
 
 Then run a HTTP server that serves the files in `org.metaborg.strdoc.website`:

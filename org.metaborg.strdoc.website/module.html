@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">{{module.name}}</li>
   </ol>
 </nav>
@@ -21,11 +21,11 @@
 	</tr>
 	<tr ng-repeat="see in module.see">
 		<th>See</th>
-		<td><a ng-href="#/module/{{see}}">{{see}}</a></td>
+		<td><a ng-href="module/{{see}}">{{see}}</a></td>
 	</tr>
 	<tr>
 		<th>Source</th>
-		<td><a ng-href="#/source/{{module.name}}.str.html">{{module.name}}.str</a></td>
+		<td><a ng-href="source/{{module.name}}.str.html">{{module.name}}.str</a></td>
 	</tr>
 </table>
 
@@ -38,7 +38,7 @@
 <ul class="strategies">
 	<li ng-repeat="strategy in module.strategies | filter:filter" id="{{strategy.name}}">
 		<h5>
-			{{strategy.name}} <span><a href="#/source/{{module.name}}.str.html/line/{{strategy.lines()}}">(source)</a></span>
+			{{strategy.name}} <span><a href="source/{{module.name}}.str.html/line/{{strategy.lines()}}">(source)</a></span>
 		</h5>
 		
 		<p class="description">{{strategy.description}}</p>
