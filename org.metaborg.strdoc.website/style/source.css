@@ -1,19 +1,23 @@
-pre.code {
+pre.source {
   font-size: 11px;
-  white-space: pre-wrap;
+  overflow-x: scroll;
   background-color: #fff;
 }
 
+pre.source code {
+  white-space: inherit;
+}
+
 /* Line numbering */
-pre.code:before {
+pre.source:before {
   counter-reset: listing;
 }
 
-pre.code code {
+pre.source code {
   counter-increment: listing;
 }
 
-pre.code code::before {
+pre.source code::before {
   content: counter(listing) " ";
   display: inline-block;
   width: 4em;
@@ -24,6 +28,6 @@ pre.code code::before {
 }
 
 /* Highlighted line */
-pre.code code.highlight {
+pre.source code.highlight {
   background-color: #fffbdd;
 }
