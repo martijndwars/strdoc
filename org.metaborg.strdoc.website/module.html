@@ -57,7 +57,7 @@
 				<dd>{{type}}</dd>
 			</div>
 
-			<div ng-repeat="param in strategy.params">
+			<div ng-repeat="param in strategy.params track by $index">
 				<dt>Param:</dt>
 				<dd>{{param}}</dd>
 			</div>
