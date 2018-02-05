@@ -128,14 +128,6 @@ app.config(function ($routeProvider, $locationProvider) {
       controller: 'ModuleViewController',
       templateUrl: 'module.html'
     })
-    .when('/source/:name*/line/:start-:end', {
-      controller: 'SourceViewController',
-      templateUrl: 'source.html'
-    })
-    .when('/source/:name*/line/:line', {
-      controller: 'SourceViewController',
-      templateUrl: 'source.html'
-    })
     .when('/source/:name*', {
       controller: 'SourceViewController',
       templateUrl: 'source.html'

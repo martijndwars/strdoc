@@ -1,31 +1,43 @@
-app.controller('SourceViewController', function (baseUrl, $scope, $routeParams, $http, $sce, $timeout, $anchorScroll) {
+app.controller('SourceViewController', function (baseUrl, $scope, $routeParams, $location, $http, $sce, $timeout, $anchorScroll) {
   var name = $routeParams.name;
+  var hash = $location.hash();
+  var range = getRange(hash);
 
   $scope.module = name.substring(0, name.length-9);
 
-  $http.get(baseUrl + 'source/' + name).then(function (response) {
+  $http.get(baseUrl + 'data/source/' + name).then(function (response) {
     $scope.source = $sce.trustAsHtml(response.data);
 
-    var line = $routeParams.line;
-    var start = $routeParams.start;
-    var end = $routeParams.end;
-
     $timeout(function() {
-      if (line != undefined) {
-        // Scroll to the line
-        $anchorScroll(line);
+      if (range == undefined) {
+        return;
+      }
 
-        // Highlight the line
-        $('#' + line).addClass('highlight');
-      } else if (start != undefined && end != undefined) {
-        // Scroll to the start
-        $anchorScroll(start);
+      $anchorScroll(range.start);
 
-        // Highlight the range
-        for (var i = parseInt(start); i <= parseInt(end); i++) {
-          $('#' + i).addClass('highlight');
-        }
+      for (var i = parseInt(range.start); i <= parseInt(range.end); i++) {
+        $('#' + i).addClass('highlight');
       }
     }, 0);
   });
+
+  function getRange(hash) {
+    if (hash == '' || hash == undefined) {
+      return undefined;
+    }
+
+    if (hash.indexOf('-') == -1) {
+      return {
+        start: hash,
+        end: hash
+      };
+    }
+
+    var splits = hash.split('-');
+
+    return {
+      start: splits[0],
+      end: splits[1]
+    };
+  }
 });
