@@ -61,13 +61,13 @@ app.run(function($rootScope, $location, moduleService) {
 
 app.factory('moduleService', function (baseUrl, $http, $templateCache, $q) {
   var getPackages = function () {
-    return $http.get(baseUrl + 'data/packages.json').then(function (response) {
+    return $http.get(baseUrl + 'data/json/packages.json').then(function (response) {
       return response.data;
     });
   };
 
   var getModules = function () {
-    return $http.get(baseUrl + 'data/packages.json').then(function (response) {
+    return $http.get(baseUrl + 'data/json/packages.json').then(function (response) {
       return _.flatMap(response.data, function (package) {
         return package.modules;
       });
@@ -75,7 +75,7 @@ app.factory('moduleService', function (baseUrl, $http, $templateCache, $q) {
   };
 
   var getModule = function (name) {
-    var file = baseUrl + 'data/' + name + '.str.json';
+    var file = baseUrl + 'data/json/' + name + '.str.json';
 
     return $http.get(file).then(function (response) {
       var data = response.data;
