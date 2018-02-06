@@ -124,6 +124,8 @@ app.factory('moduleService', function (baseUrl, $http, $location, $templateCache
 
     return $http.get(file).then(function (response) {
       return response.data;
+    }).catch(function (error) {
+      $location.url('/');
     });
   }
 
