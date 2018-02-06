@@ -59,7 +59,7 @@ app.run(function($rootScope, $location, moduleService) {
   });
 });
 
-app.factory('moduleService', function (baseUrl, $http, $templateCache, $q) {
+app.factory('moduleService', function (baseUrl, $http, $location, $templateCache, $q) {
   var getPackages = function () {
     return $http.get(baseUrl + 'data/json/packages.json').then(function (response) {
       return response.data;
@@ -88,7 +88,7 @@ app.factory('moduleService', function (baseUrl, $http, $templateCache, $q) {
       // Fix the prototype of the module
       return Object.assign(new Module, data);
     }).catch(function (error) {
-      console.error('Cannot load ' + name, error);
+      $location.url('/');
     });
   };
 

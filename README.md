@@ -54,22 +54,28 @@ $ org.metaborg.strdoc.website/deploy.sh
 
 ## Todo
 
+* Feature: Include the strategy implementation in the documentation (instead of only linking to the source).
 * Feature: Cross-reference the source code (reference links to the declaration); requires analysis on Stratego code.
 * Bug: Some whitespace gets lost in the description (see util/config/parse-options)
 * Bug: When pretty-printing the type of a parameter it looses its parenthesis, so the string looses associativity/precedence.
 * Bug: Cannot parse `collection/hash-table/scoped-finite-map.str`, `system/io/file.str`, and `system/posix/pipe-abstractions.str`.
+* Bug: When visiting a non-existent page, return a 404 error (so Google removes the page).
 * Feature: Update the page title so we get nice history in the browser.
 * Feature: Show method summary.
 * Feature: Extract constructors (with comments)
 * Feature: Extract overlays (with comments)
 * Idea: Search based on type.
+* Idea: Allow comments/discussion on a strategy definition?
+* Idea: Show module's strategies in the right side menu, like in Scala API docs.
 
 ## Inspiration
 
 For the presentation:
 
 - Current Stratego docs: releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/
+- Searchable xdoc: http://xdoc.martkolthof.nl/
 - Rust API docs: https://doc.rust-lang.org/std/
 - Scala API docs: http://www.scala-lang.org/api/current/
 - AngularJS API docs: https://docs.angularjs.org/api/
 - PHP API generator: http://www.apigen.org/ApiGen/
+
