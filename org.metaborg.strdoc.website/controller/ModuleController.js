@@ -1,12 +1,13 @@
-app.controller('ModuleViewController', function ($scope, $routeParams, $timeout, $anchorScroll, moduleService) {
-  var moduleName = $routeParams.name;
+app.controller('ModuleViewController', function ($scope, $routeParams, $location, $timeout, $anchorScroll, moduleService) {
+  var name = $routeParams.name;
+  var hash = $location.hash();
 
-  moduleService.getModule(moduleName).then(function (module) {
+  moduleService.getModule(name).then(function (module) {
     $scope.module = module;
 
-    if ($routeParams.strategy != undefined) {
+    if (hash != '') {
       $timeout(function() {
-        $anchorScroll($routeParams.strategy);
+        $anchorScroll(hash);
       }, 0);
     }
   });

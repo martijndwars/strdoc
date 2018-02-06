@@ -22,7 +22,7 @@ app.controller('SourceViewController', function (baseUrl, $scope, $routeParams, 
   });
 
   function getRange(hash) {
-    if (hash == '' || hash == undefined) {
+    if (hash == '') {
       return undefined;
     }
 

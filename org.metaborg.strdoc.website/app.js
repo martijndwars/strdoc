@@ -120,10 +120,6 @@ app.config(function ($routeProvider, $locationProvider) {
       controller: 'PackageViewController',
       templateUrl: 'package.html'
     })
-    .when('/module/:name*/strategy/:strategy*', {
-      controller: 'ModuleViewController',
-      templateUrl: 'module.html'
-    })
     .when('/module/:name*', {
       controller: 'ModuleViewController',
       templateUrl: 'module.html'
