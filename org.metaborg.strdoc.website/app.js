@@ -59,6 +59,23 @@ app.run(function($rootScope, $location, moduleService) {
   });
 });
 
+app.filter('lines', function () {
+  return function (source, strategy) {
+    if (source == undefined) {
+      return undefined;
+    }
+
+    var lines = source.split('\n');
+    var subset = lines.slice(strategy.start, strategy.end+1);
+
+    return subset.join('\n');
+  }
+});
+
+app.filter('unsafe', function ($sce) {
+  return $sce.trustAsHtml;
+});
+
 app.factory('moduleService', function (baseUrl, $http, $location, $templateCache, $q) {
   var getPackages = function () {
     return $http.get(baseUrl + 'data/json/packages.json').then(function (response) {
@@ -102,10 +119,19 @@ app.factory('moduleService', function (baseUrl, $http, $location, $templateCache
     }
   };
 
+  var getSource = function (name) {
+    var file = baseUrl + 'data/source/' + name;
+
+    return $http.get(file).then(function (response) {
+      return response.data;
+    });
+  }
+
   return {
     getPackages: getPackages,
     getModules: getModules,
-    getModule: getModuleCached
+    getModule: getModuleCached,
+    getSource: getSource
   };
 });
 

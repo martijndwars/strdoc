@@ -1,12 +1,12 @@
-app.controller('SourceViewController', function (baseUrl, $scope, $routeParams, $location, $http, $sce, $timeout, $anchorScroll) {
+app.controller('SourceViewController', function (baseUrl, $scope, $routeParams, $location, moduleService, $timeout, $anchorScroll) {
   var name = $routeParams.name;
   var hash = $location.hash();
   var range = getRange(hash);
 
   $scope.module = name.substring(0, name.length-9);
 
-  $http.get(baseUrl + 'data/source/' + name).then(function (response) {
-    $scope.source = $sce.trustAsHtml(response.data);
+  moduleService.getSource(name).then(function (source) {
+    $scope.source = source;
 
     $timeout(function() {
       if (range == undefined) {
