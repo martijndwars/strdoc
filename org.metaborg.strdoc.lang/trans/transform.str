@@ -2,8 +2,10 @@ module transform
 
 imports
 
-  signatures/strdoc-sig
   libspoofax/stratego/debug
+  libstrc
+
+  signatures/strdoc-sig
   xsignature
   names
 

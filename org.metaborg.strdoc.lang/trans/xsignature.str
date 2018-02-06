@@ -2,39 +2,6 @@ module xsignature
 
 signature
 
-  // Stratego
-  constructors
-    Strategies : List(Def) -> Decl
-    Rules : List(Def) -> Decl
-
-    StrategyDef : Def
-    RuleDef : Def
-
-    SDef : ID * List(Typedid) * ID -> StrategyDef
-    SDefT : ID * List(Typedid) * List(Typedid) * ID -> StrategyDef
-    SDefNoArgs : ID * ID -> StrategyDef
-
-    RDef : ID * ID * ID -> RuleDef
-    RDefT : ID * ID * ID * ID -> RuleDef
-    RDefNoArgs : ID * ID -> RuleDef
-
-    DefaultVarDec : ID -> Typedid
-    VarDec : ID * Type -> Typeid
-
-    SortVar : ID -> Sort
-    SortNoArgs : ID -> Sort
-    Sort : ID * List(Sort) -> Sort
-
-    FunType : Type
-    ConstType : Type
-    ConstType : Sort -> Type
-    FunType : List(ArgType) * RetType -> FunType
-    Type : ArgType
-    ConstType : ArgType
-    Type : RetType
-
-    ListVar : LId -> LID
-
   // Stratego x Xdoc
   constructors
     DocBlock : STRING * Decl -> Decl
