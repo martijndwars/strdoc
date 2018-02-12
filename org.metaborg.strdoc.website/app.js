@@ -1,4 +1,4 @@
-var app = angular.module('xdoc', ['ngRoute']);
+var app = angular.module('xdoc', ['ngRoute', 'ngMeta']);
 
 app.value('baseUrl', window.location.origin + '/');
 
@@ -29,7 +29,7 @@ Strategy.prototype.lines = function () {
   return this.start + '-' + this.end;
 };
 
-app.run(function($rootScope, $location, moduleService) {
+app.run(function($rootScope, $location, moduleService, ngMeta) {
   $rootScope.query = '';
 
   $rootScope.search = function() {
@@ -57,6 +57,9 @@ app.run(function($rootScope, $location, moduleService) {
   moduleService.getPackages().then(function (packages) {
     $rootScope.packages = packages;
   });
+
+  // Initiate ngMeta
+  ngMeta.init();
 });
 
 app.filter('lines', function () {
@@ -105,7 +108,7 @@ app.factory('moduleService', function (baseUrl, $http, $location, $templateCache
       // Fix the prototype of the module
       return Object.assign(new Module, data);
     }).catch(function (error) {
-      $location.url('/');
+      $location.url('/404').replace();
     });
   };
 
@@ -125,7 +128,7 @@ app.factory('moduleService', function (baseUrl, $http, $location, $templateCache
     return $http.get(file).then(function (response) {
       return response.data;
     }).catch(function (error) {
-      $location.url('/');
+      $location.url('/404').replace();
     });
   }
 
@@ -159,6 +162,14 @@ app.config(function ($routeProvider, $locationProvider) {
     .when('/search/:query', {
       controller: 'SearchController',
       templateUrl: 'search.html'
+    })
+    .when('/404', {
+      templateUrl: '404.html',
+      data: {
+        meta: {
+          'prerender-status-code': '404'
+        }
+      }
     })
     .otherwise({
       redirectTo:'/'

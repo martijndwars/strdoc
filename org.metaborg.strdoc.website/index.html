@@ -5,6 +5,7 @@
 
     <base href="/">
     <meta name="fragment" content="!"/>
+    <meta name="prerender-status-code" content="{{ngMeta['prerender-status-code']}}" ng-if="ngMeta['prerender-status-code']"/>
 
     <link rel="icon" href="favicon.ico"/>
 
@@ -18,6 +19,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-resource.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ng-meta/1.0.2/ngMeta.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     
@@ -38,6 +40,7 @@
           ng-model="query"
           ng-change="search()"
           ng-model-options="{debounce: 200}"
+          autofocus
           />
       </div>
       
