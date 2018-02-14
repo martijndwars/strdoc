@@ -24,3 +24,11 @@ ul.strategies li h5 span {
 ul.strategies li p {
 	margin: 1em 20px;
 }
+
+.breadcrumb-aside {
+	float: right;
+}
+
+.breadcrumb > li.breadcrumb-aside:before {
+	content: '';
+}
