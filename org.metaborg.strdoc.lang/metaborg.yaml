@@ -1,5 +1,5 @@
 ---
-id: org.metaborg:org.metaborg.strdoc.lang:2.4.0-SNAPSHOT
+id: org.metaborg:org.metaborg.strdoc.lang:2.5.0-SNAPSHOT
 name: strdoc
 dependencies:
   compile:

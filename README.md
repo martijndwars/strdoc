@@ -4,9 +4,7 @@
 
 1. _Re-generate Stratego Standard Library (SSL) documentation._ The current API documentation website was generated in 2009. Almost a decade later the standard library has been extended and the API documentation (comments) have been updated. However, because the tooling to generate the documentation is lost, we have been stuck with the 2009 documentation.
 
-2. *Ability to search for strategies.* It is 2018, we want search and we want it now. If I want to know how to "concatenate" things in Stratego, I want to search for "concat" and find "concat", "mapconcat(s)", "tconcat(s)", and "concat-strings".
-
-3. *Ability to generate your own documentation.* It could be useful for other Stratego codebases to generate browsable and searchable API documentation. This could make it easier for new people to get familiar with the codebase.
+2. *Ability to search for strategies.* It is 2018, so we want to easily search for strategies. If I want to know how to "concatenate" things in Stratego, I want to search for "concat" and find "concat", "mapconcat(s)", "tconcat(s)", and "concat-strings".
 
 ## Architecture
 
@@ -24,24 +22,27 @@ First, use Maven to build the `strdoc.lang` and `strdoc.transform` projects:
 $ mvn package
 ```
 
-Then, run `strdoc.transform` to extract the documentation and save it as .json:
+Second, run `strdoc.transform` to extract the documentation and save it as .json:
 
 ```
-$ java -jar org.metaborg.strdoc.transform/target/org.metaborg.strdoc.transform-2.4.0-SNAPSHOT-jar-with-dependencies.jar
+$ java \
+  -jar org.metaborg.strdoc.transform/target/org.metaborg.strdoc.transform-2.5.0-SNAPSHOT-jar-with-dependencies.jar \
+  --stratego /path/to/org.metaborg.meta.lang.stratego/target/org.metaborg.meta.lang.stratego-2.4.0-SNAPSHOT.spoofax-language \
+  --doc /path/to/org.metaborg.strdoc.lang/target/org.metaborg.strdoc.lang-2.4.0-SNAPSHOT.spoofax-language \
+  --project /path/to/spoofax-releng/strategoxt/strategoxt/stratego-libraries/lib/spec \
+  --output /path/to/strdoc/org.metaborg.strdoc.website/
 ```
 
-Install `nginx` and setup a site with the following location block:
+Third, build and run a Docker container with a nginx webserver:
 
 ```
-location / {
-    try_files $uri /index.html;
-}
+docker build -t docs . && docker run -p 80:80 docs
 ```
 
-Then run a HTTP server that serves the files in `org.metaborg.strdoc.website`:
+Finally, open localhost in your webbrowser:
 
 ```
-$ http-server org.metaborg.strdoc.website
+open http://localhost
 ```
 
 ## Deploy
@@ -54,8 +55,9 @@ $ org.metaborg.strdoc.website/deploy.sh
 
 ## Todo
 
-* Feature: Include the strategy implementation in the documentation (instead of only linking to the source).
-* Feature: Cross-reference the source code (reference links to the declaration); requires analysis on Stratego code.
+* Feature: Cross-reference the source code (reference links to the declaration)
+  - This is something the old Stratego docs does better.
+  - This requires analysis on Stratego code. Can we get an NaBL2 spec that does name resolution?
 * Bug: Some whitespace gets lost in the description (see util/config/parse-options)
 * Bug: When pretty-printing the type of a parameter it looses its parenthesis, so the string looses associativity/precedence.
 * Bug: Cannot parse `collection/hash-table/scoped-finite-map.str`, `system/io/file.str`, and `system/posix/pipe-abstractions.str`.
@@ -64,15 +66,15 @@ $ org.metaborg.strdoc.website/deploy.sh
 * Feature: Show method summary.
 * Feature: Extract constructors (with comments)
 * Feature: Extract overlays (with comments)
-* Idea: Search based on type.
-* Idea: Allow comments/discussion on a strategy definition?
+* Idea: Search based on type (ala Haskell's Hoogle)
+  - Probably requires more formal type annotations on Stratego
+* Idea: Allow comments/discussion on a strategy definition ala php.net?
 * Idea: Show module's strategies in the right side menu, like in Scala API docs.
 
 ## Inspiration
 
-For the presentation:
-
 - Current Stratego docs: releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/
+- Rob Vermaas' thesis on xDoc (2004): http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.102.3625&rank=4
 - Searchable xdoc: http://xdoc.martkolthof.nl/
 - Rust API docs: https://doc.rust-lang.org/std/
 - Scala API docs: http://www.scala-lang.org/api/current/
