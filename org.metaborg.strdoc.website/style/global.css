@@ -36,7 +36,17 @@ input {
 	background: #ecede5;
 }
 
+.sidebar {
+  display: none;
+}
+
 ul.packages {
 	padding-left: 0;
 	list-style: none;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: block;
+  }
 }

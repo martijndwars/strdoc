@@ -4,8 +4,10 @@
     <title>Stratego API Documentation</title>
 
     <base href="/">
+    <meta charset="utf-8">
     <meta name="fragment" content="!"/>
     <meta name="prerender-status-code" content="{{ngMeta['prerender-status-code']}}" ng-if="ngMeta['prerender-status-code']"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="icon" href="favicon.ico"/>
 
@@ -49,7 +51,7 @@
         <div class="col-md-8 col-sm-8">
             <div ng-view autoscroll></div>
         </div>
-        <div class="col-md-4 col-sm-4">
+        <div class="col-md-4 col-sm-4 sidebar">
             <h5>Packages</h5>
             <ul class="packages">
                 <li ng-repeat="package in packages">
