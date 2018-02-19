@@ -3,7 +3,8 @@
     "name": "collection/hash-table",
     "modules": [
       "collection/hash-table/common",
-      "collection/hash-table/nested"
+      "collection/hash-table/nested",
+      "collection/hash-table/scoped-finite-map"
     ]
   },
   {
@@ -99,6 +100,7 @@
     "modules": [
       "system/io/char",
       "system/io/dir",
+      "system/io/file",
       "system/io/process",
       "system/io/term"
     ]
@@ -109,6 +111,7 @@
       "system/posix/error",
       "system/posix/file-abstractions",
       "system/posix/file",
+      "system/posix/pipe-abstractions",
       "system/posix/process-abstractions",
       "system/posix/process",
       "system/posix/signal",

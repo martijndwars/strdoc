@@ -1,0 +1,177 @@
+{
+"name": "system/posix/pipe-abstractions",
+"description": "\n\n",
+"strategies": [{
+               "name": "close-pipe",
+               "description": "\n\n",
+               "start": 10,
+               "end": 15,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "stdin-from-pipe",
+               "description": "\n\n",
+               "start": 18,
+               "end": 23,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "file-from-pipe",
+               "description": "\n\n",
+               "start": 26,
+               "end": 29,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "stdout-to-pipe",
+               "description": "\n\n",
+               "start": 32,
+               "end": 37,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "file-to-pipe",
+               "description": "\n\n",
+               "start": 40,
+               "end": 43,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "write-term-to-text-pipe",
+               "description": "\n\n",
+               "start": 45,
+               "end": 51,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "read-term-from-pipe",
+               "description": "\n\n",
+               "start": 53,
+               "end": 57,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "write-to-prog(prog, args)",
+               "description": "\n\n",
+               "start": 64,
+               "end": 73,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "write-to-prog'(prog, args)",
+               "description": "\n\n",
+               "start": 75,
+               "end": 87,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "read-from-prog(prog, args)",
+               "description": "\n\n",
+               "start": 90,
+               "end": 96,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "read-from-prog'(prog, args)",
+               "description": "\n\n",
+               "start": 98,
+               "end": 109,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "setup-filter-pipe",
+               "description": "\n\n",
+               "start": 115,
+               "end": 116,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "pipe-source(prog, args)",
+               "description": "\n\n",
+               "start": 119,
+               "end": 123,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "pipe-sink(prog, args)",
+               "description": "\n\n",
+               "start": 126,
+               "end": 128,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "close-filter-pipe(s)",
+               "description": "\n\n",
+               "start": 130,
+               "end": 132,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "exec-filter-pipe(s)",
+               "description": "\n\n",
+               "start": 134,
+               "end": 137,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "spawn-filter-with-prog(prog, args)",
+               "description": "\n\n",
+               "start": 139,
+               "end": 145,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}

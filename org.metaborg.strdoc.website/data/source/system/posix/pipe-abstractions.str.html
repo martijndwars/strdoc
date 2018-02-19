@@ -145,14 +145,3 @@
 <code id="144"><span style="color: rgb(63, 127, 95)">               </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">stdout-to-pipe</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">p-out</span></code>
 <code id="145"><span style="color: rgb(63, 127, 95)">               </span><span style="color: rgb(0, 0, 128)">;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">execvp</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">prog</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">&lt;</span><span style="color: rgb(0, 64, 128)">args</span><span style="color: rgb(0, 0, 128)">&gt;</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(0, 0, 128)">)</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">=&gt;</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 128)">(</span><span style="color: rgb(0, 0, 0)">pid</span><span style="color: rgb(0, 0, 128)">,</span><span style="color: rgb(63, 127, 95)"> </span><span style="color: rgb(0, 0, 0)">_</span><span style="color: rgb(0, 0, 128)">)</span></code>
 <code id="146"><span style="color: rgb(63, 127, 95)">      //; &lt;close-pipe&gt; p-in</span></code>
-<code id="147"></code>
-<code id="148"><span style="color: rgb(63, 127, 95)">/*</span></code>
-<code id="149"><span style="color: rgb(63, 127, 95)">  file-to-file-filter(!infile, !outfile) :</span></code>
-<code id="150"><span style="color: rgb(63, 127, 95)">    (p-in, pids, p-out) -&gt; </span></code>
-<code id="151"><span style="color: rgb(63, 127, 95)">    where &lt;fopen&gt; infile </span></code>
-<code id="152"></code>
-<code id="153"><span style="color: rgb(63, 127, 95)">  pipe-comm(prog, args, cont) :</span></code>
-<code id="154"><span style="color: rgb(63, 127, 95)">    ?fd;</span></code>
-<code id="155"><span style="color: rgb(63, 127, 95)">    </span></code>
-<code id="156"><span style="color: rgb(63, 127, 95)">*/</code>
-<code id="157"></span></code>

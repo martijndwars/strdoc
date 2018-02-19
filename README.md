@@ -70,6 +70,7 @@ $ org.metaborg.strdoc.website/deploy.sh
   - Probably requires more formal type annotations on Stratego
 * Idea: Allow comments/discussion on a strategy definition ala php.net?
 * Idea: Show module's strategies in the right side menu, like in Scala API docs.
+* Idea: Apply strdoc to [https://github.com/metaborg/spoofax/tree/5c1114453ec2b30abcaf6fc51c15bf29872f6603/meta.lib.spoofax/trans/libspoofax](libspoofax).
 
 ## Inspiration
 

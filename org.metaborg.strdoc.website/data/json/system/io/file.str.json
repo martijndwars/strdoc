@@ -1,0 +1,257 @@
+{
+"name": "system/io/file",
+"description": "\nPortable file operations.\n\n",
+"strategies": [{
+               "name": "open-stream",
+               "description": "\nOpens a Stream associated to a FileLoc\n\n\n",
+               "start": 32,
+               "end": 36,
+               "types": ["(FileLoc, String) -> Stream"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "stdio-stream",
+               "description": "\n\n",
+               "start": 41,
+               "end": 41,
+               "types": ["FileLoc -> Stream"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "stdio-stream",
+               "description": "\n\n",
+               "start": 42,
+               "end": 42,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "stdio-stream",
+               "description": "\n\n",
+               "start": 43,
+               "end": 43,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "stdin-stream",
+               "description": "\nReturns the Stream for stdin, stdout and stderr\n\n\n",
+               "start": 50,
+               "end": 50,
+               "types": ["_ -> Stream"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "stdout-stream",
+               "description": "\n\n",
+               "start": 51,
+               "end": 51,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "stderr-stream",
+               "description": "\n\n",
+               "start": 52,
+               "end": 52,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "fopen",
+               "description": "\nOpens the file whose name is the string pointed to by\npathname and returns a Stream associated with this file.\nFor documentation on the mode string, see the man page of\nfopen.\n\nfails if the file couldn't be opened.\n\n\n",
+               "start": 69,
+               "end": 70,
+               "types": ["String * String -> Stream"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "fclose",
+               "description": "\nDissociates the named stream from its underlying file or set of functions.\nIf the stream was being used for output, any buffered data is written\nfirst, using fflush(3).\n\n\n",
+               "start": 79,
+               "end": 81,
+               "types": ["Stream -> ()"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "fflush",
+               "description": "\nForces a write of all user-space buffered data for the given Stream\n\n\n",
+               "start": 88,
+               "end": 90,
+               "types": ["Stream -> Stream"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "fputs",
+               "description": "\nWrites a String to a Stream\n\n",
+               "start": 101,
+               "end": 102,
+               "types": ["(String, Stream) -> Stream"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "puts",
+               "description": "\nWrites a String to stdout with a trailing newline and returns stdout.\n\n\n",
+               "start": 109,
+               "end": 110,
+               "types": ["String -> Stream"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "fputc",
+               "description": "\nWrites a Char to a Stream\n\n\n",
+               "start": 117,
+               "end": 118,
+               "types": ["(Char, Stream) -> Stream"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "fgetc",
+               "description": "\nfgetc() reads the next character from the stream and returns the\nASCII code of the character as an Int. Fails on end of file or error.\n\n\n",
+               "start": 131,
+               "end": 132,
+               "types": ["Stream -> Char"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "tmpnam",
+               "description": "\n\n",
+               "start": 139,
+               "end": 140,
+               "types": [],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "dirname",
+               "description": "\nReturns directory portion of pathname in a POSIX compatible way,\nafter converting all backslashes to forward slashes.\n\n\n",
+               "start": 154,
+               "end": 165,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "is-abspath",
+               "description": "\nSucceeds if the input pathname is an absolute path.\n\nA pathname is considered absolute if it starts with a /, a \\,\nX:/ or X:\\ for any letter X.\n\n\n",
+               "start": 177,
+               "end": 178,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": "0.9.4"
+               },{
+               "name": "is-relpath",
+               "description": "\nSucceeds if the input pathname is a relative path.\n\nA pathname is relative if is-abspath fails.\n\n\n",
+               "start": 188,
+               "end": 189,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": "0.9.4"
+               },{
+               "name": "base-filename",
+               "description": "\nStrips the directory from a pathname.\n\n\n",
+               "start": 197,
+               "end": 199,
+               "types": [" String -> String"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "guarantee-extension( | ext)",
+               "description": "\nDrops the current extension and replaces it with the specified extension.\n\n\n",
+               "start": 213,
+               "end": 215,
+               "types": ["  String -> String"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": " 0.15"
+               },{
+               "name": "has-extension( | ext)",
+               "description": "\nChecks if the file extension is ext.\n\n\n",
+               "start": 225,
+               "end": 226,
+               "types": ["  String -> String"],
+               "params": [" The required extension (without . )"],
+               "notes": [],
+               "see": [],
+               "since": " 0.15"
+               },{
+               "name": "test-extension(ext)",
+               "description": "\nTests if the file extension (everything after the . satisfies ext.\n\n\n",
+               "start": 235,
+               "end": 239,
+               "types": [],
+               "params": [" Test for the file extension. Is applied to the plain file extension (without the .)"],
+               "notes": [],
+               "see": [],
+               "since": " 0.15"
+               },{
+               "name": "add-extension",
+               "description": "\nAdds an extension (second argument) to a path (first argument).\n\n\n",
+               "start": 246,
+               "end": 247,
+               "types": ["(String, String) -> String"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "remove-extension",
+               "description": "\nRemove an extension from a file name.\nReturns the input if the file does not have an extension.\n\n\n",
+               "start": 256,
+               "end": 261,
+               "types": ["String -> String"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               },{
+               "name": "get-extension",
+               "description": "\nGet extension from filename\n\n\n",
+               "start": 268,
+               "end": 278,
+               "types": ["  String -> String"],
+               "params": [],
+               "notes": [],
+               "see": [],
+               "since": ""
+               }],
+"authors": [],
+"see": []
+}
